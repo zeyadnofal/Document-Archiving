@@ -1,0 +1,17 @@
+C:\Users\Zazo\source\repos\Document Archiving\bin\Debug\Document Archiving.exe.config
+C:\Users\Zazo\source\repos\Document Archiving\bin\Debug\Document Archiving.exe
+C:\Users\Zazo\source\repos\Document Archiving\bin\Debug\Document Archiving.pdb
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document Archiving.csprojAssemblyReference.cache
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\LoginWindow.g.cs
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\MainWindow.g.cs
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\App.g.cs
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document Archiving_MarkupCompile.cache
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document Archiving_MarkupCompile.lref
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\LoginWindow.baml
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\MainWindow.baml
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document Archiving.g.resources
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document_Archiving.Properties.Resources.resources
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document Archiving.csproj.GenerateResource.cache
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document Archiving.csproj.CoreCompileInputs.cache
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document Archiving.exe
+C:\Users\Zazo\source\repos\Document Archiving\obj\Debug\Document Archiving.pdb
