@@ -1,0 +1,2752 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Document</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Document.AnnotationsRedactionOptions">
+      <summary>Options to use when applying redactions on a page.</summary>
+    </member>
+    <member name="M:Leadtools.Document.AnnotationsRedactionOptions.#ctor">
+      <summary>Initializes a new instance of AnnotationsRedactionOptions with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Document.AnnotationsRedactionOptions.Equals(System.Object)">
+      <summary>Overrides Objects.Equals.</summary>
+      <param name="obj">Destination object to compare with.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Document.AnnotationsRedactionOptions.GetHashCode">
+      <summary>Overrides Object.GetHashCode.</summary>
+      <returns>The hash code of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.AnnotationsRedactionOptions.IntersectionPercentage">
+      <summary>Percentage of intersection to use when redacting text characters.</summary>
+      <value>The percentage of intersection to use when redacting text characters. The default value is 0, which means to perform redacting if 50% or more of the character boundary intersects with any of the redaction items.</value>
+    </member>
+    <member name="P:Leadtools.Document.AnnotationsRedactionOptions.Mode">
+      <summary>Mode to use when applying the annotations.</summary>
+      <value>The mode to use when applying the annotations. The default value is DocumentRedactionMode.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.AnnotationsRedactionOptions.ReplaceCharacter">
+      <summary>Character to use when replacing redacted text.</summary>
+      <value>The value to use when replacing each character in the redacted text. The default value is `*`.</value>
+    </member>
+    <member name="T:Leadtools.Document.CloneDocumentOptions">
+      <summary>Options to use when cloning an existing document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.CloneDocumentOptions.#ctor">
+      <summary>Initializes a new instance of CloneDocumentOptions with default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Document.CloneDocumentOptions.CachePolicy">
+      <summary>The cache policy to use with the new document.</summary>
+      <value>The cache policy to use for the new document that determines when the document and its parts are purged. Default value is</value>
+    </member>
+    <member name="P:Leadtools.Document.CloneDocumentOptions.DocumentId">
+      <summary>The ID to be used for the created document.</summary>
+      <value>String that specifies the ID to be used with the created document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.CloneDocumentOptions.UserToken">
+      <summary>User token associated with the document.</summary>
+      <value>The user token associated with the document. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.Constants">
+      <summary>Contains constant values used by this framework.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.ABCMimeType">
+      <summary>ABC MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.ABICMimeType">
+      <summary>ABIC MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.BMPMimeType">
+      <summary>BMP MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.CALSMimeType">
+      <summary>CALS MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.CMPMimeType">
+      <summary>LEAD CMP MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.CMWMimeType">
+      <summary>CMW MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.DCRMimeType">
+      <summary>DCR MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.DCSMimeType">
+      <summary>DCS MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.DefaultMimeType">
+      <summary>Default binary MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.DICOMMimeType">
+      <summary>DICOM MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.DOCMimeType">
+      <summary>DOC MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.DOCXMimeType">
+      <summary>DOCX MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.ECWMimeType">
+      <summary>ECW MIME type.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.FAXMimeType">
+      <summary>FAX MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.FPXMimeType">
+      <summary>FPX MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.GIFMimeType">
+      <summary>GIF MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.IFFMimeType">
+      <summary>IFF MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.IOCAMimeType">
+      <summary>IOCA MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.J2KMimeType">
+      <summary>J2K MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.JBIG2MimeType">
+      <summary>JBIG 2 MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.JBIGMimeType">
+      <summary>JBIG MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.JPEGMimeType">
+      <summary>JPEG MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.JXRMimeType">
+      <summary>JXR MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.KDCMimeType">
+      <summary>KDC MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.LEADMRCMimeType">
+      <summary>LEAD MRC MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.MetafileMimeType">
+      <summary>WMF/EMF MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.MRCMimeType">
+      <summary>MRC MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PBMMimeType">
+      <summary>PBM MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PCXMimeType">
+      <summary>PCX MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PDFMimeType">
+      <summary>PDF MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PGMMimeType">
+      <summary>PGM MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PNGMimeType">
+      <summary>PNG MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PostscriptMimeType">
+      <summary>Postscrtpt MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PPMMimeType">
+      <summary>PPM MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PPTMimeType">
+      <summary>PPT MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PPTXMimeType">
+      <summary>PPTX MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.PSDMimeType">
+      <summary>PCD MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.RASMimeType">
+      <summary>Sun Raster MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.RAWMimeType">
+      <summary>RAW MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.RTFMimeType">
+      <summary>RTF MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.SCTMimeType">
+      <summary>SCT MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.SGIMimeType">
+      <summary>SGI MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.SMPMimeType">
+      <summary>SMP MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.TGAMimeType">
+      <summary>TGA MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.TIFMimeType">
+      <summary>TIFF MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.TXTMimeType">
+      <summary>TXT MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.WBMPMimeType">
+      <summary>WBMP MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.WinCursorMimeType">
+      <summary>Windows Cursor MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.WinIconMimeType">
+      <summary>Windows Icon MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.XBMMimeType">
+      <summary>XBM MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.XLSMimeType">
+      <summary>XLS MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.XLSXMimeType">
+      <summary>XLSX MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.XPMMimeType">
+      <summary>XPM MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.XPSMimeType">
+      <summary>XPS MIME type</summary>
+    </member>
+    <member name="F:Leadtools.Document.Constants.XWDMimeType">
+      <summary>XWD MIME type</summary>
+    </member>
+    <member name="T:Leadtools.Document.ConvertRedactionOptions">
+      <summary>Options to use when applying the redactions during convert operations.</summary>
+    </member>
+    <member name="M:Leadtools.Document.ConvertRedactionOptions.#ctor">
+      <summary>Initializes a new instance of ConvertRedactionOptions with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Document.ConvertRedactionOptions.Clone">
+      <summary>Creates an exact copy of this object.</summary>
+      <returns>A newly created object that contains the same exact values as this object.</returns>
+    </member>
+    <member name="T:Leadtools.Document.CreateDocumentOptions">
+      <summary>Options to use when creating a new document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.CreateDocumentOptions.#ctor">
+      <summary>Initializes a new instance of CreateDocumentOptions with default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.AutoUpdateHistory">
+      <summary>Turn on history tracking for the newly created document.</summary>
+      <value>**true** to turn on history tracking for the newly created document; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.Cache">
+      <summary>The cache to use with the new document.</summary>
+      <value>The cache to use with the new document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.CachePolicy">
+      <summary>The cache policy to use with the new document.</summary>
+      <value>The cache policy to use for the new document that determine when the document and its parts are purged. Default value is</value>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.Descriptor">
+      <summary>The JSON serializable object that describes a document.</summary>
+      <value>JSON serializable object that describes a document.</value>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.DocumentId">
+      <summary>The ID to be used with the loaded document.</summary>
+      <value>String that specifies the ID to be used with the loaded document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.MimeType">
+      <summary>MIME type of the new document.</summary>
+      <value>The MIME type of the new document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.UseCache">
+      <summary>Indicates whether the new document will use the cache system.</summary>
+      <value>**true** if the new document will use the cache system; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.UserId">
+      <summary>The ID to be used with the created document.</summary>
+      <value>String that specifies the ID to be used with the created document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.CreateDocumentOptions.UserToken">
+      <summary>User token associated with the document.</summary>
+      <value>The user token associated with the document. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentAnnotations">
+      <summary>Manages the global annotations settings for the document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAnnotations.GetAnnotations(System.Boolean)">
+      <summary>Gets an array of annotations container objects for all pages with a single call.</summary>
+      <param name="createEmpty"></param>
+      <returns>An array of AnnContainer objects for each page. The array can contain any number of containers and in any order. The user must use the value of AnnContainer.PageNumber to determine the page(s).</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAnnotations.GetHistory">
+      <summary>Retrieves the annotations history tracking object of this LEADDocument.</summary>
+      <returns>The annotations history tracking object of this LEADDocument.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAnnotations.SetAnnotations(Leadtools.Annotations.Engine.AnnContainer[])">
+      <summary>Updates the annotations container objects for one or more pages with a single call.</summary>
+      <param name="containers">An array of AnnContainer objects to update. The user must set the</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAnnotations.SetHistory(Leadtools.Annotations.Engine.AnnHistory)">
+      <summary>Updates the annotations history tracking object of this LEADDocument.</summary>
+      <param name="value">Annotation history object. Use **null** to reset the history and create a new baseline.</param>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAnnotations.AnnotationsUri">
+      <summary>Location of the external annotation file used when this document was loaded.</summary>
+      <value>The location of the external annotation file used when this document was loaded.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAnnotations.Document">
+      <summary>Owner document of this DocumentAnnotations</summary>
+      <value>The owner LEADDocument object of this DocumentAnnotations.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAnnotations.RedactionOptions">
+      <summary>Redaction options to use when this document is viewed or converted.</summary>
+      <value>The redaction options to use when this document is viewed or converted. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentAttachment">
+      <summary>Properties of an attachment in a LEADDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAttachment.#ctor">
+      <summary>Initializes a new instance of DocumentAttachment.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAttachment.Clone">
+      <summary>Creates an exact copy of this object.</summary>
+      <returns>Exact copy of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachment.AttachmentNumber">
+      <summary>Attachment number.</summary>
+      <value>The 1-based embedded attachment number. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachment.DisplayName">
+      <summary>Display name of the attachment.</summary>
+      <value>The display name of the attachment. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachment.DocumentId">
+      <summary>ID of this attachment document.</summary>
+      <value>ID of this attachment document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachment.FileLength">
+      <summary>Length of the attachment file, in bytes.</summary>
+      <value>The length of the attachment file, in bytes. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachment.FileName">
+      <summary>Attachment file name.</summary>
+      <value>The attachment file name. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachment.IsEmbedded">
+      <summary>Indicates whether this attachment file is embedded inside the original document.</summary>
+      <value>**true** if this attachment file is embedded inside the original document; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachment.Metadata">
+      <summary>Gets the generic dictionary of values specific to the file format.</summary>
+      <value>Generic dictionary of values specific to the file format. The default value is an empty dictionary.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachment.MimeType">
+      <summary>Mime type of the attachment file.</summary>
+      <value>The mime type of the attachment file, such as `image/jpeg` or `application/pdf`. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentAttachments">
+      <summary>Represents a collection of DocumentAttachment objects.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAttachments.CreateAttachmentStream(System.Int32,Leadtools.Caching.ObjectCache)">
+      <summary>Creates a stream to the attachment file binary data.</summary>
+      <param name="attachmentNumber">1-based attachment number in this LEADDocument. This DocumentAttachments collection must contain an item with DocumentAttachment.AttachmentNumber equal to this value, otherwise an exception is thrown.</param>
+      <param name="cache">Cache object to use. This is optional, see the Remarks section.</param>
+      <returns>Stream to the attachment file binary data if successful; otherwise, **null**. The application program must close (dispose) the stream after use.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAttachments.ClearItems">
+      <summary>Overrides LeadCollection.ClearItems.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAttachments.InsertItem(System.Int32,Leadtools.Document.DocumentAttachment)">
+      <summary>Overrides LeadCollection.InsertItem.</summary>
+      <param name="index">Index of the new item.</param>
+      <param name="item">Attachment to insert into the collection.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAttachments.RemoveItem(System.Int32)">
+      <summary>Overrides LeadCollection.RemoveItem.</summary>
+      <param name="index">Index of the item to remove</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentAttachments.SetItem(System.Int32,Leadtools.Document.DocumentAttachment)">
+      <summary>Overrides LeadCollection.SetItem.</summary>
+      <param name="index">Index of the item to replace.</param>
+      <param name="item">Attachment to set.</param>
+    </member>
+    <member name="P:Leadtools.Document.DocumentAttachments.Document">
+      <summary>Gets the owner document of this DocumentAttachments.</summary>
+      <value>The owner LEADDocument object of this DocumentAttachments.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentBarcodes">
+      <summary>Manages the global barcodes settings for the document.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentBarcodes.BarcodeEngine">
+      <summary>Engine instance to use when reading barcodes.</summary>
+      <value>The engine instance to use when reading barcodes. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentBarcodes.Document">
+      <summary>Owner document of this DocumentBarcodes</summary>
+      <value>The owner LEADDocument object of this DocumentBarcodes.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentBookmark">
+      <summary>Represents a document bookmark (table of content) item.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentBookmark.Clone(System.Boolean)">
+      <summary>Returns an exact clone of this object.</summary>
+      <param name="withChildren"></param>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DocumentBookmark.Children">
+      <summary>Child bookmarks.</summary>
+      <value>A list of the child bookmarks. Default value is an empty list.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentBookmark.FontStyles">
+      <summary>Optional font style to use when rendering the title.</summary>
+      <value>The optional font style to use when rendering the title. Default value is DocumentFontStyles.Normal.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentBookmark.Target">
+      <summary>Target for this bookmark.</summary>
+      <value>The target for this bookmark. Default value is a default DocumentLinkTarget object.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentBookmark.Title">
+      <summary>Title (caption) of this bookmark.</summary>
+      <value>The title (caption) of this bookmark. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentCacheInfo">
+      <summary>Information about and properties of a document in the cache.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentCacheInfo.#ctor">
+      <summary>Initializes a new instance of DocumentCacheInfo.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.AnnotationsDataLength">
+      <summary>Length of bytes of the original annotations file of this document, if any.</summary>
+      <value>Length of bytes of the original annotations file of this document, if any; otherwise, 0 if this is document was not created with annotations.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.CacheName">
+      <summary>The name of the cache owner of this document.</summary>
+      <value>The name of the cache owner of this document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.DocumentDataLength">
+      <summary>Length in bytes of the original document file, if any.</summary>
+      <value>Length of bytes of the original document file if any; otherwise, 0 if this is a virtual document.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.DocumentId">
+      <summary>Unique identifier of the document.</summary>
+      <value>This value is the same as LEADDocument.DocumentId.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.HasAnnotations">
+      <summary>Indicates whether the document has any annotations.</summary>
+      <value>**true** if this document has any annotations; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.HasUserToken">
+      <summary>Indicates that this document has an associated user token.</summary>
+      <value>**true** if this document has an associated user token; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.IsLoaded">
+      <summary>Indicates whether the document has been loaded at least once.</summary>
+      <value>**true** if this document has been loaded at least once; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.IsUsingMemoryCache">
+      <summary>Indicates whether this LEADDocument is currently using memory caching.</summary>
+      <value>**true** if this document is currently using memory caching; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.IsVirtual">
+      <summary>Indicates that this document is virtual.</summary>
+      <value>**true** if this document is virtual; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.MimeType">
+      <summary>MIME type of the document.</summary>
+      <value>This value is the same as LEADDocument.MimeType.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.MimeTypeStatus">
+      <summary>Status of checking the document MIME type.</summary>
+      <value>The status of checking the document MIME type.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.Name">
+      <summary>Name of the document.</summary>
+      <value>This value is the same as LEADDocument.Name.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.PageCount">
+      <summary>Number of pages in the document.</summary>
+      <value>This property is the same as DocumentPages.Count.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCacheInfo.UserToken">
+      <summary>The user document associated with this document.</summary>
+      <value>The user token associated with this document. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentDescriptor">
+      <summary>JSON serializable object that describes a document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentDescriptor.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.Attachments">
+      <summary>Attachments for this document.</summary>
+      <value>Refer to Attachments.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.AutoDeleteAttachmentsFromCache">
+      <summary>Deletes document attachments from the cache when the owner document is removed.</summary>
+      <value>**true** to delete document attachments from the cache when the owner document is removed; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.AutoDeleteFromCache">
+      <summary>Indicates whether to automatically delete this document from the cache.</summary>
+      <value>Refer to AutoDeleteFromCache.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.AutoDisposeDocuments">
+      <summary>Indicates whether to automatically dispose any child documents.</summary>
+      <value>Refer to AutoDisposeDocuments.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.AutoParseLinks">
+      <summary>Indicate whether links are parsed automatically.</summary>
+      <value>Refer to AutoParseLinks.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.AutoSaveToCache">
+      <summary>Indicates whether to automatically save this document to the cache.</summary>
+      <value>Refer to AutoSaveToCache.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.CacheOptions">
+      <summary>Cache options.</summary>
+      <value>Refer to CacheOptions.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.DefaultBitsPerPixel">
+      <summary>Default bits per pixel.</summary>
+      <value>Refer to DefaultBitsPerPixel.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.DefaultPageSize">
+      <summary>Default page size.</summary>
+      <value>Refer to DefaultPageSize.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.DefaultResolution">
+      <summary>Default resolution.</summary>
+      <value>Refer to DefaultResolution.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.DocumentId">
+      <summary>Document ID.</summary>
+      <value>Refer to DocumentId.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.DocumentType">
+      <summary>Document type.</summary>
+      <value>Refer to DocumentType.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.ImagesRecognitionMode">
+      <summary>Indicates how to treat the image elements encountered in the input SVG page during text extraction.</summary>
+      <value>A DocumentTextImagesRecognitionMode value.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.IsReadOnly">
+      <summary>Indicates whether this document is read-only.</summary>
+      <value>Refer to IsReadOnly.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.IsResolutionsSupported">
+      <summary>Indicate whether resolutions are supported.</summary>
+      <value>Refer to IsResolutionsSupported.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.IsStructureParsed">
+      <summary>Indicate whether the structure is parsed.</summary>
+      <value>Refer to IsParsed.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.IsStructureSupported">
+      <summary>Indicate whether structure is supported.</summary>
+      <value>Refer to IsStructureSupported.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.IsSvgSupported">
+      <summary>Indicate whether SVG is supported.</summary>
+      <value>Refer to IsSvgSupported.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.IsSvgViewingPreferred">
+      <summary>Indicate whether SVG viewing is preferred.</summary>
+      <value>Refer to IsSvgViewingPreferred.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.LoadDocumentOptions">
+      <summary>Load document options.</summary>
+      <value>Refer to LoadDocumentOptions.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.MaximumImagePixelSize">
+      <summary>Maximum image pixel size.</summary>
+      <value>Refer to MaximumImagePixelSize.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.Metadata">
+      <summary>Metadata serialized as a string.</summary>
+      <value>Refer to Metadata.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.MimeType">
+      <summary>Mime type of the document.</summary>
+      <value>Refer to MimeType.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.Name">
+      <summary>Document name.</summary>
+      <value>Refer to Name.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.Pages">
+      <summary>Pages of this document.</summary>
+      <value>Refer to Pages.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.ParseBookmarks">
+      <summary>Indicate whether to parse the bookmarks.</summary>
+      <value>Refer to ParseBookmarks.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.ParsePageLinks">
+      <summary>Indicate whether to parse the page links.</summary>
+      <value>Refer to ParsePageLinks.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.RedactionOptions">
+      <summary>Redaction objects to use with the document.</summary>
+      <value>The redaction objects to use with the document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.TextExtractionMode">
+      <summary>Text extraction mode.</summary>
+      <value>A TextExtractionMode value.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.ThumbnailPixelSize">
+      <summary>Thumbnail pixel size.</summary>
+      <value>Refer to ThumbnailPixelSize.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.UnembedSvgImages">
+      <summary>Indicate whether to unembed SVG images.</summary>
+      <value>Refer to UnembedSvgImages.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.UserId">
+      <summary>User ID associated with the LEADDocument.</summary>
+      <value>The user ID associated with the LEADDocument. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDescriptor.ViewOptions">
+      <summary>Optional initial view options.</summary>
+      <value>The optional initial view options. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentDocuments">
+      <summary>Represents a collection of LEADDocument objects.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentDocuments.ClearItems">
+      <summary>Overrides LeadCollection.ClearItems.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentDocuments.InsertItem(System.Int32,Leadtools.Document.LEADDocument)">
+      <summary>Overrides LeadCollection.InsertItem.</summary>
+      <param name="index">Index of new the item.</param>
+      <param name="item">Document to insert to the collection.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentDocuments.MoveItem(System.Int32,System.Int32)">
+      <summary>Overrides LeadCollection.MoveItem.</summary>
+      <param name="oldIndex">Old item new index.</param>
+      <param name="newIndex">New item index.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentDocuments.RemoveItem(System.Int32)">
+      <summary>Overrides LeadCollection.RemoveItem.</summary>
+      <param name="index">Index of the item to remove</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentDocuments.SetItem(System.Int32,Leadtools.Document.LEADDocument)">
+      <summary>Overrides LeadCollection.SetItem.</summary>
+      <param name="index">Index of the item to replace.</param>
+      <param name="item">Document to set.</param>
+    </member>
+    <member name="P:Leadtools.Document.DocumentDocuments.Document">
+      <summary>Owner document of this DocumentDocuments</summary>
+      <value>The owner LEADDocument object of this DocumentDocuments.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentFactory">
+      <summary>Provides support for loading and creating Document objects as well as managing the global cache.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.AbortUploadDocument(Leadtools.Caching.ObjectCache,System.Uri)">
+      <summary>Abort uploading a document from the specified cache and delete all the stored data.</summary>
+      <param name="cache">The cache used when uploading this document. This value cannot be **null**.</param>
+      <param name="uri">The temporary document URL. This must be the same value returned from BeginUpload and cannot be</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.AbortUploadDocument(System.Uri)">
+      <summary>Abort uploading a document and delete all the stored data.</summary>
+      <param name="uri">The temporary document URL. This must be the same value returned from BeginUpload and cannot be</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.BeginUpload(Leadtools.Document.UploadDocumentOptions)">
+      <summary>Starts uploading a document to the cache.</summary>
+      <param name="options">Options to use with the new document. This value cannot be **null**.</param>
+      <returns>The temporary URL for the uploaded document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.CloneDocument(Leadtools.Caching.ObjectCache,Leadtools.Caching.ObjectCache,System.String,Leadtools.Document.CloneDocumentOptions)">
+      <summary>Clones (creates a copy) of a document in the cache.</summary>
+      <param name="sourceCache">The cache object containing the data for the source document. This value must not be **null**.</param>
+      <param name="targetCache">The cache object that will contain the data for the destination document. This value must not be **null** and can be the same value as *sourceCache* to clone in the document in the same cache.</param>
+      <param name="sourceDocumentId">ID to the source document in the cache. This value cannot be **null**.</param>
+      <param name="options">Options to use during cloning.</param>
+      <returns>The ID of the new newly created document if successful.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.CloneDocument(Leadtools.Caching.ObjectCache,Leadtools.Caching.ObjectCache,System.Uri,Leadtools.Document.CloneDocumentOptions)">
+      <summary>Clones (creates a copy) of an uploaded document in the cache.</summary>
+      <param name="sourceCache">The cache object containing the data for the source document. This value must not be **null**.</param>
+      <param name="targetCache">The cache object that will contain the data for the destination document. This value must not be **null** and can be the same value as *sourceCache* to clone in the document in the same cache.</param>
+      <param name="sourceDocumentUri">URI to the data of the source document in the cache. This must be in the format of an uploaded document in the cache (leadcache://documentId).</param>
+      <param name="options">Options to use during cloning.</param>
+      <returns>The URL to the uploaded data of the new newly created document if successful. This value is in the leadcache://documentId format.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.CloneDocument(Leadtools.Caching.ObjectCache,System.String,Leadtools.Document.CloneDocumentOptions)">
+      <summary>Clones (creates a copy) of an existing document in the cache.</summary>
+      <param name="cache">Cache containing the existing and new document. This value must not be **null**.</param>
+      <param name="documentId">ID of the document to clone. This value must not be **null** and must be the ID of an existing document in *cache*.</param>
+      <param name="options">Options to use during cloning.</param>
+      <returns>A brand new document that is an exact copy of the document referenced by *documentId*.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.Create(Leadtools.Document.CreateDocumentOptions)">
+      <summary>Creates a new empty virtual document.</summary>
+      <param name="options">Options to use when creating the document. Cannot be **null**.</param>
+      <returns>The newly created document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.Create(System.String,Leadtools.Document.CreateDocumentOptions)">
+      <summary>Creates a new empty document.</summary>
+      <param name="documentType">Document type. Cannot be **null**.</param>
+      <param name="options">Options to use when creating the document. Cannot be **null**.</param>
+      <returns>The newly created document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DeleteFromCache(Leadtools.Document.LoadFromCacheOptions)">
+      <summary>Deletes a document from the cache.</summary>
+      <param name="options">Options containing the cache and document ID to delete.</param>
+      <returns>Use this method to delete a document previously stored in the cache with SaveToCache.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DeleteFromCache(Leadtools.Caching.ObjectCache,System.String)">
+      <summary>Deletes a document from the specified cache.</summary>
+      <param name="cache">The cache object to use. This value cannot be **null**.</param>
+      <param name="documentId">The document identifier. This value cannot be **null**.</param>
+      <returns>Use this method to delete a document previously stored in the cache with SaveToCache.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DeleteFromCache(System.String)">
+      <summary>Deletes a document from the global cache.</summary>
+      <param name="documentId">The document identifier. This value cannot be **null**.</param>
+      <returns>This method is the equivalent of calling DeleteFromCache(DocumentFactory.Cache, documentId) and therefore will throw an exception if Cache was not set up.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadAnnotations(Leadtools.Document.DownloadDocumentOptions)">
+      <summary>Downloads the annotations of the specified document.</summary>
+      <param name="options">Options containing the document properties and download options to use. This value must not be **null**.</param>
+      <returns>The total number of bytes read into DownloadDocumentOptions.Data or DownloadDocumentOptions.Stream. This can be less than the number of bytes requested by DownloadDocumentOptions.Length, if that many bytes are not currently available; or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadAnnotations(Leadtools.Caching.ObjectCache,System.String,System.Int64,System.Byte[],System.Int32,System.Int32)">
+      <summary>Downloads the annotations of the specified document ID into an array.</summary>
+      <param name="cache">The cache containing the document. This value cannot be **null**.</param>
+      <param name="documentId">ID of the owner document of the annotations to download.</param>
+      <param name="offset">0-based byte offset into the source annotations data at which to begin reading the data.</param>
+      <param name="data">Buffer to read the data into.</param>
+      <param name="dataOffset">0-based byte offset into **data** at which to begin storing the data.</param>
+      <param name="dataLength">The maximum number of bytes to read.</param>
+      <returns>The total number of bytes read into *data*. This can be less than the number of bytes requested by *dataLength*, if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadAnnotations(Leadtools.Caching.ObjectCache,System.String,System.Int64,System.Int32,System.IO.Stream)">
+      <summary>Downloads the annotations of the specified document ID into a stream.</summary>
+      <param name="cache">The cache containing the document. This value cannot be **null**.</param>
+      <param name="documentId">ID of the owner document of the annotations to download.</param>
+      <param name="offset">0-based byte offset into the source data at which to begin reading the data.</param>
+      <param name="bytes">The maximum number of bytes to read. If this value is -1, then the remaining data will be read till the end is reached.</param>
+      <param name="stream">Stream to read the data into. This should be a write-able stream and cannot be **null**.</param>
+      <returns>The total number of bytes read into *stream*. This can be less than the number of bytes requested by *bytes*, if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadAnnotations(Leadtools.Caching.ObjectCache,System.Uri,System.Int64,System.Byte[],System.Int32,System.Int32)">
+      <summary>Downloads the annotations of the specified document URI into an array.</summary>
+      <param name="cache">The cache containing the document. This value cannot be **null**.</param>
+      <param name="uri">URI to the owner document of the annotations to download.</param>
+      <param name="offset">0-based byte offset into the source annotations data at which to begin reading the data.</param>
+      <param name="data">Buffer to read the data into.</param>
+      <param name="dataOffset">0-based byte offset into **data** at which to begin storing the data.</param>
+      <param name="dataLength">The maximum number of bytes to read.</param>
+      <returns>The total number of bytes read into *data*. This can be less than the number of bytes requested by *dataLength*, if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadAnnotations(Leadtools.Caching.ObjectCache,System.Uri,System.Int64,System.Int32,System.IO.Stream)">
+      <summary>Downloads the annotations of the specified document URI into a stream.</summary>
+      <param name="cache">The cache containing the document. This value cannot be **null**.</param>
+      <param name="uri">URI to the owner document of the annotations to download.</param>
+      <param name="offset">0-based byte offset into the source data at which to begin reading the data.</param>
+      <param name="bytes">The maximum number of bytes to read. If this value is -1, then the remaining data will be read till the end is reached.</param>
+      <param name="stream">Stream to read the data into. This should be a write-able stream and cannot be **null**.</param>
+      <returns>The total number of bytes read into *stream*. This can be less than the number of bytes requested by *bytes*, if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadDocument(Leadtools.Document.DownloadDocumentOptions)">
+      <summary>Downloads the data of the specified document ID.</summary>
+      <param name="options">Options containing the document properties and download options to use. This value must not be **null**.</param>
+      <returns>The total number of bytes read into DownloadDocumentOptions.Data or DownloadDocumentOptions.Stream. This can be less than the number of bytes requested by DownloadDocumentOptions.Length, if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadDocument(Leadtools.Caching.ObjectCache,System.String,System.Int64,System.Byte[],System.Int32,System.Int32)">
+      <summary>Downloads the data of the specified document ID into an array.</summary>
+      <param name="cache">The cache containing the document. This value cannot be **null**.</param>
+      <param name="documentId">ID of the document to download.</param>
+      <param name="offset">0-based byte offset into the source data at which to begin reading the data.</param>
+      <param name="data">Buffer to read the data into.</param>
+      <param name="dataOffset">0-based byte offset into **data** at which to begin storing the data.</param>
+      <param name="dataLength">The maximum number of bytes to read.</param>
+      <returns>The total number of bytes read into *data*. This can be less than the number of bytes requested by *dataLength*, if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadDocument(Leadtools.Caching.ObjectCache,System.String,System.Int64,System.Int32,System.IO.Stream)">
+      <summary>Downloads the data of the specified document ID into a stream.</summary>
+      <param name="cache">The cache containing the document. This value cannot be **null**.</param>
+      <param name="documentId">ID of the document to download.</param>
+      <param name="offset">0-based byte offset into the source data at which to begin reading the data.</param>
+      <param name="bytes">The maximum number of bytes to read. If this value is -1, then the remaining data will be read till the end is reached.</param>
+      <param name="stream">Stream to read the data into. This should be a write-able stream and cannot be **null**.</param>
+      <returns>The total number of bytes read into *stream*. This can be less than the number of bytes requested by *bytes*, if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadDocument(Leadtools.Caching.ObjectCache,System.Uri,System.Int64,System.Byte[],System.Int32,System.Int32)">
+      <summary>Downloads the data of the specified document URI into an array.</summary>
+      <param name="cache">The cache containing the document. This value cannot be **null**.</param>
+      <param name="uri">The URI to document to download.</param>
+      <param name="offset">0-based byte offset into the source data at which to begin reading the data.</param>
+      <param name="data">Buffer to read the data into.</param>
+      <param name="dataOffset">0-based byte offset into **data** at which to begin storing the data.</param>
+      <param name="dataLength">The maximum number of bytes to read.</param>
+      <returns>The total number of bytes read into *data*. This can be less than the number of bytes requested by *dataLength*, if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.DownloadDocument(Leadtools.Caching.ObjectCache,System.Uri,System.Int64,System.Int32,System.IO.Stream)">
+      <summary>Downloads the data of the specified document URI into a stream.</summary>
+      <param name="cache">The cache containing the document. This value cannot be **null**.</param>
+      <param name="uri">The URI of the document to download.</param>
+      <param name="offset">0-based byte offset into the source data at which to begin reading the data.</param>
+      <param name="bytes">The maximum number of bytes to read. If this value is -1, then the remaining data will be read till the end is reached.</param>
+      <param name="stream">Stream to read the data into. This should be a write-able stream and cannot be **null**.</param>
+      <returns>The total number of bytes read into *stream*. This can be less than the number of bytes requested by *bytes* if that many bytes are not currently available, or zero (0) if the end of the data has been reached.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.EndUpload(Leadtools.Caching.ObjectCache,System.Uri)">
+      <summary>Finish uploading a document to the cache.</summary>
+      <param name="cache">The cache used when uploading this document. This value cannot be **null**.</param>
+      <param name="uri">The temporary document URI. This must be the same value returned from BeginUpload and cannot be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.GetDocumentCacheInfo(Leadtools.Caching.ObjectCache,System.String)">
+      <summary>Retrieves information for a document in the cache using its ID.</summary>
+      <param name="cache">The cache object to use. This value cannot be **null**.</param>
+      <param name="documentId">The document identifier. This value cannot be **null**.</param>
+      <returns>DocumentCacheInfo object that contains the information of the document referenced by *documentId* such as its name, mime type, page count if the document was found in the cache; otherwise, **null** if no document with the ID specified by *documentId* was found in the cache.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.GetDocumentCacheInfo(Leadtools.Caching.ObjectCache,System.Uri)">
+      <summary>Retrieves information for a document in the cache using its URI.</summary>
+      <param name="cache">The cache object to use. This value cannot be **null**.</param>
+      <param name="uri">The URI to the document. This can be the temporary URI for the uploaded document. This value cannot be **null**.</param>
+      <returns>DocumentCacheInfo object that contains the information of the document referenced by *uri* such as its name, mime type, page count if the document was found in the cache; otherwise, **null** if no document with the ID specified by *uri* was found in the cache.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.GetLeadCacheData(System.Uri)">
+      <summary>Helper method to get the data part from a LEAD cache URI.</summary>
+      <param name="uri">LEAD cache URI.</param>
+      <returns>The data part (usually the document ID), if *uri* contains a valid LEAD cache scheme; otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.IsDocumentInCache(Leadtools.Caching.ObjectCache,System.String)">
+      <summary>Helper method to quickly determine if a document exists in the cache.</summary>
+      <param name="cache">Cache to check. This value cannot be **null**.</param>
+      <param name="documentId">The ID of the document to check. This value cannot be **null** and can be either a document ID or the URL to an uploaded LEAD document (leaddocument://).</param>
+      <returns>This method uses the information described in Document Toolkit and Caching to quickly determine if the document exists in the cache.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.IsLeadCacheScheme(System.String)">
+      <summary>Helper method to determine whether a string value contains a valid LEAD cache URI.</summary>
+      <param name="value">URI to check.</param>
+      <returns>Refer to IsUploadDocumentUri for more information.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.IsUploadDocumentUri(System.Uri)">
+      <summary>Indicates whether the URL points to a special LEAD cache scheme.</summary>
+      <param name="uri">URI to check.</param>
+      <returns>This is a helper method that can be used to detect whether a URL was created by BeginUpload. The Document Library creates a URI in the following format for uploaded documents:</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.LoadDocumentAttachment(Leadtools.Document.LoadFromCacheOptions,Leadtools.Document.LoadAttachmentOptions)">
+      <summary>Loads an attachment as a LEADDocument object.</summary>
+      <param name="loadOptions">Options to identify the owner document. This value cannot be **null**.</param>
+      <param name="attachmentsOptions">Options to identify the attachment. This value cannot be **null**.</param>
+      <returns>The attachment document as a LEADDocument object if successful; otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.LoadFromCache(Leadtools.Document.LoadFromCacheOptions)">
+      <summary>Loads a previously saved document from the specified cache.</summary>
+      <param name="options">Options identifying the document to load.</param>
+      <returns>The document object if found in the cache; otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.LoadFromCache(Leadtools.Caching.ObjectCache,System.String)">
+      <summary>Loads a previously saved document from the specified cache.</summary>
+      <param name="cache">The cache object to use. This value cannot be **null**.</param>
+      <param name="documentId">The document identifier. This value cannot be **null**.</param>
+      <returns>The document object if found in the cache, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.LoadFromCache(System.String)">
+      <summary>Loads a previously saved document from the global cache.</summary>
+      <param name="documentId">The document identifier. This value cannot be **null**.</param>
+      <returns>The document object if found in the cache; otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.LoadFromFile(System.String,Leadtools.Document.LoadDocumentOptions)">
+      <summary>Loads a document from existing data stored in a disk file.</summary>
+      <param name="fileName">Path to the file name containing the original document data. This value cannot be **null**.</param>
+      <param name="options">Options to use when loading the document. This value cannot be **null**.</param>
+      <returns>The newly created document object.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.LoadFromStream(System.IO.Stream,Leadtools.Document.LoadDocumentOptions)">
+      <summary>Loads a document from existing data stored in a stream.</summary>
+      <param name="stream">Stream containing the original document data. This value cannot be **null**, and the stream must be seekable.</param>
+      <param name="options">Options to use when loading the document. This value cannot be **null**.</param>
+      <returns>The newly created document object.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.LoadFromUri(System.Uri,Leadtools.Document.LoadDocumentOptions)">
+      <summary>Loads a document from existing data stored in a remote URL.</summary>
+      <param name="uri">Path to the URL containing the original document data. This value cannot be **null**.</param>
+      <param name="options">Options to use when loading the document. This value cannot be **null**.</param>
+      <returns>The newly created document object.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.LoadFromUriAsync(System.Uri,Leadtools.Document.LoadDocumentAsyncOptions)">
+      <summary>Loads a document asynchronously from existing data stored in a remote URL.</summary>
+      <param name="uri">Path to the URL containing the original document data. This value cannot be **null**.</param>
+      <param name="options">Options to use when loading the document. This value cannot be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.MakeLeadCacheUri(System.String)">
+      <summary>Constructs a LEAD cache URI from a document ID.</summary>
+      <param name="documentId">The Document ID to use. This value cannot be **null**.</param>
+      <returns>LEAD cache URI that identifies the document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.NewCacheId">
+      <summary>Generates a new document unique ID.</summary>
+      <returns>Unique document ID. This is in the `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` format.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.SaveAttachmentToCache(Leadtools.Document.LoadFromCacheOptions,Leadtools.Document.SaveAttachmentToCacheOptions)">
+      <summary>Saves an attachment to the cache.</summary>
+      <param name="loadOptions">Options to identify the owner document. This value cannot be **null**.</param>
+      <param name="saveOptions">Options to identify and save the attachment. This value cannot be **null**.</param>
+      <returns>The ID of the attachment document saved into the cache if successful; otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.UploadAnnotations(Leadtools.Caching.ObjectCache,System.Uri,System.Byte[],System.Int32,System.Int32)">
+      <summary>Uploads a chunk of external annotations data to the specified document.</summary>
+      <param name="cache">The cache used when uploading this document. This value cannot be **null**.</param>
+      <param name="uri">The temporary document URI. This must be the same value returned from BeginUpload and cannot be **null**.</param>
+      <param name="data">Current chunk of data. The factory will upload length number of bytes from this chunk starting at offset.</param>
+      <param name="offset">Offset into data where to data begins.</param>
+      <param name="length">Number of bytes to upload.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.UploadDocument(Leadtools.Caching.ObjectCache,System.Uri,System.Byte[],System.Int32,System.Int32)">
+      <summary>Upload a chunk of the document to the specified cache.</summary>
+      <param name="cache">The cache used when uploading this document. This value cannot be **null**.</param>
+      <param name="uri">The temporary document URI. This must be the same value returned from BeginUpload and cannot be **null**.</param>
+      <param name="data">Current chunk of data. The factory will upload length number of bytes from this chunk starting at offset.</param>
+      <param name="offset">Offset into data where to data begins.</param>
+      <param name="length">Number of bytes to upload.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentFactory.UploadDocument(System.Uri,System.Byte[],System.Int32,System.Int32)">
+      <summary>Uploads a chunk of the document to the global cache.</summary>
+      <param name="uri">The temporary document URL. This must be the same value returned from BeginUpload and cannot be **null**.</param>
+      <param name="data">Current chunk of data. The factory will upload length number of bytes from this chunk starting at offset.</param>
+      <param name="offset">Offset into data where to data begins.</param>
+      <param name="length">Number of bytes to upload.</param>
+    </member>
+    <member name="E:Leadtools.Document.DocumentFactory.LoadDocumentFromCache">
+      <summary>Called by the factory when loading child documents from the cache.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentFactory.Cache">
+      <summary>The LEADTOOLS ObjectCache object responsible for managing cache items and expiration policies.</summary>
+      <value>The cache object responsible for managing cache items and expiration policies. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentFactory.DefaultDocumentResolution">
+      <summary>The default resolution to use when loading document file formats.</summary>
+      <value>Resolution to use when loading document file formats. The default value is 300.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentFactory.DefaultRasterResolution">
+      <summary>The default resolution to use when loading raster file formats that do not have a resolution.</summary>
+      <value>Resolution to use when loading raster file formats that do not have a resolution. The default value is 96.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentFactory.DefaultVectorResolution">
+      <summary>The default resolution to use when loading vector file formats.</summary>
+      <value>Resolution to use when loading vector file formats. The default value is 300.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentFactory.DocumentMemoryCache">
+      <summary>Document memory cache support.</summary>
+      <value>A new instance of DocumentMemoryCache.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentFactory.InvalidUserTokenException">
+      <summary>Custom error to be thrown when the user tries to access a document with an invalid user token.</summary>
+      <value>The custom error to be thrown when the user tries to access a document with an invalid user token. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentFactory.MimeTypes">
+      <summary>MIME type whitelisting support.</summary>
+      <value>DocumentMimeTypes object to support MIME type whitelisting in this DocumentFactory.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentFactory.RasterCodecsTemplate">
+      <summary>Global template used when loading and saving raster and SVG images.</summary>
+      <value>The global RasterCodecs template to use when loading and saving raster and SVG images. The default value is a RasterCodecs object with the following values:</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentHistory">
+      <summary>History tracking of LEADDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentHistory.Clear">
+      <summary>Clears the tracking history of this document.</summary>
+      <returns>This method will clear the internal list of items for tracking history of this document to create a new baseline.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentHistory.GetItems">
+      <summary>Retrieves this document's modification history.</summary>
+      <returns>List of DocumentHistoryItem that contain the modifications or changes that occurred in this document since it was created or since the last baseline (clear).</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentHistory.SetItems(Leadtools.Document.DocumentHistoryItem)">
+      <summary>Updates this document modification history.</summary>
+      <param name="value">List of DocumentHistoryItem that contain the modifications or changes that occurred in this document.</param>
+    </member>
+    <member name="P:Leadtools.Document.DocumentHistory.AutoUpdate">
+      <summary>Enables history tracking for this document.</summary>
+      <value>**true** to enable history tracking for this document; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentHistory.Document">
+      <summary>Owner document of this DocumentHistory.</summary>
+      <value>The owner LEADDocument object of this DocumentHistory.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentHistoryItem">
+      <summary>Describes the type of change and page number that occurred in a document for logging purposes.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentHistoryItem.#ctor">
+      <summary>Initializes a new instance of DocumentHistoryItem.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentHistoryItem.Comment">
+      <summary>Optional user defined comment associated with this modification.</summary>
+      <value>The optional user defined comment associated with this modification. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentHistoryItem.ModifyType">
+      <summary>The type of change (modification).</summary>
+      <value>The type of the change (modification). The default value is DocumentHistoryModifyType.Created.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentHistoryItem.PageNumber">
+      <summary>The page number associated with this change.</summary>
+      <value>1-based page number in the document associated with this change. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentHistoryItem.Timestamp">
+      <summary>The timestamp of the modification.</summary>
+      <value>Time stamp of the modification. This value is in UTC and created in the "yyyy-MM-ddTHH:mm:ss" format. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentHistoryItem.UserId">
+      <summary>The ID of the user at the time of the modification.</summary>
+      <value>The ID of the user at the time of the modification. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentImages">
+      <summary>Manages the global image settings for the document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentImages.FlipViewPerspective(Leadtools.RasterViewPerspective)">
+      <summary>Helper method to flip a view perspective.</summary>
+      <param name="value">Original view perspective.</param>
+      <returns>Flipped view perspective.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentImages.GetThumbnailsGrid(System.Int32,System.Int32,System.Int32)">
+      <summary>Gets an image that contains one or more page thumbnails.</summary>
+      <param name="firstPageNumber">1-based number of the first page number in the document.</param>
+      <param name="lastPageNumber">1-based number of the last page number in the document.</param>
+      <param name="maximumGridWidth">The maximum width of the grid in pixels.</param>
+      <returns>A raster image object that contains the thumbnails in a grid layout.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentImages.GetViewPerspectiveTransform(Leadtools.RasterViewPerspective,Leadtools.LeadSizeD,System.Boolean)">
+      <summary>Helper method to calculate the matrix to use when applying a view perspective.</summary>
+      <param name="viewPerspective">View perspective to use.</param>
+      <param name="size">Size of the page.</param>
+      <param name="apply"></param>
+      <returns>Matrix that contains transformation values (rotation, flip and reverse).</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentImages.RotateViewPerspective(Leadtools.RasterViewPerspective,System.Int32)">
+      <summary>Helper method to rotate a view perspective by the specified value.</summary>
+      <param name="value">Original view perspective.</param>
+      <param name="angle">Rotation angle in degrees. Positive values will rotate the view perspective clockwise and negative values will rotate the view perspective counter-clockwise. Must be in increment of 90 degrees.</param>
+      <returns>Rotate view perspective.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.DefaultBitsPerPixel">
+      <summary>Bits per pixel to use when getting the raster image of a page.</summary>
+      <value>The bits per pixel to use when getting the raster image of a page. This value is determined by the document type.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.Document">
+      <summary>Owner document of this DocumentAnnotations</summary>
+      <value>The owner LEADDocument object of this DocumentAnnotations.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.IsResolutionsSupported">
+      <summary>Determines whether this document supports loading images using different resolutions.</summary>
+      <value>**true** if this document supports loading images using different resolutions (DPI); otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.IsSvgSupported">
+      <summary>Gets a value that indicates whether this document supports getting a page in SVG format.</summary>
+      <value>**true** if this document supports getting a page as SVG; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.IsSvgViewingPreferred">
+      <summary>Indicates whether the pages in this document are best viewed using SVG instead of viewed as raster images.</summary>
+      <value>**true** if the pages in this document are best viewed using SVG instead of viewed as raster images; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.MaximumImagePixelSize">
+      <summary>Maximum width or height in pixels to use when obtaining image data from the pages in this document.</summary>
+      <value>The maximum width or height in pixels to use when obtaining image data from the pages in this document. Default value is 0 which means to use the original size.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.RasterCodecs">
+      <summary>Raster codecs object used by this LEADDocument to load raster images and SVG documents.</summary>
+      <value>The raster codecs object used by this LEADDocument to load raster images and SVG documents.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.ThumbnailPixelSize">
+      <summary>Size to use when getting the thumbnail image of a page.</summary>
+      <value>The size to use in pixels when getting the thumbnail image of a page. Default value is 128 by 128 pixels.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentImages.UnembedSvgImages">
+      <summary>Unembed the image elements inside the SVG.</summary>
+      <value>**true** to unembed the image elements inside the SVG; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentMemoryCache">
+      <summary>Document memory cache support.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMemoryCache.HasDocument(System.String,System.Boolean)">
+      <summary>Indicates whether an entry associated with the specified document exists.</summary>
+      <param name="documentId">Document ID.</param>
+      <param name="updateExpiry">Touches the item by updating its expiry policy.</param>
+      <returns>If *updateExpiry* is **true** and the cache contains an entry associated with *documentId*, then the item expiry will be extended by another DocumentMemoryCacheStartOptions.SlidingExpiration.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMemoryCache.Start(Leadtools.Document.DocumentMemoryCacheStartOptions)">
+      <summary>Starts document memory caching support.</summary>
+      <param name="startOptions">Options to use for memory caching support.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMemoryCache.Stop">
+      <summary>Stops document memory caching support.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMemoryCache.IsStarted">
+      <summary>Indicates whether document memory caching support has been started.</summary>
+      <value>**true** if document memory caching support has been started; otherwise, **false**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentMemoryCacheStartOptions">
+      <summary>Options to use with DocumentMemoryCache.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMemoryCacheStartOptions.#ctor">
+      <summary>Initializes a new instance of DocumentMemoryCacheStartOptions.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMemoryCacheStartOptions.MaximumItems">
+      <summary>Maximum number of items to keep in the cache.</summary>
+      <value>The maximum number of items to keep in the cache. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMemoryCacheStartOptions.MinimumLoadDuration">
+      <summary>Minimum amount of time the initial loading of a document takes to be considered for memory optimization.</summary>
+      <value>The minimum amount of time the initial loading of a document takes to be considered for memory optimization. The default value is 2 seconds.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMemoryCacheStartOptions.SlidingExpiration">
+      <summary>The window of time during which a cache entry must be touched else it is deleted from the cache.</summary>
+      <value>The window of time during which a cache entry must be touched else it is deleted from the cache. The default value is 60 seconds.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMemoryCacheStartOptions.TimerInterval">
+      <summary>Interval the timer uses to check for and remove expired items.</summary>
+      <value>The interval the timer uses to check for and remove expired items. The default value is 60 seconds.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentMetadata">
+      <summary>Manages the metadata of the document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMetadata.#ctor(SerializationInfo,StreamingContext)">
+      <summary>Initializes a new instance of the DocumentMetadata class with serialized data.</summary>
+      <param name="info">The object that holds the serialized object data.</param>
+      <param name="context">The contextual information about the source or destination.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMetadata.GetObjectData(SerializationInfo,StreamingContext)">
+      <summary>Overrides System.Collections.Generic.Dictionary`2.</summary>
+      <param name="info">The System.Runtime.Serialization.SerializationInfo that holds the serialized object data for the object.</param>
+      <param name="context">The System.Runtime.Serialization.StreamingContext that contains contextual information about the source or destination.</param>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMetadata.Document">
+      <summary>Owner document of this DocumentMetadata</summary>
+      <value>The owner LEADDocument object of this DocumentMetadata.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentMimeTypes">
+      <summary>MIME type whitelisting support.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMimeTypes.#ctor">
+      <summary>Initializes a new instance of DocumentMimeTypes.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMimeTypes.GetDocumentStatus(System.Uri,Leadtools.Document.LoadDocumentOptions,Leadtools.Document.DocumentMimeTypeSource,System.String)">
+      <summary>Performs the default action for a MIME type.</summary>
+      <param name="uri">The URI to the document being loaded.</param>
+      <param name="options">The object passed by the user.</param>
+      <param name="source">The source of this invocation.</param>
+      <param name="mimeType">The MIME type being checked.</param>
+      <returns>Status of the MIME type.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMimeTypes.GetStatus(System.String)">
+      <summary>Gets the status of a MIME type.</summary>
+      <param name="mimeType">MIME type to check. If this value is **null**, then DocumentMimeTypeStatus.Unspecified is returned.</param>
+      <returns>If Entries contains a key matching *mimeTypes*, then the value is returned (of type DocumentMimeTypeStatus). Otherwise, DocumentMimeTypeStatus.Unspecified.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentMimeTypes.UserGetDocumentStatusHandler(System.Uri,Leadtools.Document.LoadDocumentOptions,Leadtools.Document.DocumentMimeTypeSource,System.String)">
+      <summary>MIME whitelist user defined callback type.</summary>
+      <param name="uri">The URI to the document being loaded.</param>
+      <param name="options">The object passed by the user.</param>
+      <param name="source">The source of this callback invocation.</param>
+      <param name="mimeType">The MIME type being checked</param>
+      <returns>Call GetDocumentStatus to continue with the current settings or any other values to manually allow/deny the MIME type.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMimeTypes.DefaultStatus">
+      <summary>Default status of a MIME type.</summary>
+      <value>The default status of a MIME type. The default value is DocumentMimeTypeStatus.Unspecified.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMimeTypes.Entries">
+      <summary>Dictionary of MIME type status.</summary>
+      <value>Dictionary of MIME type status. The default value is an empty dictionary.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentMimeTypes.UserGetDocumentStatus">
+      <summary>MIME whitelist user defined callback.</summary>
+      <value>MIME whitelist user defined callback. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentPage">
+      <summary>Represents a page in the current LEADDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.ApplyAnnotationsViewPerspective(Leadtools.Annotations.Engine.AnnContainer,System.Boolean)">
+      <summary>Applies the current transformation on the specified container.</summary>
+      <param name="container">Annotation container to apply the transformation into.</param>
+      <param name="apply"></param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.ApplyImageViewPerspective(Leadtools.RasterImage,System.Boolean)">
+      <summary>Applies the current transformation on the specified raster image.</summary>
+      <param name="rasterImage">Raster image to apply the transformation into.</param>
+      <param name="apply"></param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.ApplySvgViewPerspective(Leadtools.Svg.SvgDocument,System.Boolean)">
+      <summary>Applies the current transformation on the specified SVG image.</summary>
+      <param name="svg">SVG image to apply the transformation into.</param>
+      <param name="apply"></param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.ApplyTextViewPerspective(Leadtools.Document.DocumentPageText,System.Boolean)">
+      <summary>Applies the current transformation on the specified page text.</summary>
+      <param name="text">Page text to apply the transformation into.</param>
+      <param name="apply"></param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.Flip">
+      <summary>Flips this page vertically.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetAnnotations(System.Boolean)">
+      <summary>Gets the annotation container of this page.</summary>
+      <param name="createEmpty"></param>
+      <returns>The annotation container for this page if available, or **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetImage">
+      <summary>Gets this page as a raster image.</summary>
+      <returns>This page as a RasterImage object.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetImage(System.Int32)">
+      <summary>Gets this page as a raster image at the specified resolution.</summary>
+      <param name="resolution">Resolution to use in dots per inch. If this value is 0, then the current page Resolution value is used.</param>
+      <returns>This page as a RasterImage object.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetLinks">
+      <summary>Links of this page.</summary>
+      <returns>An array containing the links for this page if available, or **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetRotateFlip">
+      <summary>Extracts the rotation and flip value of the current view perspective of this page.</summary>
+      <returns>DocumentRotateFlip object containing the rotation and flip value of ViewPerspective.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetSvg(Leadtools.Codecs.CodecsLoadSvgOptions)">
+      <summary>Gets this page as an SVG document with the specified options.</summary>
+      <param name="options">Options to use when creating the SVG document. It can be used to drop images, text or shapes from the returned document</param>
+      <param name=""></param>
+      <param name=""></param>
+      <param name="">2. If an item was found in the cache, it is returned right away. This is available if the document was created using the cache system.</param>
+      <param name="">SvgDocument object is saved to the cache before it is returned. Next time this method is called, the SVG will be returned from the cache directly</param>
+      <param name="">return **null** as well.</param>
+      <returns>The SVG document of this page if found or **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetSvgBackImage(Leadtools.RasterColor)">
+      <summary>Gets a raster image that represents contains only the image elements of the SVG document for this page using the default resolution.</summary>
+      <param name="backColor">Color to use to fill the background of the image.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetSvgBackImage(Leadtools.RasterColor,System.Int32)">
+      <summary>Gets a raster image that contains only the image elements of the SVG document for this page.</summary>
+      <param name="backColor">Color to fill the background of the image.</param>
+      <param name="resolution">Resolution to use, in dots per inch. If this value is 0, then the current page Resolution value is used.</param>
+      <returns>Raster image that contains only the image elements of the SVG document for this page if this page supports SVG, and the SVG data contains image elements; otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetText">
+      <summary>Gets the text content of this page.</summary>
+      <returns>The text content of this DocumentPage as a DocumentPageText object.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetText(Leadtools.LeadRectD)">
+      <summary>Gets the text content of an area in this page.</summary>
+      <param name="clip">The region of interest area. If this value is Empty, then the text of the whole page is obtained.</param>
+      <returns>The text content of this DocumentPage as a DocumentPageText object.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetThumbnailImage">
+      <summary>Gets a thumbnail representation of this page.</summary>
+      <returns>The thumbnail representation of this page.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.GetViewPerspectiveTransform(System.Boolean)">
+      <summary>Helper method to calculate the matrix to use when applying a view perspective.</summary>
+      <param name="apply"></param>
+      <returns>Matrix that contains transformation values (rotation, flip and reverse).</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.ReadBarcodes(Leadtools.LeadRectD,System.Int32,Leadtools.Barcode.BarcodeSymbology[])">
+      <summary>Reads the barcodes found on this page.</summary>
+      <param name="bounds">Search area in page coordinates. If this value is Empty, then the entire page is searched for barcodes.</param>
+      <param name="maximumBarcodes">Maximum number of barcodes to read. Use -1 to read all barcodes found.</param>
+      <param name="symbologies">Barcode symbologies to search for. If this value is **null** or an empty array, then all barcode symbologies are searched for.</param>
+      <returns>Array containing the data for each barcode found. An empty array is returned if no barcodes are found on the page.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.Reverse">
+      <summary>Flips this page horizontally.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.Rotate(System.Int32)">
+      <summary>Rotates this page by the specified angle.</summary>
+      <param name="angle">Rotation angle in degrees. Positive values will rotate the page clockwise and negative values will rotate the page counter-clockwise. Must be in increment of 90 degrees.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.SetAnnotations(Leadtools.Annotations.Engine.AnnContainer)">
+      <summary>Replaces the annotation container for this page.</summary>
+      <param name="container">New annotation container to use for this page. This value can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.SetImage(Leadtools.RasterImage)">
+      <summary>Replaces the raster image for this page.</summary>
+      <param name="image">New raster image to use for this page. This value can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.SetLinks(Leadtools.Document.DocumentLink[])">
+      <summary>Replaces the links of this page.</summary>
+      <param name="links">An array containing the new links for this page. A value of **null** is supported.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.SetSvg(Leadtools.Svg.SvgDocument,Leadtools.Codecs.CodecsLoadSvgOptions)">
+      <summary>Replaces the SVG document for this page.</summary>
+      <param name="svg">New SVG document to use for this page. This value can be **null**.</param>
+      <param name="options">Options to use when caching this SVG document. It can be used to drop images, text or shapes before the document is saved, if they are not needed. If this value is **null**, then the SVG document is saved as is without modification.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.SetSvgBackImage(Leadtools.RasterImage)">
+      <summary>Replaces the SVG background image for this page.</summary>
+      <param name="image">New SVG background image to use for this page. This value can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPage.SetText(Leadtools.Document.DocumentPageText)">
+      <summary>Replaces the text content for this page.</summary>
+      <param name="text">New text content to use for this page. This value can be **null**.</param>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.CustomData">
+      <summary>User-defined custom data associated with this page.</summary>
+      <value>Dictionary of key/value string pairs containing any custom value to be associated with this page.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.DataType">
+      <summary>Data type of this DocumentPage.</summary>
+      <value>The data type of this DocumentPage. Default value is DocumentDataType.Transient.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.Document">
+      <summary>Owner document of this DocumentPage</summary>
+      <value>The owner LEADDocument object of this DocumentPage.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.HasEmbeddedAnnotations">
+      <summary>Indicates whether the original document has embedded annotations for this page.</summary>
+      <value>**true** if the original document has embedded annotations for this page; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.ImageScale">
+      <summary>Scale value used when retuning image objects of this page.</summary>
+      <value>The scale value used when retuning image objects of this page.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsAnnotationsModified">
+      <summary>Indicates whether the annotations for this page has been replaced.</summary>
+      <value>**true** if the annotations for this page has been replaced; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsDeleted">
+      <summary>Quickly mark this page as deleted in the document.</summary>
+      <value>**true** to mark this page as deleted; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsImageModified">
+      <summary>Indicates whether the raster image for this page has been replaced.</summary>
+      <value>**true** if the raster image for this page has been replaced; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsLinksModified">
+      <summary>Indicates whether the links for this page have been replaced.</summary>
+      <value>**true** if the links for this page has been replaced; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsLocal">
+      <summary>Indicate that this page has been created by the user in this document.</summary>
+      <value>**true** if this page has been created by the user in this document; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsSvgBackImageModified">
+      <summary>Indicates whether the SVG background image for this page has been replaced.</summary>
+      <value>**true** if the SVG background image for this page has been replaced; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsSvgConversionPreferred">
+      <summary>Indicates whether SVG conversion is preferred for this page.</summary>
+      <value>**true** if SVG conversion is preferred with this page; otherwise; **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsSvgModified">
+      <summary>Indicates whether the SVG document for this page has been replaced.</summary>
+      <value>**true** if the SVG document for this page has been replaced; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsSvgSupported">
+      <summary>Gets a value that indicates whether this page supports SVG.</summary>
+      <value>**true** if this page supports SVG; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsSvgViewingPreferred">
+      <summary>Gets a value that indicates whether SVG viewing is preferred with this page.</summary>
+      <value>**true** if SVG viewing is preferred with this page; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsTextModified">
+      <summary>Gets a value that indicates whether the text content for this page has been replaced.</summary>
+      <value>**true** if the text content for this page has been replaced; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsViewPerspectiveFlipped">
+      <summary>Determines if the page has a flipped view perspective.</summary>
+      <value>**true** if the page view perspective is flipped; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsViewPerspectiveModified">
+      <summary>Determines if this page has any transformation applied.</summary>
+      <value>**true** if this page has any transformation applied; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.IsViewPerspectiveRotated">
+      <summary>Determines if the page has a rotated view perspective.</summary>
+      <value>**true** if the page view perspective is rotated; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.OriginalPageNumber">
+      <summary>The number of this page in the original document.</summary>
+      <value>1-based number of this page in the original document.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.PageNumber">
+      <summary>The current number of this page in the document.</summary>
+      <value>The 1-based number of this DocumentPage in the document.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.Resolution">
+      <summary>Resolution of this page.</summary>
+      <value>The resolution of this DocumentPage, in dots per inch (DPI). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.Size">
+      <summary>Size of this page.</summary>
+      <value>The size of this DocumentPage in document units.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.UserData">
+      <summary>The user-defined data associated with this page.</summary>
+      <value>Any object that can be used as the user-defined data associated with this page. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.ViewPerspective">
+      <summary>Current view perspective (transformation) value of this page.</summary>
+      <value>The current view perspective of this page. The default value is RasterViewPerspective.TopLeft.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPage.ViewPerspectiveSize">
+      <summary>Size of this page after applying its transformation.</summary>
+      <value>The size of this DocumentPage after applying its transformation in document units.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentPageDescriptor">
+      <summary>JSON serilizable object that describes a page in the document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageDescriptor.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageDescriptor.DocumentId">
+      <summary>ID of the owner document</summary>
+      <value>Refer to Document.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageDescriptor.IsDeleted">
+      <summary>Indicates that this page is marked for deletion.</summary>
+      <value>**true** if this page is marked for deletion; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageDescriptor.OriginalPageNumber">
+      <summary>The number of this page in the original document</summary>
+      <value>Refer to OriginalPageNumber.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageDescriptor.PageNumber">
+      <summary>Page number in the owner document</summary>
+      <value>Refer to PageNumber.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageDescriptor.Resolution">
+      <summary>Resolution of this page in dots per inch.</summary>
+      <value>Refer to Resolution.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageDescriptor.Size">
+      <summary>Size of this page in document units.</summary>
+      <value>Refer to Size.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageDescriptor.ViewPerspective">
+      <summary>View perspective of the page.</summary>
+      <value>The view perspective of the page. The default value is RasterViewPerspective.TopLeft</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentPages">
+      <summary>Represents a collection of DocumentPage objects.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.CreatePage(Leadtools.LeadSizeD,System.Double)">
+      <summary>Creates a new DocumentPage.</summary>
+      <param name="size">Size of the new page in document units. Cannot be empty (Empty).</param>
+      <param name="resolution">The resolution of the new page in dots per inch (DPI). Must be greater than or equal 0. A value of 0 means</param>
+      <returns>The newly created page.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.Flip(System.Int32,System.Int32)">
+      <summary>Flips the specified pages vertically.</summary>
+      <param name="firstPageNumber">1-based first page number in the document. This value must be greater than or equal to 1.</param>
+      <param name="lastPageNumber">1-based last page number in the document. This value must be greater or equal to *firstPageNumber*. A value of -1 means the last page in the document.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.GetTargetPageNumber(Leadtools.Document.LEADDocument,System.Int32)">
+      <summary>Finds the page number in this document that corresponds to a page number in another source document.</summary>
+      <param name="sourceDocument">Source document. Must not be **null**.</param>
+      <param name="sourcePageNumber">1-based page number in the source document.</param>
+      <returns>The 1-based page number in this document if found, -1 otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.Reverse(System.Int32,System.Int32)">
+      <summary>Flips the specified pages horizontally.</summary>
+      <param name="firstPageNumber">1-based first page number in the document. This value must be greater than or equal to 1.</param>
+      <param name="lastPageNumber">1-based last page number in the document. This value must be greater or equal to *firstPageNumber*. A value of -1 means the last page in the document.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.Rotate(System.Int32,System.Int32,System.Int32)">
+      <summary>Rotates the specified pages.</summary>
+      <param name="angle">Rotation angle in degrees. Positive values will rotate the pages clockwise and negative values will rotate the pages counter-clockwise. Must be in increment of 90 degrees.</param>
+      <param name="firstPageNumber">1-based first page number in the document. This value must be greater than or equal to 1.</param>
+      <param name="lastPageNumber">1-based last page number in the document. This value must be greater or equal to *firstPageNumber*. A value of -1 means the last page in the document.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.SetViewPerspective(Leadtools.RasterViewPerspective,System.Int32,System.Int32)">
+      <summary>Applies transformation on the specified pages.</summary>
+      <param name="viewPerspective">View perspective value to apply.</param>
+      <param name="lastPageNumber">1-based last page number in the document. This value must be greater or equal to *firstPageNumber*. A value of -1 means the last page in the document.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.ClearItems">
+      <summary>Overrides LeadCollection.ClearItems.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.InsertItem(System.Int32,Leadtools.Document.DocumentPage)">
+      <summary>Overrides LeadCollection.InsertItem.</summary>
+      <param name="index">Index of new the item.</param>
+      <param name="item">Page to insert to the collection.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.InsertItemRange(System.Int32,Leadtools.Document.DocumentPage)">
+      <summary>Overrides `LeadCollection` InsertItemRange.</summary>
+      <param name="index">The 0-based index at which items should be inserted.</param>
+      <param name="items">The objects to insert. The objects can be **null** for reference types.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.MoveItem(System.Int32,System.Int32)">
+      <summary>Overrides LeadCollection.MoveItem.</summary>
+      <param name="oldIndex">Old item new index.</param>
+      <param name="newIndex">New item index.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.RemoveItem(System.Int32)">
+      <summary>Overrides LeadCollection.RemoveItem.</summary>
+      <param name="index">Index of the item to remove</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.RemoveItemRange(System.Int32,System.Int32)">
+      <summary>Overrides `LeadCollection` RemoveItemRange.</summary>
+      <param name="index">The 0-based index of the item to remove.</param>
+      <param name="count">The number of items to remove.</param>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPages.SetItem(System.Int32,Leadtools.Document.DocumentPage)">
+      <summary>Overrides LeadCollection.SetItem.</summary>
+      <param name="index">Index of the item to replace.</param>
+      <param name="item">Page to set.</param>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPages.DefaultPageSize">
+      <summary>Default page size of this document.</summary>
+      <value>The default page size of this document. Default value depends on how this document was created.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPages.DefaultResolution">
+      <summary>Default resolution in dots per inch of this document.</summary>
+      <value>The default resolution in dots per inch (DPI) of this document. Default value depends on how this document was created.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPages.Document">
+      <summary>Owner document of this DocumentPages</summary>
+      <value>The owner LEADDocument object of this DocumentPages.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPages.OriginalFirstPageNumber">
+      <summary>The number of the first page loaded into this document.</summary>
+      <value>The number of the first page loaded into this document.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPages.OriginalLastPageNumber">
+      <summary>The number of the last page loaded into this document.</summary>
+      <value>The number of the last page loaded into this document.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPages.OriginalPageCount">
+      <summary>The number of pages in the original document.</summary>
+      <value>The number of pages in the original document.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentPageText">
+      <summary>Contains the text characters and words found in a document page.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageText.#ctor">
+      <summary>Initializes a new instance of DocumentPageText.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageText.BuildText">
+      <summary>Build the text found in the document page as a simple string object.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageText.BuildTextWithMap">
+      <summary>Build the text found in the document page with extra map back into the characters list.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageText.BuildWords">
+      <summary>Build a list of the words found in the document page.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageText.ClearBuildData">
+      <summary>Clears the generated words, text and map values.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageText.ClipText(Leadtools.LeadRectD)">
+      <summary>Creates a new DocumentPageText from a portion of this text data.</summary>
+      <param name="bounds">The area to clone. This value is in document coordinates.</param>
+      <returns>New DocumentPageText that contains only the characters that are included in bounds.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageText.FromSvgDocument(Leadtools.Svg.SvgDocument,Leadtools.Document.LEADDocument)">
+      <summary>Parses the text from an SVG document.</summary>
+      <param name="document">Source SVG document. This value must not be **null**.</param>
+      <param name="mappingDocument">The owner document of the SVG. This is used to map the location and size of the items found into document coordinates. If this</param>
+      <param name=""></param>
+      <returns>The object containing the text found in the SVG document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentPageText.ParseLinks(IList&lt;Regex&gt;)">
+      <summary>Parses the links found in this DocumentText.</summary>
+      <param name="linkPatterns">A list of System.Text.RegularExpressions.Regex objects to use for parsing the links.</param>
+      <returns>A list of the links parsed.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageText.Characters">
+      <summary>The list of text characters found in the document page.</summary>
+      <value>List of text characters found in the document page. The default value is an empty list.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageText.OcrPageCharacters">
+      <summary>The recognized OCR characters object associated with this page.</summary>
+      <value>The recognized OCR characters object associated with this page if DocumentText.StoreOcrPageCharacters was **true**; otherwise, **null**. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageText.Text">
+      <summary>The text found in the document page.</summary>
+      <value>The text found in the document page as a simple string object. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageText.TextMap">
+      <summary>List that contains the indices into Characters of each character in Text</summary>
+      <value>A list of integers that contain the indices into Characters of each character in Text. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentPageText.Words">
+      <summary>The list of text words found in the document page.</summary>
+      <value>List of text words found in the document page. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentRedactionOptions">
+      <summary>Options to use when applying the redactions on a LEADDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentRedactionOptions.#ctor">
+      <summary>Initializes a new instance of DocumentRedactionOptions with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentRedactionOptions.Clone">
+      <summary>Creates an exact copy of this DocumentRedactionOptions.</summary>
+      <returns>Newly created object that contains a copy of the values of this DocumentRedactionOptions.</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentRedactionOptions.Equals(System.Object)">
+      <summary>Overrides Object.Equals.</summary>
+      <param name="obj">The object with which to compare.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Document.DocumentRedactionOptions.GetHashCode">
+      <summary>Overrides Object.GetHashCode.</summary>
+      <returns>The hash code of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DocumentRedactionOptions.ConvertOptions">
+      <summary>Options to use when applying the redactions during converting.</summary>
+      <value>The options to use when applying the redactions during converting. The default value is a new instance of ConvertRedactionOptions.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentRedactionOptions.ViewOptions">
+      <summary>Options to use when applying the redactions during viewing.</summary>
+      <value>The options to use when applying the redactions during viewing. The default value is a new instance of ViewRedactionOptions.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentRotateFlip">
+      <summary>Holds the rotation and flip value of a view perspective.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentRotateFlip.#ctor">
+      <summary>Initializes a new instance of DocumentRotateFlip.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentRotateFlip.IsFlipped">
+      <summary>Flips the object vertically.</summary>
+      <value>**true** to flip the object vertically; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentRotateFlip.RotationAngle">
+      <summary>Rotation angle in degrees.</summary>
+      <value>Rotation angle in degrees. Positive values rotate the object clockwise, negative values rotate the object counterclockwise. This value is in increments of 90.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentStructure">
+      <summary>Manages the structure of the document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentStructure.Parse">
+      <summary>Parse the structure of this document and read the bookmarks and table of content.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentStructure.Bookmarks">
+      <summary>The list of bookmarks (table of content) in this document.</summary>
+      <value>The list of bookmarks (table of content) in this document.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentStructure.Document">
+      <summary>Owner document of this DocumentStructure</summary>
+      <value>The owner LEADDocument object of this DocumentStructure.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentStructure.IsParsed">
+      <summary>Indicates whether the structure of this document has been parsed.</summary>
+      <value>**true** if the structure of this document has been parsed; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentStructure.ParseBookmarks">
+      <summary>Indicates whether to parse the bookmarks from the original document.</summary>
+      <value>**true** to parse the bookmarks from the original document when Parse is called; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentStructure.ParsePageLinks">
+      <summary>Indicates whether to parse the links found in the pages from the original document.</summary>
+      <value>**true** to parse the links found in the pages from the original document when Parse is called; otherwise, **false**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentText">
+      <summary>Manages the text options of the document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentText.ResetLinkPatterns">
+      <summary>Resets the regular expressions list used when parsing links from text to the default value.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.AutoParseLinks">
+      <summary>Indicates whether to parse links from the text of the pages.</summary>
+      <value>**true** to parse links from the text of the pages; otherwise, **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.Document">
+      <summary>Owner document of this DocumentText</summary>
+      <value>The owner LEADDocument object of this DocumentText.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.ImagesRecognitionMode">
+      <summary>Indicates how to treat the image elements encountered in the SVG representation of this page during text extraction.</summary>
+      <value>A DocumentTextImagesRecognitionMode value that indicates how to treat the image elements encountered in the SVG representation of this page during text extraction. The default value is DocumentTextImagesRecognitionMode.Auto.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.LinkPatterns">
+      <summary>Regular expressions to use when parsing links from text.</summary>
+      <value>A list of the regular expressions to use when parsing links from text. The default value is</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.OcrEngine">
+      <summary>Optional OCR engine instance to use when extracting text.</summary>
+      <value>The optional OCR engine instance to use when extracting text. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.PreApplyViewPerspective">
+      <summary>Applies page transformation before extracting the text using the OCR or SVG engine</summary>
+      <value>**true** to apply page transformation before extracting the text using the OCR or SVG engine; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.RecognizeGlyphs">
+      <summary>Indicates whether  the application will attempt to recognize any glyphs found in SVG files using the OCR engine.</summary>
+      <value>**true** to try to recognize glyphs found in SVG files using the OCR engine; otherwise, **false** to ignore using the OCR engine to recognize glyphs found in SVG files. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.RemoveRubbishOcrZones">
+      <summary>Indicates whether to ignore low confidence (because of noise, or rubbish) OCR results when adding results to the DocumentPageText.</summary>
+      <value>**true** to ignore low confidence (because of noise, or rubbish) OCR results when adding results to the DocumentPageText; otherwise, **false** to add all results obtained from OCR recognition regardless of the confidence value. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.StoreOcrPageCharacters">
+      <summary>Indicates whether to store the recognized OCR object used to obtain the text in this DocumentPageText.</summary>
+      <value>**true** to store the recognized OCR object used to obtain the text in this DocumentPageText; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentText.TextExtractionMode">
+      <summary>Mode to use when extracting text from this document.</summary>
+      <value>The mode to use when extracting text from this document. Default value is DocumentTextExtractionMode.Auto.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentViewCommand">
+      <summary>Command to run when this document is set into a document viewer.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentViewCommand.#ctor">
+      <summary>Initializes a new instance of DocumentViewCommand with default values.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewCommand.Command">
+      <summary>Document viewer command.</summary>
+      <value>The document viewer command to run. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewCommand.Parameters">
+      <summary>Optional parameters for the command to run.</summary>
+      <value>The optional parameters for the command to run. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentViewOptions">
+      <summary>Optional initial view options to use when a document is set in a document viewer.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentViewOptions.#ctor">
+      <summary>Initializes a new instance of DocumentViewOptions with default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.AnnotationsUserMode">
+      <summary>Annotations user mode to set when this document is set into a viewer.</summary>
+      <value>The annotations user mode to set when this document is set into a viewer. The default value is DocumentViewAnnotationsUserMode.Design.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.LoadAnnotations">
+      <summary>Instructs the document viewer to create the annotations UI elements, and tries to load the annotations stored in the document.</summary>
+      <value>**true** to instruct the document viewer to create the annotations UI elements and try to load the annotations stored in the document. **false** to instruct the document viewer to disable and hide the annotations UI elements. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.LoadBookmarks">
+      <summary>Instructs the document viewer to create the bookmark UI elements and try to load the bookmarks stored in the document.</summary>
+      <value>**true** to instruct the document viewer to create the bookmark UI elements and try to load the bookmarks stored in the document. **false**, to instruct the document viewer to disable and hide the bookmark UI elements. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.LoadThumbnails">
+      <summary>Instructs the document viewer to create the thumbnail UI elements and try to load the thumbnails of the document.</summary>
+      <value>**true** to instruct the document viewer to create the thumbnail UI elements and try to load the thumbnails of the document. **false**, to instruct the document viewer to disable and hide the thumbnail UI elements. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.PageNumber">
+      <summary>Page number to go to when this document is set in a viewer.</summary>
+      <value>1-based page number to go to when this document is set in a viewer. The default value is 1.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.ViewCommands">
+      <summary>Gets additional user-defined document viewer commands to run when this document is set into a viewer.</summary>
+      <value>The additional user-defined document viewer commands to run when this document is set into a viewer. The default value is an empty list.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.ViewItemType">
+      <summary>View item type to use when this document is set into a viewer.</summary>
+      <value>The view item type to use when this document is set into a viewer. The default value is DocumentViewItemType.Svg.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.ViewLayout">
+      <summary>View layout to use when this document is set into a viewer.</summary>
+      <value>The view layout to use when this document is set into a viewer. The default value is DocumentViewLayout.Vertical</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.ViewScrollOffset">
+      <summary>Scrolls the view by the specified amount.</summary>
+      <value>Scrolls the view by the specified amount. The default value is \(0,0\).</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.ViewSizeMode">
+      <summary>Size mode to set when this document is set in a viewer.</summary>
+      <value>The size mode to set when this document is set in a viewer. The default value is DocumentViewSizeMode.ActualSize.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentViewOptions.ViewZoomPercent">
+      <summary>Zooms the view by the specified percentage.</summary>
+      <value>Zooms the view by the specified percentage. The default value is 1.</value>
+    </member>
+    <member name="T:Leadtools.Document.DownloadDocumentOptions">
+      <summary>Options to use when downloading a document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DownloadDocumentOptions.#ctor">
+      <summary>Initializes a new instance of DownloadDocumentOptions.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DownloadDocumentOptions.Clone">
+      <summary>Returns an exact clone of this object.</summary>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DownloadDocumentOptions.Cache">
+      <summary>The cache containing the document to download.</summary>
+      <value>The cache containing the document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DownloadDocumentOptions.Data">
+      <summary>Buffer to read the data into during this download operation.</summary>
+      <value>Buffer to read the document data to. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DownloadDocumentOptions.DataOffset">
+      <summary>Offset into Data at which to begin storing the data.</summary>
+      <value>The 0-based byte offset into Data, at which to begin storing the data. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DownloadDocumentOptions.DocumentId">
+      <summary>ID of the document to download.</summary>
+      <value>The ID of the document to download. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DownloadDocumentOptions.Length">
+      <summary>Maximum number of bytes to read during this download operation.</summary>
+      <value>Maximum number of bytes to read during this download operation. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DownloadDocumentOptions.Offset">
+      <summary>Offset into the source data at which to begin reading the data during this download operation.</summary>
+      <value>0-based byte offset into the source data at which to begin reading the data. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DownloadDocumentOptions.Stream">
+      <summary>Stream to read the data into during this download operation.</summary>
+      <value>Stream into which to read the document data. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DownloadDocumentOptions.UserToken">
+      <summary>User token associated with the document.</summary>
+      <value>The user token associated with the document. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.LEADDocument">
+      <summary>Encapsulates a multipage document with support for raster and SVG images, bookmarks, annotations, and text data.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.#ctor">
+      <summary>Initializes a new instance of LEADDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.Clone(Leadtools.Caching.ObjectCache,Leadtools.Document.CloneDocumentOptions)">
+      <summary>Clones this document in the specified cache.</summary>
+      <param name="cache">Destination cache. This value cannot be **null**.</param>
+      <param name="options">Options to use when cloning the document. This value cannot be **null**.</param>
+      <returns>A brand new document that is an exact copy of this LEADDocument.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.CreateCacheItemPolicy">
+      <summary>Create a new policy to be used when items of this document is cached.</summary>
+      <returns>The new cache policy.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.CreateDocumentDescriptor">
+      <summary>Creates a descritpor object that can be used to re-create this document.</summary>
+      <returns>Object containing the values required to re-create this document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.Decrypt(System.String)">
+      <summary>Decrypt this document using the specified password.</summary>
+      <param name="password">String containing the password phrase to decrypt this document.</param>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.DocumentToPixels(System.Double,System.Double)">
+      <summary>Converts a value from document units to pixels.</summary>
+      <param name="resolution">The resolution to use.</param>
+      <param name="value">Source value to convert in document units.</param>
+      <returns>The converted value in pixels.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.GetAnnotationsFileName">
+      <summary>Path to the file holding the original annotations.</summary>
+      <returns>The path to the file holding the original annotations.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.GetAnnotationsStream">
+      <summary>Stream containing the data of the original annotations.</summary>
+      <returns>Stream containing the data of the original annotations.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.GetCache">
+      <summary>Gets the cache object used with by this document.</summary>
+      <returns>The cache object used with by this document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.GetCacheKeys">
+      <summary>Get the cache keys used by this document.</summary>
+      <returns>Set of all possible cache keys used by this document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.GetDocumentFileName">
+      <summary>Path to the file holding the original document.</summary>
+      <returns>The path to the file holding the original document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.GetDocumentStream">
+      <summary>Stream containing the data of the original document.</summary>
+      <returns>Stream containing the data of the original document.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.GetRotateFlip(Leadtools.RasterViewPerspective)">
+      <summary>Extracts the rotation and flips value of the specified view perspective of this page.</summary>
+      <param name="viewPerspective">View perspective to extract into a rotation angle and flip value.</param>
+      <returns>DocumentRotateFlip object containing the rotation and flip value of *viewPerspective*.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.GetViewPerspectiveTransform(Leadtools.RasterViewPerspective,Leadtools.LeadSizeD,System.Boolean)">
+      <summary>Helper method to calculate the matrix to use when applying a view perspective.</summary>
+      <param name="viewPerspective">View perspective to use.</param>
+      <param name="size">Size of the page.</param>
+      <param name="apply"></param>
+      <returns>Matrix that contains transformation values (rotation, flip and reverse).</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.LoadDocumentAttachment(Leadtools.Document.LoadAttachmentOptions)">
+      <summary>Loads an attachment as a LEADDocument object.</summary>
+      <param name="options">Options to identify the attachment to load.</param>
+      <returns>The attachment document as a LEADDocument object.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.LockStreams">
+      <summary>Lock the document and annotation streams to be used by the current thread only.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.PixelsToDocument(System.Double,System.Int32)">
+      <summary>Converts a value from pixels to document units.</summary>
+      <param name="resolution">The resolution to use.</param>
+      <param name="value">Source value to convert in pixels.</param>
+      <returns>The converted value in document units.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.PointToDocument(Leadtools.LeadPoint)">
+      <summary>Converts a point from pixels to document units.</summary>
+      <param name="value">Source value in pixels.</param>
+      <returns>The converted value in document units.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.PointToPixels(Leadtools.LeadPointD)">
+      <summary>Converts a point from document units to pixels.</summary>
+      <param name="value">Source value in document units.</param>
+      <returns>The converted value in pixels.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.RectToDocument(Leadtools.LeadRect)">
+      <summary>Converts a rectangle from pixels to document units.</summary>
+      <param name="value">Source value in pixels.</param>
+      <returns>The converted value in document units.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.RectToPixels(Leadtools.LeadRectD)">
+      <summary>Converts a rectangle from document units to pixels.</summary>
+      <param name="value">Source value in document units.</param>
+      <returns>The converted value in pixels.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.SaveAttachmentToCache(Leadtools.Document.SaveAttachmentToCacheOptions)">
+      <summary>Saves an attachment to the cache.</summary>
+      <param name="options">Options to identify the attachment to save.</param>
+      <returns>ID of the document saved into the cache if successful; otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.SaveToCache">
+      <summary>Saves the document to the cache.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.SaveToFile(System.String,Leadtools.Document.SaveDocumentOptions)">
+      <summary>Exports this document to the specified file using the specified format.</summary>
+      <param name="fileName">Target file name. This cannot be **null**.</param>
+      <param name="options">Options to use when saving the document. If this is **null**, then the document will be saved</param>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.SaveToUri(System.Uri,Leadtools.Document.SaveDocumentOptions)">
+      <summary>Exports this document to the specified remote URL using the specified format.</summary>
+      <param name="uri">Target URL. This cannot be **null**.</param>
+      <param name="options">Options to use when saving the document. If this is **null**, then the document will be saved</param>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.SizeToDocument(Leadtools.LeadSize)">
+      <summary>Converts a size from pixels to document units.</summary>
+      <param name="value">Source value in pixels.</param>
+      <returns>The converted value in document units.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.SizeToPixels(Leadtools.LeadSizeD)">
+      <summary>Converts a size from document units to pixels.</summary>
+      <param name="value">Source value in document units.</param>
+      <returns>The converted value in pixels.</returns>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.UnlockStreams">
+      <summary>Unlock the document and annotation streams from the current thread.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.UpdateFromDocumentDescriptor(Leadtools.Document.DocumentDescriptor)">
+      <summary>Update this document from a descriptor.</summary>
+      <param name="descriptor">Simple JSON object that contains properties of the document.</param>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.Dispose">
+      <summary>Releases all resources used by this LEADDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this LEADDocument.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Document.LEADDocument.Finalize">
+      <summary>This method overrides System.Object.Finalize</summary>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Annotations">
+      <summary>Object that manages the annotations of the document.</summary>
+      <value>The DocumentAnnotations object that manages the annotations of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Attachments">
+      <summary>Gets the Object that manages the attachments of the document.</summary>
+      <value>The DocumentAttachments object that manages the attachments of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.AutoDeleteAttachmentsFromCache">
+      <summary>Controls what happens to the external attachment documents when the owner document is deleted from the cache.</summary>
+      <value>**true** to delete all external attachment documents when the owner document is deleted from the cache; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.AutoDeleteFromCache">
+      <summary>Indicates whether to delete all the entries that belong to this document from the cache when it is disposed.</summary>
+      <value>**true** to delete all the entries that belong to this document from the cache when it is disposed; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.AutoDisposeDocuments">
+      <summary>Indicates whether to automatically dispose any child documents.</summary>
+      <value>**true** to automatically dispose any child documents when this document is disposed; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.AutoDisposeStream">
+      <summary>Indicates whether LEADDocument should dispose the stream passed to DocumentFactory.LoadFromStream.</summary>
+      <value>**true** for LEADDocument to dispose the stream passed to DocumentFactory.LoadFromStream; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.AutoSaveToCache">
+      <summary>Indicates whether to automatically save the document to the cache before it is disposed.</summary>
+      <value>**true** to automatically save the document to the cache before it is disposed; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Barcodes">
+      <summary>Object that manages the barcodes of the document.</summary>
+      <value>The DocumentBarcodes object that manages the barcodes of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.CacheName">
+      <summary>The name of the cache owner of this document.</summary>
+      <value>The name of the cache owner of this document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.CacheOptions">
+      <summary>Determines which part of the document will be stored in the cache.</summary>
+      <value>Determines which part of the document will be stored in the cache. Default value is DocumentCacheOptions.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.CacheStatus">
+      <summary>The cache status of this document.</summary>
+      <value>The cache status of this document. Default value is DocumentCacheStatus.NotSynced.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.CacheUri">
+      <summary>The URL to the original document's image data if it was stored in the cache.</summary>
+      <value>The URL to the original document's image data if it was stored in the cache; otherwise, **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.DataType">
+      <summary>Data type of this LEADDocument.</summary>
+      <value>The data type of this LEADDocument. Default value is DocumentDataType.Transient.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.DocumentId">
+      <summary>Unique identifier of this document.</summary>
+      <value>The unique identifier of this document.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Documents">
+      <summary>Object that manages the children of this document.</summary>
+      <value>The DocumentDocuments object that manages the children of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.DocumentType">
+      <summary>Document type.</summary>
+      <value>The document type.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.FileLength">
+      <summary>Length of the original document file or URL.</summary>
+      <value>The length of the original document file or URL in bytes.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Format">
+      <summary>Gets the LEADTOOLS raster image format identifier for this document.</summary>
+      <value>The LEADTOOLS raster image format identifier for this document.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.HasAnnotationsStream">
+      <summary>Indicates that the document has a valid stream containing the data of the original annotations.</summary>
+      <value>**true** if the document has a valid stream containing the data of the original annotations; otherwise; **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.HasCache">
+      <summary>Indicates whether this LEADDocument is using the cache.</summary>
+      <value>**true** if this document uses the cache system; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.HasDocuments">
+      <summary>Determine whether this document has children.</summary>
+      <value>**true** if this document has children; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.HasStream">
+      <summary>Indicates that the document has a valid stream containing the data of the original document.</summary>
+      <value>**true** if the document has a valid stream containing the data of the original document; otherwise; **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.History">
+      <summary>Object that manages the history tracking of this LEADDocument.</summary>
+      <value>The DocumentHistory object that manages the history tracking of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Images">
+      <summary>Object that manages the raster and SVG image settings of the document.</summary>
+      <value>The DocumentImages object that manages the raster and SVG image settings of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.InternalObject">
+      <summary>Internal LEADTOOLS object used with the document.</summary>
+      <value>The internal LEADTOOLS object used with the document.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.IsAnyCacheStatusNotSynced">
+      <summary>Checks if the cache status of this document or any of its children is not synced.</summary>
+      <value>**true** if the cache status of this document or any of its children is not synced; otherwise, **false** when the cache status of this document and all its children are synced.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.IsDecrypted">
+      <summary>Gets a value that indicates whether this document has been decrypted.</summary>
+      <value>**true** if this document has been decrypted; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.IsDownloaded">
+      <summary>Indicates if this document was downloaded.</summary>
+      <value>**true** if this document was downloaded; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.IsEncrypted">
+      <summary>Gets a value that indicates whether this document is encrypted.</summary>
+      <value>**true** if this document is encrypted; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.IsLocal">
+      <summary>Indicate that this document has been created by the user.</summary>
+      <value>**true** if this document has been created by the user; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.IsReadOnly">
+      <summary>Indicates that this document is read-only and cannot be modified.</summary>
+      <value>**true** if this document is read-only and cannot be modified; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.IsStructureSupported">
+      <summary>Gets a value that determines whether the document structure is supported.</summary>
+      <value>**true** if the document structure is supported; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.LastCacheSyncTime">
+      <summary>Timestamp of when the document was last saved to the cache sucessfully.</summary>
+      <value>Timestamp of when the document was last saved to the cache sucessfully.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.LoadDuration">
+      <summary>Time it took the library to load this document in milliseconds.</summary>
+      <value>The time it took the library to load this document in milliseconds.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Metadata">
+      <summary>Object that manages the metadata of the document.</summary>
+      <value>The DocumentMetadata object that manages the metadata of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.MimeType">
+      <summary>MIME type of the document.</summary>
+      <value>The MIME type of the document.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Name">
+      <summary>Name of the document.</summary>
+      <value>The name of the document.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Pages">
+      <summary>Object that manages the pages of the document.</summary>
+      <value>The DocumentPages object that manages the pages of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.RasterCodecs">
+      <summary>Object that is used to load or save raster images and SVG documents.</summary>
+      <value>The RasterCodecs object to use when this LEADDocument loads or saves RasterImage and SvgDocument</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Stream">
+      <summary>Gets the original document stream.</summary>
+      <value>Original document stream.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Structure">
+      <summary>Object that manages the structure and table of content of the document.</summary>
+      <value>The DocumentStructure object that manages the structure and table of content of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Text">
+      <summary>Object that manages the text and OCR recognition settings of the document.</summary>
+      <value>The DocumentText object that manages the text and OCR recognition settings of this LEADDocument.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.Uri">
+      <summary>Gets the URL to the original document's physical location.</summary>
+      <value>The URL to the original document physical location.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.UserData">
+      <summary>The user-defined data associated with this document.</summary>
+      <value>Any object that can be used as the user-defined data associated with this document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.UserId">
+      <summary>User ID associated with this document.</summary>
+      <value>The user ID associated with this LEADDocument. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.UserToken">
+      <summary>User token associated with the document.</summary>
+      <value>The user token associated with the document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LEADDocument.ViewOptions">
+      <summary>Optional initial view options of this LEADDocument.</summary>
+      <value>The optional initial view options of this LEADDocument. The default value is **null**.</value>
+    </member>
+    <member name="F:Leadtools.Document.LEADDocument.MetadataKey_IsLinearized">
+      <summary>"IsLinearized" metadata key constant.</summary>
+    </member>
+    <member name="F:Leadtools.Document.LEADDocument.MetadataKey_IsPortfolio">
+      <summary>"IsPortfolio" metadata key constant.</summary>
+    </member>
+    <member name="F:Leadtools.Document.LEADDocument.PostUpload_LinearizePdfMinimumLength">
+      <summary>"PostUpload_LinearizePdfMinimumLength" post upload operation constant.</summary>
+    </member>
+    <member name="F:Leadtools.Document.LEADDocument.UnitsPerInch">
+      <summary>Number of units per inch used for document coordinates.</summary>
+    </member>
+    <member name="T:Leadtools.Document.LoadAsyncCompletedEventArgs">
+      <summary>Data for the LoadDocumentAsyncOptions.Completed event.</summary>
+    </member>
+    <member name="P:Leadtools.Document.LoadAsyncCompletedEventArgs.Document">
+      <summary>Gets the loaded LEADDocument object.</summary>
+      <value>The resulting loaded LEADDocument object if the load operation was successful; otherwise, **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadAsyncCompletedEventArgs.Uri">
+      <summary>The location of the document loaded.</summary>
+      <value>The location of the document loaded. This is the uri value passed to LoadFromUriAsync.</value>
+    </member>
+    <member name="T:Leadtools.Document.LoadAsyncProgressEventArgs">
+      <summary>Data for the LoadDocumentAsyncOptions.Progress event.</summary>
+    </member>
+    <member name="P:Leadtools.Document.LoadAsyncProgressEventArgs.BytesReceived">
+      <summary>Number of bytes received during this chunk of the operation.</summary>
+      <value>Number of bytes received during this chunk of the operation.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadAsyncProgressEventArgs.IsCancelPending">
+      <summary>Aborts the load operation.</summary>
+      <value>**true** to abort the current load operation; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadAsyncProgressEventArgs.TotalBytesToReceive">
+      <summary>Total number of bytes received so far for the whole load operation.</summary>
+      <value>The total number of bytes received so far for the whole load operation.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadAsyncProgressEventArgs.Uri">
+      <summary>The location of the document being loaded</summary>
+      <value>The location of the document being loaded. This is the uri value passed to LoadFromUriAsync.</value>
+    </member>
+    <member name="T:Leadtools.Document.LoadAttachmentOptions">
+      <summary>Options to use when loading an attachment.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LoadAttachmentOptions.#ctor">
+      <summary>Initializes a new instance of LoadAttachmentOptions.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LoadAttachmentOptions.Clone">
+      <summary>Creates an exact copy of this LoadAttachmentOptions.</summary>
+      <returns>Exact copy of this LoadAttachmentOptions.</returns>
+    </member>
+    <member name="P:Leadtools.Document.LoadAttachmentOptions.AttachmentNumber">
+      <summary>Attachment number to load.</summary>
+      <value>1-based attachment number to load. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadAttachmentOptions.LoadDocumentOptions">
+      <summary>Options to use when loading an embedded attachment from a document.</summary>
+      <value>The options to use when loading an embedded attachment from a document. The default value is a default LoadDocumentOptions object.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadAttachmentOptions.UpdateAttachmentDocumentId">
+      <summary>Updates the embedded attachment's document ID if loading is successful.</summary>
+      <value>**true** to automatically update the embedded attachment's document ID if loading is successful; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Document.LoadDocumentAsyncOptions">
+      <summary>Options to use when loading a document asynchronously.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LoadDocumentAsyncOptions.#ctor">
+      <summary>Initializes a new instance of LoadDocumentAsyncOptions with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LoadDocumentAsyncOptions.Clone">
+      <summary>Returns an exact clone of this object.</summary>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="E:Leadtools.Document.LoadDocumentAsyncOptions.Completed">
+      <summary>Event that occurs when the factory finishes loading the document successfully or otherwise.</summary>
+    </member>
+    <member name="E:Leadtools.Document.LoadDocumentAsyncOptions.Progress">
+      <summary>Event that occurs one or more times while the factory is loading the document to indicate the current progress.</summary>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentAsyncOptions.UserState">
+      <summary>The user-defined state object associated with this operation.</summary>
+      <value>Optional user-defined state object associated with this operation. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.LoadDocumentOptions">
+      <summary>Options to use when loading a document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LoadDocumentOptions.#ctor">
+      <summary>Initializes a new instance of LoadDocumentOptions with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LoadDocumentOptions.Clone">
+      <summary>Returns an exact clone of this object.</summary>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.AnnotationsUri">
+      <summary>The location to the external annotation file associated with the document.</summary>
+      <value>The location to the external annotation file associated with the document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.Cache">
+      <summary>The cache to use with the new document.</summary>
+      <value>The cache to use with the new document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.CacheOptions">
+      <summary>Determines which part of the document will be stored in the cache.</summary>
+      <value>Determines which part of the document will be stored in the cache. Default value is DocumentCacheOptions.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.CachePolicy">
+      <summary>The cache policy to use with the new document.</summary>
+      <value>The cache policy to use for the new document that determine when the document and its parts are purged. Default value is</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.DocumentId">
+      <summary>The ID to be used with the loaded document.</summary>
+      <value>String that specifies the ID to be used with the loaded document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.FirstPageNumber">
+      <summary>Number of the first page to be loaded from the document.</summary>
+      <value>The 1-based number of the first page to be converted from the input document. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.LastPageNumber">
+      <summary>Number of the last page to be loaded from the document.</summary>
+      <value>The 1-based number of the last page to be converted from the input document. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.LoadAttachmentsMode">
+      <summary>Controls how to handle the embedded attachment found in the document during load.</summary>
+      <value>A DocumentLoadAttachmentsMode enumeration value that indicates how to handle the embedded attachment found in the document during loading as described in the Remarks section. The default value is DocumentLoadAttachmentsMode.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.LoadEmbeddedAnnotations">
+      <summary>Tries to load the annotations embedded in the document.</summary>
+      <value>**true** to try to load the annotations embedded in the document; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.MaximumImagePixelSize">
+      <summary>Maximum width or height in pixels to use when obtaining image data from the pages in this document.</summary>
+      <value>The maximum width or height in pixels to use when obtaining image data from the pages in this document. Default value is 0 which means to use the original size.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.MayHaveDifferentPageSizes">
+      <summary>Hint to the loader that the document may contain pages with different sizes.</summary>
+      <value>**true** if the document may contain pages with different sizes; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.MimeType">
+      <summary>The optional mime type of the document being loaded.</summary>
+      <value>Optional mime type of the document being loaded. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.Name">
+      <summary>Optional name of the document.</summary>
+      <value>The optional name of the document.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.Password">
+      <summary>The password to use if the document is encrypted.</summary>
+      <value>The password to use if the document is encrypted. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.RedactionOptions">
+      <summary>Redaction options to use with this document.</summary>
+      <value>The optional redaction options to use with this document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.RenderAnnotations">
+      <summary>Renders annotations embedded in the document.</summary>
+      <value>**true** to render the annotations embedded in the document; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.TimeoutMilliseconds">
+      <summary>Timeout in milliseconds, after which time loading is aborted.</summary>
+      <value>Timeout in milliseconds, after which time loading is aborted. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.UseCache">
+      <summary>Indicates whether the new document will use the cache system.</summary>
+      <value>**true** if the new document will use the cache system; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.UserToken">
+      <summary>User token associated with the document.</summary>
+      <value>The user token associated with the document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadDocumentOptions.WebClient">
+      <summary>The .NET System.Net.WebClient object to use when downloading or uploading data from a remote URL.</summary>
+      <value>The .NET System.Net.WebClient object to use when downloading or uploading data from a remote URL. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.LoadFromCacheOptions">
+      <summary>Options to use when loading or deleting a document from the cache.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LoadFromCacheOptions.#ctor">
+      <summary>Initializes a new instance of LoadDocumentOptions with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Document.LoadFromCacheOptions.Clone">
+      <summary>Returns an exact clone of this object.</summary>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.LoadFromCacheOptions.Cache">
+      <summary>Cache object to use.</summary>
+      <value>The cache object to use. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadFromCacheOptions.DocumentId">
+      <summary>Document identifier.</summary>
+      <value>The document identifier. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.LoadFromCacheOptions.UserToken">
+      <summary>User token associated with the document.</summary>
+      <value>The user token associated with the document. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.ResolveDocumentEventArgs">
+      <summary>Data for the DocumentFactory.LoadDocumentFromCache event.</summary>
+    </member>
+    <member name="M:Leadtools.Document.ResolveDocumentEventArgs.#ctor(Leadtools.Document.LEADDocument,Leadtools.Document.LoadFromCacheOptions)">
+      <summary>Initializes a new instance of ResolveDocumentEventArgs.</summary>
+      <param name="sourceDocument">Source (owner) document being loaded.</param>
+      <param name="loadFromCacheOptions">The options to use when loading this child document.</param>
+    </member>
+    <member name="P:Leadtools.Document.ResolveDocumentEventArgs.Document">
+      <summary>Loaded child document.</summary>
+      <value>The loaded child document. If the handler leaves this value as **null**, then the factory will attempt to load the document using the options set in LoadFromCacheOptions.</value>
+    </member>
+    <member name="P:Leadtools.Document.ResolveDocumentEventArgs.LoadFromCacheOptions">
+      <summary>Options to use when loading this child document.</summary>
+      <value>The options to use when loading this child document.</value>
+    </member>
+    <member name="P:Leadtools.Document.ResolveDocumentEventArgs.SourceDocument">
+      <summary>Source (owner) document being loaded.</summary>
+      <value>The source (owner) document being loaded.</value>
+    </member>
+    <member name="T:Leadtools.Document.SaveAttachmentToCacheOptions">
+      <summary>Options used to save an attachment to the cache.</summary>
+    </member>
+    <member name="M:Leadtools.Document.SaveAttachmentToCacheOptions.#ctor">
+      <summary>Initializes a new instance of SaveAttachmentToCacheOptions.</summary>
+    </member>
+    <member name="M:Leadtools.Document.SaveAttachmentToCacheOptions.Clone">
+      <summary>Creates an exact copy of this object.</summary>
+      <returns>Exact copy of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.SaveAttachmentToCacheOptions.AttachmentNumber">
+      <summary>Attachment number to save.</summary>
+      <value>1-based attachment number to save. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.SaveAttachmentToCacheOptions.UpdateAttachmentDocumentId">
+      <summary>Updates the embedded attachment's document ID if saving is successful.</summary>
+      <value>**true** to automatically update the embedded attachment document ID if saving is successful; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.SaveAttachmentToCacheOptions.UploadDocumentOptions">
+      <summary>Options to use when saving an attachment to the cache.</summary>
+      <value>The options to use when saving an attachment to the cache. The default value is a default UploadDocumentOptions object.</value>
+    </member>
+    <member name="T:Leadtools.Document.SaveDocumentOptions">
+      <summary>Options to use when saving a document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.SaveDocumentOptions.#ctor">
+      <summary>Initializes a new instance of SaveDocumentOptions with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Document.SaveDocumentOptions.Clone">
+      <summary>Returns an exact clone of this object.</summary>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.SaveDocumentOptions.AnnotationsUri">
+      <summary>Path to where the annotations file will be saved.</summary>
+      <value>The path to where the annotations file will be saved. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.SaveDocumentOptions.BitsPerPixel">
+      <summary>Bits per pixel to use when saving the document.</summary>
+      <value>The bits per pixel to use when saving the document. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.SaveDocumentOptions.Format">
+      <summary>Raster image format to use when saving the document.</summary>
+      <value>The raster image format to use when saving the document. Default value is RasterImageFormat.Unknown.</value>
+    </member>
+    <member name="P:Leadtools.Document.SaveDocumentOptions.WebClient">
+      <summary>The .NET System.Net.WebClient object to use when downloading or uploading data from a remote URL.</summary>
+      <value>The .NET System.Net.WebClient object to use when downloading or uploading data from a remote URL. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.UploadDocumentOptions">
+      <summary>Options to use when uploading a document to the cache.</summary>
+    </member>
+    <member name="M:Leadtools.Document.UploadDocumentOptions.#ctor">
+      <summary>Initializes a new instance of UploadDocumentOptions with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Document.UploadDocumentOptions.Clone">
+      <summary>Returns an exact clone of this object.</summary>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.Cache">
+      <summary>The cache to use with the new document.</summary>
+      <value>The cache to use with the new document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.CachePolicy">
+      <summary>The cache policy to use with the new document.</summary>
+      <value>The cache policy to use for the new document that determines when the document and its parts are purged. Default value is</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.DocumentDataLength">
+      <summary>Total length of the data being uploaded.</summary>
+      <value>The total length of the data being uploaded in bytes. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.DocumentId">
+      <summary>The ID to be used with the loaded document.</summary>
+      <value>String that specifies the ID to be used with the loaded document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.EnableStreaming">
+      <summary>Indicates whether direct streaming should be used.</summary>
+      <value>**true** to speed up document upload by using direct streaming; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.MimeType">
+      <summary>MIME type of the document being uploaded.</summary>
+      <value>The MIME type of the document being uploaded if known. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.Name">
+      <summary>Name to use with the document.</summary>
+      <value>Name to use with the document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.PageCount">
+      <summary>Number of pages in the document being uploaded.</summary>
+      <value>The number of pages in the document being uploaded. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.Password">
+      <summary>Optional password to use with encrypted PDF files.</summary>
+      <value>The optional password to use with encrypted PDF files. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.PostUploadOperations">
+      <summary>Optional post-upload operations to perform on the document data.</summary>
+      <value>Dictionary containing the optional post upload operations and their settings to perform on the document data. The default value is an empty dictionary.</value>
+    </member>
+    <member name="P:Leadtools.Document.UploadDocumentOptions.UserToken">
+      <summary>User token associated with the document.</summary>
+      <value>The user token associated with the document. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.ViewRedactionOptions">
+      <summary>Options to use when applying the redactions during view operations.</summary>
+    </member>
+    <member name="M:Leadtools.Document.ViewRedactionOptions.#ctor">
+      <summary>Initializes a new instance of ViewRedactionOptions with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Document.ViewRedactionOptions.Clone">
+      <summary>Creates an exact copy of this object.</summary>
+      <returns>Newly created object that contains the same values as this object.</returns>
+    </member>
+    <member name="T:Leadtools.Document.UserGetDocumentStatusHandler">
+      <summary>MIME whitelist user defined callback type.</summary>
+      <param name="uri">The URI to the document being loaded.</param>
+      <param name="options">The object passed by the user.</param>
+      <param name="source">The source of this callback invocation.</param>
+      <param name="mimeType">The MIME type being checked</param>
+      <returns>Call GetDocumentStatus to continue with the current settings or any other values to manually allow/deny the MIME type.</returns>
+    </member>
+    <member name="T:Leadtools.Document.DocumentCacheOptions">
+      <summary>Determines which extra parts of the document will be stored in the cache.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheOptions.None">
+      <summary>No extra parts of the document is cached. Only what is needed to re-construct the documents and its pages from the cache.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheOptions.PageImage">
+      <summary>Calls to DocumentPage.GetImage will try to save the result in the cache and re-used in subsequent calls.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheOptions.PageSvg">
+      <summary>Calls to DocumentPage.GetSvg will try to save the result in the cache and re-used in subsequent calls.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheOptions.PageSvgBackImage">
+      <summary>Calls to DocumentPage.GetSvgBackImage will try to save the result in the cache and re-used in subsequent calls.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheOptions.PageThumbnailImage">
+      <summary>Calls to DocumentPage.GetThumbnailImage will try to save the result in the cache and re-used in subsequent calls.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheOptions.PageText">
+      <summary>Calls to DocumentPage.GetText will try to save the result in the cache and re-used in subsequent calls.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheOptions.PageAnnotations">
+      <summary>Calls to DocumentPage.GetAnnotations will try to save the result in the cache and re-used in subsequent calls.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheOptions.All">
+      <summary>All results are cached and re-used in subsequent calls.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentCacheStatus">
+      <summary>The status of this document in the cache.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheStatus.Synced">
+      <summary>The document is synced and no saving to cache is required.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentCacheStatus.NotSynced">
+      <summary>The document is not synced and saving to cache is required.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentDataType">
+      <summary>Data type of a LEADDocument.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentDataType.Transient">
+      <summary>The document has been created but has not been saved to the cache yet.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentDataType.Cached">
+      <summary>The document data is saved in the cache.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentDataType.Virtual">
+      <summary>The document is virtual.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentFontStyles">
+      <summary>Font styles.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentHistoryModifyType">
+      <summary>Types of modification (change) that can occur in a document when history tracking is enabled.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentLinkType">
+      <summary>Type of a document link object.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentLinkType.Value">
+      <summary>Use DocumentLink.Value. The link target is an external value.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentLinkType.TargetPage">
+      <summary>Use DocumentLink.Target.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentLoadAttachmentsMode">
+      <summary>Controls how to handle the embedded attachment found in the document during load.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentMimeTypeSource">
+      <summary>Source of a MIME type callback invocation.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentMimeTypeSource.User">
+      <summary>The mime type is passed by the user. For instance, in LoadDocumentOptions.MimeType.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentMimeTypeSource.Cache">
+      <summary>The mime type is stored in the cache, for example, from BeginUploadDocumentOptions.MimeType.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentMimeTypeSource.Url">
+      <summary>The mime type was obtained from the HTTP headers of a URL as set by the server containing the document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentMimeTypeSource.Data">
+      <summary>The mime type is read by LEADTOOLS RasterCodecs from the actual image data.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentMimeTypeStatus">
+      <summary>MIME type status.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentMimeTypeStatus.Unspecified">
+      <summary>Default value. Operation will succeed.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentMimeTypeStatus.Allowed">
+      <summary>Allows documents of this MIME type. Operation will succeed.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentMimeTypeStatus.Denied">
+      <summary>Disallows documents of this MIME type. Operation will fail.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentPageFitType">
+      <summary>Specifies how to fit the page when an internal link is invoked.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentPageFitType.None">
+      <summary>No fitting. Use Position and ZoomPercent if they have valid values.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentPageFitType.Fit">
+      <summary>Show the whole page in the view. If the page is smaller, do not zoom in.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentPageFitType.FitAlways">
+      <summary>Show the whole page in the view. If the page is smaller, zoom in to fit.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentPageFitType.FitWidth">
+      <summary>Fit the view so the whole width of the page is visible.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentPageFitType.FitHeight">
+      <summary>Fit the view so the whole height of the page is visible.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentRedactionMode">
+      <summary>Annotations redaction mode.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentRedactionMode.None">
+      <summary>Do not apply any annotations. Default behavior. All annotations are visible and live during viewing or converting.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentRedactionMode.Apply">
+      <summary>Apply the annotations and keep SVG pages.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentRedactionMode.ApplyThenRasterize">
+      <summary>Apply the annotations and rasterize SVG pages.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentTextExtractionMode">
+      <summary>Mode to use when extracting text from this document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentTextExtractionMode.Auto">
+      <summary>Automatic. This depends on the document type, if it supports SVG, then SVG is used; otherwise, if available use OCR.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentTextExtractionMode.SvgOnly">
+      <summary>Use SVG only if the document supports it. Otherwise, do not extract text.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentTextExtractionMode.OcrOnly">
+      <summary>Use OCR always even if the document supports SVG.</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentTextImagesRecognitionMode">
+      <summary>Indicates how to treat the image elements encountered in the input SVG page during text extraction.</summary>
+    </member>
+    <member name="false">
+      <summary></summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentViewAnnotationsUserMode">
+      <summary>Annotations user mode.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewAnnotationsUserMode.Design">
+      <summary>Annotations.UserModeDesign command</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewAnnotationsUserMode.Run">
+      <summary>Annotations.UserModeRun command</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewAnnotationsUserMode.Render">
+      <summary>Annotations.UserModeRender command</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentViewItemType">
+      <summary>View item type.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewItemType.Image">
+      <summary>ViewItemType with Image command</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewItemType.Svg">
+      <summary>ViewItemType with Svg command</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentViewLayout">
+      <summary>View layout.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewLayout.Single">
+      <summary>Layout.Single command</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewLayout.Vertical">
+      <summary>Layout.Vertical command</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewLayout.Double">
+      <summary>Layout.Double command</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewLayout.Horizontal">
+      <summary>Layout.Horizontal command</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentViewSizeMode">
+      <summary>View size modes.</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewSizeMode.ActualSize">
+      <summary>Show the actual size of the page in the view</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewSizeMode.FitWidth">
+      <summary>Fit to the page width in the view</summary>
+    </member>
+    <member name="F:Leadtools.Document.DocumentViewSizeMode.FitPage">
+      <summary>Fit the page in the view</summary>
+    </member>
+    <member name="T:Leadtools.Document.DocumentCharacter">
+      <summary>Contains the properties of a text character found in the page.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.Bounds">
+      <summary>The bounding rectangle of the character.</summary>
+      <value>The bounding rectangle of the character in document coordinates. Default value is empty rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.Code">
+      <summary>The character code value of this DocumentCharacter.</summary>
+      <value>The character code value of this DocumentCharacter. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.IsEndOfLine">
+      <summary>Gets or sets a value that indicates whether this is the last character in a line.</summary>
+      <value>**true** if this is the last character in a line; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.IsEndOfWord">
+      <summary>Gets or sets a value that indicates whether this is the last character in a word.</summary>
+      <value>**true** if this is the last character in a word; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.IsFromOcr">
+      <summary>Indicates that this character was obtained through an OCR operation.</summary>
+      <value>**true** if this character was obtained through an OCR operation; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.IsLineBreak">
+      <summary>Indicates whether this character has a soft line break.</summary>
+      <value>**true** if this character has a soft line break; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.IsRightToLeft">
+      <summary>Indicates if this character is part of a right-to-left flow of text.</summary>
+      <value>**true** if this character is part of a right-to-left flow of text; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.OcrCharacterIndex">
+      <summary>Index of this character index into the zone collection stored in DocumentPageText.OcrPageCharacters.</summary>
+      <value>0-based index of this character index into the zone collection stored in DocumentPageText.OcrPageCharacters. This value is valid only if IsFromOcr is **true**. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentCharacter.OcrZoneIndex">
+      <summary>Index of this character index into DocumentPageText.OcrPageCharacters.</summary>
+      <value>0-based index of this character into DocumentPageText.OcrPageCharacters. This value is valid only if IsFromOcr is **true**. The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentLink">
+      <summary>Holds the properties of a link inside the document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentLink.Clone">
+      <summary>Returns an exact clone of this object.</summary>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DocumentLink.Bounds">
+      <summary>Link location and position in the page.</summary>
+      <value>The link location and position in the page in document coordinates. Default value is empty rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentLink.LinkType">
+      <summary>Link type.</summary>
+      <value>The link type. Default value is DocumentLinkType.Value.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentLink.Target">
+      <summary>Target properties if this is an internal link.</summary>
+      <value>The target properties if this is an internal link. Default value is a default DocumentLinkTarget structure.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentLink.Value">
+      <summary>Value if this is an external link.</summary>
+      <value>The value of the external link. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentLinkTarget">
+      <summary>Defines the target of an internal link in the document.</summary>
+    </member>
+    <member name="M:Leadtools.Document.DocumentLinkTarget.Clone">
+      <summary>Returns an exact clone of this object.</summary>
+      <returns>Exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.DocumentLinkTarget.PageFitType">
+      <summary>Indicates how to fit the target page.</summary>
+      <value>A value that indicate how to fit the target page. Default value is DocumentPageFitType.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentLinkTarget.PageNumber">
+      <summary>Target page number.</summary>
+      <value>The 1-based target page number. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentLinkTarget.Position">
+      <summary>Target position to use after moving to the page.</summary>
+      <value>The target position to use after moving to the page in document coordinates. Default value is 0,0.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentLinkTarget.ZoomPercent">
+      <summary>Zoom percentage to use after moving to the page.</summary>
+      <value>The zoom percentage to use after moving to the page. Default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Document.DocumentWord">
+      <summary>Contains the properties of a text word found in the page.</summary>
+    </member>
+    <member name="P:Leadtools.Document.DocumentWord.Bounds">
+      <summary>The bounding rectangle of the word.</summary>
+      <value>The bounding word of the character in document coordinates. Default value is empty rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentWord.FirstCharacterIndex">
+      <summary>The index of the first character that forms this word in the Characters list.</summary>
+      <value>The 0-based index of the first character that forms this word in the Characters list. Default value is **0**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentWord.LastCharacterIndex">
+      <summary>The index of the last character that forms this word in the Characters list.</summary>
+      <value>The 0-based index of the last character that forms this word in the Characters list. Default value is **0**.</value>
+    </member>
+    <member name="P:Leadtools.Document.DocumentWord.Value">
+      <summary>The string value of the word.</summary>
+      <value>The string value of the word. Default value is **null**.</value>
+    </member>
+  </members>
+</doc>

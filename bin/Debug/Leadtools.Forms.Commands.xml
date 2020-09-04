@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Commands</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Commands.BankCheckField">
+      <summary>Represents a field from a bank check.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BankCheckField.#ctor(Leadtools.LeadRect)">
+      <summary>Initializes a new BankCheckField class object.</summary>
+      <param name="bounds">Represents the bounds of the initialized field.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BankCheckField.#ctor(System.String,Leadtools.LeadRect)">
+      <summary>Initializes a new BankCheckField class object.</summary>
+      <param name="text">Represents the string value of the initialized field.</param>
+      <param name="bounds">Represent the bounds of the initialized field.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BankCheckField.Bounds">
+      <summary>The field bounds in the processed image</summary>
+      <value>Returns a LeadRect that represents the field bounds in the processed image.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BankCheckField.Text">
+      <summary>A bank check text field (can be empty for some BankCheckFieldTypes.)</summary>
+      <value>String representing a text field value. It can be empty if the field does not have a string value such as in a signature field that is missing the signature.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.BankCheckReader">
+      <summary>Class for reading BankCheckFields in a bank check image.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BankCheckReader.#ctor">
+      <summary>Initializes a new BankCheckReader class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BankCheckReader.Cancel">
+      <summary>A call to this function at any time during processing cancels any further image processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BankCheckReader.ProcessImage(Leadtools.RasterImage)">
+      <summary>Processes RasterImage bank check images.</summary>
+      <param name="image">A RasterImage representing a bank check image.</param>
+    </member>
+    <member name="E:Leadtools.Forms.Commands.BankCheckReader.Process">
+      <summary>Represents a process event.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BankCheckReader.MicrFontType">
+      <summary>The current BankCheckMicrFontType type used for detection and processing. {[NET, Java, Android, iOS, OSX]}</summary>
+      <value>MICR code type used for detection and processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BankCheckReader.OcrEngine">
+      <summary>Gets or sets the IOcrEngine to be used by the BankCheckReader to process an image.</summary>
+      <value>The IOcrEngine that will be used by the BankCheckReader object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BankCheckReader.Results">
+      <summary>Returns a dictionary representing the results from processing the bank check image.</summary>
+      <value>Dictionary containing the results of processing a bank check image.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.BCResult">
+      <summary>Represents a field from a business card image.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BCResult.#ctor">
+      <summary>Initializes a new BCResult class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BCResult.#ctor(System.String,Leadtools.LeadRect,System.Int32)">
+      <summary>Initializes a new instance of BCResult with the specified values.</summary>
+      <param name="str">Text representation of the field obtained through OCR.</param>
+      <param name="rect">Represents the bounds of the initialized field.</param>
+      <param name="confidence">Confidence value of the recognition certainty of text.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BCResult.Bounds">
+      <summary>The field bounds of the business card in the processed image.</summary>
+      <value>Returns a LeadRect that represents the field bounds in the processed image.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BCResult.Confidence">
+      <summary>Confidence value that represents the amount of confidence in the recognition results of a Text.</summary>
+      <value>Value between 0 and 100 where 0 is the lowest confidence value and 100 the highest. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BCResult.Value">
+      <summary>Text representation of the field obtained through OCR.</summary>
+      <value>Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.BusinessCardReader">
+      <summary>Class for reading business card fields.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BusinessCardReader.#ctor(Leadtools.Ocr.IOcrEngine)">
+      <summary>Initializes a new BusinessCardReader class object.</summary>
+      <param name="ocrEngine">IOcrEngine to be used to process an image</param>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BusinessCardReader.#ctor(Leadtools.Ocr.IOcrEngine,Leadtools.Barcode.BarcodeEngine)">
+      <summary>Initializes a new BusinessCardReader class object.</summary>
+      <param name="ocrEngine">IOcrEngine to be used to process an image</param>
+      <param name="barcodeEngine">The BarcodeEngine to be used by the BusinessCardReader object.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.BusinessCardReader.Process(Leadtools.RasterImage)">
+      <summary>Processes RasterImage business card images.</summary>
+      <param name="image">A RasterImage representing a business card image.</param>
+      <returns>BCProcessStatus that represents the status of the recognition.</returns>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BusinessCardReader.BarcodeEngine">
+      <summary>The BarcodeEngine to be used by the BusinessCardReader to process an image.</summary>
+      <value>The BarcodeEngine that will be used by the BusinessCardReader object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BusinessCardReader.EnableQRDoublePass">
+      <summary>Indicates whether to enable the double pass setting when reading QR symbols.</summary>
+      <value>**true** to use double pass when reading QR symbols. Otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BusinessCardReader.EnableQRPreprocessing">
+      <summary>Indicates whether to enable applying auto segmentation and deep auto pre-processing to the image and then re-scanning when no barcodes of this symbology are found.</summary>
+      <value>**true** to apply auto segmentation and deep auto pre-processing to the image then re-scanning when no barcodes of this symbology are found; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BusinessCardReader.OcrEngine">
+      <summary>The IOcrEngine to be used by the BusinessCardReader to process an image.</summary>
+      <value>The IOcrEngine that will be used by the BusinessCardReader object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BusinessCardReader.RecognizeQRCode">
+      <summary>Indicates whether to enable reading QR symbols.</summary>
+      <value>**true** to enable reading QR symbols. Otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.BusinessCardReader.Results">
+      <summary>Returns a list representing the results from processing the business card image.</summary>
+      <value>Key/Value pairs containing the results of processing a business card image. In such pairs, 'Key' represents the field name, and 'Value' represents BCResult.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.FieldResult">
+      <summary>ID card field properties {[NET, Java, Android, iOS, OSX]}</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.FieldResult.#ctor(System.String,System.Int32)">
+      <summary>Initializes a new instance of this class with the specified values. {[NET, Java, Android, iOS, OSX]}</summary>
+      <param name="text">Text representation of the field obtained through OCR</param>
+      <param name="confidence">Confidence value of the recognition certainty of text</param>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.FieldResult.Confidence">
+      <summary>Confidence value that represents the amount of confidence in the recognition results of the Text. {[NET, Java, Android, iOS, OSX]}</summary>
+      <value>Value between 0 and 100 where 0 is the lowest confidence value and 100 the highest. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.FieldResult.Text">
+      <summary>Text representation of the field obtained through OCR. {[NET, Java, Android, iOS, OSX]}</summary>
+      <value>Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.IDCardReader">
+      <summary>ID Card Reader</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.IDCardReader.#ctor(Leadtools.Ocr.IOcrEngine)">
+      <summary>Initializes a new instance of this class.</summary>
+      <param name="ocrEngine">LEADTOOLS OCR engine instance to use for card processing.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.IDCardReader.ProcessFrame(Leadtools.RasterImage)">
+      <summary>Processes a frame of image data.</summary>
+      <param name="image">Frame containing the image data of a card. Must not be **null**.</param>
+      <returns>Refer to IDCardReader for more information.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.IDCardReader.ResetRecognitionData">
+      <summary>Resets the internal engine state.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.IDCardReader.OcrEngine">
+      <summary>OCR engine instance used by this card reader.</summary>
+      <value>The same value passed to the IDCardReader constructor used to create this object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.IDCardReader.Region">
+      <summary>Card region.</summary>
+      <value>The region of the card. Default value is IDCardRegion.USA.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.IDCardReader.Results">
+      <summary>Gets the latest results.</summary>
+      <value>IDCardResults containing the latest card results found using ProcessFrame. Or **null** if</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.IDCardResults">
+      <summary>Results obtained from IDCardReader</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.IDCardResults.#ctor">
+      <summary>Initialized a new instance of IDCardResults.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.IDCardResults.BirthDate">
+      <summary>Birth date of the card holder</summary>
+      <value>Date as a string. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.IDCardResults.Country">
+      <summary>Country or state name that issued the card</summary>
+      <value>For US cards, full name of the state issuring the card, such as North Carolina or California. For EU cards, the full country name Belgium</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.IDCardResults.ExpireDate">
+      <summary>Card expire date</summary>
+      <value>Date as a string. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.IDCardResults.IDNumber">
+      <summary>Card ID number</summary>
+      <value>Card ID number found. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.IDCardResults.IssueDate">
+      <summary>Card issue date</summary>
+      <value>Date as a string. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.MRTDDataElement">
+      <summary>Represents a Data Element of a field in MRTD.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.MRTDDataElement.#ctor(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Boolean)">
+      <summary>Initializes a new MRTDDataElement class object.</summary>
+      <param name="readableValue">Represents the Readable String for the MRTDDataElement.</param>
+      <param name="mrzCharacters">MRZ string for the MRTDDataElement.</param>
+      <param name="lineIndex">Line index for the current MRZ string data in all MRZ strings of the document.</param>
+      <param name="beginIndex">The beginning index for the current MRZ string data in its line.</param>
+      <param name="length">MRZ string data length.</param>
+      <param name="isValid">To check if this data element is valid.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDDataElement.BeginIndex">
+      <summary>Beginning Index for the Data Element.</summary>
+      <value>Returns the Beginning Index for the Data Element in its Line Index.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDDataElement.IsValid">
+      <summary>Validity of Data Element.</summary>
+      <value>If true, Data was read successfully; otherwise, data is invalid.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDDataElement.Length">
+      <summary>Length of the Data Element.</summary>
+      <value>Length of the Data Element (MRZ Value).</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDDataElement.LineIndex">
+      <summary>Data Element Line Index.</summary>
+      <value>Returns the line index that contains this MRTDDataElement.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDDataElement.MrzCharacters">
+      <summary>MRZ Value.</summary>
+      <value>Returns MRZ characters as a string for the MRTDDataElement.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDDataElement.ReadableValue">
+      <summary>Readable Value.</summary>
+      <value>Returns a meaningful string for the MRTDDataElement.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.MRTDReader">
+      <summary>Class for reading MRTDDataElements in an MRTD(Machine Readable Travel Documents) image or MRZ string.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.MRTDReader.#ctor">
+      <summary>Initializes a new MRTDReader class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.MRTDReader.ProcessImage(Leadtools.RasterImage)">
+      <summary>ProcessImage processes a RasterImage containing an MRZ.</summary>
+      <param name="origImage">A RasterImage representing an MRTD document.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.MRTDReader.ProcessText(System.String[])">
+      <summary>Array of strings representing MRZ characters as Lines.</summary>
+      <param name="lines">An Array of strings containing MRZ data.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDReader.Bounds">
+      <summary>A rectangle which represents the Bounds of the MRZ in the processed image.</summary>
+      <value>The Bounds of the MRZ in the processed image.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDReader.Errors">
+      <summary>Errors Processing MRTD.</summary>
+      <value>Errors that prevent the processing of an MRTD.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDReader.ImproveResults">
+      <summary>Improve Results.</summary>
+      <value>If set to true, the Reader will try to help improving results.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDReader.Lines">
+      <summary>An array of MRZ lines of characters.</summary>
+      <value>An array of MRZ character strings.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDReader.OcrEngine">
+      <summary>Gets or sets the IOcrEngine to be used by an MRTDReader to process an image.</summary>
+      <value>The IOcrEngine that will be used by the MRTDReader object to process Image.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.MRTDReader.Results">
+      <summary>Returns a dictionary representing the results of processing the MRTD document.</summary>
+      <value>Dictionary containing the results of processing an MRTD document.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.ProgressEventArgs">
+      <summary>Reports the progress for specific BankCheckReader operations and offers the user an opportunity to cancel them.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Commands.ProgressEventArgs.#ctor(Leadtools.Forms.Commands.BankCheckField,Leadtools.Forms.Commands.BankCheckFieldType,System.Int32,Leadtools.Forms.Commands.ProcessState)">
+      <summary>Initializes a new ProgressEventArgs class object.</summary>
+      <param name="currentField">The current BankCheckField that has been processed by BankCheckReader.</param>
+      <param name="fieldType">The type of field that has been processed or will be processed.</param>
+      <param name="percentage">The current progress percentage for processing a bank check image.</param>
+      <param name="state">The current state for the processing phase.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.ProgressEventArgs.Cancel">
+      <summary>Gets or sets the Cancel flag. When set to true cancels the process.</summary>
+      <value>If set to true it will cancel the process.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.ProgressEventArgs.CurrentField">
+      <summary>The current field that is being processed.</summary>
+      <value>Returns the BankCheckField that has been processed. Returns null if it has not been processed yet.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.ProgressEventArgs.FieldType">
+      <summary>The current BankCheckField type that will be or has been processed.</summary>
+      <value>Type of field that will be or has been processed.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.ProgressEventArgs.Percentage">
+      <summary>The current percentage for processing the bank check image.</summary>
+      <value>An integer value representing the completed processing percentage.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Commands.ProgressEventArgs.State">
+      <summary>The current state for the bank check image processing .</summary>
+      <value>Returns the processing state.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.BankCheckFieldType">
+      <summary>Represents the type of field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckFieldType.None">
+      <summary>Not a field. When the state of processing is Start or Finish, then the BankCheckFieldType is set to BankCheckFieldType.None. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckFieldType.Micr">
+      <summary>Micr field. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckFieldType.Date">
+      <summary>Date field. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckFieldType.Amount">
+      <summary>Amount field. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckFieldType.Name">
+      <summary>Name field. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckFieldType.Signature">
+      <summary>Signature field. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.BankCheckMicrFontType">
+      <summary>Represents the MICR field type.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckMicrFontType.Unknown">
+      <summary>Detects E13b and Cmc7 code.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckMicrFontType.E13b">
+      <summary>Detects E13b code.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BankCheckMicrFontType.Cmc7">
+      <summary>Detects Cmc7 code.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.BCProcessStatus">
+      <summary>Represents the recognition status of the business card image.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BCProcessStatus.Failed">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BCProcessStatus.BlurDetected">
+      <summary>Image is blurred.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BCProcessStatus.GlareDetected">
+      <summary>Image has glare.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.BCProcessStatus.Success">
+      <summary>Image is recognized successfully.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.IDCardRegion">
+      <summary>ID card region identifier</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.IDCardRegion.USA">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.IDCardRegion.EU">
+      <summary></summary>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.MRTDErrors">
+      <summary>Represents MRTD reading Errors.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDErrors.NoError">
+      <summary>No Errors. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDErrors.UnknownDocumentType">
+      <summary>Unknown Document Type. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDErrors.InvalidString">
+      <summary>The Passed String is invalid. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDErrors.InvalidCharacterFound">
+      <summary>The Passed String contain Invalid Characters. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.MRTDField">
+      <summary>Represents MRTD Field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.Type">
+      <summary>The Type of the Document. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.DocumentCode">
+      <summary>The Code of the Document. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.DocumentNumber">
+      <summary>The Number of the Document. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.PassportNumber">
+      <summary>The Number of the Passport. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.IssuingState">
+      <summary>The Issuing State of the Document. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.Name">
+      <summary>The Name of the Document Holder. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.LastName">
+      <summary>The Last name of the Document Holder. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.Sex">
+      <summary>The Sex of the Document Holder. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.Nationality">
+      <summary>The Nationality of the Document Holder. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.DateOfBirth">
+      <summary>The Date Of Birth for the Document Holder. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.DateOfExpiry">
+      <summary>The Date Of Expiry for the Document. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.ValidUntilDate">
+      <summary>Valid Until Date for the Document. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.OptionalData">
+      <summary>The Optional Data for the Document. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.OptionalData2">
+      <summary>The Optional Data for the Document(some documents has two optional Data). </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.IDCardNumber">
+      <summary>The number of the Identification Card. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.PassportNumberCheckDigit">
+      <summary>The Check Digit for Passport number. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.DocumentNumberCheckDigit">
+      <summary>The Check Digit for the Document number. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.IDCardNumberCheckDigit">
+      <summary>The Check Digit for the Id Card number. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.DateOfBirthCheckDigit">
+      <summary>The Check Digit for the Date Of Birth. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.DateOfExpiryCheckDigit">
+      <summary>The Check Digit for the Date Of Expiry. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.ValidUntilDateCheckDigit">
+      <summary>The Check Digit for the "Valid Until Date" field. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.OptionalDataCheckDigit">
+      <summary>The Check Digit for Optional Data. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.CompositeCheckDigit">
+      <summary>The Composite Check Digit. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.MRTDField.OverallCheckDigit">
+      <summary>The Overall Check Digit. </summary>
+      <platforms>NET, Java, Android, iOS, OSX</platforms>
+    </member>
+    <member name="T:Leadtools.Forms.Commands.ProcessState">
+      <summary>Enumeration values that represent the processing state.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.ProcessState.Start">
+      <summary>The processing of fields has started. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.ProcessState.Processed">
+      <summary>A field has been processed. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.ProcessState.WillProcess">
+      <summary>A field will be processed. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Forms.Commands.ProcessState.Finish">
+      <summary>The processing of fields has finished. There are no other fields left to process. </summary>
+      <platforms>NET</platforms>
+    </member>
+  </members>
+</doc>

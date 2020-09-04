@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Common</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Common.PageAlignment">
+      <summary>Contains the information needed to align a Master Form (Form Template) page with the filled-in Form page image.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Common.PageAlignment.#ctor">
+      <summary>Initializes a new instance of PageAlignment.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Common.PageAlignment.AlignOmrRectangle(Leadtools.LeadRect)">
+      <summary>Returns a LeadRect that is aligned to the form that has generated this PageAlignment.</summary>
+      <param name="rectangle">The original LeadRect to align. This LeadRect should be in Master Form coordinates.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Common.PageAlignment.AlignRectangle(Leadtools.LeadRect)">
+      <summary>Returns a LeadRect that is aligned to the form that has generated this PageAlignment.</summary>
+      <param name="rectangle">The original LeadRect to align. This LeadRect should be in Master Form coordinates.</param>
+    </member>
+    <member name="T:Leadtools.Forms.Common.PageProgressCallbackData">
+      <summary>Data for the PageProgressCallback delegate.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Common.PageProgressCallbackData.#ctor">
+      <summary>Initializes a new instance of PageProgressCallbackData.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Common.PageProgressCallbackData.Percentage">
+      <summary>Gets the progress of the current operation, expressed as a percentage.</summary>
+      <value>A value between 0 and 100 that represents the percent completion of the process.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Common.FormProgressCallback">
+      <summary>Optional delegate method that reports the progress of a specific operation and offers the client an opportunity to cancel.</summary>
+      <param name="currentPage">The 1-based index of the current page.</param>
+      <param name="totalPages">The total number of pages.</param>
+      <param name="percentage">A value between 0 and 100 that represents the percent completion of the process.</param>
+      <returns>true to continue the process, false to cancel the process.</returns>
+    </member>
+    <member name="T:Leadtools.Forms.Common.PageProgressCallback">
+      <summary>Monitors the progress of the form's page operations.</summary>
+      <param name="data">An instance of the PageProgressCallbackData interface containing the progress callback data.</param>
+    </member>
+    <member name="T:Leadtools.Forms.Common.FormsPageType">
+      <summary>Represents the Page type.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Common.FormsPageType.Normal">
+      <summary>Normal(General) page from a document, an invoice, or any other type of document that is not specified in any other members of the FormsPageType enumeration.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Common.FormsPageType.IDCard">
+      <summary>An ID card (For example, Driving License, Identification card, Library card, Passport, etc.)..</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Common.FormsPageType.Omr">
+      <summary>Optical mark recognition.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Common.FormsRecognitionMethod">
+      <summary>Represents the Method used for recognition.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Common.FormsRecognitionMethod.Complex">
+      <summary>Complex Method that takes more time than the Simple Method, but can recognize almost all forms. This method is affected by which FormsTradeoffMode is selected in the Leadtools.Forms.Recognition.PageRecognitionOptions.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Common.FormsRecognitionMethod.Simple">
+      <summary>Simple method that takes less time than the Complex Method. Although it can recognize most forms passed to it, it cannot recognize forms that contain invoices.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Common.FormsTradeoffMode">
+      <summary>Represents criteria values to use with the trade-off algorithm for recognition.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Common.FormsTradeoffMode.Accurate">
+      <summary>Highest accuracy mode. Used to recognize and process forms at any resolution.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Common.FormsTradeoffMode.Balanced">
+      <summary>High speed. Used to recognize and process forms that have resolutions similar to their master forms with moderate text.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Common.FormsTradeoffMode.Fast">
+      <summary>Highest speed. Used to recognize and process forms that have resolutions similar to their master forms with abundant text.</summary>
+    </member>
+  </members>
+</doc>

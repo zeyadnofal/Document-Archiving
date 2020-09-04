@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Windows.Media.Effects</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Windows.Media.Effects.BrightExtractEffect">
+      <summary>Adjust the image brightness based on the given threshold.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.BrightExtractEffect.#ctor">
+      <summary>Initializes a new instance of the BrightExtractEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.BrightExtractEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.BrightExtractEffect.Threshold">
+      <summary>Gets or sets brightness threshold. This is a dependency property.</summary>
+      <value>The brightness threshold. Default value is 0.5.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.BrightExtractEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.BrightExtractEffect.ThresholdProperty">
+      <summary>Identifies the Threshold dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.CircularShutterEffect">
+      <summary>Creates a circular or elliptical shutter effect by using a center point, radius, aspect ratio and a color to clear the area outside the shutter.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.CircularShutterEffect.#ctor">
+      <summary>Initializes a new instance of the CircularShutterEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.CircularShutterEffect.AspectRatio">
+      <summary>Gets or sets aspect ratio of the shutter. This is a dependency property.</summary>
+      <value>The aspect ratio of the shutter. This value is multiplied by the Radius value to generate an elliptical shutter. Default value is 1.5.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.CircularShutterEffect.Center">
+      <summary>Gets or sets center of the shutter. This is a dependency property.</summary>
+      <value>The center of the shutter. The value is a percentage of the image size. Default value is 0.5, 0.5.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.CircularShutterEffect.ClearColor">
+      <summary>Gets or sets the color to use to clear the area outside the shutter. This is a dependency property.</summary>
+      <value>The color to use to clear the area outside the shutter. Default value is a solid Black color.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.CircularShutterEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.CircularShutterEffect.Radius">
+      <summary>Gets or sets the radius of the shutter. This is a dependency property.</summary>
+      <value>The radius of the shutter. The value is a percentage of the image size. Default value is 0.25.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CircularShutterEffect.AspectRatioProperty">
+      <summary>Identifies the AspectRatio dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CircularShutterEffect.CenterProperty">
+      <summary>Identifies the Center dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CircularShutterEffect.ClearColorProperty">
+      <summary>Identifies the ClearColor dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CircularShutterEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CircularShutterEffect.RadiusProperty">
+      <summary>Identifies the Radius dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.ContrastAdjustEffect">
+      <summary>Enhances the image colors by adjusting the image brightness and contrast using specified values.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.ContrastAdjustEffect.#ctor">
+      <summary>Initializes a new instance of the ContrastAdjustEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.ContrastAdjustEffect.Brightness">
+      <summary>Gets or sets the value to use to adjust the image brightness. This is a dependency property.</summary>
+      <value>The value to use to adjust the image brightness. Default value is 0.0.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.ContrastAdjustEffect.Contrast">
+      <summary>Gets or sets the value to use to adjust the image saturation. This is a dependency property.</summary>
+      <value>The value to use to adjust the image saturation. Default value is 1.2.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.ContrastAdjustEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.ContrastAdjustEffect.BrightnessProperty">
+      <summary>Identifies the Brightness dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.ContrastAdjustEffect.ContrastProperty">
+      <summary>Identifies the Contrast dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.ContrastAdjustEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.DesaturateEffect">
+      <summary>Increase or decrease the image saturation based on the given parameter.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.DesaturateEffect.#ctor">
+      <summary>Initializes a new instance of the DesaturateEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.DesaturateEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.DesaturateEffect.Saturation">
+      <summary>Gets or sets the amount to change the saturation of each pixel. This is a dependency property.</summary>
+      <value>The amount to change the saturation of each pixel. Default value is 0.5.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.DesaturateEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.DesaturateEffect.SaturationProperty">
+      <summary>Identifies the Saturation dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.EdgeDetectEffect">
+      <summary>Detects the edges of the image based on threshold and an input matrix.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.EdgeDetectEffect.#ctor">
+      <summary>Initializes a new instance of the EdgeDetectEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EdgeDetectEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EdgeDetectEffect.InputSize">
+      <summary>Gets or sets the size of the optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Size that specifies the size of the optional result of this effect. Default value is 800 by 600.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EdgeDetectEffect.KernelPos1">
+      <summary>Gets or sets the value of the first edge detection matrix item. This is a dependency property.</summary>
+      <value>The value of first edge detection matrix item. Default value is 1.0.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EdgeDetectEffect.KernelPos2">
+      <summary>Gets or sets the value of the second edge detection matrix item. This is a dependency property.</summary>
+      <value>The value of the second edge detection matrix item. Default value is 2.0.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EdgeDetectEffect.KernelPos3">
+      <summary>Gets or sets the value of the third edge detection matrix item. This is a dependency property.</summary>
+      <value>The value of the third edge detection matrix item. Default value is 1.0.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EdgeDetectEffect.Threshold">
+      <summary>Gets or sets threshold used to detect the edge of the image. This is a dependency property.</summary>
+      <value>The threshold used to detect the edge of the image. Default value is 0.5.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EdgeDetectEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EdgeDetectEffect.InputSizeProperty">
+      <summary>Identifies the InputSize dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EdgeDetectEffect.KernelPos1Property">
+      <summary>Identifies the KernelPos1 dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EdgeDetectEffect.KernelPos2Property">
+      <summary>Identifies the KernelPos2 dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EdgeDetectEffect.KernelPos3Property">
+      <summary>Identifies the KernelPos3 dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EdgeDetectEffect.ThresholdProperty">
+      <summary>Identifies the Threshold dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.EmbossEffect">
+      <summary>Applies an emboss effect to an image, letting you specify the depth and shift of the effect.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.EmbossEffect.#ctor">
+      <summary>Initializes a new instance of the EmbossEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EmbossEffect.Amount">
+      <summary>Gets or sets the amount of the emboss value. This is a dependency property.</summary>
+      <value>The amount of the emboss value. Default value is 0.5.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EmbossEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.EmbossEffect.Width">
+      <summary>Gets or sets the amount of the shift used to render the emboss effect. This is a dependency property.</summary>
+      <value>The amount of the shift used to render the emboss effect. Default value is 0.003.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EmbossEffect.AmountProperty">
+      <summary>Identifies the Amount dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EmbossEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.EmbossEffect.WidthProperty">
+      <summary>Identifies the Width dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.IntensityDetectEffect">
+      <summary>Applies binary segmentation to an image by filtering the specified image to detect colors in a specified intensity range.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.IntensityDetectEffect.#ctor">
+      <summary>Initializes a new instance of the IntensityDetectEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.IntensityDetectEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.IntensityDetectEffect.Intensity">
+      <summary>Gets or sets the threshold of the color intensity values. This is a dependency property.</summary>
+      <value>The threshold of the color intensity values. Default value is 128.5.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.IntensityDetectEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.IntensityDetectEffect.IntensityProperty">
+      <summary>Identifies the Intensity dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.InvertEffect">
+      <summary>Inverts the colors in the specified image, giving it the appearance of a photographic negative.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.InvertEffect.#ctor">
+      <summary>Initializes a new instance of the InvertEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.InvertEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.InvertEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.MagnifyGlassEffect">
+      <summary>Creates an effect that can be used to zoom in on a portion of an image with options to specify size, shape and color of the magnify glass and crosshairs.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.#ctor">
+      <summary>Initializes a new instance of the MagnifyGlassEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.AspectRatio">
+      <summary>Gets or sets aspect ratio of the magnify glass. This is a dependency property.</summary>
+      <value>The aspect ratio of the magnify glass. This value is multiplied by the Radius value to generate an elliptical magnify glass. Default value is 1.5.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.Border">
+      <summary>Gets or sets a value indicating whether to draw the border of this magnify glass. This is a dependency property.</summary>
+      <value>1.0 to draw the border; otherwise, hide it. Default value is 1.0.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.Center">
+      <summary>Gets or sets center of the magnify glass. This is a dependency property.</summary>
+      <value>The center of the magnify glass. The valus is a percentage of the image size. Default value is 0.5, 0.5.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.Color">
+      <summary>Gets or sets the color to use to draw the border and crosshairs of this magnify glass. This is a dependency property.</summary>
+      <value>The color to use to draw the border and crosshairs of this magnify glass. Default value is White.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.CrossHairs">
+      <summary>Gets or sets a value indicating whether to draw the crosshairs of this magnify glass. This is a dependency property.</summary>
+      <value>1.0 to draw the crosshairs; otherwise, hide it. Default value is 1.0.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.Radius">
+      <summary>Gets or sets the radius of the magnify glass. This is a dependency property.</summary>
+      <value>The radius of the magnify glass. The value is a percentage of the image size. Default value is 0.25.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.ScaleFactor">
+      <summary>Gets or sets the amount of the scale factor to use in this magnify glass. This is a dependency property.</summary>
+      <value>The amount of the scale factor to use in this magnify glass. Default value is 2.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.AspectRatioProperty">
+      <summary>Identifies the AspectRatio dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.BorderProperty">
+      <summary>Identifies the Border dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.CenterProperty">
+      <summary>Identifies the Center dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.ColorProperty">
+      <summary>Identifies the Color dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.CrossHairsProperty">
+      <summary>Identifies the CrossHairs dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.RadiusProperty">
+      <summary>Identifies the Radius dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.MagnifyGlassEffect.ScaleFactorProperty">
+      <summary>Identifies the ScaleFactor dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.RectangularShutterEffect">
+      <summary>Creates a rectangular shutter effect by using a center point, shutter size and a color to clear the area outside the shutter.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.RectangularShutterEffect.#ctor">
+      <summary>Initializes a new instance of the RectangularShutterEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.RectangularShutterEffect.Center">
+      <summary>Gets or sets center of the shutter. This is a dependency property.</summary>
+      <value>The center of the shutter. The valus is a percentage of the image size. Default value is 0.5, 0.5.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.RectangularShutterEffect.ClearColor">
+      <summary>Gets or sets the color to use to clear the area outside the shutter. This is a dependency property.</summary>
+      <value>The color to use to clear the area outside the shutter. Default value is a solid Black color.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.RectangularShutterEffect.Height">
+      <summary>Gets or sets height of the shutter. This is a dependency property.</summary>
+      <value>The height of the shutter. The value is a percentage of the image size. Default value is 0.3.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.RectangularShutterEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.RectangularShutterEffect.Width">
+      <summary>Gets or sets the width of the shutter. This is a dependency property.</summary>
+      <value>The width of the shutter. The value is a percentage of the image size. Default value is 0.5.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.RectangularShutterEffect.CenterProperty">
+      <summary>Identifies the Center dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.RectangularShutterEffect.ClearColorProperty">
+      <summary>Identifies the ClearColor dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.RectangularShutterEffect.HeightProperty">
+      <summary>Identifies the Height dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.RectangularShutterEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.RectangularShutterEffect.WidthProperty">
+      <summary>Identifies the Width dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.SharpenEffect">
+      <summary>Increases or decreases the sharpness of this image.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.SharpenEffect.#ctor">
+      <summary>Initializes a new instance of the SharpenEffect class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.SharpenEffect.Amount">
+      <summary>Gets or sets the amount to change the sharpness. This is a dependency property.</summary>
+      <value>The amount to change the sharpness.Negative sharpness values decrease the sharpness of the image and positive sharpness values increase the sharpness. Default value is 1.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.SharpenEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.SharpenEffect.InputSize">
+      <summary>Gets or sets the size of the optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Size that specifies the size of the optional result of this effect. Default value is 800 by 600.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.SharpenEffect.AmountProperty">
+      <summary>Identifies the Amount dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.SharpenEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.SharpenEffect.InputSizeProperty">
+      <summary>Identifies the InputSize dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.WindowLevelEffect">
+      <summary>Fills and applies window leveling on the specified image.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.WindowLevelEffect.#ctor">
+      <summary>Initializes a new instance of the WindowLevelEffect class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.WindowLevelEffect.#ctor(Leadtools.RasterImage)">
+      <summary>Initializes a new instance of the WindowLevelEffect class with the specified parameters.</summary>
+      <param name="image">The LEADTOOLS Leadtools.RasterImage containing the grayscale image.</param>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.WindowLevelEffect.CreateGrayTexture(Leadtools.RasterImage)">
+      <summary>Helper method to create the grayscale brush required by this effect from a LEADTOOLS Leadtools.RasterImage.</summary>
+      <param name="image">The input LEADTOOLS Leadtools.RasterImage.</param>
+      <returns>An System.Windows.Media.ImageBrush object containing the grayscale texture.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.WindowLevelEffect.FillGrayTexture(Leadtools.RasterImage)">
+      <summary>Initializes the GrayTexture property of this effect from the specified Leadtools.RasterImage.</summary>
+      <param name="image">The LEADTOOLS Leadtools.RasterImage containing the grayscale image.</param>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Effects.WindowLevelEffect.OnCurveTypeChanged(DependencyPropertyChangedEventArgs)">
+      <summary>Occurs when the value of the CurveType property changes.</summary>
+      <param name="e">A System.Windows.DependencyPropertyChangedEventArgs that contains the event data.</param>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.WindowLevelEffect.CurveType">
+      <summary>Gets or sets a value that specifies how the range is used to fill the LUT and the type of LUT. This is a dependency property.</summary>
+      <value>An CurveType enumeration member that specifies how the range is used to fill the LUT and the type of LUT. Default value is CurveType.Linear.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.WindowLevelEffect.End">
+      <summary>Gets or sets the ending color value for the gradient. This is a dependency property.</summary>
+      <value>a System.Windows.Media.Color that specifies the ending color value for the gradient. Default value is White.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.WindowLevelEffect.Factor">
+      <summary>Gets or sets the factor to be applied in the function operation specified in CurveType. This is a dependency property.</summary>
+      <value>The factor to be applied in the function operation specified in CurveType. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.WindowLevelEffect.GrayTexture">
+      <summary>Gets or sets the gray texture to use with this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the gray texture to use with this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.WindowLevelEffect.Input">
+      <summary>Gets or sets an optional brush that represents the result of this effect. This is a dependency property.</summary>
+      <value>A System.Windows.Media.Brush that specifies the optional result of this effect. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.WindowLevelEffect.Start">
+      <summary>Gets or sets the starting color value for the gradient. This is a dependency property.</summary>
+      <value>a System.Windows.Media.Color that specifies the starting color value for the gradient. Default value is Black.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.WindowLevelEffect.WindowCenter">
+      <summary>Gets or sets the center of the window used in this effect. This is a dependency property.</summary>
+      <value>The center of the window used in this effect. Default value is 32768.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Effects.WindowLevelEffect.WindowWidth">
+      <summary>Gets or sets the width of the window used in this effect. This is a dependency property.</summary>
+      <value>The width of the window used in this effect. Default value is 65536.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.WindowLevelEffect.CurveTypeProperty">
+      <summary>Identifies the CurveType dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.WindowLevelEffect.EndProperty">
+      <summary>Identifies the End dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.WindowLevelEffect.FactorProperty">
+      <summary>Identifies the Factor dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.WindowLevelEffect.GrayTextureProperty">
+      <summary>Identifies the GrayTexture dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.WindowLevelEffect.InputProperty">
+      <summary>Identifies the Input dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.WindowLevelEffect.StartProperty">
+      <summary>Identifies the Start dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.WindowLevelEffect.WindowCenterProperty">
+      <summary>Identifies the WindowCenter dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.WindowLevelEffect.WindowWidthProperty">
+      <summary>Identifies the WindowWidth dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Effects.CurveType">
+      <summary>Options to specify how the range is used to fill the LUT and the type of LUT.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CurveType.Linear">
+      <summary>LUT is leaner</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CurveType.Logarithmic">
+      <summary>LUT is logarithmic.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CurveType.Exponential">
+      <summary>LUT is exponential.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Effects.CurveType.Sigmoid">
+      <summary>LUT is sigmoid.</summary>
+      <platforms>NET</platforms>
+    </member>
+  </members>
+</doc>

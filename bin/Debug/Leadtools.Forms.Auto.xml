@@ -1,0 +1,1083 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Auto</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsEngine">
+      <summary>Provides high level form recognition and processing functionalities to recognize, process, and create forms. It uses the provided Master Form IMasterFormsRepository to recognize form type and process its fields.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.#ctor(Leadtools.Forms.Auto.AutoFormsEngineCreateOptions)">
+      <summary>Initializes a new instance of AutoFormsEngine with the specified options.</summary>
+      <param name="createOptions">Options to use when creating the engine. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.#ctor(Leadtools.Forms.Auto.IMasterFormsRepository,Leadtools.Ocr.IOcrEngine,Leadtools.Barcode.BarcodeEngine)">
+      <summary>Initializes a new AutoFormsEngine class object.</summary>
+      <param name="repository">Repository of Master Forms.</param>
+      <param name="ocrEngine">The Leadtools.Ocr.IOcrEngine that is used for optical character recognition and processing.</param>
+      <param name="barcodeEngine">The Leadtools.Barcode.BarcodeEngine that is used for barcode recognition and processing.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.#ctor(Leadtools.Forms.Auto.IMasterFormsRepository,Leadtools.Ocr.IOcrEngine,Leadtools.Barcode.BarcodeEngine,Leadtools.Forms.Auto.AutoFormsRecognitionManager)">
+      <summary>Initializes a new AutoFormsEngine class object.</summary>
+      <param name="repository">Repository of Master Forms.</param>
+      <param name="ocrEngine">The Leadtools.Ocr.IOcrEngine that is used for optical character recognition and processing.</param>
+      <param name="barcodeEngine">The Leadtools.Barcode.BarcodeEngine that is used for barcode recognition and processing.</param>
+      <param name="managers">The Object Managers to be used to recognize forms and generate Master Forms attributes in GenerateMasterFormAttributes.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.#ctor(Leadtools.Forms.Auto.IMasterFormsRepository,Leadtools.Ocr.IOcrEngine,Leadtools.Barcode.BarcodeEngine,Leadtools.Forms.Auto.AutoFormsRecognitionManager,System.Int32,System.Int32,System.Boolean)">
+      <summary>Initializes a new AutoFormsEngine class object.</summary>
+      <param name="repository">Repository of Master Forms.</param>
+      <param name="ocrEngine">The Leadtools.Ocr.IOcrEngine that is used for optical character recognition and processing.</param>
+      <param name="barcodeEngine">The Leadtools.Barcode.BarcodeEngine that is used for barcode recognition and processing.</param>
+      <param name="managers">The Object Managers to be used to recognize forms and generate Master Forms attributes in GenerateMasterFormAttributes.</param>
+      <param name="minimumConfidenceKnownForm">The minimum confidence value to decide that the Form type result is a known type. It ranges from 0 to 100 and usually it is less than \minimumConfidenceRecognized\.</param>
+      <param name="minimumConfidenceRecognized">The minimum confidence value to decide that the Form type is recognized and no further comparison with Master Forms is needed. It ranges from 0 to 100 and usually it is greater than \minimumConfidenceKnownForm\.</param>
+      <param name="recognizeFirstPageOnly">Recognize the form based on the first page only.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.#ctor(Leadtools.Forms.Auto.IMasterFormsRepository,Leadtools.Ocr.IOcrEngine,Leadtools.Barcode.BarcodeEngine,System.Int32,System.Int32,System.Boolean)">
+      <summary>Initializes a new AutoFormsEngine class object.</summary>
+      <param name="repository">Repository of Master Forms.</param>
+      <param name="ocrEngine">The Leadtools.Ocr.IOcrEngine that is used for optical character recognition and processing.</param>
+      <param name="barcodeEngine">The Leadtools.Barcode.BarcodeEngine that is used for barcode recognition and processing.</param>
+      <param name="minimumConfidenceKnownForm">The minimum confidence value to decide that the Form type result is a known type. It ranges from 0 to 100 and usually it is less than \minimumConfidenceRecognized\.</param>
+      <param name="minimumConfidenceRecognized">The minimum confidence value to decide that the Form type is recognized and no further comparison with Master Forms is needed. It ranges from 0 to 100 and usually it is greater than \minimumConfidenceKnownForm\.</param>
+      <param name="recognizeFirstPageOnly">Recognize the form based on the first page only.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.CreateProcessingOcrEngine(Leadtools.Ocr.OcrEngineType,Leadtools.Codecs.RasterCodecs,Leadtools.Document.Writer.DocumentWriter,System.String,System.String)">
+      <summary>Create and startup OCR engine instance suitable for forms processing.</summary>
+      <param name="ocrEngineType">OCR engine type. Passed to OcrEngineManager.CreateEngine.</param>
+      <param name="rasterCodecs">Raster codecs instance passed to IOcrEngine.Startup.</param>
+      <param name="documentWriter">Document writer instance passed to IOcrEngine.Startup.</param>
+      <param name="workDirectory">Work directory value passed to IOcrEngine.Startup.</param>
+      <param name="startUpParameters">Startup parameters value passed to IOcrEngine.Startup.</param>
+      <returns>An instance of IOcrEngine that started and setup with settings suitable for forms processing.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.CreateRecognitionOcrEngine(Leadtools.Ocr.OcrEngineType,Leadtools.Codecs.RasterCodecs,Leadtools.Document.Writer.DocumentWriter,System.String,System.String)">
+      <summary>Create and startup OCR engine instance suitable for forms recognition.</summary>
+      <param name="ocrEngineType">OCR engine type. Passed to OcrEngineManager.CreateEngine.</param>
+      <param name="rasterCodecs">Raster codecs instance passed to IOcrEngine.Startup.</param>
+      <param name="documentWriter">Document writer instance passed to IOcrEngine.Startup.</param>
+      <param name="workDirectory">Work directory value passed to IOcrEngine.Startup.</param>
+      <param name="startUpParameters">Startup parameters value passed to IOcrEngine.Startup.</param>
+      <returns>An instance of IOcrEngine that started and setup with settings suitable for forms recognition.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.DeleteMasterFormsFromFullTextSearch">
+      <summary>Delete all the master forms in the repository from the full text search engine database.</summary>
+      <returns>This method will loop through all the master forms in the IMasterFormsRepository set in this engine and delete each</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.GenerateMasterFormAttributes(Leadtools.RasterImage,System.String,Guid,Leadtools.Forms.Recognition.FormRecognitionOptions,Leadtools.Forms.Recognition.PageRecognitionOptions)">
+      <summary>Generate master Form attributes based on the Object Managers set when this AutoFormsEngine object is constructed.</summary>
+      <param name="image">Master form image, it must have all master form page images.</param>
+      <param name="name">The Master Form name.</param>
+      <param name="id">The Master Form ID.</param>
+      <param name="formOptions">Specifies the options for the Master Form.</param>
+      <param name="pagesOptions">List of Leadtools.Forms.Recognition.PageRecognitionOptions for all form pages.</param>
+      <returns>Returns the Master Forms attributes if the set Object Managers are able to extract its features, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.GetMinimumRecognizedConfidenceForm">
+      <summary>Automatically finds the minimum confidence value that is needed to consider an unknown form as recognized and no further Master Form comparison is needed.</summary>
+      <returns>The minimum confidence value that is needed to consider unknown form as recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.GetMinimumRecognizedConfidencePage">
+      <summary>Automatically finds the minimum confidence value that is needed to consider an unknown page as recognized and no further Master Form Pages comparison is needed.</summary>
+      <returns>The minimum confidence value that is needed to consider unknown page is recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessForm(Leadtools.RasterImage,Leadtools.Forms.Auto.PageRequestCallback,System.Object,Leadtools.Forms.Auto.AutoFormsRecognizeFormResult)">
+      <summary>Performs field processing on the recognized form image.</summary>
+      <param name="form">The recognized Form image.</param>
+      <param name="pageRequestCallback">Page request callback if more form images are needed.</param>
+      <param name="userData">The user defined data that is associated with PageRequestCallback.</param>
+      <param name="formResult">The form recognition result that has been returned by RecognizeForm(RasterImage,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <returns>The processed fields if the Master Form has fields, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessForm(Leadtools.RasterImage,Leadtools.Forms.Auto.PageRequestCallback,System.Object,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages)">
+      <summary>Performs field processing on the recognized form image.</summary>
+      <param name="form">The recognized Form image.</param>
+      <param name="pageRequestCallback">Page request callback if more form images are needed.</param>
+      <param name="userData">The user defined data that is associated with PageRequestCallback.</param>
+      <param name="masterAttributes">The Master Form attributes of the form type.</param>
+      <param name="formFields">The fields to be processed for the Master Form of the form type.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessForm(System.IO.Stream,Leadtools.Forms.Auto.AutoFormsRecognizeFormResult)">
+      <summary>Performs field processing on the recognized form image.</summary>
+      <param name="stream">A System.IO.Stream containing the unknown form image data.</param>
+      <param name="formResult">The form recognition result that has been returned by RecognizeForm(RasterImage,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <returns>The processed fields if the Master Form has fields, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessForm(System.IO.Stream,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages)">
+      <summary>Performs field processing on the recognized form image.</summary>
+      <param name="stream">A System.IO.Stream containing the unknown form image data.</param>
+      <param name="masterAttributes">The Master Form attributes of the form type.</param>
+      <param name="formFields">The fields to be processed for the Master Form of the form type.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessForm(System.String,Leadtools.Forms.Auto.AutoFormsRecognizeFormResult)">
+      <summary>Performs field processing on the recognized form image.</summary>
+      <param name="fileName">A System.String containing the unknown form image file.</param>
+      <param name="formResult">The form recognition result that has been returned by RecognizeForm(RasterImage,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <returns>The processed fields if the Master Form has fields, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessForm(System.String,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages)">
+      <summary>Performs field processing on the recognized form image.</summary>
+      <param name="fileName">A System.String containing the unknown form image file.</param>
+      <param name="masterAttributes">The Master Form attributes of the form type.</param>
+      <param name="formFields">The fields to be processed for the Master Form of the form type.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessForm(System.Uri,Leadtools.Forms.Auto.AutoFormsRecognizeFormResult)">
+      <summary>Performs field processing on the recognized form image.</summary>
+      <param name="url">A System.Uri containing the unknown form image data.</param>
+      <param name="formResult">The form recognition result that has been returned by RecognizeForm(RasterImage,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <returns>The processed fields if the Master Form has fields, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessForm(System.Uri,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages)">
+      <summary>Performs field processing on the recognized form image.</summary>
+      <param name="url">A System.Uri containing the unknown form image data.</param>
+      <param name="masterAttributes">The Master Form attributes of the form type.</param>
+      <param name="formFields">The fields to be processed for the Master Form of the form type.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(Leadtools.RasterImage,System.Int32,Leadtools.Forms.Auto.AutoFormsRecognizeFormResult,System.Int32)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="page">The recognized page image.</param>
+      <param name="pageNumber">1-based index of the in \page\.</param>
+      <param name="formResult">The recognition result of the form that is returned by RecognizeForm(RasterImage,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <param name="formPageNumber">The form page number to be processed.</param>
+      <returns>The processed fields of the page they exist, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(Leadtools.RasterImage,System.Int32,Leadtools.Forms.Auto.AutoFormsRecognizePageResult)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="page">The recognized page image.</param>
+      <param name="pageNumber">1-based index of the in \page\.</param>
+      <param name="pageResult">The recognition result of the page that is returned by RecognizePage(RasterImage,Int32,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <returns>The processed fields of the page if they exist, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(Leadtools.RasterImage,System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPage)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="page">The recognized page image.</param>
+      <param name="pageNumber">1-based index of the in \page\.</param>
+      <param name="masterAttributes">Master Form attributes of the recognized page type.</param>
+      <param name="pageFields">Page fields to process.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.IO.Stream,System.Int32,Leadtools.Forms.Auto.AutoFormsRecognizeFormResult,System.Int32)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="stream">A System.IO.Stream containing the recognized page image data.</param>
+      <param name="pageNumber">1-based index of the in \stream\.</param>
+      <param name="formResult">The recognition result of the form that is returned by RecognizeForm(RasterImage,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <param name="formPageNumber">The form page number to be processed.</param>
+      <returns>The processed fields of the page if they exist, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.IO.Stream,System.Int32,Leadtools.Forms.Auto.AutoFormsRecognizePageResult)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="stream">A System.IO.Stream containing the recognized page image date.</param>
+      <param name="pageNumber">1-based index of the in \stream\.</param>
+      <param name="pageResult">The recognition result of the page that is returned by RecognizePage(RasterImage,Int32,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <returns>The processed fields of the page if they exist, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.IO.Stream,System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPage)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="stream">A System.IO.Stream containing the recognized page image data.</param>
+      <param name="pageNumber">1-based index of the in \stream\.</param>
+      <param name="masterAttributes">Master Form attributes of the recognized page type.</param>
+      <param name="pageFields">Page fields to process.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.String,System.Int32,Leadtools.Forms.Auto.AutoFormsRecognizeFormResult,System.Int32)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="fileName">A System.String containing the recognized page image file.</param>
+      <param name="pageNumber">1-based index of the in \fileName\.</param>
+      <param name="formResult">The recognition result of the form that is returned by RecognizeForm(RasterImage,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <param name="formPageNumber">The form page number to be processed.</param>
+      <returns>The processed fields of the page if they exist, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.String,System.Int32,Leadtools.Forms.Auto.AutoFormsRecognizePageResult)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="fileName">A System.String containing the recognized page image file.</param>
+      <param name="pageNumber">1-based index of the in \fileName\.</param>
+      <param name="pageResult">The recognition result of the page that is returned by RecognizePage(RasterImage,Int32,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <returns>The processed fields of the page if they exist, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.String,System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPage)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="fileName">A System.String containing the recognized page image file.</param>
+      <param name="pageNumber">1-based index of the in \fileName\.</param>
+      <param name="masterAttributes">Master Form attributes of the recognized page type.</param>
+      <param name="pageFields">Page fields to process.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.Uri,System.Int32,Leadtools.Forms.Auto.AutoFormsRecognizeFormResult,System.Int32)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="url">A System.Uri containing the recognized page image data.</param>
+      <param name="pageNumber">1-based index of the in \url\.</param>
+      <param name="formResult">The recognition result of the form that is returned by RecognizeForm(RasterImage,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <param name="formPageNumber">The form page number to be processed.</param>
+      <returns>The processed fields of the page if they exist, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.Uri,System.Int32,Leadtools.Forms.Auto.AutoFormsRecognizePageResult)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="url">A System.Uri containing the recognized page image date.</param>
+      <param name="pageNumber">1-based index of the in \url\.</param>
+      <param name="pageResult">The recognition result of the page that is returned by RecognizePage(RasterImage,Int32,List\&lt;IMasterFormsCategory\&gt;).</param>
+      <returns>The processed fields of the page if they exist, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.ProcessPage(System.Uri,System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPage)">
+      <summary>Performs field processing on the recognized page image.</summary>
+      <param name="url">A System.Uri containing the recognized page image data.</param>
+      <param name="pageNumber">1-based index of the in \url\.</param>
+      <param name="masterAttributes">Master Form attributes of the recognized page type.</param>
+      <param name="pageFields">Page fields to process.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizeForm(Leadtools.RasterImage,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Recognize the unknown form type.</summary>
+      <param name="form">Form image.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>The result of the recognition will be the result of the Master Form with maximum confidence. If the confidence is less than MinimumConfidenceKnownForm it will return null, i.e. the form type is unknown and cannot be recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizeForm(System.IO.Stream,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Recognize the unknown form type.</summary>
+      <param name="stream">A System.IO.Stream containing the unknown form image data.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>The result of the recognition will be the result of the Master Form with maximum confidence. If the confidence is less than MinimumConfidenceKnownForm it will return null, i.e. the form type is unknown and cannot be recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizeForm(System.String,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Recognize the Form type.</summary>
+      <param name="fileName">A System.String containing the name of the unknown form image file.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>The result of the recognition will be the result of the Master Form with maximum confidence. If the confidence is less than MinimumConfidenceKnownForm it will return null, i.e. the form type is unknown and cannot be recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizeForm(System.Uri,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Recognize the Form type.</summary>
+      <param name="url">A System.Uri containing the unknown form image data.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>The result of the recognition will be the result of the Master Form with maximum confidence. If the confidence is less than MinimumConfidenceKnownForm it will return null, i.e. the form type is unknown and cannot be recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizePage(Leadtools.RasterImage,System.Int32,Leadtools.Forms.Auto.AutoFormsEnginePageRecognitionOptions)">
+      <summary>Recognize the type of the unknown page in a raster image with options.</summary>
+      <param name="form">Image of the unknown page. Must not be **null**.</param>
+      <param name="pageNumber">The 1-based page number in form. Must be greather than or equal to 1.</param>
+      <param name="options">Options to use during recognition.</param>
+      <returns>The result of the recognition will have the result of the Master Form Page with maximum confidence. If the confidence is less than</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizePage(Leadtools.RasterImage,System.Int32,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Recognize the type of the unknown page.</summary>
+      <param name="form">Leadtools.RasterImage that contains the image of the unknown page.</param>
+      <param name="pageNumber">The unknown page number in the \form\.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>The result of the recognition will have the result of the Master Form Page with maximum confidence. If the confidence is less than MinimumConfidenceKnownForm it will return null, i.e. the form type is unknown and cannot be recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizePage(System.IO.Stream,System.Int32,Leadtools.Forms.Auto.AutoFormsEnginePageRecognitionOptions)">
+      <summary>Recognize the type of the unknown page in a stream with options.</summary>
+      <param name="stream">Stream containing the image of the unknown page. Must not be **null**.</param>
+      <param name="pageNumber">The 1-based page number in stream. Must be greather than or equal to 1.</param>
+      <param name="options">Options to use during recognition.</param>
+      <returns>The result of the recognition will have the result of the Master Form Page with maximum confidence. If the confidence is less than</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizePage(System.IO.Stream,System.Int32,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Recognize the unknown page type.</summary>
+      <param name="stream">A System.IO.Stream containing the name of the unknown form image data.</param>
+      <param name="pageNumber">The unknown page number in the unknown form from \stream\.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>The result of the recognition will have the result of the Master Form Page with maximum confidence. If the confidence is less than MinimumConfidenceKnownForm it will return null, i.e. the form type is unknown and cannot be recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizePage(System.String,System.Int32,Leadtools.Forms.Auto.AutoFormsEnginePageRecognitionOptions)">
+      <summary>Recognize the type of the unknown page in an image disk file with options.</summary>
+      <param name="fileName">Name of the file containing the image of the unknown page. Must not be **null**.</param>
+      <param name="pageNumber">The 1-based page number in fileName. Must be greather than or equal to 1.</param>
+      <param name="options">Options to use during recognition.</param>
+      <returns>The result of the recognition will have the result of the Master Form Page with maximum confidence. If the confidence is less than</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizePage(System.String,System.Int32,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Recognize the unknown page type.</summary>
+      <param name="fileName">A System.String containing the name of the unknown form image file.</param>
+      <param name="pageNumber">The unknown page number in the unknown form from \fileName\.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>The result of the recognition will have the result of the Master Form Page with maximum confidence. If the confidence is less than MinimumConfidenceKnownForm it will return null, i.e. the form type is unknown and cannot be recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizePage(System.Uri,System.Int32,Leadtools.Forms.Auto.AutoFormsEnginePageRecognitionOptions)">
+      <summary>Recognize the type of the unknown page in a URL with options.</summary>
+      <param name="url">URL containing the image of the unknown page. Must not be **null**.</param>
+      <param name="pageNumber">The 1-based page number in url. Must be greather than or equal to 1.</param>
+      <param name="options">Options to use during recognition.</param>
+      <returns>The result of the recognition will have the result of the Master Form Page with maximum confidence. If the confidence is less than</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.RecognizePage(System.Uri,System.Int32,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Recognize the unknown page type.</summary>
+      <param name="url">A System.Uri containing the name of the unknown form image data.</param>
+      <param name="pageNumber">The unknown page number in the unknown form from \url\.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>The result of the recognition will have the result of the Master Form Page with maximum confidence. If the confidence is less than MinimumConfidenceKnownForm it will return null, i.e. the form type is unknown and cannot be recognized.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.Run(Leadtools.RasterImage,Leadtools.Forms.Auto.PageRequestCallback,System.Object,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Automatically recognizes the unknown form then it processes its fields.</summary>
+      <param name="form">The unknown form image.</param>
+      <param name="pageRequestCallback">Page request callback if more form images are needed.</param>
+      <param name="userData">The user defined data that is associated with PageRequestCallback.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>Returns the results of the recognition and processing if the form is recognized, otherwise it returns null. If the Master Form has no processing field, AutoFormsRunResult.FormFields will be null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.Run(System.IO.Stream,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Automatically recognizes the unknown form then it processes its fields.</summary>
+      <param name="stream">A System.IO.Stream containing the unknown form image data.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>Returns the results of the recognition and processing if the form is recognized, otherwise it returns null. If the Master Form has no processing field, AutoFormsRunResult.FormFields will be null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.Run(System.String,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Automatically recognizes the unknown form then it processes its fields.</summary>
+      <param name="fileName">A System.String containing the name of the unknown form image file.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>Returns the results of the recognition and processing if the form is recognized, otherwise it returns null. If the Master Form has no processing field, AutoFormsRunResult.FormFields will be null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.Run(System.Uri,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Automatically recognizes the unknown form then it processes its fields.</summary>
+      <param name="url">A System.Uri containing the unknown form image data.</param>
+      <param name="categories">List of Master Forms categories to use in comparison, pass null or empty to use all Master Forms in the repository.</param>
+      <returns>Returns the results of the recognition and processing if the form is recognized, otherwise it returns null. If the Master Form has no processing field, AutoFormsRunResult.FormFields will be null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.SetFullTextSearchManager(Leadtools.Forms.Recognition.IFullTextSearchManager,System.String,System.String)">
+      <summary>Begin full text search manager support.</summary>
+      <param name="manager">Instance of a class that implements IFullTextSearchManager here to enable the use of full text search during the recognition process.</param>
+      <param name="repositoryName">Repository name to use with all full text search. If this is **null**, then the default repository without a name will be searched.</param>
+      <param name="language">Optional language of the form. Passing **null** will default to "en-US" (or locale ID 1033).</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.UpsertMasterFormsToFullTextSearch">
+      <summary>Add or updates all the master forms in the repository to the full text search engine database.</summary>
+      <returns>This method will loop through all the master forms in the IMasterFormsRepository set in this engine and add or update each</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.Dispose">
+      <summary>Releases all resources used by this AutoFormsEngine.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.Dispose(System.Boolean)">
+      <summary>Releases all the resources used by this AutoFormsEngine.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngine.Finalize">
+      <summary>This member overrides System.Object.Finalize.</summary>
+    </member>
+    <member name="E:Leadtools.Forms.Auto.AutoFormsEngine.Progress">
+      <summary>Optional delegate method used after page processing is finished.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.EnableQuickPreRecognitionCheck">
+      <summary>Indicates whether to use the quick-check process to identify the form. If it fails, it will perform the recognition process.</summary>
+      <value>**true** to use the quick-check process to identify the form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.FilledFormType">
+      <summary>Default value for PageRecognitionOptions.PageType.</summary>
+      <value>The default value is FormsPageType.Normal.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.FIPSCompatibleMode">
+      <summary>Enables or disables Compatible with FIPS(Federal Information Processing Standards).</summary>
+      <value>**true** to enable FIPS Compatibility mode, **false**, to disable Compatibility.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.FullTextSearchLanguage">
+      <summary>Full text search language.</summary>
+      <value>The same full text search language value passed in the SetFullTextSearchManager method, or **null** if none was used.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.FullTextSearchManager">
+      <summary>Full text search manager used set in the engine.</summary>
+      <value>The same full text search manager instance passed in the SetFullTextSearchManager method, or **null** if none was used.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.FullTextSearchMaximumCandidates">
+      <summary>The maximum number of matches (candidates) to return.</summary>
+      <value>The default value is 3. Must be a number greater than or equal to 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.FullTextSearchMinimumRank">
+      <summary>Minimum rank value to be considered a match (or candidate).</summary>
+      <value>The default value is -1 meaning to return all candidates.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.FullTextSearchRepositoryName">
+      <summary>Full text search repository name.</summary>
+      <value>The same full text search repository name passed in the SetFullTextSearchManager method, or **null** if none was used.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.MasterFormCacheMaximumSize">
+      <summary>Specifies the maximum number of master forms that can be stored in a cache at any time.</summary>
+      <value>Specifies the maximum number of master forms that can be stored in a cache at any time. Set to 1 or less to make the caches perform as load on demand.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.MasterFormLoadType">
+      <summary>Specifies how to load in memory the master form data found in the repository.</summary>
+      <value>Gets the load type for master form data.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.MinimumConfidenceKnownForm">
+      <summary>The minimum confidence value to consider the form as being one of the known types in Master Forms repository.</summary>
+      <value>The minimum confidence value to consider the form as being one of the known types in Master Forms repository.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.MinimumConfidenceRecognized">
+      <summary>The minimum confidence value to consider the form as being recognized and to stop searching Master Forms.</summary>
+      <value>The minimum confidence value to consider the form as being recognized and to stop searching Master Forms.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.ProcessingOcrEngine">
+      <summary>Gets the OCR engine used for processing.</summary>
+      <value>The OCR engine used for processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.RecognitionOcrEngine">
+      <summary>Gets the OCR engine used for recognition.</summary>
+      <value>The OCR engine used for recognition.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.RecognizeFirstPageOnly">
+      <summary>Gets or sets the method of recognizing unknown forms.</summary>
+      <value>True if the comparison is going to be done based on the first page of the form, otherwise false.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.TradeoffMode">
+      <summary>Specifies which recognition algorithm trade-off setting to use for forms recognition and processing.</summary>
+      <value>The Leadtools.Forms.Common.FormsTradeoffMode setting to use for forms recognition and processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngine.UseThreadPool">
+      <summary>Enables or disables the use of a .NET ThreadPool when recognizing and processing forms.</summary>
+      <value>**true** to enable the use of a .NET ThreadPool; otherwise, **false** (use Win32 threads).</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions">
+      <summary>Options to use when creating a new AutoFormsEngine.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.#ctor">
+      <summary>Initializes a new instance of AutoFormsEngineCreateOptions.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.BarcodeEngine">
+      <summary>Engine for barcode recognition and processing.</summary>
+      <value>The BarcodeEngine instance used for barcode recognition and processing. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.Managers">
+      <summary>Object Managers to be used to recognize forms and generate Master Forms attributes.</summary>
+      <value>Default value is AutoFormsRecognitionManager.None.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.MasterFormLoadType">
+      <summary>Specifies how to load master form data found in the repository.</summary>
+      <value>The load type for master form data</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.MinimumConfidenceKnownForm">
+      <summary>Minimum confidence value to decide that the Form type result is a known type.</summary>
+      <value>Valid values are from 0 to 100 and usually it is less than MinimumConfidenceRecognized. Default value is 30.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.MinimumConfidenceRecognized">
+      <summary>Minimum confidence value to decide that the Form type is recognized and no further comparison with Master Forms is needed.</summary>
+      <value>Valid values are from 0 to 100 and usually it is greater than MinimumConfidenceKnownForm. Default value is 90.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.ProcessingOcrEngine">
+      <summary>OCR engine used for field processing.</summary>
+      <value>The OCR engine instance used for field processing. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.RecognitionOcrEngine">
+      <summary>OCR engine used for form recognition.</summary>
+      <value>The OCR engine instance used for form recognition. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.RecognizeFirstPageOnly">
+      <summary>Recognize the form based on the first page only.</summary>
+      <value>**true** to recognize the form based on the first page only, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEngineCreateOptions.Repository">
+      <summary>Repository of Master Forms.</summary>
+      <value>The master forms repository. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsEnginePageRecognitionOptions">
+      <summary>Options for recognizing the type an unknown page.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsEnginePageRecognitionOptions.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEnginePageRecognitionOptions.Categories">
+      <summary>List of Master Forms categories to use in comparison.</summary>
+      <value>Pass **null** or an empty list to use all Master Forms in the repository. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsEnginePageRecognitionOptions.ForProcessing">
+      <summary>Indicate that the engine must use the processing OCR engine if needed.</summary>
+      <value>**true** to use processing OCR engine if needed, otherwise; **false**. Default value is **true**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsProgressEventArgs">
+      <summary>Reports the progress for specific AutoFormsEngine operations and offers the user an opportunity to cancel.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsProgressEventArgs.#ctor(Leadtools.Forms.Auto.AutoFormsOperation,System.Int32)">
+      <summary>Initializes a new instance of the AutoFormsProgressEventArgs class.</summary>
+      <param name="operation">The current running AutoFormsOperation.</param>
+      <param name="percentage">A value between 0 and 100 that represents the percent completion of the process.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsProgressEventArgs.Cancel">
+      <summary>Cancel the current operation.</summary>
+      <value>true cancel the current operation, otherwise, continue.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsProgressEventArgs.Operation">
+      <summary>Gets the current running AutoFormsOperation.</summary>
+      <value>The current running AutoFormsOperation.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsProgressEventArgs.Percentage">
+      <summary>A value between 0 and 100 that represents the percent completion of the process.</summary>
+      <value>A value between 0 and 100 that represents the percent completion of the process.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsRecognizeFormResult">
+      <summary>Contains the success or failure of the form recognition.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsRecognizeFormResult.#ctor">
+      <summary>Initializes a new AutoFormsRecognizeFormResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizeFormResult.Alignments">
+      <summary>Gets a list of Leadtools.Forms.Common.PageAlignment objects that determines the amount of shift and scaling for each page of the form with its corresponding page in the Master Form.</summary>
+      <value>List of Leadtools.Forms.Common.PageAlignment objects.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizeFormResult.FormPages">
+      <summary>return Leadtools.Forms.Processing.FormPages that contain fields recognized.</summary>
+      <value>IMasterForm for the Master Form of the recognized type.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizeFormResult.MasterForm">
+      <summary>IMasterForm for the Master Form of the type of the recognized form.</summary>
+      <value>IMasterForm for the Master Form of the recognized type.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizeFormResult.Properties">
+      <summary>Gets or sets the properties of the Master Form of the type of the recognized form.</summary>
+      <value>Leadtools.Forms.Recognition.FormRecognitionProperties of the Master Form of the type of the recognized form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizeFormResult.Result">
+      <summary>Gets the form recognition result.</summary>
+      <value>Form recognition result. If it is null, the form type is unknown.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsRecognizePageResult">
+      <summary>Contains the success or failure of the page recognition.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsRecognizePageResult.#ctor">
+      <summary>Initializes a new AutoFormsRecognizePageResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizePageResult.Alignment">
+      <summary>Gets Leadtools.Forms.Common.PageAlignment object that determines the amount of shift and scaling of the page with its corresponding page in the Master Form.</summary>
+      <value>Leadtools.Forms.Common.PageAlignment object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizePageResult.MasterForm">
+      <summary>IMasterForm for the Master Form of the type of the recognized page.</summary>
+      <value>IMasterForm for the Master Form of the recognized type.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizePageResult.PageNumber">
+      <summary>Gets the corresponding page number in the Master Form for the recognized page.</summary>
+      <value>The number of the page in the Master Form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizePageResult.Properties">
+      <summary>The properties of the Master Form of the type of the recognized page.</summary>
+      <value>FormRecognitionProperties of the Master Form of the type of the recognized page. Default value is FormRecognitionProperties.Empty.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRecognizePageResult.Result">
+      <summary>Gets the recognition result for this page.</summary>
+      <value>Form recognition result. If it is null, the form type is unknown.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsRunResult">
+      <summary>Contains the success or failure and the processed field of the Form recognition and processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.AutoFormsRunResult.#ctor">
+      <summary>Initializes a new AutoFormsRunResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRunResult.FormFields">
+      <summary>Gets the processed form fields.</summary>
+      <value>Returns the processed form fields of the Master Form if any, otherwise it returns null.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.AutoFormsRunResult.RecognitionResult">
+      <summary>Gets Form recognition results.</summary>
+      <value>Returns AutoFormsRecognizeFormResult if the form is recognized, otherwise it returns null.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.DiskMasterForm">
+      <summary>Implements the IMasterForm interface for Master Forms stored on the local disk. It provides methods to read and write Master Form attributes, and to process form fields and images on the local disk.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.AutoDetectOmrFields(Leadtools.Ocr.OcrOmrSensitivity,System.Int32)">
+      <summary>Automatically detects all OMR fields in OMR master forms to facilitate creating OMR master forms with more than 100 OMR marks.</summary>
+      <param name="omrSensitivity">Set the sensitivity of all detected OMR fields, for values check OcrOmrSensitivity</param>
+      <param name="formPageNumber">Master form page number.</param>
+      <returns>A list of all detected OmrFormField with sensitivity set to omrSensitivity.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.CreateAnswerAreaField(Leadtools.RasterImage,Leadtools.Forms.Processing.FormField,Leadtools.LeadRect,System.Int32)">
+      <summary>Creates a new OmrAnswerAreaField with automatically filled out field values.</summary>
+      <param name="image">The master form image.</param>
+      <param name="formFields">A FormField list that contains all fields, including the OmrFormField fields within the bounds.</param>
+      <param name="bounds">A LogicalRectangle represents the location of the OmrAnswerAreaField to be created.</param>
+      <param name="formPageNumber">Master form page number.</param>
+      <returns>A OmrAnswerAreaField field with automatically filled out field values.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.CreateBubbleWordField(Leadtools.RasterImage,Leadtools.Forms.Processing.FormField,Leadtools.LeadRect,System.Int32)">
+      <summary>Creates a new BubbleWordField with automatically filled out field values.</summary>
+      <param name="image">The master form image.</param>
+      <param name="formFields">A FormField list that contains all fields, including the OmrFormField fields within the bounds.</param>
+      <param name="bounds">A LeadRect represents the location of the BubbleWordField to be created.</param>
+      <param name="formPageNumber">Master form page number.</param>
+      <returns>A BubbleWordField field with automatically filled out field values.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.CreateOmrDateField(Leadtools.RasterImage,Leadtools.Forms.Processing.FormField,Leadtools.LeadRect,System.Int32)">
+      <summary>Creates a new OmrDateField with automatically filled out field values.</summary>
+      <param name="image">The master form image.</param>
+      <param name="formFields">A FormField list that contains all fields, including the OmrFormField fields within the bounds.</param>
+      <param name="bounds">A Leadtools.LeadRect represents the location of the OmrDateField to be created.</param>
+      <param name="formPageNumber">Master form page number.</param>
+      <returns>A OmrDateField field with automatically filled out field values.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.CreateSingleSelectionField(Leadtools.Forms.Processing.FormField,Leadtools.LeadRect,System.Int32)">
+      <summary>Creates a new SingleSelectionField with automatically filled out field values recognized by Ocr.</summary>
+      <param name="formFields">A FormField list that contains all fields, including the OmrFormField fields within the bounds.</param>
+      <param name="bounds">A LeadRect that represents the location of the SingleSelectionField to be created.</param>
+      <param name="formPageNumber">Master form page number.</param>
+      <returns>A SingleSelectionField field with automatically filled out field values.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.ReadAttributes">
+      <summary>Reads Master Form recognition attributes.</summary>
+      <returns>Master Form attributes if it exists, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.ReadFields">
+      <summary>Reads Master Form processing fields.</summary>
+      <returns>Master Form fields if it exists, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.ReadForm">
+      <summary>Reads Master Form image.</summary>
+      <returns>Master Form image if it exists, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.WriteAttributes(Leadtools.Forms.Recognition.FormRecognitionAttributes)">
+      <summary>Writes Master Form attributes.</summary>
+      <param name="attributes">Master Form attributes.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.WriteFields(Leadtools.Forms.Processing.FormPages)">
+      <summary>Writes Master Form fields.</summary>
+      <param name="fields">Master Form fields.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterForm.WriteForm(Leadtools.RasterImage)">
+      <summary>Writes Master Form image.</summary>
+      <param name="form">Master Form image.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterForm.CandidatePageNumber">
+      <summary>Page number of the candidate page found with full text search.</summary>
+      <value>The 1-based page number of the candidate page found with full text search. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterForm.IsExtendable">
+      <summary>Returns If form is extendable (contains Leadtools.Forms.Processing.TableFormField (invoice)).</summary>
+      <value>Is master Form extendable.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterForm.Name">
+      <summary>Returns the Master Form name.</summary>
+      <value>The Master Form name.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterForm.Parent">
+      <summary>Gets the parent of the DiskMasterFormsCategory object.</summary>
+      <value>Return the parent category of this DiskMasterForm.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterForm.Path">
+      <summary>Master Form path.</summary>
+      <value>A System.String representing the Master Form path.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterForm.Repository">
+      <summary>Gets the DiskMasterFormsRepository to which this DiskMasterForm belongs.</summary>
+      <value>The DiskMasterFormsRepository to which this DiskMasterForm belongs.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.DiskMasterFormsCategory">
+      <summary>Implements the IMasterFormsCategory interface for categories stored on the local disk. It provides methods to add and delete Master Forms and categories on the local disk.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsCategory.AddChildCategory(System.String)">
+      <summary>Adds a new sub-category (child category) to this category on both the local disk and in ChildCategories.</summary>
+      <param name="name">Category Name.</param>
+      <returns>Returns the created IMasterFormsCategory object.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsCategory.AddMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,Leadtools.RasterImage)">
+      <summary>Adds a new Master Form to this category on the local disk and in MasterForms.</summary>
+      <param name="attributes">Master Form recognition attributes.</param>
+      <param name="fields">Master Form processing fields.</param>
+      <param name="form">Master Form image.</param>
+      <returns>Returns the created IMasterForm object.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsCategory.AddMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,System.IO.Stream)">
+      <summary>Adds a new Master Form to this category on the local disk and in MasterForms.</summary>
+      <param name="attributes">Master Form recognition attributes.</param>
+      <param name="fields">Master Form processing fields.</param>
+      <param name="stream">A System.IO.Stream containing the name of the Master Form image data.</param>
+      <returns>Returns the created IMasterForm object.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsCategory.AddMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,System.String)">
+      <summary>Adds a new Master Form to this category on the local disk and in MasterForms.</summary>
+      <param name="attributes">Master Form recognition attributes.</param>
+      <param name="fields">Master Form processing fields.</param>
+      <param name="fileName">A System.String containing the name of the Master Form image file.</param>
+      <returns>Returns the created IMasterForm object.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsCategory.AddMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,System.Uri)">
+      <summary>Adds a new Master Form to this category in both the local disk and MasterForms.</summary>
+      <param name="attributes">Master Form recognition attributes.</param>
+      <param name="fields">Master Form processing fields.</param>
+      <param name="url">A System.Uri containing the name of the Master Form image data.</param>
+      <returns>Returns the created IMasterForm object.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsCategory.Clear">
+      <summary>Removes all Master Forms in MasterForms and all child categories from ChildCategories and deletes them all from the local disk.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsCategory.DeleteChildCategory(Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Removes the first appearance of the specified category object from ChildCategories and deletes it from the local disk.</summary>
+      <param name="category">The category object to be deleted.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsCategory.DeleteMasterForm(Leadtools.Forms.Auto.IMasterForm)">
+      <summary>Removes the first appearance of the specified Master Form object from MasterForms and deletes it from the local disk.</summary>
+      <param name="masterForm">The Master Form object to be deleted.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsCategory.ChildCategories">
+      <summary>Gets a collection of child categories that this category contains.</summary>
+      <value>Returns the a collection of directories (sub-categories) in this category.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsCategory.ChildCategoriesCount">
+      <summary>Returns the number of categories contained in ChildCategories.</summary>
+      <value>Number of categories contained in ChildCategories.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsCategory.MasterForms">
+      <summary>Gets a collection of Master Forms in this category.</summary>
+      <value>Returns the a collection of Master Forms in this category.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsCategory.MasterFormsCount">
+      <summary>Returns the number of categories contained in MasterForms.</summary>
+      <value>Number of categories contained in MasterForms.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsCategory.Name">
+      <summary>Returns the category name.</summary>
+      <value>The category name.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsCategory.Parent">
+      <summary>Gets the parent of the DiskMasterFormsCategory object.</summary>
+      <value>Return the parent category of this DiskMasterFormsCategory.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsCategory.Path">
+      <summary>Gets the path of this category on the local disk.</summary>
+      <value>Returns the path of this category on the local disk.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsCategory.Repository">
+      <summary>Gets the DiskMasterFormsRepository to which this DiskMasterFormsCategory belongs.</summary>
+      <value>The DiskMasterFormsRepository to which this DiskMasterFormsCategory belongs.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.DiskMasterFormsRepository">
+      <summary>Implements the IMasterFormsRepository interface for Master Forms stored on local disk.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsRepository.#ctor(Leadtools.Codecs.RasterCodecs,System.String)">
+      <summary>Initializes a new instance of the DiskMasterFormsRepository class.</summary>
+      <param name="rasterCodecsInstance">Leadtools.Codecs.RasterCodecs object to load/save Master Form images.</param>
+      <param name="path">The path of the root directory of this repository.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.DiskMasterFormsRepository.Refresh">
+      <summary>Updates the repository with the latest modifications and changes that have occurred to the Master Forms in the storage site.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsRepository.Path">
+      <summary>Gets the path of the root directory of the repository.</summary>
+      <value>Returns the path of the root category.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsRepository.RasterCodecsInstance">
+      <summary>Gets the Leadtools.Codecs.RasterCodecs object used to load/save Master Form images.</summary>
+      <value>Returns the Leadtools.Codecs.RasterCodecs that is used for loading and saving Master Form images.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.DiskMasterFormsRepository.RootCategory">
+      <summary>Gets the root category of the repository.</summary>
+      <value>Returns the IMasterFormsCategory that represents the top category that has all Master Forms and sub-categories that are going to be used for AutoFormsEngine.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.MasterFormCollection">
+      <summary>Represents a generic collection of objects.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.#ctor">
+      <summary>Creates a new instance of MasterFormCollection with default settings.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.AddMasterForm(Leadtools.Forms.Auto.IMasterForm)">
+      <summary>Adds a IMasterForm to the collection.</summary>
+      <param name="masterForm">The Master Form to be added.</param>
+      <returns>The Added Master Form.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.Clear">
+      <summary>Removes all items from the collection.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.Contains(Leadtools.Forms.Auto.IMasterForm)">
+      <summary>Determines whether or not the specified item is contained in the collection.</summary>
+      <param name="item">Object to test.</param>
+      <returns>true if the item is found in the collection, false otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.CopyTo(Leadtools.Forms.Auto.IMasterForm[],System.Int32)">
+      <summary>Copies all the elements of the collection to the specified one-dimensional array starting at the specified destination array index.</summary>
+      <param name="array">The one-dimensional array that is the destination of the elements copied from the current collection.</param>
+      <param name="arrayIndex">The index at which copying begins.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.GetEnumerator">
+      <summary>Returns a generic enumerator that can iterate through the MasterFormCollection.</summary>
+      <returns>A generic enumerator that can iterate through the MasterFormCollection.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.IndexOf(Leadtools.Forms.Auto.IMasterForm)">
+      <summary>Returns the index of the specified item if it is found in the collection.</summary>
+      <param name="item">Object to test.</param>
+      <returns>The index of the specified item if it is found in the collection.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.Remove(Leadtools.Forms.Auto.IMasterForm)">
+      <summary>Removes the specified item.</summary>
+      <param name="item">Item to remove.</param>
+      <returns>true if the item is removed, otherwise, false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.RemoveAt(System.Int32)">
+      <summary>Removes the item from the specified index.</summary>
+      <param name="index">Index of the item to remove.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.Add(Leadtools.Forms.Auto.IMasterForm)">
+      <summary>Adds an item to the MasterFormCollection.</summary>
+      <param name="item">The item to be added.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormCollection.Insert(System.Int32,Leadtools.Forms.Auto.IMasterForm)">
+      <summary>Inserts an item to the MasterFormCollection at the specified index.</summary>
+      <param name="index">Index to insert the item.</param>
+      <param name="item">The item to be inserted.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.MasterFormCollection.Count">
+      <summary>Gets the number of items in the collection.</summary>
+      <value>The number of items in the collection.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.MasterFormCollection.IsReadOnly">
+      <summary>Specifies whether or not the collection is Read Only.</summary>
+      <value>true if the collection is read only, false otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.MasterFormCollection.Item">
+      <summary>Gets and sets the item at the specified index from within the collection.</summary>
+      <param name="index">The zero-based index of the element to get or set.</param>
+      <value>The item at the specified index.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.MasterFormsCategoryCollection">
+      <summary>Represents a generic collection of objects.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.#ctor">
+      <summary>Creates a new instance of MasterFormsCategoryCollection with default settings.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.AddCategory(Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Adds a IMasterFormsCategory to the collection.</summary>
+      <param name="category">Category to be added.</param>
+      <returns>The Added category.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.Clear">
+      <summary>Removes all items from the collection.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.Contains(Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Determines whether or not the specified item is contained in the collection.</summary>
+      <param name="item">Object to test.</param>
+      <returns>true if the item is found in the collection, false otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.CopyTo(Leadtools.Forms.Auto.IMasterFormsCategory[],System.Int32)">
+      <summary>Copies all the elements of the collection to the specified one-dimensional array starting at the specified destination array index.</summary>
+      <param name="array">The one-dimensional array that is the destination of the elements copied from the current collection.</param>
+      <param name="arrayIndex">The index at which copying begins.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.GetEnumerator">
+      <summary>Returns a generic enumerator that can iterate through the MasterFormsCategoryCollection.</summary>
+      <returns>A generic enumerator that can iterate through the MasterFormsCategoryCollection.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.IndexOf(Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Returns the index of the specified item if it is found in the collection.</summary>
+      <param name="item">Object to test.</param>
+      <returns>The index of the specified item if it is found in the collection.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.Remove(Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Removes the specified item.</summary>
+      <param name="item">Item to remove.</param>
+      <returns>true if the item is removed, otherwise, false.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.RemoveAt(System.Int32)">
+      <summary>Removes the item from the specified index.</summary>
+      <param name="index">Index of the item to remove.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.Add(Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Adds an item to the MasterFormsCategoryCollection.</summary>
+      <param name="item">The item to be added.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.MasterFormsCategoryCollection.Insert(System.Int32,Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Inserts an item to the MasterFormsCategoryCollection at the specified index.</summary>
+      <param name="index">Index to insert the item.</param>
+      <param name="item">The item to be inserted.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.MasterFormsCategoryCollection.Count">
+      <summary>Gets the number of items in the collection.</summary>
+      <value>The number of items in the collection.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.MasterFormsCategoryCollection.IsReadOnly">
+      <summary>Specifies whether or not the collection is Read Only.</summary>
+      <value>true if the collection is read only, false otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.MasterFormsCategoryCollection.Item">
+      <summary>Gets and sets the item at the specified index from within the collection.</summary>
+      <param name="index">The zero-based index of the element to get or set.</param>
+      <value>The item at the specified index.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.PageRequestCallbackData">
+      <summary>Data for the PageRequestCallback delegate.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.PageRequestCallbackData.#ctor">
+      <summary>Initializes a new instance of PageRequestCallbackData.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.PageRequestCallbackData.FormPageNumber">
+      <summary>Gets the requested page number of the image.</summary>
+      <value>The requested page number.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.PageRequestCallbackData.Page">
+      <summary>Gets or set the requested image page.</summary>
+      <value>The requested image page.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.PageRequestCallbackData.SvgDocument">
+      <summary>The optional requested SVG document.</summary>
+      <value>Optional SVG representation of the page. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.PageRequestCallbackData.UserData">
+      <summary>Gets user-defined data of the PageRequestCallback.</summary>
+      <value>The user-defined data of the PageRequestCallback.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.PageRequestCallback">
+      <summary>Delegate method that is used to request a page and provide the requested page to the caller method.</summary>
+      <param name="data">An instance of the PageRequestCallbackData interface containing the requested image information.</param>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsEngineMasterFormLoadType">
+      <summary>Master form load options</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsEngineMasterFormLoadType.LoadAllInMemory">
+      <summary>Load to memory all master forms found in a repository</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsEngineMasterFormLoadType.LoadOnDemand">
+      <summary>Load master form on demand, i.e., one at a time.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsEngineMasterFormLoadType.UseCache">
+      <summary>Use cache to store loaded master forms.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsOperation">
+      <summary>Represents the different types operations carried by AutoFormsEngine.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsOperation.Generating">
+      <summary>Generating form's pages attributes.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsOperation.Recognizing">
+      <summary>Recognizing the form with the available Master Forms.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsOperation.Processing">
+      <summary>Processing the form fields.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.AutoFormsRecognitionManager">
+      <summary>Represents the recognition objects managers.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsRecognitionManager.None">
+      <summary>Do not use any object manager.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsRecognitionManager.Ocr">
+      <summary>Use the OCR object manager.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsRecognitionManager.Barcode">
+      <summary>Use the barcode object manager.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Auto.AutoFormsRecognitionManager.Default">
+      <summary>Use the default object manager.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.IMasterForm">
+      <summary>Represents a Master Form inside a IMasterFormsCategory. It provides methods to read and write Master Form recognition attributes, processing fields, and images.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterForm.ReadAttributes">
+      <summary>Reads Master Form recognition attributes.</summary>
+      <returns>Returns Leadtools.Forms.Recognition.FormRecognitionAttributes if recognition attributes are available; otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterForm.ReadFields">
+      <summary>Reads Master Form processing fields.</summary>
+      <returns>Returns Leadtools.Forms.Processing.FormPages if the processing fields are available, otherwise it returns null.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterForm.ReadForm">
+      <summary>Reads a Master Form image.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterForm.WriteAttributes(Leadtools.Forms.Recognition.FormRecognitionAttributes)">
+      <summary>Writes Master Form Attributes.</summary>
+      <param name="attributes">Master Form attributes.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterForm.WriteFields(Leadtools.Forms.Processing.FormPages)">
+      <summary>Writes Master Form processing fields.</summary>
+      <param name="fields">Master Form processing fields.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterForm.WriteForm(Leadtools.RasterImage)">
+      <summary>Writes the Master Form image.</summary>
+      <param name="form">The Master Form image.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterForm.CandidatePageNumber">
+      <summary>Page number of the candidate page found with full text search.</summary>
+      <value>The 1-based page number of the candidate page found with full text search. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterForm.IsExtendable">
+      <summary>Returns If form is extendable (contains Leadtools.Forms.Processing.TableFormField (invoice)).</summary>
+      <value>Is master Form extendable.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterForm.Name">
+      <summary>Returns the name of the Master Form.</summary>
+      <value>The master Form name.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterForm.Parent">
+      <summary>Gets the parent of this IMasterForm.</summary>
+      <value>Returns an IMasterFormsCategory that is the parent to this IMasterForm object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterForm.Repository">
+      <summary>Gets the IMasterFormsRepository to which this IMasterForm object belongs.</summary>
+      <value>The IMasterFormsRepository to which this IMasterForm object belongs.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.IMasterFormsCategory">
+      <summary>Represents a category inside a IMasterFormsRepository that may have Master Forms and/or other sub-categories (child categories). It provides methods to add and delete Master Forms, sub-categories (child categories), and category information such as its name and its parent category.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsCategory.AddChildCategory(System.String)">
+      <summary>Adds a new sub-category (child category) to this category in both the storage device and ChildCategories.</summary>
+      <param name="name">Name of the category.</param>
+      <returns>Returns an object of the created IMasterFormsCategory.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsCategory.AddMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,Leadtools.RasterImage)">
+      <summary>Adds a new Master Form to this category in both the storage device and MasterForms.</summary>
+      <param name="attributes">Master Form attributes.</param>
+      <param name="fields">Master Form fields.</param>
+      <param name="form">Master Form image.</param>
+      <returns>Returns an object of the created IMasterForm.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsCategory.AddMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,System.IO.Stream)">
+      <summary>Adds a new Master Form to this category in both the storage device and MasterForms.</summary>
+      <param name="attributes">Master Form attributes.</param>
+      <param name="fields">Master Form fields.</param>
+      <param name="stream">A System.IO.Stream containing the name of the Master Form image data.</param>
+      <returns>Returns an object of the created IMasterForm.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsCategory.AddMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,System.String)">
+      <summary>Adds a new Master Form to this category in both the storage device and MasterForms.</summary>
+      <param name="attributes">Master Form attributes.</param>
+      <param name="fields">Master Form fields.</param>
+      <param name="fileName">A System.String containing the name of the Master Form image file.</param>
+      <returns>Returns an object of the created IMasterForm.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsCategory.AddMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,System.Uri)">
+      <summary>Adds a new Master Form to this category in both the storage device and MasterForms.</summary>
+      <param name="attributes">Master Form attributes.</param>
+      <param name="fields">Master Form fields.</param>
+      <param name="url">A System.Uri containing the name of the Master Form image data.</param>
+      <returns>Returns an object of the created IMasterForm.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsCategory.Clear">
+      <summary>Removes all Master Forms and sub-categories (child categories) from MasterForms and ChildCategories and deletes them from the storage device.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsCategory.DeleteChildCategory(Leadtools.Forms.Auto.IMasterFormsCategory)">
+      <summary>Removes the specified sub-category (child category) from ChildCategories and deletes it from the storage device.</summary>
+      <param name="category">The child category to be deleted.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsCategory.DeleteMasterForm(Leadtools.Forms.Auto.IMasterForm)">
+      <summary>Removes the specified Master Form from MasterForms and deletes it from the storage device.</summary>
+      <param name="masterForm">The Master Form to be deleted.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsCategory.ChildCategories">
+      <summary>Gets the sub-categories (child categories) inside this category.</summary>
+      <value>The sub-categories (child categories) inside this category.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsCategory.ChildCategoriesCount">
+      <summary>Returns the number of sub-categories (child categories) in ChildCategories.</summary>
+      <value>The number of sub-categories in the ChildCategories.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsCategory.MasterForms">
+      <summary>Gets the Master Forms inside this category.</summary>
+      <value>The Master Forms inside this category.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsCategory.MasterFormsCount">
+      <summary>Returns the number of Master Forms in MasterForms.</summary>
+      <value>The number of Master Forms in the MasterForms.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsCategory.Name">
+      <summary>Returns the category name.</summary>
+      <value>The category name.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsCategory.Parent">
+      <summary>Gets the parent of the IMasterFormsCategory object.</summary>
+      <value>The parent category of this IMasterFormsCategory.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsCategory.Repository">
+      <summary>Gets the IMasterFormsRepository to which this IMasterFormsCategory belongs.</summary>
+      <value>The IMasterFormsRepository to which this IMasterFormsCategory belongs.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Auto.IMasterFormsRepository">
+      <summary>Provides the interface for the Master Form repository providing methods for collecting the Master Forms available in the storage device to be used in AutoFormsEngine.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Auto.IMasterFormsRepository.Refresh">
+      <summary>Updates the repository with the latest modifications and changes that have occurred to the Master Forms in the storage site.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsRepository.RasterCodecsInstance">
+      <summary>Gets the Leadtools.Codecs.RasterCodecs used for loading and saving images of objects that implement the IMasterFormsRepository interface.</summary>
+      <value>Returns the Leadtools.Codecs.RasterCodecs used for loading and saving images of objects that implement the IMasterFormsRepository interface.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Auto.IMasterFormsRepository.RootCategory">
+      <summary>Gets the root category of the repository.</summary>
+      <value>Returns the IMasterFormsCategory that represents the top category that has all Master Forms and sub-categories that are going to be used for AutoFormsEngine.</value>
+    </member>
+  </members>
+</doc>

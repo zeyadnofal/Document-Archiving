@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Document.Converter</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Document.Converter.DocumentConverter">
+      <summary>Supports conversion from any type of document to another using SVG, OCR and Raster technologies.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverter.#ctor">
+      <summary>Initializes a new instance of DocumentConverter.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverter.SetAnnRenderingEngineInstance(Leadtools.Annotations.Engine.AnnRenderingEngine)">
+      <summary>Sets the rendering engine to use when overlaying annotations during document conversion.</summary>
+      <param name="instance">The rendering engine to use when overlaying annotations during document conversion.</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverter.SetDocumentWriterInstance(Leadtools.Document.Writer.DocumentWriter)">
+      <summary>Sets the document writer instance to use when converting documents.</summary>
+      <param name="instance">The document writer instance to use when converting documents.</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverter.SetOcrEngineInstance(Leadtools.Ocr.IOcrEngine,System.Boolean)">
+      <summary>Sets the engine instance to use when converting documents using OCR.</summary>
+      <param name="instance">The OCR engine instance to use when converting documents. If this is not **null**, then the engine must be initialized and started.</param>
+      <param name="autoDispose"></param>
+      <param name="">and not dispose instance when this DocumentConverter is disposed.</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverter.Dispose">
+      <summary>Releases all resources used by this DocumentConverter.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverter.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this DocumentConverter.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverter.Finalize">
+      <summary>This method overrides System.Object.Finalize</summary>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverter.AnnRenderingEngineInstance">
+      <summary>Rendering engine to use when overlaying annotations during document conversion.</summary>
+      <value>The rendering engine to use when overlaying annotations during document conversion.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverter.Diagnostics">
+      <summary>Object that manages the diagnostics options to use with the document converter.</summary>
+      <value>The object that manages the diagnostics options to use with this DocumentConverter.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverter.DocumentWriterInstance">
+      <summary>Document writer instance to use when converting documents.</summary>
+      <value>The document writer instance to use when converting documents.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverter.Jobs">
+      <summary>Object that manages creating and running jobs in this document converter as well as job status events.</summary>
+      <value>The object that manages creating and running jobs in this DocumentConverter as well as job status events.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverter.LoadDocumentOptions">
+      <summary>Options to use when creating LEADDocument objects.</summary>
+      <value>The options to use when creating LEADDocument objects. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverter.OcrEngineInstance">
+      <summary>Engine instance to use when converting documents using OCR.</summary>
+      <value>The engine instance to use when converting documents using OCR.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverter.Options">
+      <summary>Object that manages the extra options to use with the document converter.</summary>
+      <value>The object that manages the extra options to use with this DocumentConverter.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverter.Preprocessor">
+      <summary>Object that manages the pre-processing options of the document converter.</summary>
+      <value>The object that manages the pre-processing options of this DocumentConverter.</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterDiagnostics">
+      <summary>Manages the diagnostics options of the document converter.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterDiagnostics.EnableTrace">
+      <summary>Indicates whether this DocumentConverter should output debug messages to the standard .NET trace listeners.</summary>
+      <value>**true** if this DocumentConverter should output debug messages to the standard .NET trace listeners; otherwise,</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterJob">
+      <summary>Document converter job.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.ConversionModes">
+      <summary>Conversion modes used for this job.</summary>
+      <value>One or more DocumentConverterConversionModes enumeration members that specify the type(s) of conversions used in this job.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.DocumentConverter">
+      <summary>Instance of the DocumentConverter used to create and run this object.</summary>
+      <value>The instance of the DocumentConverter used to create and run this object.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.Errors">
+      <summary>Any errors occurred when this job is run.</summary>
+      <value>A list of DocumentConverterJobError objects that contain detailed information on any errors that may have occurred when this job is run.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.JobData">
+      <summary>Job data.</summary>
+      <value>A copy of the DocumentConverterJobData structure that was used to create this job.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.OutputAnnotationFiles">
+      <summary>Output annotation files generated by this conversion job.</summary>
+      <value>A list that contains the full paths of all output annotation files generated by this conversion job (if any).</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.OutputDocumentExtraFiles">
+      <summary>Output document extra files generated by this conversion job.</summary>
+      <value>A list that contains the full paths of all output document extra files generated by this conversion job.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.OutputDocumentFiles">
+      <summary>Output document files generated by this conversion job.</summary>
+      <value>A list that contains the full paths of all output document files generated by this conversion job.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.OutputFiles">
+      <summary>Output files generated by this conversion job.</summary>
+      <value>A list that contains the full paths of all output files generated by this conversion job.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.Status">
+      <summary>Final job status.</summary>
+      <value>The final job status.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJob.UploadDocumentUri">
+      <summary>The URI of the uploaded document.</summary>
+      <value>The URI of the uploaded document.</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterJobEventArgs">
+      <summary>Data for the JobStarted, JobOperation andJobCompleted events.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobEventArgs.#ctor">
+      <summary>Initializes a new instance of DocumentConverterJobEventArgs.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.AnnContainer">
+      <summary>The AnnContainer object used when annotations are loaded or saved.</summary>
+      <value>The AnnContainer object used when annotations are loaded or saved.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.AnnotationsMode">
+      <summary>Current annotations mode.</summary>
+      <value>The current annotations mode.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.Document">
+      <summary>The current input LEADDocument object.</summary>
+      <value>The current input LEADDocument object.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.DocumentWriter">
+      <summary>The DocumentWriter object used when saving document formats.</summary>
+      <value>The DocumentWriter object used when saving document formats.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.InputDocumentPageNumber">
+      <summary>The current input page number.</summary>
+      <value>The 1-based current input page number.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.IsPostOperation">
+      <summary>A value that indicates whether the engine has already run the operation.</summary>
+      <value>**true** if the engine has already run the operation; otherwise, **false** and the engine is about to run the operation.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.Job">
+      <summary>The current job object.</summary>
+      <value>The current job object that was passed to RunJob or RunJobAsync.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.OcrDocument">
+      <summary>The IOcrDocument object created when converting using OCR.</summary>
+      <value>The IOcrDocument object created by the engine when OCR is used in the conversion.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.OcrPage">
+      <summary>The IOcrPage object created when converting using OCR.</summary>
+      <value>The IOcrPage object created by the engine when OCR is used in the conversion.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.OcrPageImage">
+      <summary>RasterImage object used as the input for a page when OCR conversion is used.</summary>
+      <value>The IOcrPage object used as the input for a page when OCR conversion is used.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.Operation">
+      <summary>The current operation.</summary>
+      <value>A DocumentConverterJobOperation enumeration member that specifies the current operation.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.OutputDocumentPageNumber">
+      <summary>The current output page number.</summary>
+      <value>The 1-based current output page number.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.RasterImage">
+      <summary>The RasterImage object used as the input for raster conversion and optional overlay for SVG conversion.</summary>
+      <value>The RasterImage object used as the input for raster conversion and optional overlay for SVG conversion.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.Status">
+      <summary>Current status of the job and allows the user to cancel it.</summary>
+      <value>The current status of the job and allows the user to cancel it.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobEventArgs.SvgDocument">
+      <summary>The SvgDocument object used when SVG conversion is used.</summary>
+      <value>The SvgDocument object used when SVG conversion is used.</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterJobs">
+      <summary>Manages creating and running jobs in this document converter as well as job status events.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobs.AbortAllJobs">
+      <summary>Aborts all asynchronous running and pending jobs</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobs.CreateJob(Leadtools.Document.Converter.DocumentConverterJobData)">
+      <summary>Creates a new job.</summary>
+      <param name="jobData">Data containing the properties of the job.</param>
+      <returns>The job data object ready to run.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobs.CreateJobData(Leadtools.Document.LEADDocument,System.String,Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Fills in a common document conversion job data for an input LEADDocument.</summary>
+      <param name="document">Input document to convert.</param>
+      <param name="outputDocumentFileName">Path to the output file to be generated by this conversion.</param>
+      <param name="documentFormat">The output format.</param>
+      <returns>The newly initialized job data.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobs.CreateJobData(Leadtools.Document.LEADDocument,System.String,Leadtools.RasterImageFormat)">
+      <summary>Fills in a common raster conversion job data for an input LEADDocument.</summary>
+      <param name="document">Input document to convert.</param>
+      <param name="outputDocumentFileName">Path to the output file to be generated by this conversion.</param>
+      <param name="rasterImageFormat">The output format.</param>
+      <returns>The newly initialized job data.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobs.CreateJobData(System.String,System.String,Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Fills in a common document conversion job data.</summary>
+      <param name="inputDocumentFileName">Path to the input file for the conversion.</param>
+      <param name="outputDocumentFileName">Path to the output file to be generated by this conversion.</param>
+      <param name="documentFormat">The output format.</param>
+      <returns>The newly initialized job data.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobs.CreateJobData(System.String,System.String,Leadtools.RasterImageFormat)">
+      <summary>Fills in a common raster conversion job data.</summary>
+      <param name="inputDocumentFileName">Path to the input file for the conversion.</param>
+      <param name="outputDocumentFileName">Path to the output file to be generated by this conversion.</param>
+      <param name="rasterImageFormat">The output format.</param>
+      <returns>The newly initialized job data.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobs.RunJob(Leadtools.Document.Converter.DocumentConverterJob)">
+      <summary>Runs a job.</summary>
+      <param name="job">The DocumentConverterJob to run. This parameter cannot be **null**. Use CreateJob to create a valid</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterJobs.RunJobAsync(Leadtools.Document.Converter.DocumentConverterJob)">
+      <summary>Runs a job asynchronously.</summary>
+      <param name="job">The DocumentConverterJob to run. This parameter cannot be **null**. Use CreateJob to create a valid</param>
+    </member>
+    <member name="E:Leadtools.Document.Converter.DocumentConverterJobs.JobCompleted">
+      <summary>Occurs when a job is completed or aborted.</summary>
+    </member>
+    <member name="E:Leadtools.Document.Converter.DocumentConverterJobs.JobOperation">
+      <summary>Occurs while a job is running.</summary>
+    </member>
+    <member name="E:Leadtools.Document.Converter.DocumentConverterJobs.JobStarted">
+      <summary>Occurs when a job is about to start.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterOptions">
+      <summary>Manages the extra options to use with the document converter.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterOptions.Load(System.IO.Stream)">
+      <summary>Loads the options previously saved from an XML stream</summary>
+      <param name="stream">Stream containing previously saved options as XML.</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterOptions.LoadFromString(System.String)">
+      <summary>Sets the options from an XML string</summary>
+      <param name="value">String containing the options as XML.</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterOptions.Save(System.IO.Stream,System.Boolean)">
+      <summary>Saves the current option to a stream as XML.</summary>
+      <param name="stream">Stream that will contain the current options as XML.</param>
+      <param name="formatted"></param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.DocumentConverterOptions.SaveToString">
+      <summary>Gets the current options as an XML string.</summary>
+      <returns>XML string containing the current options.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterOptions.EmptyPageMode">
+      <summary>Determines how empty pages are treated during the conversion.</summary>
+      <value>Determines how empty pages are treated during the conversion. Default value is DocumentConverterEmptyPageMode.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterOptions.EnableSvgConversion">
+      <summary>Indicates whether SVG conversion should be used, if available.</summary>
+      <value>**true** if SVG conversion should be used, if available; otherwise, **false** and OCR mode is forced.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterOptions.JobErrorMode">
+      <summary>Indicates whether to abort or try to continue running jobs when an error occurs.</summary>
+      <value>An DocumentConverterJobErrorMode enumeration member that specifies whether to abort or try to continue running jobs when an error occur. Default</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterOptions.OutputSinglePages">
+      <summary>Saves each page in a separate file regardless of the final document format.</summary>
+      <value>**true** to save each page in a separate file regardless of the final document format; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterOptions.PageNumberingTemplate">
+      <summary>Template to use for the individual file names when the output format does not support multipages.</summary>
+      <value>A string that contains the template to use for the individual file names when the output format does not support multipages.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterOptions.SvgImagesRecognitionMode">
+      <summary>Indicates how to treat the image elements encountered in the input SVG page during the conversion.</summary>
+      <value>A value that indicate how to treat the image elements encountered in the input SVG page during the conversion. Default value is</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterOptions.UseThreads">
+      <summary>Indicates whether to use multiple threads during the conversion.</summary>
+      <value>**true** to use multiple threads during the conversion; otherwise, **false**. Default value is **true**.</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterPreprocessor">
+      <summary>Manages the pre-processing options of the document converter.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterPreprocessor.BlankPageDetectorCommandFlags">
+      <summary>Options to use for detecting empty raster pages.</summary>
+      <value>The options to use for detecting empty raster pages. Default value is BlankPageDetectorCommandFlags.None</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterPreprocessor.Deskew">
+      <summary>Indicates that automatic deskewing should be used.</summary>
+      <value>**true** if automatic deskewing should be used; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterPreprocessor.Invert">
+      <summary>Indicates that automatic inversion correction should be used.</summary>
+      <value>**true** if automatic inversion correction should be used; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterPreprocessor.Orient">
+      <summary>Indicates that automatic orientation correction should be used.</summary>
+      <value>**true** if automatic orientation correction should be used; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.StatusJobData">
+      <summary>Data for a status conversion job.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobData.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobData.Clone">
+      <summary>Creates an exact clone of this object.</summary>
+      <returns>An exact clone of this object.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.Abort">
+      <summary>Aborts this job.</summary>
+      <value>**true** to signal the runner that this job should be aborted; otherwise, **false**. The default is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.AnnotationsMode">
+      <summary>Annotation conversion options.</summary>
+      <value>Annotation conversion options. The default value is DocumentConverterAnnotationsMode.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.DocumentConverter">
+      <summary>Document converter to use with this job.</summary>
+      <value>The document converter to use with this job. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.DocumentConverterOptions">
+      <summary>Document converter options to use with this job.</summary>
+      <value>The document converter options to use with this job. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.DocumentFormat">
+      <summary>Output format to use for document conversion.</summary>
+      <value>The output format to use for document conversion. Default value is DocumentFormat.User.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.DocumentWriterOptions">
+      <summary>Options for the document writer to use with this job.</summary>
+      <value>The options for the document writer to use with this job. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.ErrorMessages">
+      <summary>Any error messages occurred during the conversion.</summary>
+      <value>Any error messages occurred during the conversion. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.InputCache">
+      <summary>Cache containing the input document.</summary>
+      <value>The cache containing the input document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.InputCacheConfiguration">
+      <summary>Configuration of the cache containing the input document.</summary>
+      <value>The configuration of the cache containing the input document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.InputDocumentFirstPageNumber">
+      <summary>Number of the first page to be converted from the input document</summary>
+      <value>The 1-based number of the first page to be converted from the input document. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.InputDocumentId">
+      <summary>ID of the input document to convert.</summary>
+      <value>The ID of the input document to convert. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.InputDocumentLastPageNumber">
+      <summary>Number of the last page to be converted from the input document</summary>
+      <value>The 1-based number of the last page to be converted from the input document. A value of -1 means to use the last page in the document. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.InputDocumentUserToken">
+      <summary>User token associated with the input document.</summary>
+      <value>The user token associated with the input document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.IsCompleted">
+      <summary>Checks whether the conversion job has finished.</summary>
+      <value>**true** if the conversion has finished; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.JobCompletedTimestamp">
+      <summary>Indicates the timestamp when this job has completed.</summary>
+      <value>The timestamp when this job has completed. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.JobName">
+      <summary>Optional job name.</summary>
+      <value>The optional job name.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.JobStartedTimestamp">
+      <summary>Indicates the timestamp when this job started.</summary>
+      <value>The timestamp when this job has started. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.JobStatus">
+      <summary>Final job status.</summary>
+      <value>The final status of the job. The default value is DocumentConverterJobStatus.Success.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.JobStatusMessage">
+      <summary>Current status message.</summary>
+      <value>The current status message. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.JobStatusPageNumber">
+      <summary>The page number currently being converted.</summary>
+      <value>The page number currently being converted. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.JobStatusTimestamp">
+      <summary>Indicates the timestamp this job was last queried.</summary>
+      <value>The timestamp this job was last queried. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.JobToken">
+      <summary>Job token associated with this job.</summary>
+      <value>Job token associated with this job. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OcrEngineName">
+      <summary>Name of the OCR engine to use with the conversion.</summary>
+      <value>The name of the OCR engine to use with the conversion. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OcrEngineSettings">
+      <summary>Setting for the OCR engine to use during the conversion.</summary>
+      <value>The setting for the OCR engine to use during the conversion. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OcrEngineStartupParameters">
+      <summary>Startup parameters to use with the OCR engine during the conversion.</summary>
+      <value>The startup parameters to use with the OCR engine during the conversion. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OutputCache">
+      <summary>Cache that will contain the output document.</summary>
+      <value>The cache that will contain the output document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OutputCacheConfiguration">
+      <summary>Configuration of the cache that will contain the output document.</summary>
+      <value>The configuration of the cache that will contain the output document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OutputCacheItemPolicy">
+      <summary>The policy to use when storing the output document in the cache.</summary>
+      <value>The policy to use when storing the output document in the cache. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OutputCachePolicy">
+      <summary>Serialized policy as a string to use when storing the output document in the cache.</summary>
+      <value>The serialized policy as a string to use when storing the output document in the cache. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OutputDocumentId">
+      <summary>ID of the output document generated by this conversion job.</summary>
+      <value>The ID of the output document generated by this conversion job. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OutputDocumentName">
+      <summary>Name of the output document generated by this conversion job.</summary>
+      <value>The name of the output document generated by this conversion job. The default value is **null**</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.OutputDocumentUri">
+      <summary>URL to the output document in the cache.</summary>
+      <value>The URL to the output document in the cache. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.QueryJobStatusTimestamp">
+      <summary>Indicates the timestamp this job status has been queried.</summary>
+      <value>The timestamp this job status has been queried. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.RasterImageBitsPerPixel">
+      <summary>Bits per pixel to use for the output document when raster conversion is used.</summary>
+      <value>The bits per pixel to use for the output document when raster conversion is used. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.RasterImageFormat">
+      <summary>Output format to use for raster conversion.</summary>
+      <value>The output format to use for raster conversion. The default value is RasterImageFormat.Unknown.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.StatusCache">
+      <summary>Cache to use for storing the status of the job.</summary>
+      <value>The cache to use for storing the status of the job. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.StatusCacheConfiguration">
+      <summary>Configuration of the cache to use for storing the status of the job.</summary>
+      <value>The configuration of the cache to use for storing the status of the job. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.StatusCacheItemPolicy">
+      <summary>Policy to use when storing status items in the cache.</summary>
+      <value>The policy to use when storing status items in the cache. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.StatusCachePolicy">
+      <summary>Policy serialized as a string to use when storing status items in the cache.</summary>
+      <value>The policy serialized as a string to use when storing status items in the cache. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.UserData">
+      <summary>User defined data.</summary>
+      <value>User defined data. The default value is **null**</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobData.UserToken">
+      <summary>User token associated with this job.</summary>
+      <value>User token associated with this job. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.StatusJobDataRunner">
+      <summary>Runs a conversion job with status update.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.AbortJob(Leadtools.Caching.ObjectCache,System.String,System.String)">
+      <summary>Aborts the specified job.</summary>
+      <param name="cache">Cache containing the status data.</param>
+      <param name="userToken">Value indicating the user token of the job.</param>
+      <param name="jobToken">Value indicating the token of the job.</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.DeleteJob(Leadtools.Caching.ObjectCache,System.String,System.String)">
+      <summary>Deletes the specified job.</summary>
+      <param name="cache">Cache containing the status data.</param>
+      <param name="userToken">Value indicating the user token of the job.</param>
+      <param name="jobToken">Value indicating the token of the job.</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.Prepare(Leadtools.Document.Converter.StatusJobData)">
+      <summary>Prepares to run a job.</summary>
+      <param name="jobData">Information and options for the job to run. This value must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.QueryJobStatus(Leadtools.Caching.ObjectCache,System.String,System.String)">
+      <summary>Retrieves the status of the specified job.</summary>
+      <param name="cache">Cache containing the status data.</param>
+      <param name="userToken">Value indicating the user token of the job.</param>
+      <param name="jobToken">Value indicating the token of the job.</param>
+      <returns>Data containing the last status of this job if found; otherwise, **null** if no such job was found.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.Run">
+      <summary>Runs the conversion job.</summary>
+      <returns>The final status of the job.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.ToJobData(Leadtools.Document.Converter.StatusJobData)">
+      <summary>Converts a status job data to document converter job data.</summary>
+      <param name="value">Status job data.</param>
+      <returns>Document converter job data containing the values parsed from *value*.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.ToStatusJobData(Leadtools.Document.Converter.DocumentConverterJobData)">
+      <summary>Converts a document converter job data to status job data.</summary>
+      <param name="value">Input document converter job data.</param>
+      <returns>Status job data containing the values parsed from *value*.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.Dispose">
+      <summary>Releases all resources used by this StatusJobDataRunner.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this StatusJobDataRunner.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Document.Converter.StatusJobDataRunner.Finalize">
+      <summary>This method overrides System.Object.Finalize.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.DocumentConverter">
+      <summary>Document converter instance being used to run this job.</summary>
+      <value>The document converter instance being used to run this job.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.DocumentWriter">
+      <summary>Document writer instance being used to create the output document.</summary>
+      <value>The document writer instance being used to create the output document.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.InputCache">
+      <summary>Cache containing the input document being converted.</summary>
+      <value>The cache containing the input document being converted.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.Job">
+      <summary>Job created by this runner being run or ready to be run.</summary>
+      <value>The job created by this runner being run or ready to be run.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.JobData">
+      <summary>Data of the job set into this runner being run or ready to be run.</summary>
+      <value>The data of the job set into this runner being run or ready to be run.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.MinifyCacheItem">
+      <summary>IndicateS whether to minify the data stored in the cache for each status.</summary>
+      <value>**true** to minify the data stored in the cache for each status; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.OcrEngine">
+      <summary>OCR engine instance being used by this job.</summary>
+      <value>The OCR engine instance being used by this job.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.OutputCache">
+      <summary>Cache to store the result output document of the conversion.</summary>
+      <value>The cache to store the result output document of the conversion.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.StatusJobDataRunner.StatusCache">
+      <summary>Cache used for storing the job status.</summary>
+      <value>The cache used for storing the job status.</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterAnnotationsMode">
+      <summary>Annotation conversion options.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterAnnotationsMode.None">
+      <summary>Do not save any annotations.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterAnnotationsMode.External">
+      <summary>Export the annotations to an external file.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterAnnotationsMode.Overlay">
+      <summary>Overlay the annotations over the image (raster conversion only).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterAnnotationsMode.Embed">
+      <summary>Embed the annotations in the final document (for PDF and TIFF file formats only).</summary>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterConversionModes">
+      <summary>Types of conversions that were used during the operation of this job.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterConversionModes.None">
+      <summary>None. The job did not start yet or an error occurred prior to any specific conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterConversionModes.SVG">
+      <summary>SVG conversion was used.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterConversionModes.OCR">
+      <summary>OCR conversion was used.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterConversionModes.Raster">
+      <summary>Raster conversion was used.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterEmptyPageMode">
+      <summary>Controls how empty pages are treated during the conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterEmptyPageMode.None">
+      <summary>Empty page will be added to the document and no checking is performed.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterEmptyPageMode.Skip">
+      <summary>Skip empty pages. The page is considered not empty if the annotations container for page contains items.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterEmptyPageMode.SkipIgnoreAnnotations">
+      <summary>Skip empty pages. The page is considered empty even if the annotations container for page contains items.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterJobErrorMode">
+      <summary>Controls how the engine handles errors that may occur during conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobErrorMode.Abort">
+      <summary>Abort the conversion job.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobErrorMode.Continue">
+      <summary>Continue on non-critical errors.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterJobOperation">
+      <summary>Document converter operation.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.Started">
+      <summary>The conversion has started. Only with the DocumentConverterJobs.JobStarted event.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.Completed">
+      <summary>The conversion has completed. Only with the DocumentConverterJobs.JobCompleted event.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.CreateDocument">
+      <summary>A new LEADDocument object is created from InputDocumentFileName.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.BeginDocumentWriter">
+      <summary>DocumentWriter.BeginDocument is called to create the output document. Document conversion only.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.EndDocumentWriter">
+      <summary>DocumentWriter.EndDocument is called to finalize the output document. Document conversion only.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.Other">
+      <summary>General operation.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.LoadRasterPage">
+      <summary>DocumentPage.GetImage is called get the raster image of a page. Document and Raster conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.SaveRasterPage">
+      <summary>is called to save the page image. Raster conversion only.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.LoadSvgPage">
+      <summary>DocumentPage.GetSvg is called get the SVG image of a page. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.AddDocumentPage">
+      <summary>DocumentWriter.AddPage is called to add a page to the document. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.PreprocessPage">
+      <summary>AutoPreprocess is called to pre-process the page.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.CreateOcrDocument">
+      <summary>object. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.AddOcrPage">
+      <summary>AddPage(RasterImage,OcrProgressCallback) object. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.AutoZoneOcrPage">
+      <summary>IOcrPage.AutoZone is called. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.RecognizeOcrPage">
+      <summary>IOcrPage.Recognize is called. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.SaveOcrPage">
+      <summary>IOcrDocument.Save with a single page is called. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.SaveOcrDocument">
+      <summary>IOcrDocument.Save is called. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.ConvertOcrDocument">
+      <summary>DocumentWriter.Convert is during OCR conversion called. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.LoadAnnotations">
+      <summary>AnnCodecs.Load is called to load the annotations from the input document or external input annotations file.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.SaveAnnotations">
+      <summary>AnnCodecs.Save is called to save the annotations to the external output annotations file.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.EmbedAnnotations">
+      <summary>The annotations are being embedded into the output document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.ConvertDocument">
+      <summary>DocumentWriter.Convert is called during SVG conversion. Document conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.OverlayAnnotations">
+      <summary>The annotations is being overlayed on top of the page.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.BeginUploadDocument">
+      <summary>The document converter is calling DocumentFactory.BeginUpload preparing to begin uploading the document to the cache.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.UploadDocument">
+      <summary>The document converter is calling DocumentFactory.UploadDocument to upload the document to the cache.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.UploadAnnotations">
+      <summary>The document converter is calling DocumentFactory.UploadAnnotations to upload the annotations of the document to the cache.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.EndUploadDocument">
+      <summary>The document converter is calling DocumentFactory.EndUpload to finish uploading the document to the cache.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobOperation.LinearizeDocument">
+      <summary>The document is a PDF and is being linearized (optimized for fast web viewing).</summary>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterJobStatus">
+      <summary>Job status.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobStatus.Success">
+      <summary>The job is successful.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobStatus.SuccessWithErrors">
+      <summary>The job is partially successful.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterJobStatus.Aborted">
+      <summary>The job was not successful and is aborted.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterSvgImagesRecognitionMode">
+      <summary>Determines how image elements inside SVG documents are treated during SVG conversion.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterSvgImagesRecognitionMode.Auto">
+      <summary>Use SVG engine unless the page is full raster. </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterSvgImagesRecognitionMode.Disabled">
+      <summary>Do not use OCR recognition for the image elements. Instead, the image element is added as is to the final document. </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Converter.DocumentConverterSvgImagesRecognitionMode.Always">
+      <summary>Use OCR recognition on the image elements. The recognition data is added to the final document with the rest of the other SVG elements of the page. Requires a valid IOcrEngine set in the converter using SetOcrEngineInstance.  </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterJobData">
+      <summary>Data for a document converter job.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.AnnotationsMode">
+      <summary>Controls how annotations are saved in the output document.</summary>
+      <value>A DocumentConverterAnnotationsMode enumeration value that controls how annotations are saved in the output document. Default value is</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.Cache">
+      <summary>Cache that contains the document ID to use as the input of the conversion.</summary>
+      <value>Cache that contains the document ID to use as the input of the conversion. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.Document">
+      <summary>LEADDocument object to be used as the input of the conversion.</summary>
+      <value>The LEADDocument object to be used as the input of the conversion. If this value is not **null**,</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.DocumentFormat">
+      <summary>Output format to use for document conversion.</summary>
+      <value>The output format to use for document conversion.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.DocumentId">
+      <summary>The ID of the LEADDocument object to be used as the input of the conversion.</summary>
+      <value>The ID of LEADDocument object to be used as the input of the conversion. If this value is not **null**,</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.InputAnnotationsFileName">
+      <summary>Path to the file containing the annotations file to be added to the output document. Optional.</summary>
+      <value>The path to the file containing the annotations file to be added to the output document. This is an optional value and will be used</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.InputDocumentFileName">
+      <summary>Path to the input file for the conversion. Either this or Document are used.</summary>
+      <value>The path to the input file for the conversion. If this value is not **null**, then it will be used as the input document for</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.InputDocumentFirstPageNumber">
+      <summary>Number of the first page to be converted from the input document</summary>
+      <value>The 1-based number of the first page to be converted from the input document. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.InputDocumentLastPageNumber">
+      <summary>Number of the last page to be converted from the input document</summary>
+      <value>The 1-based number of the last page to be converted from the input document. A value of -1 means to use the last page in the document. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.JobName">
+      <summary>Optional job name.</summary>
+      <value>The optional job name.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.OutputAnnotationsFileName">
+      <summary>Name of the file that will contain the annotations parsed from the input document. Optional.</summary>
+      <value>The name to the file that will contain the annotations parsed from the input document. Optional.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.OutputAnnotationsStream">
+      <summary>Stream that will contain the annotations parsed from the input document. Optional.</summary>
+      <value>Stream that will contain the annotations parsed from the input document. Optional. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.OutputDocumentFileName">
+      <summary>Name of the output file generated by this conversion.</summary>
+      <value>Name of the output file generated by this conversion.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.OutputDocumentStream">
+      <summary>Stream to hold the output file generated by this conversion.</summary>
+      <value>Stream to hold the output file generated by this conversion. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.RasterImageBitsPerPixel">
+      <summary>Bits per pixel to use for the output document when raster conversion is used.</summary>
+      <value>The bits per pixel to use for the output document when raster conversion is used. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.RasterImageFormat">
+      <summary>Output format to use for raster conversion.</summary>
+      <value>The output format to use for raster conversion.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.UploadDocumentOptions">
+      <summary>Options to use for automatically uploading the converted document to the cache.</summary>
+      <value>Options to use for automatically upload the converted document to the cache. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.UserData">
+      <summary>Optional user-defined object that can be used a long side the job events to pass application specified data.</summary>
+      <value>The optional user-defined object that can be used a long side the job events to pass application specified data.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobData.UserToken">
+      <summary>User token associated with the document.</summary>
+      <value>The user token associated with the document. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Document.Converter.DocumentConverterJobError">
+      <summary>Contains information on an document converter job error</summary>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobError.Error">
+      <summary>The exception that was thrown (if any).</summary>
+      <value>The System.Exception object that was thrown and caught by the engine. May be a **null** value.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobError.InputDocumentPageNumber">
+      <summary>The 1-based number of the page in the input document file that caused the error.</summary>
+      <value>The 1-based number of the page in the input document file that caused the error.</value>
+    </member>
+    <member name="P:Leadtools.Document.Converter.DocumentConverterJobError.Operation">
+      <summary>The operation that was running when the error occured.</summary>
+      <value>An DocumentConverterJobOperation enumeration member that specifies the operation that was running when the error occured.</value>
+    </member>
+  </members>
+</doc>

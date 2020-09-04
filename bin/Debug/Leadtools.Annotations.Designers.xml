@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Annotations.Designers</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Annotations.Designers.AnnCrossProductDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing cross product objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnCrossProductObject)">
+      <summary>Initializes a new AnnCrossProductDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annCrossProductObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductDrawDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductDrawDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp method.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnCrossProductEditDesigner">
+      <summary>Extends the AnnEditDesigner class to provide functionality for editing cross product objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnCrossProductObject)">
+      <summary>Initializes a new AnnCrossProductEditDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annCrossProductObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductEditDesigner.GetThumbLocations">
+      <summary>The AnnCrossProductEditDesigner implementation of the GetThumbLocations method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductEditDesigner.SnapObjectToGrid(Leadtools.Annotations.Engine.AnnObject,System.Boolean)">
+      <summary>Provides an implementation of the SnapObjectToGrid method for this AnnCrossProductEditDesigner object.</summary>
+      <param name="targetObject">An AnnObject to snap.</param>
+      <param name="clipToContainer">A Boolean value to specify if we want to clip the point to container bounds after snap or no.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductEditDesigner.GetRotationReferencePoints">
+      <summary>Provides an implementation of the GetRotationReferencePoints method for this AnnCrossProductEditDesigner object.</summary>
+      <returns>The two reference points used to keep the rotation center and gripper at an even distance when the object is moved in annotation coordinates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductEditDesigner.Move(System.Double,System.Double)">
+      <summary>Provides an implementation of the Move method for this AnnCrossProductEditDesigner object.</summary>
+      <param name="offsetX">The horizontal offset to be used when moving the object.</param>
+      <param name="offsetY">The vertical offset to be used when moving the object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnCrossProductEditDesigner.MoveThumb(System.Int32,Leadtools.LeadPointD)">
+      <summary>Provides an implementation of the MoveThumb method for this AnnCrossProductEditDesigner object.</summary>
+      <param name="thumbIndex">Index of the thumb to move.</param>
+      <param name="offset">The new position of the thumb.</param>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnDesigner">
+      <summary>Defines the base class for all of the designers in the annotation toolkit.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Initializes a new instance of AnnDesigner with the specified parameters.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use. Must not be **null**.</param>
+      <param name="annObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.Cancel">
+      <summary>Cancels the current designer operation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.End">
+      <summary>Ends this designer.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.GetRenderer">
+      <summary>Gets the object that is used to render the TargetObject.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.Invalidate(Leadtools.LeadRectD)">
+      <summary>Manually invalidates this designer.</summary>
+      <param name="rc">The region to invalidate. If the value of this parameter is LeadRectD.Empty, then the entire surface is invalidated.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.OnPointerDoubleClick(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Handles pointer double-click events on the designer.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Derived classes should override this method in order to process pointer double-click events on the container. The designer should return **true** if it handled this event in any way.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Handles pointer down events on the designer.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Derived classes should override this method in order to process pointer down events on the container. The designer should return **true** if it handled this event in any way.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Handles pointer move events on the designer.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Derived classes should override this method in order to process pointer move events on the container. The designer should return **true** if it handled this event in any way.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Handles pointer up events on the designer.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Derived classes should override this method in order to process pointer up events on the container. The designer should return **true** if it handled this event in any way.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.SnapPointToGrid(Leadtools.LeadPointD,System.Boolean)">
+      <summary>Snaps the specified point to the container grid based on SnapToGridOptions.</summary>
+      <param name="position">Point to snap.</param>
+      <param name="clipToContainer">A Boolean value to specify if we want to clip the point to container bounds after snap or no.</param>
+      <returns>point snapped to the container grid based on SnapToGridOptions.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.Start">
+      <summary>Starts this designer.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDesigner.ClipPoint(Leadtools.LeadPointD,Leadtools.LeadRectD)">
+      <summary>Clips the specified point.</summary>
+      <param name="point">Point to clip.</param>
+      <param name="clipRect">Clipping rectangle to use.</param>
+      <returns>point clipped to the boundaries of the rectangle.</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.AutomationControl">
+      <summary>Gets the automation control associated with this designer.</summary>
+      <value>The automation control associated with this designer.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.FinalTargetObject">
+      <summary>Gets the final target object for this designer.</summary>
+      <value>The final target object for this designer. Default implementation is to return TargetObject.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.HasStarted">
+      <summary>Gets a value that indicates whether this designer has started.</summary>
+      <value>**true** if this AnnDesigner has started; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.IsMouseLeftButtonDown">
+      <summary>Gets or sets a value indicating whether the left mouse button is currently down.</summary>
+      <value>**true** if the left mouse button is currently down; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.RestrictDesigners">
+      <summary>Gets or sets a value that indicates whether the object should be restricted to a point inside the rectangle set in ClipRectangle.</summary>
+      <value>It is **true** if the object should be restricted to a point inside inside the rectangle set in ClipRectangle; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.SnapToGridOptions">
+      <summary>Gets the AnnSnapToGridOptions for this AnnDesigner.</summary>
+      <value>The AnnSnapToGridOptions object for this AnnDesigner.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.TargetObject">
+      <summary>Gets or sets the target object for this designer.</summary>
+      <value>The target object for this designer.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.ClipRectangle">
+      <summary>Gets the cursor clipping rectangle for this designer.</summary>
+      <value>The cursor clipping rectangle for this designer. The default value of ClipRectangle is set to the location and boundary of the Container.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDesigner.Container">
+      <summary>Gets the AnnContainer object for this AnnDesigner.</summary>
+      <value>The AnnContainer object for this AnnDesigner.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnDrawDesigner">
+      <summary>Extends the AnnDesigner class to provide standard functionality for drawing annotation objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Initializes a new instance of an AnnDrawDesigner object with the specified parameters.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDrawDesigner.Cancel">
+      <summary>Provides an implementation of the AnnDesigner.Cancel method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDrawDesigner.End">
+      <summary>Ends drawing the TargetObject.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDrawDesigner.Start">
+      <summary>Starts drawing the TargetObject.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDrawDesigner.EndWorking">
+      <summary>Indicates whether this AnnDrawDesigner has successfully ended the drawing process.</summary>
+      <returns>For more information and an example, refer to Implement User Defined Objects with LEADTOOLS Annotations</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDrawDesigner.OnDraw(Leadtools.Annotations.Engine.AnnDrawDesignerEventArgs)">
+      <summary>Raises the Draw event.</summary>
+      <param name="e">The event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDrawDesigner.StartWorking">
+      <summary>Starts the drawing process.</summary>
+      <returns>For more information and an example, refer to Implement User Defined Objects with LEADTOOLS Annotations</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnDrawDesigner.Working">
+      <summary>Indicates whether this AnnDrawDesigner is currently drawing.</summary>
+      <returns>For more information and an example, refer to Implement User Defined Objects with LEADTOOLS Annotations</returns>
+    </member>
+    <member name="E:Leadtools.Annotations.Designers.AnnDrawDesigner.Draw">
+      <summary>Occurs when this AnnDrawDesigner object is drawing an AnnObject.</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDrawDesigner.ExtendedMode">
+      <summary>A value indicating whether this AnnDrawDesigner is currently in extended mode.</summary>
+      <value>**true** if this AnnDrawDesigner is currently in extended mode, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDrawDesigner.ExtendedModeModifierKey">
+      <summary>Gets or sets a value indicating the current extended mode modifier key.</summary>
+      <value>The current extended mode modifier key. Default value is AnnKeys.None.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDrawDesigner.IsTargetObjectAdded">
+      <summary>Gets a value indicating whether this AnnDrawDesigner has automatically added TargetObject to the container.</summary>
+      <value>**true** if this AnnDrawDesigner has automatically added TargetObject to the container, otherwise; **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDrawDesigner.OperationStatus">
+      <summary>Gets the current drawing operation status.</summary>
+      <value>The current drawing operation status.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnDrawDesigner.IsExtendedMode">
+      <summary>Gets a value indicating whether this AnnDrawDesigner is currently in extended mode.</summary>
+      <value>**true** if this AnnDrawDesigner is currently in extended mode, otherwise; **false**.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnEditDesigner">
+      <summary>Extends AnnDesigner to provide standard functionality for editing Annotation objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Initializes a new instance of the AnnEditDesigner class with the specified parameters.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.Cancel">
+      <summary>The AnnEditDesigner implementation of the AnnDesigner.Cancel method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.End">
+      <summary>Ends the editing of the TargetObject.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.GetRotateGripper">
+      <summary>Gets the location of the rotate gripper thumb for the selected object, in annotation coordinates.</summary>
+      <returns>The location of the rotate gripper thumb for the selected object, in annotation coordinates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.GetThumbLocations">
+      <summary>Gets the location of the thumbs of this AnnEditDesigner.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.HitTestThumbs(Leadtools.LeadPointD)">
+      <summary>Performs hit-testing on the specified thumb control point of this edit designer.</summary>
+      <param name="pt">Test point.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.Invalidate(Leadtools.LeadRectD)">
+      <summary>Manually invalidates this designer.</summary>
+      <param name="rc">The region to invalidate. If the value of this parameter is LeadRectD.Empty, then the entire surface is invalidated.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.OnPointerDoubleClick(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDoubleClick event in this AnnEditDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown event in this AnnEditDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove event in this AnnEditDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp event in this AnnEditDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.ResetRotateThumbs">
+      <summary>Move the rotate thumbs to the default position.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.SnapObjectToGrid(Leadtools.Annotations.Engine.AnnObject,System.Boolean)">
+      <summary>Snaps the specified AnnObject to the container grid based on AnnSnapToGridOptions.</summary>
+      <param name="targetObject">An AnnObject to snap.</param>
+      <param name="clipToContainer">A Boolean value to specify if we want to clip the point to container bounds after snap or no.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.Start">
+      <summary>Starts editing the TargetObject.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.EndWorking">
+      <summary>Ends editing.</summary>
+      <returns>For more information and an example, refer to Implement User Defined Objects with LEADTOOLS Annotations</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.GetIntersectionWithReferencePoints">
+      <summary>Gets the intersection point between the rotate center and gripper.</summary>
+      <returns>The intersection point between the rotate center and gripper.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.GetRotateCenterPoint">
+      <summary>Gets the location of the rotate center thumb for the selected object, in annotation coordinates.</summary>
+      <returns>The location of the rotate center thumb for the selected object, in annotation coordinates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.GetRotationReferencePoints">
+      <summary>Gets the two reference points used to keep the rotation center and gripper at an even distance when the object is moved along annotation coordinates.</summary>
+      <returns>The two reference points used to keep the rotation center and gripper at an even distance when the object is moved in annotation coordinates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.Move(System.Double,System.Double)">
+      <summary>Moves the object.</summary>
+      <param name="offsetX">The horizontal offset to be used when moving the object.</param>
+      <param name="offsetY">The vertical offset to be used when moving the object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.MoveThumb(System.Int32,Leadtools.LeadPointD)">
+      <summary>Moves a thumb.</summary>
+      <param name="thumbIndex">Index of the thumb to move.</param>
+      <param name="offset">The new position of the thumb.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.OnEdit(Leadtools.Annotations.Engine.AnnEditDesignerEventArgs)">
+      <summary>Raises the Edit event.</summary>
+      <param name="e">The event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.StartWorking(Leadtools.Annotations.Engine.AnnEditDesignerOperation,System.Int32)">
+      <summary>Begins editing.</summary>
+      <param name="operation">The current operation.</param>
+      <param name="thumbIndex">The Index of the object being moved (or -1 if no thumb is being moved).</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnEditDesigner.Working">
+      <summary>Continues the editing process.</summary>
+      <returns>For more information and an example, refer to Implement User Defined Objects with LEADTOOLS Annotations</returns>
+    </member>
+    <member name="E:Leadtools.Annotations.Designers.AnnEditDesigner.Edit">
+      <summary>Occurs when this AnnEditDesigner is editing an AnnObject.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Designers.AnnEditDesigner.EditContent">
+      <summary>Occurs when this AnnEditDesigner is editing the content of an AnnObject.</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.IsModified">
+      <summary>A value that indicates whether this object has been modified.</summary>
+      <value>**true** if the object has been modified; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.MaintainAspectRatio">
+      <summary>Gets or sets a value that indicates whether to preserve the aspect ratio when moving a corner thumb.</summary>
+      <value>**true** to preserve the aspect ratio when moving a corner thumb; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.MoveThumbIndex">
+      <summary>Gets the index of the current thumb being moved.</summary>
+      <value>The index of the current thumb being moved. The default value is -1.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.Operation">
+      <summary>Gets a value that indicates which edit operation is currently being performed.</summary>
+      <value>The current edit operation. The default value is AnnEditDesignerOperation.None.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.RotateModifierKey">
+      <summary>Gets or sets a value indicating the current auto-rotate modifier key.</summary>
+      <value>the current auto-rotate modifier key. Default value is AnnKeys.None.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.ShowThumbs">
+      <summary>Gets or sets a value that indicates whether to show the thumbs.</summary>
+      <value>**true** to show the thumbs; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.ThumbsEnabled">
+      <summary>Enables hit-testing and invoking the default behavior when the user clicks and drags on the control point thumbs of this edit designer.</summary>
+      <value>**true** to enable hit-testing and invoking the default behavior when the user clicks and drags on the control point thumbs of this edit designer; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.ThumbsHitTestBuffer">
+      <summary>Gets or sets the hit test buffer to use for the thumbs of this AnnEditDesigner.</summary>
+      <value>The hit test buffer, in annotation coordinates, for the thumbs of this AnnEditDesigner. This must be a value greater than or equal to 0. The default value is 1.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.UseRotateThumbs">
+      <summary>Gets or sets a value that indicates whether to use the rotate thumbs of this AnnEditDesigner.</summary>
+      <value>**true** to use the rotate thumbs of this AnnEditDesigner; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnEditDesigner.WorkingBuffer">
+      <summary>Gets or sets the buffer to use for determining how far a OnPointerMove is from the previous OnPointerMove to be considered a legitimate move operation by the user and not an error due to sensitity.</summary>
+      <value>The buffer to use for determining how far a OnPointerMove is from the previous OnPointerMove to be considered a legitimate move operation by the user and not an error due to sensitity. Default value is 2 pixels.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnFreehandDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing freehand AnnPolylineObjects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnFreehandDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPolylineObject)">
+      <summary>Initializes a new AnnFreehandDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annPolylineObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnFreehandDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnFreehandDrawDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnFreehandDrawDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp method.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnFreehandDrawDesigner.Spacing">
+      <summary>Gets or sets a value representing the distance between any two points in the free-hand drawing.</summary>
+      <value>The distance, in pixels, between any two points in the free-hand drawing. The default value is 2.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnFreeHandSelectionDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for free hand selection when using the AnnSelectionObject on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnFreeHandSelectionDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnRectangleObject)">
+      <summary>Initializes a new AnnFreeHandSelectionDrawDesigner object.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annRectangleObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnFreeHandSelectionDrawDesigner.EndWorking">
+      <summary>Provides an implementation of the AnnDrawDesigner.EndWorking method.</summary>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnFreeHandSelectionDrawDesigner.StartWorking">
+      <summary>Starts the drawing process.</summary>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnFreeHandSelectionDrawDesigner.FinalTargetObject">
+      <summary>Gets the final target object for this designer.</summary>
+      <value>The final target object for this designer.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnLineDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing line objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnLineDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPolylineObject)">
+      <summary>Initializes a new AnnLineDrawDesigner object.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annLineObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnLineDrawDesigner.OnPointerDoubleClick(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDoubleClick method this AnnLineDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnLineDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method for this AnnLineDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnLineDrawDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method for this AnnLineDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnLineDrawDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp method for this AnnLineDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnPointDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing point objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPointDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointObject)">
+      <summary>Initializes a new AnnPointDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annPointObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPointDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method for this AnnPointDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnPointEditDesigner">
+      <summary>Extends the AnnEditDesigner class to provide functionality for editing point objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPointEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointObject)">
+      <summary>Initializes a new AnnPointEditDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annPointObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPointEditDesigner.GetThumbLocations">
+      <summary>An AnnPointEditDesigner implementation of the GetThumbLocations method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPointEditDesigner.GetRotationReferencePoints">
+      <summary>Provides an implementation of the GetRotationReferencePoints method for this AnnPointEditDesigner object.</summary>
+      <returns>The two reference points used to keep the rotation center and gripper at even distance when the object is moved in annotation coordinates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPointEditDesigner.MoveThumb(System.Int32,Leadtools.LeadPointD)">
+      <summary>Provides an implementation of the MoveThumb method for this AnnPointEditDesigner object.</summary>
+      <param name="thumbIndex">Index of the thumb to move.</param>
+      <param name="offset">The new position of the thumb.</param>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnPolylineDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing polyline objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPolylineObject)">
+      <summary>Initializes a new AnnPolylineDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annPolylineObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineDrawDesigner.OnPointerDoubleClick(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDoubleClick method for this AnnPolylineDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method for this AnnPolylineDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineDrawDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method for this AnnPolylineDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineDrawDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp method for this AnnPolylineDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineDrawDesigner.EndWorking">
+      <summary>Provides an implementation of the AnnDrawDesigner.EndWorking method for the AnnPolylineDrawDesigner object.</summary>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnPolylineDrawDesigner.FirstPointOnClick">
+      <summary>Indicates whether this AnnPolylineDrawDesigner will draw the first point on the first user click.</summary>
+      <value>**true** to draw the first point on user click, **false** otherwise.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnPolylineEditDesigner">
+      <summary>Extends the AnnEditDesigner class to provide functionality for editing polyline objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPolylineObject)">
+      <summary>Initializes a new AnnPolylineEditDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annPolylineObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineEditDesigner.GetThumbLocations">
+      <summary>An AnnPolylineEditDesigner implementation of the GetThumbLocations method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineEditDesigner.GetRotateCenterPoint">
+      <summary>Provides an implementation of the GetRotateCenterPoint method for this AnnPolylineEditDesigner object.</summary>
+      <returns>The two reference points are used to keep the rotation center and gripper at an even distance when the object is moved in annotation coordinates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineEditDesigner.GetRotationReferencePoints">
+      <summary>Provides an implementation of the GetRotationReferencePoints method for this AnnPolylineEditDesigner object.</summary>
+      <returns>The two reference points used to keep the rotation center and gripper at even distance when the object is moved in annotation coordinates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnPolylineEditDesigner.MoveThumb(System.Int32,Leadtools.LeadPointD)">
+      <summary>Provides an implementation of the MoveThumb method for this AnnPolylineEditDesigner object.</summary>
+      <param name="thumbIndex">Index of the thumb to move.</param>
+      <param name="offset">The new position of the thumb.</param>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnPolylineEditDesigner.ThumbsGap">
+      <summary>Gets or sets a value that indicates which thumb to display.</summary>
+      <value>A value greater than 0 that indicates which thumbs to display. The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnProtractorDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing protractor objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnProtractorDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnProtractorObject)">
+      <summary>Initializes a new AnnProtractorDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annProtractorObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnProtractorDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method for this AnnProtractorDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnProtractorDrawDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method for this AnnProtractorDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnProtractorDrawDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp method for this AnnProtractorDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnRectangleDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing rectangle objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnRectangleObject)">
+      <summary>Initializes a new AnnRectangleDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annRectObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method for this AnnRectangleDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleDrawDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method for this AnnRectangleDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleDrawDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp method for this AnnRectangleDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnRectangleDrawDesigner.DrawOnClick">
+      <summary>Automatically draws a complete object on the first user click.</summary>
+      <value>**true** to automatically draw a complete object on the first user click; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnRectangleEditDesigner">
+      <summary>Extends the AnnEditDesigner class to provide functionality for editing rectangle objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnRectangleObject)">
+      <summary>Initializes a new AnnRectangleEditDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annRectangleObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleEditDesigner.GetThumbLocations">
+      <summary>The AnnRectangleEditDesigner implementation of the GetThumbLocations method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleEditDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>The AnnRectangleEditDesigner implementation of the OnPointerDown method.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleEditDesigner.SnapObjectToGrid(Leadtools.Annotations.Engine.AnnObject,System.Boolean)">
+      <summary>Provides an implementation of the SnapObjectToGrid method for this AnnRectangleEditDesigner object.</summary>
+      <param name="targetObject">An AnnObject to snap.</param>
+      <param name="clipToContainer">A Boolean value to specify if we want to clip the point to container bounds after snap or no.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRectangleEditDesigner.MoveThumb(System.Int32,Leadtools.LeadPointD)">
+      <summary>Provides an implementation of the MoveThumb method for this AnnRectangleEditDesigner object.</summary>
+      <param name="thumbIndex">Index of the thumb to move.</param>
+      <param name="offset">The new position of the thumb.</param>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnRectangleEditDesigner.MinimumSize">
+      <summary>Gets or sets a value that indicates the minimum object size.</summary>
+      <value>The minimum object size in container coordinates. The default value is empty.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnRunDesigner">
+      <summary>Extends AnnDesigner to provide standard functionality for running Annotation objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Initializes a new instance of AnnRunDesigner with the specified parameters.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.Cancel">
+      <summary>Provides an implementation of the AnnDesigner.Cancel in this AnnRunDesigner object.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.OnPointerDoubleClick(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDoubleClick method for this AnnRunDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method for this AnnRunDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method for this AnnRunDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp method for this AnnRunDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.EndWorking">
+      <summary>Ends the running process.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.OnRun(Leadtools.Annotations.Engine.AnnRunDesignerEventArgs)">
+      <summary>Raises the Run event.</summary>
+      <param name="e">The event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.StartWorking">
+      <summary>Starts the running process.</summary>
+      <returns>For more information and an example, refer to Implement User Defined Objects with LEADTOOLS Annotations</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnRunDesigner.Working">
+      <summary>Continues the running process.</summary>
+      <returns>For more information and an example, refer to Implement User Defined Objects with LEADTOOLS Annotations</returns>
+    </member>
+    <member name="E:Leadtools.Annotations.Designers.AnnRunDesigner.Run">
+      <summary>Occurs when this AnnRunDesigner is running an AnnObject.</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnRunDesigner.HitTestBuffer">
+      <summary>Gets or sets the hit test buffer for this AnnRunDesigner.</summary>
+      <value>The hit test buffer, in pixels, for this AnnRunDesigner. This must be a value greater than or equal to 0. The default value is 1.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnSelectionEditDesigner">
+      <summary>Extends the AnnEditDesigner class to provide functionality for editing the special selection object on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnSelectionEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnSelectionObject)">
+      <summary>Initializes a new AnnSelectionEditDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annSelectionObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnSelectionEditDesigner.End">
+      <summary>This object's implementation of the AnnDesigner.End method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnSelectionEditDesigner.GetThumbLocations">
+      <summary>The AnnSelectionEditDesigner implementation of the GetThumbLocations method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnSelectionEditDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnSelectionEditDesigner.Start">
+      <summary>This object's implementation of the AnnDesigner.Start method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnSelectionEditDesigner.Move(System.Double,System.Double)">
+      <summary>Provides an implementation of the Move method for this AnnSelectionEditDesigner object.</summary>
+      <param name="offsetX">The horizontal offset to be used when moving the object.</param>
+      <param name="offsetY">The vertical offset to be used when moving the object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnSelectionEditDesigner.MoveThumb(System.Int32,Leadtools.LeadPointD)">
+      <summary>Provides an implementation of the MoveThumb method for this AnnSelectionEditDesigner object.</summary>
+      <param name="thumbIndex">Index of the thumb to move.</param>
+      <param name="offset">The new position of the thumb.</param>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnSelectionEditDesigner.MaintainAspectRatio">
+      <summary>This object's implementation of the AnnEditDesigner.MaintainAspectRatio method.</summary>
+      <value>**true** to preserve the aspect ratio when moving a corner thumb; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnStickyNoteDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing sticky note objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnStickyNoteDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnStickyNoteObject)">
+      <summary>Initializes a new AnnStickyNoteDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annStickyNoteObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnStickyNoteDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method for this AnnStickyNoteDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnTextEditDesigner">
+      <summary>Extends the AnnEditDesigner class to provide functionality for editing text objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnTextObject)">
+      <summary>Initializes a new AnnTextEditDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annTextObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextEditDesigner.Invalidate(Leadtools.LeadRectD)">
+      <summary>Overrides AnnEditDesigner.Invalidate.</summary>
+      <param name="rc">Overrides AnnEditDesigner.Invalidate to invalidate the region. If the value of this parameter is LeadRectD.Empty, then the entire surface is invalidated.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextEditDesigner.OnPointerDoubleClick(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDoubleClick method for this AnnTextEditDesigner.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="E:Leadtools.Annotations.Designers.AnnTextEditDesigner.EditText">
+      <summary>Occurs when the user enters text edit mode in this AnnTextEditDesigner.</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnTextEditDesigner.AcceptsReturn">
+      <summary>Indicates whether pressing ENTER within a multi-line TextBox control creates a new line of text in the control or activates the default button for the form.</summary>
+      <value>**true** if pressing **ENTER** creates a new line of text in a multi-line version of the control; **false** if pressing **ENTER** activates the default button for the form. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnTextEditDesigner.AutoSizeAfterEdit">
+      <summary>Resizes the text object to adjust it to fit the boundary of the enclosing text.</summary>
+      <value>**true** to resize the text object to adjust it to fit the boundary of the enclosing text; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnTextEditDesigner.AutoSizeRotatedOnly">
+      <summary>Enables resizing the text object to adjust it to fit within the boundaries of the enclosing text when rotated.</summary>
+      <value>**true** to enable resizing the text object to adjust it to fit the boundary of the enclosing text when rotated; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnTextPointerDrawDesigner">
+      <summary>Extends the AnnDrawDesigner class, providing functionality for drawing text pointer objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnTextPointerObject)">
+      <summary>Initializes a new AnnTextPointerDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annTextPointerObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerDrawDesigner.Cancel">
+      <summary>Provides an implementation of the AnnDrawDesigner.Cancel method for the AnnTextPointerDrawDesigner object.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerDrawDesigner.OnPointerDown(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerDown method for this AnnTextPointerDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerDrawDesigner.OnPointerMove(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerMove method for this AnnTextPointerDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerDrawDesigner.OnPointerUp(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Provides an implementation of the OnPointerUp method for this AnnTextPointerDrawDesigner object.</summary>
+      <param name="sender">The container associated with this designer.</param>
+      <param name="e">The event data.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerDrawDesigner.EndWorking">
+      <summary>Provides an implementation of the AnnDrawDesigner.EndWorking method for the AnnTextPointerDrawDesigner object.</summary>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnTextPointerDrawDesigner.DefaultText">
+      <summary>The default text to be used with new AnnTextPointerObject objects.</summary>
+      <value>The default text to be used with new AnnTextPointerObject objects. The default value is "AaBbZz".</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnTextPointerEditDesigner">
+      <summary>Extends the AnnEditDesigner class to provide functionality for editing text pointer objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnTextPointerObject)">
+      <summary>Initializes a new AnnTextPointerEditDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annTextPointerObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerEditDesigner.GetThumbLocations">
+      <summary>AnnTextPointerEditDesigner implementation of the GetThumbLocations method.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextPointerEditDesigner.MoveThumb(System.Int32,Leadtools.LeadPointD)">
+      <summary>Provides an implementation of the MoveThumb method for this AnnTextPointerEditDesigner object.</summary>
+      <param name="thumbIndex">Index of the thumb to move.</param>
+      <param name="offset">The new position of the thumb.</param>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnTextReviewDrawDesigner">
+      <summary>Extends the AnnRectangleDrawDesigner class, providing functionality for drawing text review objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextReviewDrawDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnTextReviewObject)">
+      <summary>Initializes a new AnnTextReviewDrawDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annTextReviewObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextReviewDrawDesigner.EndWorking">
+      <summary>Provides an implementation of the AnnDrawDesigner.EndWorking method for the AnnTextReviewDrawDesigner object.</summary>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Designers.AnnTextReviewDrawDesigner.FinalTargetObject">
+      <summary>Gets the final target object for this designer.</summary>
+      <value>The final target object for this designer.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnTextReviewEditDesigner">
+      <summary>Extends the AnnEditDesigner class to provide functionality for editing text review objects on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextReviewEditDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Initializes a new AnnTextReviewEditDesigner.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextReviewEditDesigner.GetThumbLocations">
+      <summary>Gets the location of the thumbs of this AnnTextReviewEditDesigner.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextReviewEditDesigner.Move(System.Double,System.Double)">
+      <summary>Moves the object.</summary>
+      <param name="offsetX">The horizontal offset to be used when moving the object.</param>
+      <param name="offsetY">The vertical offset to be used when moving the object.</param>
+    </member>
+    <member name="T:Leadtools.Annotations.Designers.AnnTextRollupRunDesigner">
+      <summary>Extends AnnRunDesigner to provide functionality for running an AnnTextRollupObject on an annotation container.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextRollupRunDesigner.#ctor(Leadtools.Annotations.Engine.IAnnAutomationControl,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnTextRollupObject)">
+      <summary>Initializes a new AnnTextRollupRunDesigner method.</summary>
+      <param name="automationControl">The automation control associated with this designer.</param>
+      <param name="container">The container to use.</param>
+      <param name="annTextRollupObject">The target object.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Designers.AnnTextRollupRunDesigner.OnRun(Leadtools.Annotations.Engine.AnnRunDesignerEventArgs)">
+      <summary>Provides an implementation of the AnnRunDesigner.OnRun method for this AnnTextRollupRunDesigner object.</summary>
+      <param name="e">The event data.</param>
+    </member>
+  </members>
+</doc>

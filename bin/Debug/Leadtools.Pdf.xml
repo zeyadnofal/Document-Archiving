@@ -1,0 +1,2955 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Pdf</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Pdf.PDFAnnotation">
+      <summary>Contains information for a single PDF annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFAnnotation class with the specified parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFAnnotation</summary>
+      <returns>The PDFAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.Content">
+      <summary>Content of annotation object. This is optional.</summary>
+      <value>A System.String that contains content of annotation object. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.Matrix">
+      <summary>Gets the general transformation matrix associated with this PDF annotation object.</summary>
+      <value>The general transformation matrix associated with this PDF annotation object. The default value is an empty PDFMatrix (no transformation).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.Modified">
+      <summary>Date and time for last modification of annotation object.</summary>
+      <value>A System.DateTime that contains the date and time of the last modification of this annotation object.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.ObjectBounds">
+      <summary>Gets the source bounds of this annotation.</summary>
+      <value>A PDFRect that represents the source location and size of this annotation in PDF units (1/72 of an inch and bottom left). The default value is an empty PDFRect.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.ObjectNumber">
+      <summary>The optional unique number (id) of this annotation object.</summary>
+      <value>Optional unique number (ID) of this annotation object. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.PageNumber">
+      <summary>Page number for this annotation.</summary>
+      <value>An System.Int32 that specifies the number of the page that this annotation will be added to. The default value is 1.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.ParentObjectNumber">
+      <summary>The optional unique number (ID) of the parent of this annotation object.</summary>
+      <value>Optional unique number (ID) of the parent of this annotation object. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.Relationship">
+      <summary>Optional relationship between this annotation object and its parent.</summary>
+      <value>Optional relationship between this annotation object and its parent. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.Subject">
+      <summary>Subject of this PDF annotation.</summary>
+      <value>A System.String that contain the subject of the PDF annotation. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.Title">
+      <summary>Title of this PDF annotation.</summary>
+      <value>A System.String that contain the title of the PDF annotation. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.Transparency">
+      <summary>Transparency for this annotation.</summary>
+      <value>A System.Double that specifies the transparency of this annotation. The default value is 1.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFAnnotation.ViewFlags">
+      <summary>The view flags associated with this PDFAnnotation object.</summary>
+      <value>The view flags associated with this PDFAnnotation object. Default value is 0.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.BorderEffectCloud">
+      <summary>Cloud border effect.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.BorderEffectNone">
+      <summary>No border effect.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleButt">
+      <summary>PDF Specification standard Butt line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleCircle">
+      <summary>PDF Specification standard Circle line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleClosedArrow">
+      <summary>PDF Specification standard Closed Arrow line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleDiamond">
+      <summary>PDF Specification standard Diamond line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleNone">
+      <summary>PDF Specification standard None (default) line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleOpenArrow">
+      <summary>PDF Specification standard Open Arrow line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleRClosedArrow">
+      <summary>PDF Specification standard Reversed Closed Arrow line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleROpenArrow">
+      <summary>PDF Specification standard Reversed Open Arrow line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleRSlash">
+      <summary>PDF Specification standard Slash line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.LineEndingsStyleSquare">
+      <summary>PDF Specification standard Square line ending style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.RelationGroup">
+      <summary>Group relationship.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.RelationReply">
+      <summary>Reply relationship.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsHidden">
+      <summary>Hidden view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsInvisible">
+      <summary>Invisible view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsLocked">
+      <summary>Locked view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsLockedContents">
+      <summary>Locked contents view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsNoRotate">
+      <summary>No rotate view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsNoView">
+      <summary>No view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsNoZoom">
+      <summary>No zoom view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsPrint">
+      <summary>Print view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsReadOnly">
+      <summary>Read-only view flag.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotation.ViewFlagsToggleNoView">
+      <summary>Toggle no view flag.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFDistillerOptions">
+      <summary>Provides options to use when distilling Postscript files (Convert Postscript files to PDF).</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDistillerOptions.#ctor">
+      <summary>Initializes a new instance of the PDFDistillerOptions class with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDistillerOptions.Clone">
+      <summary>Creates an exact copy of this PDFDistillerOptions object.</summary>
+      <returns>The PDFDistillerOptions cone this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDistillerOptions.AutoRotatePageMode">
+      <summary>Page rotation mode to use when distilling Postscript files.</summary>
+      <value>An PDFDistillerAutoRotatePageMode enumeration member that determine the page rotation mode to use when distilling Postscript files. The default value is PDFDistillerAutoRotatePageMode.None.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDistillerOptions.OutputMode">
+      <summary>Output optimization mode to use when distilling Postscript files.</summary>
+      <value>A PDFDistillerOutputMode enumeration member that determines the output optimization mode to use when distilling Postscript files. The default value is PDFDistillerOutputMode.Default.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFDocument">
+      <summary>Encapsulates a PDF document and allows PDF pages, objects, and images to be read.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.#ctor(System.IO.Stream)">
+      <summary>Initializes a new PDFDocument from a specified stream containing a PDF file.</summary>
+      <param name="stream">The stream containing an existing PDF file. This cannot be **null** and must support reading and seeking.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.#ctor(System.IO.Stream,System.String)">
+      <summary>Initializes a new PDFDocument from the specified stream containing a PDF file and (optional) password.</summary>
+      <param name="stream">The stream containing an existing PDF file. This cannot be **null** and must support reading and seeking.</param>
+      <param name="password">The password to use if stream contains an encrypted PDF file.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.#ctor(System.String)">
+      <summary>Initializes a new PDFDocument from a specified PDF file.</summary>
+      <param name="fileName">The name of an existing PDF file.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.#ctor(System.String,System.String)">
+      <summary>Initializes a new PDFDocument form a specified PDF file and optional password.</summary>
+      <param name="fileName">The name of an existing PDF file.</param>
+      <param name="password">The password to use if fileName contains an encrypted PDF file; otherwise, this parameter is not used.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.DecodeImage(System.String)">
+      <summary>Decodes the specified PDF image object embedded in this PDFDocument.</summary>
+      <param name="imageObjectNumber">String that specifies the PDF image object number to decode.</param>
+      <returns>A Leadtools.RasterImage object.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetContentType(System.Int32)">
+      <summary>Gets the content type for the specified page of this PDFDocument.</summary>
+      <param name="pageNumber">The page number to check.</param>
+      <returns>A PDFContentType that indicates the content type for the specified page.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetDigitalSignatureSupportStatus">
+      <summary>Gets the status of digital signature support in the LEADTOOLS PDF toolkit.</summary>
+      <returns>A RasterExceptionCode that indicates the status of digital signature support in the LEADTOOLS PDF toolkit. A value of RasterExceptionCode.Success indicates that digital signature support is available and ready to use. Any other value indicates that either the required libraries are missing, or digital signature support is not available for this platform.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetEmbeddedFileSchema(System.String)">
+      <summary>Helper method to find the schema of an embedded file.</summary>
+      <param name="key">Schema key to find.</param>
+      <returns>The matching schema if found; otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetImageRect(Leadtools.RasterImage,System.Int32,System.Double,System.Double,Leadtools.Pdf.PDFRect)">
+      <summary>Creates an image from a PDF document page.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetPageImage(Leadtools.Codecs.RasterCodecs,System.Int32)">
+      <summary>Gets a raster image of a page in the PDF file associated with this PDFDocument.</summary>
+      <param name="codecs">An optional Leadtools.Codecs.RasterCodecs to use when reading the page. If you pass a **null** reference, then this method will internal create a new Leadtools.Codecs.RasterCodecs object and dispose before it returns.</param>
+      <param name="pageNumber">The 1-based page number to read. Must be greater than or equal to 1 and less than or equal to the total number of pages in the document (Pages.Count). Use the special value of -1 to represent the last page in the document.</param>
+      <returns>A Leadtools.RasterImage that represents the rendering of the requested page.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetPageRasterizer(System.Int32)">
+      <summary>Returns a PDFPageRasterizer object for the specified page.</summary>
+      <returns>PDFPageRasterizer object for the specified page.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetPageSvg(System.Int32,Leadtools.Codecs.CodecsLoadSvgOptions)">
+      <summary>Gets the specified page as an SVG document.</summary>
+      <param name="pageNumber">1-based number of the page.</param>
+      <param name="options">Options to use when converting the PDF data to SVG. This parameter can be **null** to use the default options.</param>
+      <returns>The Leadtools.ISvgDocument for the specified page.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetPageSvg(Leadtools.Codecs.RasterCodecs,System.Int32,Leadtools.Codecs.CodecsLoadSvgOptions)">
+      <summary>Gets a SVG document representation of a page in the PDF file associated with this PDFDocument.</summary>
+      <param name="codecs">An optional Leadtools.Codecs.RasterCodecs to use when reading the page. If you pass a **null** reference, then this method will internally create a new Leadtools.Codecs.RasterCodecs object and dispose of it before returning.</param>
+      <param name="pageNumber">The 1-based page number to read. Must be greater than or equal to 1 and less than or equal to the total number of pages in the document (Pages.Count). Use the special value of -1 to indicate a reference to the last page of the document.</param>
+      <param name="options">Options to use when loading the SVG.</param>
+      <returns>An Leadtools.ISvgDocument that represents the requested page.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.GetThumbnail(Leadtools.Codecs.RasterCodecs,System.Int32,System.Int32,System.Int32)">
+      <summary>Gets a thumbnail of a page in the PDF file associated with this PDFDocument.</summary>
+      <param name="codecs">An optional Leadtools.Codecs.RasterCodecs to use when reading the page. If you pass a **null** reference, then this method will internally create a new Leadtools.Codecs.RasterCodecs object and dispose before it returns.</param>
+      <param name="pageNumber">The 1-based page number. Must be greater than or equal to 1 and less than or equal to the total number of pages in the document (Pages.Count). Use the special value of -1 to represent the last page in the document.</param>
+      <param name="thumbnailWidth">The desired maximum width of the thumbnail image in pixels. Must be greater than 32.</param>
+      <param name="thumbnailHeight">The desired maximum height of the thumbnail image in pixels. Must be greater than 32.</param>
+      <returns>A new Leadtools.RasterImage that is the thumbnail image.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.ParseDocumentStructure(Leadtools.Pdf.PDFParseDocumentStructureOptions)">
+      <summary>Parses the Table of Content and internal links or jumps between the pages of the PDF file associated with this PDFDocument.</summary>
+      <param name="options">Document structure parsing options.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.ParsePages(Leadtools.Pdf.PDFParsePagesOptions,System.Int32,System.Int32)">
+      <summary>Parses objects such as text items (characters), images, rectangles, annotations, form fields, digital signatures, hyperlinks and fonts from one or more PDF pages.</summary>
+      <param name="options">One or more PDFParsePagesOptions enumeration member that specify the types of objects to parse.</param>
+      <param name="firstPageNumber">1-based index of the first page number to parse. Must be greater than or equal to 1 and less than or equal to the number of pages in the document.</param>
+      <param name="lastPageNumber">1-based index of the last page number to parse. Must be greater than or equal to \firstPageNumber\ and less than or equal to the number of pages in the document. Use the special value of -1 to represent the last page in the document.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.Dispose">
+      <summary>Releases all resources used by this PDFDocument.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this PDFDocument.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocument.Finalize">
+      <summary>This member overrides System.Object.Finalize</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.Bookmarks">
+      <summary>Gets the Table of Contents (TOC) of this PDF document.</summary>
+      <value>A list of PDFBookmark objects that specify the Table of Contents (TOC) of this PDFDocument. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.DefaultResolution">
+      <summary>Default resolution in dots per inch used when creating new PDFDocument objects.</summary>
+      <value>A System.Int32 that specifies the default resolution in dots per inch to use when creating new PDFDocument objects. Must be a value greater than or equal to 0. Default value is 150.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.DocumentProperties">
+      <summary>Gets the properties or metadata of this PDF document.</summary>
+      <value>A PDFDocumentProperties object that contains the properties or metadata of the PDF file associated with this PDFDocument. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.EmbeddedFiles">
+      <summary>Collection of the embedded files found in this document.</summary>
+      <value>Collection of the embedded files found in this document. The default value is an empty collection.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.EmbeddedFilesSchemas">
+      <summary>Collection of the embedded file schemas found in this document.</summary>
+      <value>Collection of the embedded file schemas found in this document. The default value is an empty collection.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.FileName">
+      <summary>Gets the name of the PDF file associated with this PDFDocument.</summary>
+      <value>A System.String that contains the name of the PDF file associated with this PDFDocument. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.FileType">
+      <summary>Gets the file type or version of this PDF document.</summary>
+      <value>A PDFFileType enumeration member that specifies the file type of version of the PDF file associated with this PDFDocument. The default value is PDFFileType.Unknown.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.Fonts">
+      <summary>Gets a list of the embedded fonts of this PDFDocument.</summary>
+      <value>A list of PDFFonts contained in this **PDFDocument**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.HasEmbeddedFiles">
+      <summary>Indicates whether this PDF document has any embedded files (attachments).</summary>
+      <value>**true** if the PDF document has embedded files; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.Images">
+      <summary>Gets a list of the embedded images of this PDFDocument.</summary>
+      <value>A list of PDFImage contained in this **PDFDocument**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.InternalLinks">
+      <summary>Gets the internal links (or jumps) between the pages of this PDF document.</summary>
+      <value>A list of PDFInternalLink objects that specify the internal links (or jumps) between the pages of this PDFDocument. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.IsEncrypted">
+      <summary>Gets a value that indicates whether this PDF document is encrypted.</summary>
+      <value>**true** if this PDF document is encrypted and a password is necessary to open it; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.IsLinearized">
+      <summary>Determines if this PDF document is linearized (optimized for the web).</summary>
+      <value>**true** if this PDF document is linearized (optimized for the web); otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.IsPdfA">
+      <summary>Determines if this document is PDF/A.</summary>
+      <value>**true** if this document is PDF/A; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.IsPortfolio">
+      <summary>Indicates whether this PDF document is a portfolio.</summary>
+      <value>**true** if the PDF document is portfolio; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.Pages">
+      <summary>Gets the collection of pages in this PDF document.</summary>
+      <value>A collection of PDFDocumentPage objects, containing an item for each page in the PDF file associated with this PDFDocument object. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.Password">
+      <summary>Gets the password used to decrypt this PDFDocument.</summary>
+      <value>A System.String that contains the password used to decrypt this PDFDocument. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.Resolution">
+      <summary>Resolution, in dots per inch, of this PDF document.</summary>
+      <value>An System.Int32 that specifies the resolution in dots per inch of this PDF document. The default value is the value of the static PDFDocument.DefaultResolution property.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocument.SecurityOptions">
+      <summary>Gets the security and encryption options used with this PDF document.</summary>
+      <value>The security and encryption options used with this PDF document.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDocument.MaximumPasswordLength">
+      <summary>Gets the maximum size of a PDF password.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDocument.MaximumStringLength">
+      <summary>Gets the maximum size of a PDF string.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFDocumentPage">
+      <summary>Contains information about a page of a PDF document.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocumentPage.ConvertPoint(Leadtools.Pdf.PDFCoordinateType,Leadtools.Pdf.PDFCoordinateType,Leadtools.Pdf.PDFPoint)">
+      <summary>Converts a point from one coordinate system type to another.</summary>
+      <param name="sourceType">The current coordinate system type of \point\.</param>
+      <param name="destinationType">The coordinate system type to convert to.</param>
+      <param name="point">Coordinates to convert.</param>
+      <returns>A PDFPoint that contains the converted point.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocumentPage.ConvertRect(Leadtools.Pdf.PDFCoordinateType,Leadtools.Pdf.PDFCoordinateType,Leadtools.Pdf.PDFRect)">
+      <summary>Converts a rectangle from one coordinate system type to another.</summary>
+      <param name="sourceType">The current coordinate system type of \rect\.</param>
+      <param name="destinationType">The coordinate system type to convert to.</param>
+      <param name="rect">Coordinates to convert.</param>
+      <returns>A PDFRect that contains the converted rectangle.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocumentPage.GetRasterizer">
+      <summary>Returns a PDFPageRasterizer object for this page.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.Annotations">
+      <summary>Gets a list of the annotations found on this page.</summary>
+      <value>An IList of PDFAnnotation items that contain the annotations found in the page. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.CropBox">
+      <summary>Gets the crop box of this page.</summary>
+      <value>A PDFRect that specifies the crop box of this page. The default value is an empty PDFRect.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.Fonts">
+      <summary>*(Deprecated)* Gets a list of the fonts found on this page.</summary>
+      <value>An IList of PDFFont items that contains the fonts found on this page. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.FormFields">
+      <summary>Gets a list of the form fields found on this page.</summary>
+      <value>An IList of PDFFormField items that contains the form fields found on the page. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.Height">
+      <summary>Gets the height in PDF units.</summary>
+      <value>The height in PDF units (1/72 of an inch). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.HeightInches">
+      <summary>Gets the height of the page in inches.</summary>
+      <value>The height of the page in inches. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.HeightPixels">
+      <summary>Gets the height of the page in pixels</summary>
+      <value>The height of the page in pixels. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.Hyperlinks">
+      <summary>Gets a list of the hyperlinks found in this page.</summary>
+      <value>An IList of PDFHyperlink items that contain the hyperlinks found in the page. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.MediaBox">
+      <summary>Gets the media box of this page.</summary>
+      <value>A PDFRect that specifies the media box of this page. The default value is an empty PDFRect.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.Objects">
+      <summary>Gets a list of the objects found on this page.</summary>
+      <value>An IList of PDFObject items that contain the objects found on the page. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.PageNumber">
+      <summary>Gets the number of this PDF page.</summary>
+      <value>A System.Int32 that specifies the number of this page. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.Rotation">
+      <summary>Gets the rotation angle of this page in degrees.</summary>
+      <value>The rotation angle of this page in degrees. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.Signatures">
+      <summary>Gets a list of the digital signatures found on this page.</summary>
+      <value>An IList of PDFSignature items that contain the digital signatures found on the page. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.Width">
+      <summary>Gets the width in PDF units.</summary>
+      <value>The width in PDF units (1/72 of an inch). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.WidthInches">
+      <summary>Gets the width of the page in inches.</summary>
+      <value>The width of the page in inches. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentPage.WidthPixels">
+      <summary>Gets the width of the page in pixels.</summary>
+      <value>The width of the page in pixels. The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFDocumentPageCollection">
+      <summary>Defines a collection of PDF document pages.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFDocumentProperties">
+      <summary>Contains a PDF document properties or metadata.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocumentProperties.#ctor">
+      <summary>Initializes a new instance of the PDFDocumentProperties with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFDocumentProperties.Clone">
+      <summary>Creates an exact copy of this PDFDocumentProperties object.</summary>
+      <returns>The PDFDocumentProperties cone this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentProperties.Author">
+      <summary>Author of the PDF document. This is optional.</summary>
+      <value>A System.String that contain the author of the PDF document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentProperties.Created">
+      <summary>Creation date and time of the PDF document. This is optional.</summary>
+      <value>A System.DateTime that contain the optional created date and time of the PDF document. The default value is an empty System.DateTime object.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentProperties.Creator">
+      <summary>Creator of the PDF document. This is optional.</summary>
+      <value>A System.String that contain the creator of the PDF document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentProperties.Keywords">
+      <summary>Keywords of the PDF document. This is optional.</summary>
+      <value>A System.String that contain the keywords of the PDF document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentProperties.Modified">
+      <summary>Modified date and time of the PDF document. This is optional.</summary>
+      <value>A System.DateTime that contain the optional modified date and time of the PDF document. The default value is an empty System.DateTime object.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentProperties.Producer">
+      <summary>Producer of the PDF document. This is optional.</summary>
+      <value>A System.String that contain the producer of the PDF document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentProperties.Subject">
+      <summary>Subject of the PDF document.</summary>
+      <value>A System.String that contain the subject of the PDF document. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFDocumentProperties.Title">
+      <summary>Title of the PDF document. This is optional.</summary>
+      <value>A System.String that contain the title of the PDF document. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFEllipseAnnotation">
+      <summary>Contains information for a PDF ellipse annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFEllipseAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFEllipseAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFEllipseAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFEllipseAnnotation</summary>
+      <returns>The PDFAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEllipseAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEllipseAnnotation.BorderEffect">
+      <summary>The border effect of this ellipse object.</summary>
+      <value>The border effect of this ellipse object. The default value is 0 (BorderEffectNone).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEllipseAnnotation.BorderEffectIntensity">
+      <summary>The intensity of the border effect.</summary>
+      <value>The intensity of the border effect. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEllipseAnnotation.Brush">
+      <summary>Brush of this annotation.</summary>
+      <value>A PDFBrush that represents brush properties for this annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEllipseAnnotation.Center">
+      <summary>Center point of this ellipse annotation.</summary>
+      <value>A PDFPoint that represents the center point, in PDF units (1/72 of an inch from the bottom-left), of the ellipse annotation. The default value is an empty PDFPoint.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEllipseAnnotation.HorizontalRadius">
+      <summary>Horizontal radius of this ellipse annotation.</summary>
+      <value>A System.Double that represents the horizontal radius, in PDF units (1/72 of an inch from the bottom-left), of the ellipse annotation. The default value is 0 System.Double.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEllipseAnnotation.Pen">
+      <summary>Pen of this annotation.</summary>
+      <value>A PDFPen that represents the pen properties for this annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEllipseAnnotation.VerticalRadius">
+      <summary>Vertical radius of this ellipse annotation.</summary>
+      <value>A System.Double that represents the horizontal radius, in PDF units (1/72 of an inch from the bottom-left), of the ellipse annotation. The default value is 0 System.Double.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFEmbeddedFile">
+      <summary>Properties of an embedded file (attachment) in this document.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFEmbeddedFile.#ctor">
+      <summary>Initializes a new instance of PDFEmbeddedFile with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFEmbeddedFile.Clone">
+      <summary>Creates an exact copy of this PDFEmbeddedFile object.</summary>
+      <returns>Copy of this PDFEmbeddedFile object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEmbeddedFile.Created">
+      <summary>Date this file was created.</summary>
+      <value>The date this file was created.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEmbeddedFile.Description">
+      <summary>Description of this embedded file.</summary>
+      <value>Description of this embedded file. This is optional and the default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEmbeddedFile.FileName">
+      <summary>Name of the embedded file.</summary>
+      <value>Name of the embedded file.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEmbeddedFile.FileNumber">
+      <summary>1-based file number of this embedded file.</summary>
+      <value>The 1-based file number of this embedded file. This value is unique.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEmbeddedFile.FileSize">
+      <summary>Size of this embedded file, in bytes.</summary>
+      <value>The size of this embedded file, in bytes.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEmbeddedFile.Modified">
+      <summary>Date this file was last modified.</summary>
+      <value>The date this file was last modified.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEmbeddedFile.ObjectNumber">
+      <summary>PDF object number of this embedded file.</summary>
+      <value>The PDF object number of this embedded file. This is a unique value.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFEmbeddedFile.SchemaValues">
+      <summary>Gets the schema item values for this embedded file.</summary>
+      <value>The schema item values for this embedded file.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFFile">
+      <summary>PDF file features class. \* PDF Capability Required.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.#ctor">
+      <summary>Initializes a new PDFFile object with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.#ctor(System.String)">
+      <summary>Initializes a new PDFFile object and associates it with the name of a PDF file.</summary>
+      <param name="fileName">The name of the file to be associated with this PDFFile.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.#ctor(System.String,System.String)">
+      <summary>Initializes a new PDFFile object and associated it with the name of a PDF file and the password used to decrypt it.</summary>
+      <param name="fileName">The name of the file associated with this PDFFile.</param>
+      <param name="password">The password associated with the PDF file at \fileName\.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ClearAnnotations(System.String)">
+      <summary>Clears the annotations from an existing PDF file.</summary>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ClearBookmarks(System.String)">
+      <summary>Clears the bookmarks and internal links (TOC) from an existing PDF file.</summary>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.Clone">
+      <summary>Creates an exact copy of this PDFFile object.</summary>
+      <returns>The PDFFile cone this method creates, cast as an object.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.Convert(System.Int32,System.Int32,System.String)">
+      <summary>Converts the file associated with the PDFFile object to a different version using optional document properties and security options.</summary>
+      <param name="firstPageNumber">The 1-based number of the first page to be converted. It must be a value greater than or equal to 1.</param>
+      <param name="lastPageNumber">The 1-based number of the last page to be converted. It must be a value greater than or equal to \firstPageNumber\, and less than or equal to the total number of pages in the file. Use the special value of -1 to represent "last page in the file".</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ConvertToPDFA(System.String)">
+      <summary>Converts the file associated with this PDFFile object to PDF/A.</summary>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null**, then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ConvertToSvg(System.String,System.Int32,System.Int32)">
+      <summary>Converts the specified page of this PDFFile to SVG.</summary>
+      <param name="destinationFileName">The filename for the output SVG file.</param>
+      <param name="resolution">The resolution for the output file.</param>
+      <param name="pageNumber">The page number to convert.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.DeletePages(System.Int32,System.Int32,System.String)">
+      <summary>Delete one or more pages from the file associated with this PDFFile object.</summary>
+      <param name="firstPageNumber">The 1-based number of the first page to be deleted. Must be a value greater than or equal to 1.</param>
+      <param name="lastPageNumber">The 1-based number of the last page to be deleted. Must be a value greater than or equal to \firstPageNumber\ and less than or equal to the total number of pages in the file. Use the special value of -1 to represents "last page in the file".</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.Distill(Leadtools.Pdf.PDFDistillerOptions,System.String)">
+      <summary>Converts (distills) the Postscript file associated with this PDFFile object to PDF.</summary>
+      <param name="distillerOptions">The options to use when creating the PDF file. Cannot be **null** .</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. Cannot be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ExtractEmbeddedFile(System.IO.Stream,System.String,System.Int32,System.IO.Stream)">
+      <summary>Extracts an embedded file (attachment) from a stream containing a PDF document file, and saves it to an output stream.</summary>
+      <param name="stream">Stream containing the data of the owner PDF document.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <param name="fileNumber">Embedded file number. This value must be between 1 and the total number of embedded files in the owner PDF document.</param>
+      <param name="outputStream">Stream that will be populated with the embedded file's binary data.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ExtractEmbeddedFile(System.IO.Stream,System.String,System.Int32,System.String)">
+      <summary>Extracts an embedded file (attachment) from a stream containing a PDF document file, and saves it to disk.</summary>
+      <param name="stream">Stream containing the data of the owner PDF document.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <param name="fileNumber">Embedded file number. This value must be between 1 and the total number of embedded files in the owner PDF document.</param>
+      <param name="outputFileName">Name of the file that will contain the embedded file's binary data.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ExtractEmbeddedFile(System.String,System.String,System.Int32,System.IO.Stream)">
+      <summary>Extracts an embedded file (attachment) from a PDF document file, and saves it to an output stream.</summary>
+      <param name="fileName">Name of the owner PDF document file.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <param name="fileNumber">Embedded file number. This value must be between 1 and the total number of embedded files in the owner PDF document.</param>
+      <param name="outputStream">Stream that will be populated with the embedded file binary data.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ExtractEmbeddedFile(System.String,System.String,System.Int32,System.String)">
+      <summary>Extracts an embedded file (attachment) from a PDF document file and saves it to disk.</summary>
+      <param name="fileName">Name of the owner PDF document file.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <param name="fileNumber">Embedded file number. This value must be between 1 and the total number of embedded files in the owner PDF document.</param>
+      <param name="outputFileName">Name of the file that will contain the embedded file binary data.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ExtractPages(System.Int32,System.Int32,System.String)">
+      <summary>Extract one or more pages from the file associated with this PDFFile object.</summary>
+      <param name="firstPageNumber">The 1-based number of the first page to be extracted. Must be a value greater than or equal to 1.</param>
+      <param name="lastPageNumber">The 1-based number of the last page to be extracted. Must be a value greater than or equal to \firstPageNumber\ and less than or equal to the total number of pages in the file. Use the special value of -1 to represents "last page in the file".</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.GetEmbeddedFileCount(System.IO.Stream,System.String)">
+      <summary>Gets the total number of embedded files (attachments) in a PDF stream.</summary>
+      <param name="stream">Stream containing a PDF document.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <returns>The total number of embedded files (attachments) in the PDF.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.GetEmbeddedFileCount(System.String,System.String)">
+      <summary>Gets the total number of embedded files (attachments) in a PDF file.</summary>
+      <param name="fileName">The name of the PDF file.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <returns>The total number of embedded files (attachments) in the PDF.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.GetPageCount">
+      <summary>Gets the number of pages in this PDFFile object.</summary>
+      <returns>A System.Int32 that represents the number of pages in this PDFFile object.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.GetPDFFileType(System.String,System.Boolean)">
+      <summary>Gets the type of a PDF or Postscript file.</summary>
+      <param name="fileName">The name of the PDF or Postscript file.</param>
+      <param name="pdfTypesOnly"></param>
+      <returns>An PDFFileType enumeration member that specifies the type of the file. If the file is not PDF (or Postscript depending on \pdfTypesOnly\), then PDFFileType.Unknown is returned.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.InsertPagesFrom(System.Int32,Leadtools.Pdf.PDFFile,System.Int32,System.Int32)">
+      <summary>Inserts one or more pages from an existing PDF file into the file associated with this PDFFile object.</summary>
+      <param name="insertPageNumber">The 1-based number of the insertion point in this PDFFile object. Use a value of 0 to insert the new pages at the beginning of the file and -1 to insert the new pages at the end of the file (append).</param>
+      <param name="sourceFile">A PDFFile object associated with an existing PDF file that contain the source file to insert the pages from.</param>
+      <param name="firstPageNumber">The 1-based number of the first page in the source file to be inserted. Must be a value greater than or equal to 1.</param>
+      <param name="lastPageNumber">The 1-based number of the last page in the source file to be inserted. Must be a value greater than or equal to \firstPageNumber\ and less than or equal to the total number of pages in the file. Use the special value of -1 to represent "last page in the file".</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.IsEncrypted(System.String)">
+      <summary>Gets a value that indicate whether a PDF file is encrypted.</summary>
+      <param name="fileName">The name of the PDF file.</param>
+      <returns>This method checks if the PDF file has been encrypted and protected with a password. If this is the case, then you must create a PDFFile object (or set the Password property) to the correct file before you can use the other methods of this object.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.IsLinearized(System.IO.Stream,System.String)">
+      <summary>Determines if the PDF in a stream is linearized (optimized for the web).</summary>
+      <param name="stream">Stream containing the PDF file data.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <returns>A linearized PDF file is a file that has been organized in such a way as to enable efficient, incremental access in a network environment. Linearized PDF files allow the first page of the PDF file to be displayed in a user Web browser before the entire file is downloaded from the Web server.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.IsLinearized(System.String,System.String)">
+      <summary>Determines if this PDF file is linearized (optimized for the web).</summary>
+      <param name="fileName">The name of the PDF file.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); use **null** otherwise.</param>
+      <returns>A linearized PDF file is a file that has been organized to enable efficient, incremental access in a network environment. Linearized PDF files allow the first page of the PDF file to be displayed in a user Web browser before the entire file has been downloaded from the Web server.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.IsPdfA(System.String)">
+      <summary>Determines if the specified file is PDF/A.</summary>
+      <param name="fileName">The name of the PDF file.</param>
+      <returns>This method checks whether the file claims to be PDF/A. The engine only checks if the file claims compliance with PDF/A standard and does not perform any validation.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.IsPortfolio(System.IO.Stream,System.String)">
+      <summary>Indicates whether the stream contains a PDF portfolio.</summary>
+      <param name="stream">Stream containing the data of a PDF document.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <returns>A PDF file can be created as a portfolio which contains multiple files assembled into an integrated unit.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.IsPortfolio(System.String,System.String)">
+      <summary>Indicates whether the file is a PDF portfolio.</summary>
+      <param name="fileName">The name of the PDF file.</param>
+      <param name="password">The password to use when loading this PDF file (if the file is encrypted); otherwise, use **null**.</param>
+      <returns>A PDF file can be created as a portfolio which contains multiple files assembled into an integrated unit.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.Linearize(System.String)">
+      <summary>Converts the file associated with this PDFFile object into a linearized version (one optimized for Web viewing).</summary>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null**, the file name will be pulled from FileName.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.Load">
+      <summary>Loads this PDFFile object and populate its pages collection and document properties.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.MergeWith(Leadtools.Pdf.PDFFile[],System.String)">
+      <summary>Merges this PDF file with one or more PDF existing files with optional passwords for each file.</summary>
+      <param name="sourceFiles">An array of PDFFile objects that contain the names and optional password of the source files to merge with this PDFFile. Must not be **null** and must contain at least one item and a maximum of 100 items.</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.MergeWith(System.String[],System.String)">
+      <summary>Merges this PDF file with one or more PDF existing files.</summary>
+      <param name="sourceFileNames">An array of System.String's that contain the names of the source files to merge with this PDFFile. Must not be **null** and must contain at least one item and a maximum of 100 items.</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** (**Nothing** in VB) then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.Optimize(System.String)">
+      <summary>Optimizes this PDFFile object and writes the PDF data into the specified file.</summary>
+      <param name="destinationFileName">The filename of the new, optimized PDF file.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.Redact(System.IO.Stream,System.String,Leadtools.Pdf.PDFRedact)">
+      <summary>Redacts a PDF document stored in a stream.</summary>
+      <param name="stream">Stream containing an existing PDF document to be redacted.</param>
+      <param name="password">The password to use if \stream\ contains an encrypted PDF file.</param>
+      <param name="redacts">One or more PDF redact objects.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.Redact(System.String,System.String,Leadtools.Pdf.PDFRedact)">
+      <summary>Redacts a PDF document stored in a file.</summary>
+      <param name="fileName">Name of the file containing an existing PDF document to be redacted.</param>
+      <param name="password">The password to use if \fileName\ contains an encrypted PDF file.</param>
+      <param name="redacts">One or more PDF redact objects.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.ReplacePagesFrom(System.Int32,Leadtools.Pdf.PDFFile,System.Int32,System.Int32)">
+      <summary>Replaces one or more pages from an existing PDF file into the file associated with this PDFFile object.</summary>
+      <param name="replacePageNumber">The 1-based number of the replacement point in this PDFFile object. Must be greater than or equal to 1 and less than or equal to the total number of pages in \sourceFile\.</param>
+      <param name="sourceFile">A PDFFile object associated with an existing PDF file that contain the source file to replace the pages from.</param>
+      <param name="firstPageNumber">The 1-based number of the first page in the source file to be replaced. Must be a value greater than or equal to 1.</param>
+      <param name="lastPageNumber">The 1-based number of the last page in the source file to be replaced. Must be a value greater than or equal to \firstPageNumber\ and less than or equal to the total number of pages in the file. Use the special value of -1 to represent "last page in the file".</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.RotatePages(System.Int32[],System.Int32,System.Int32,System.String)">
+      <summary>Rotate one or more pages in an existing PDF file. {[NET]}</summary>
+      <param name="angles">Rotation angles for each page specified. Angles are in degrees and must be multiple of 90. Positive values will rotate the page clock-wise while</param>
+      <param name="firstPageNumber">First page number to rotate.</param>
+      <param name="lastPageNumber">Last page number to rotate.</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.SetDocumentProperties(System.String)">
+      <summary>Updates the properties of the file associated with this PDFFile object.</summary>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null**then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.SetInitialView(System.String)">
+      <summary>Updates the initial view options of the specified PDF file.</summary>
+      <param name="destinationFileName">The filename of the PDF file to be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.SignDocument(System.String,System.String,System.String)">
+      <summary>Adds a digital signature to a PDF document from a PFX file.</summary>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null**, then the filename set in FileName will be updated.</param>
+      <param name="signatureFileName">Name of the file containing the digital signature. This should be a valid PFX file and cannot be **null**.</param>
+      <param name="signaturePassword">The password to use if the PFX file requires one. Otherwise, **null**.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.WriteAnnotations(Leadtools.Pdf.PDFAnnotation,System.String)">
+      <summary>Writes annotations to an existing PDF file.</summary>
+      <param name="annotations">A list of PDFAnnotation objects to write. This must not be **null** and must be a list of 1 or more items. An empty list (count is zero) will throw an exception.</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFile.WriteBookmarks(Leadtools.Pdf.PDFBookmark,System.String)">
+      <summary>Writes bookmarks (TOC) to an existing PDF file.</summary>
+      <param name="bookmarks">A list of PDFBookmark objects to write. This must not be **null** and must be a list of 1 or more items. An empty list (count is zero) will throw an exception.</param>
+      <param name="destinationFileName">Name of the destination PDF file to be created. If the value of this parameter is **null** then the filename set in FileName will be updated.</param>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFile.CompatibilityLevel">
+      <summary>PDF compatibility level (version) to use when updating or creating a PDF file.</summary>
+      <value>A PDFCompatibilityLevel that specifies the PDF compatibility level (version) to use when this PDFFile is used to update or create a PDF file. Default value is PDFCompatibilityLevel.Default.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFile.DocumentProperties">
+      <summary>PDF document properties or metadata used with this PDFFile object.</summary>
+      <value>A PDFDocumentProperties that contain the PDF document properties or metadata used with this PDFFile. The default value is **null** .</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFile.FileName">
+      <summary>Gets or sets the name of the file associated with this PDFFile.</summary>
+      <value>A System.String that contains the name of the file associated with this PDFFile. The default value is a **null** reference .</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFile.InitialViewOptions">
+      <summary>Sets the PDFInitialViewOptions that this PDFFile object uses when creating new PDF files.</summary>
+      <value>The PDFInitialViewOptions to use.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFile.OptimizerOptions">
+      <summary>Sets the PDFOptimizerOptions that this PDFFile object uses when Optimize is called to create a new, optimized PDF file.</summary>
+      <value>The PDFOptimizerOptions to use.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFile.Pages">
+      <summary>Gets the collection of pages in this PDF file.</summary>
+      <value>A collection of PDFFilePage objects that contain an item for each page in the PDF file associated with this PDFFile object. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFile.Password">
+      <summary>Gets or sets the password associated with this PDFFile.</summary>
+      <value>A System.String that contains the password to use when loading this PDFFile object (if the file is encrypted).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFile.SecurityOptions">
+      <summary>PDF security and encryption options to use when updating or creating a PDF file.</summary>
+      <value>A PDFSecurityOptions that contain the PDF security and encryption options to use when this PDFFile is used to update or create a PDF file. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFFormField">
+      <summary>Contains information about a single PDF form field.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFormField.#ctor">
+      <summary>Initializes a new instance of PDFFormField.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFFormField.Clone">
+      <summary>Returns an exact copy of this PDFFormField.</summary>
+      <returns>An exact copy of this PDFFormField.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.AlternateName">
+      <summary>Alternate name of the field.</summary>
+      <value>Alternate name of the field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.BorderColor">
+      <summary>Border color of this field.</summary>
+      <value>Border color of this field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.BorderStyle">
+      <summary>Border style of this field.</summary>
+      <value>Border style of this field. In most cases, this is one of the **BorderStyleXYZ** constants defined in PDFFormField.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.BorderWidth">
+      <summary>Border width of this field.</summary>
+      <value>Border width of this field in PDF page units.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.Bounds">
+      <summary>The location and size of this field in the page.</summary>
+      <value>location and size of this field in the page in PDF page coordinates.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.Contents">
+      <summary>List of the contents set in the field.</summary>
+      <value>List of the contents set in the field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.ContentType">
+      <summary>Content type.</summary>
+      <value>Field type. In most cases, this is one of the **ContentTypeXYZ** constants defined in PDFFormField.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.ContentValues">
+      <summary>List of the content values set in the field.</summary>
+      <value>List of the content values set in the field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.FieldFlags">
+      <summary>Other flags associated with the field.</summary>
+      <value>Other flags associated with the field. In most cases, this is one of the **FieldFlagsXYZ** constant values defined in PDFFormField. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.FieldType">
+      <summary>Field type.</summary>
+      <value>Field type. In most cases, this is one of the **FieldTypeXYZ** constants defined in PDFFormField.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.FillColor">
+      <summary>Background color of the field</summary>
+      <value>Background color of the field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.FillMode">
+      <summary>Fill mode of this field.</summary>
+      <value>Fill mode of this field. In most cases, this is one of the **FillModeXYZ** constants defined in PDFFormField.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.FontName">
+      <summary>Font name to use for the text of this field</summary>
+      <value>Font name to use for the text of this field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.FontSize">
+      <summary>Font size to use with the text of this field.</summary>
+      <value>Font size to use with the text of this field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.GroupId">
+      <summary>Optional ID if this field is part of a group.</summary>
+      <value>Optional ID if this field is part of a group.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.MappingName">
+      <summary>Mapping name of the field.</summary>
+      <value>Mapping name of the field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.MaxLength">
+      <summary>Maximum length of the field content.</summary>
+      <value>Maximum length of the field content.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.Name">
+      <summary>Name of the field.</summary>
+      <value>Name of the field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.OptionalName">
+      <summary>Optional name of the field.</summary>
+      <value>Optional name of the field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.PageNumber">
+      <summary>The 1-based number of the page that owns this field.</summary>
+      <value>The 1-based number of the page that owns this field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.Rotation">
+      <summary>Rotation angle of the field.</summary>
+      <value>Rotation angle of the field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.SelectedContents">
+      <summary>The selected contents if this field is a list box.</summary>
+      <value>A list of the selected contents if this field is a list box.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.State">
+      <summary>State of the field is supported.</summary>
+      <value>State of the field is supported. In most cases, this is one of the **StateXYZ** constant values defined in PDFFormField. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.TextColor">
+      <summary>Foreground (text) color of this field.</summary>
+      <value>Foreground (text) color of this field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.TextJustification">
+      <summary>Justification to use for text of this field.</summary>
+      <value>Justification to use for text of this field.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFormField.ViewFlags">
+      <summary>View flags associated with the field.</summary>
+      <value>View flags associated with the field. In most cases, this is one of the **ViewFlagsXYZ** constant values defined in PDFFormField. The default value is 0.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.BorderStyleBeveled">
+      <summary>Beveled border style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.BorderStyleDashed">
+      <summary>Dashed border style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.BorderStyleInset">
+      <summary>Inset border style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.BorderStyleSolid">
+      <summary>Solid border style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.BorderStyleTransparent">
+      <summary>Transparent border style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.BorderStyleUnderline">
+      <summary>Underline border style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ContentTypeCustom">
+      <summary>Content type is custom.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ContentTypeDate">
+      <summary>Content type is a date.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ContentTypeNumber">
+      <summary>Content type is a number.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ContentTypeTime">
+      <summary>Content type is a time.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ContentTypeUnrestrained">
+      <summary>Content type can be anything.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsButtonNoToggleToOff">
+      <summary>Button should not toggle to off state.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsButtonPushButton">
+      <summary>Button is a push button.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsButtonRadio">
+      <summary>Button is a radio button.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsButtonRadioInUnison">
+      <summary>Button is in a group of radio buttons (using GroupId) and only a single item should be selected at a time.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsChoiceCombo">
+      <summary>Choice field is a combo box.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsChoiceCommitOnSelectionChange">
+      <summary>Choice field should commit changes if it is modified.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsChoiceEdit">
+      <summary>Choice field is editable.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsChoiceMultiSelect">
+      <summary>Choice field supports multi-select.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsChoiceSort">
+      <summary>Choice field is sorted.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsNoExport">
+      <summary>Field cannot be exported.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsReadOnly">
+      <summary>Field is read-only.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsRequired">
+      <summary>Field is required.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsTextComb">
+      <summary>Text field is a combo box.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsTextDoNotScroll">
+      <summary>Text field should not scroll.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsTextDoNotSpellcheck">
+      <summary>Text field should not be spell checked.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsTextFileSelect">
+      <summary>Text field is a file selection.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsTextMultiline">
+      <summary>Text field is multi-lined.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsTextPassword">
+      <summary>Text field is a password.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldFlagsTextRichText">
+      <summary>Text field that should be edited with a rich text edit control.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldTypeCheckBox">
+      <summary>Check box field type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldTypeComboBox">
+      <summary>Combo box field type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldTypeListBox">
+      <summary>List box field type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldTypeRadioButton">
+      <summary>Radio button field type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FieldTypeTextBox">
+      <summary>Text box field type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FillModeFilled">
+      <summary>Field is filled.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.FillModeNoFill">
+      <summary>Field is not filled.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.StateNotSelected">
+      <summary>The state is unselected or unchecked.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.StateSelected">
+      <summary>The state is selected or checked.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.StateUndefined">
+      <summary>The state is undefined or not used.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.TextJustificationCentered">
+      <summary>Centered justified text.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.TextJustificationLeft">
+      <summary>Left justified text.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.TextJustificationRight">
+      <summary>Right justified text.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsHidden">
+      <summary>Field is hidden.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsInvisible">
+      <summary>Field is invisible.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsLocked">
+      <summary>Field is locked.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsLockedContents">
+      <summary>Field has its content locked.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsNoRotate">
+      <summary>Field is cannot be rotated.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsNoView">
+      <summary>Field has no view.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsNoZoom">
+      <summary>Field cannot be zoomed.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsPrint">
+      <summary>Field can be printed.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsReadOnly">
+      <summary>Field is for view only.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFormField.ViewFlagsToggleNoView">
+      <summary>Field is toggled.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFHighlightAnnotation">
+      <summary>Contains information for PDF highlight annotations.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFHighlightAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFHighlightAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFHighlightAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFHighlightAnnotation.</summary>
+      <returns>The PDFHighlightAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFHighlightAnnotation.AnnotationType">
+      <summary>Gets the type of the annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFHighlightAnnotation.Color">
+      <summary>Color of the highlight annotations.</summary>
+      <value>A Leadtools.RasterColor object that represents the color of the highlight annotations. The default value is an empty Leadtools.RasterColor object.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFHighlightAnnotation.Points">
+      <summary>Gets a list of points for the highlight annotations.</summary>
+      <value>An IList of PDFPoint structures that contain the list of points, in PDF units (1/72 of an inch from the bottom-left), of the highlight annotations.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFInitialViewOptions">
+      <summary>The PDFInitialViewOptions class provides options for controlling the initial view and actions that should be applied by external viewers when the PDF file is opened.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFInitialViewOptions.#ctor">
+      <summary>Creates a new PDFInitialViewOptions object with default settings.</summary>
+      <returns>The newly created **PDFInitialViewOptions** object.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFInitialViewOptions.Clone">
+      <summary>Creates an exact copy of this PDFInitialViewOptions object.</summary>
+      <returns>The PDFInitialViewOptions cone this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.AutoPrint">
+      <summary>Enables or disables PDF Auto Print</summary>
+      <value>true to enable PDF Auto Print; false to disable PDF Auto Print.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.CenterWindow">
+      <summary>Enables or disables center in window.</summary>
+      <value>true to enable center in window; false to disable center in window.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.DisplayDocTitle">
+      <summary>Enables or disables display of the document title.</summary>
+      <value>true to enable display of the document title; false to disable display of the document title.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.FitWindow">
+      <summary>Enables or disables fit in window.</summary>
+      <value>true to enable fit in window; false to disable fit in window.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.HideMenubar">
+      <summary>Shows or hides the menu bar in the External viewer.</summary>
+      <value>true to hide the menu bar; false to disable the menubar.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.HideToolbar">
+      <summary>Enables or disables the toolbar in the External viewer.</summary>
+      <value>true to enable the toolbar; false to disable the toolbar.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.HideWindowUI">
+      <summary>Shows or hides the window user interface in the External viewer.</summary>
+      <value>true to hide the window user interface; false to disable the window user interface.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.PageFitType">
+      <summary>Target page fit type of the initial page.</summary>
+      <value>A PDFPageFitType enumeration member that specifies the target page fit type of the initial page. The default value is PDFPageFitType.Default.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.PageLayoutType">
+      <summary>Page layout of the initial page.</summary>
+      <value>A PDFPageLayoutType enumeration member that specifies the page layout for the initial page.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.PageModeType">
+      <summary>Page mode type of the initial page.</summary>
+      <value>A PDFPageModeType enumeration member that specifies the page mode for the initial page.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.PageNumber">
+      <summary>Initial page to display</summary>
+      <value>The page number to display when the PDF file is opened.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.Position">
+      <summary>Position in the initial page to scroll to.</summary>
+      <value>A PDFPoint that represents the position in PDF units (1/72 of an inch and bottom-left) of the initial page to scroll to. The default value is an empty PDFPoint.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInitialViewOptions.ZoomPercent">
+      <summary>Initial page zoom percentage.</summary>
+      <value>A System.Int32 that specifies the zoom percent (100 equals to no zoom) of the initial page. The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFLineAnnotation">
+      <summary>Contains information for a PDF line annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFLineAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFLineAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFLineAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFLineAnnotation.</summary>
+      <returns>The PDFLineAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.CaptionPosition">
+      <summary>Position of the caption over the line.</summary>
+      <value>The position of the caption in relation to the line. The default value is **null** (for inline caption position, where the caption will be centered inside the line).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.EndingsBrush">
+      <summary>The brush to use to fill any area inside the selected ending style.</summary>
+      <value>Brush to use to fill any area inside the selected ending style. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.EndPoint">
+      <summary>End point of this line annotation.</summary>
+      <value>A PDFPoint that represents the end point, in PDF units (1/72 of an inch from the bottom-left), of the line annotation. The default value is an empty PDFPoint.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.EndStyle">
+      <summary>The style of the end point of this object.</summary>
+      <value>Style of the end point of this object. The default value is **null** for none.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.Intent">
+      <summary>Intent of this line object.</summary>
+      <value>The intent of this line object. The default value is **null**, which means a default line with no intent.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.LeaderExtension">
+      <summary>Leader line extension length.</summary>
+      <value>The length of the leader line extension in PDF coordinates. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.LeaderLength">
+      <summary>Leader line length.</summary>
+      <value>The length of the leader line in PDF coordinates. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.LeaderOffset">
+      <summary>Leader line offset.</summary>
+      <value>The offset of the leader line in PDF coordinates. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.Pen">
+      <summary>Pen of this line annotation.</summary>
+      <value>A PDFPen that represents pen properties for this annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.ShowCaption">
+      <summary>Indicates whether to display the caption for this line annotation.</summary>
+      <value>**true** to show the caption of this line annotation; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.StartPoint">
+      <summary>Start point of this line annotation.</summary>
+      <value>A PDFPoint that represents the start point, in PDF units (1/72 of an inch from the bottom-left), of the line annotation. The default value is an empty PDFPoint.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFLineAnnotation.StartStyle">
+      <summary>The style of the starting point of this object.</summary>
+      <value>Style of the starting point of this object. The default value is **null** for none.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFLineAnnotation.CaptionPositionInline">
+      <summary>Inline caption position.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFLineAnnotation.CaptionPositionTop">
+      <summary>Top caption position.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFLineAnnotation.IntentLineArrow">
+      <summary>Arrow line intent.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFLineAnnotation.IntentLineDimension">
+      <summary>Dimension line intent.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFNoteAnnotation">
+      <summary>Contains information for a PDF note annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFNoteAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFNoteAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFNoteAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFAnnotation.</summary>
+      <returns>The PDFAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFNoteAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFNoteAnnotation.Color">
+      <summary>Color of this note annotation.</summary>
+      <value>A Leadtools.RasterColor structure that represents the color of the note annotation. The default value is an empty Leadtools.RasterColor structure.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFNoteAnnotation.Open">
+      <summary>Indicates whether this note annotation is opened or not.</summary>
+      <value>**true** if the note pop up window is opened; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFNoteAnnotation.Point">
+      <summary>Position of this note annotation.</summary>
+      <value>A PDFPoint that represents the position, in PDF units (1/72 of an inch from the bottom-left), of the note annotation. The default value is an empty PDFPoint.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFNoteAnnotation.State">
+      <summary>The state of this note object.</summary>
+      <value>State of this note object. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFNoteAnnotation.StateModel">
+      <summary>State model of this note object.</summary>
+      <value>State model of this note object. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFNoteAnnotation.Type">
+      <summary>Type of this note annotation object.</summary>
+      <value>A value that specifies the icon type of note annotation object associated with this PDFNoteAnnotation.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.Comment">
+      <summary>Comment icon</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.Help">
+      <summary>Help icon</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.Insert">
+      <summary>Insert icon</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.Key">
+      <summary>Key icon</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.NewParagraph">
+      <summary>New paragraph icon</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.Note">
+      <summary>Note icon</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.Paragraph">
+      <summary>Paragraph icon</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateAccepted">
+      <summary>Accepted state.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateCancelled">
+      <summary>Cancelled state</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateCompleted">
+      <summary>Completed state.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateMarked">
+      <summary>Marked state.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateModelMarked">
+      <summary>Marked state model.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateModelReview">
+      <summary>Review state model.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateNone">
+      <summary>None state.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateRejected">
+      <summary>Rejected state.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFNoteAnnotation.StateUnmarked">
+      <summary>Unmarked state.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFOptimizerOptions">
+      <summary>The PDFOptimizerOptions class provides options for controlling the PDFFile optimizer.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFOptimizerOptions.#ctor">
+      <summary>Creates a new PDFOptimizerOptions object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFOptimizerOptions.Clone">
+      <summary>Creates an exact copy of this PDFOptimizerOptions object.</summary>
+      <returns>The PDFOptimizerOptions cone this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.AutoOptimizerMode">
+      <summary>Optimizer mode, which controls the file size and quality.</summary>
+      <value>A PDFAutoOptimizerMode value.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.ColorImageCompression">
+      <summary>Compression format to use when saving a color image.</summary>
+      <value>The Leadtools.RasterImageFormat to use. Possible values: SupportedColorImageFormats.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.ColorImageDownsampleFactor">
+      <summary>Downsample threshold for color images.</summary>
+      <value>This is the ratio of image resolution to output resolution above which downsampling may be performed. Must be between 1.0 through 10.0, inclusive.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.ColorImageDownsamplingMode">
+      <summary>Interpolation mode for color images.</summary>
+      <value>A PDFDownsamplingMode value to use for downsampling. Default is Average</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.ColorImageDPI">
+      <summary>DPI to use when saving a color image.</summary>
+      <value>Specifies the resolution to which downsampled color images are reduced. This should be always less than original image resolution. Default is 150.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.EmbedAllFonts">
+      <summary>Enables or disables font embedding in the output PDF file.</summary>
+      <value>If **true**, specifies that all fonts are to be embedded in the PDF file, default **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.GrayImageCompression">
+      <summary>Compression format to use when saving a grayscale image.</summary>
+      <value>The Leadtools.RasterImageFormat to use. Possible values: SupportedGrayImageFormats.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.GrayImageDownsampleFactor">
+      <summary>Scale factor to use for resizing when saving a grayscale image.</summary>
+      <value>This is the ratio of image resolution to output resolution above which downsampling may be performed. Must be between 1.0 through 10.0, inclusive.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.GrayImageDownsamplingMode">
+      <summary>Downsampling mode to use for resizing when saving a grayscale image.</summary>
+      <value>A PDFDownsamplingMode value to use for downsampling. Default is Average</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.GrayImageDPI">
+      <summary>DPI to use when saving a grayscale image.</summary>
+      <value>Specifies the resolution to which downsampled grayscale images are reduced. This should be always less than original image resolution. Default is 150.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.MonoImageCompression">
+      <summary>Compression format to use when saving a monochrome image.</summary>
+      <value>The Leadtools.RasterImageFormat to use. Possible values: SupportedMonoImageFormats.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.MonoImageDownsampleFactor">
+      <summary>Scale factor to use for resizing when saving a monochrome image.</summary>
+      <value>This is the ratio of image resolution to output resolution above which downsampling may be performed. Must be between 1.0 through 10.0, inclusive.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.MonoImageDownsamplingMode">
+      <summary>Downsampling mode to use for resizing when saving a monochrome image.</summary>
+      <value>A PDFDownsamplingMode value to use for downsampling. Default is Average</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.MonoImageDPI">
+      <summary>DPI to use when saving a monochrome image.</summary>
+      <value>Specifies the resolution to which downsampled monochrome images are reduced. This should be always less than original image resolution. Default is 150.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.QualityFactor">
+      <summary>Quality Factor (Q. Factor) for lossy image compression.</summary>
+      <value>The Quality Factor to use when saving compressed images.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.SubsetFonts">
+      <summary>Enables or disables font sub-setting in the output PDF file.</summary>
+      <value>If **true**, enables font subsetting. If **false**, sub-setting is not enabled.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.SupportedColorImageFormats">
+      <summary>Gets the list of supported color image formats.</summary>
+      <value>An array of Leadtools.RasterImageFormat values.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.SupportedGrayImageFormats">
+      <summary>Gets the list of supported grayscale image formats.</summary>
+      <value>An array of Leadtools.RasterImageFormat values.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFOptimizerOptions.SupportedMonoImageFormats">
+      <summary>Gets the list of supported monochrome image formats.</summary>
+      <value>An array of Leadtools.RasterImageFormat values.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPageRasterizer">
+      <summary>Allows resterization of a PDFDocumentPage.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPageRasterizer.ClearCache">
+      <summary>Clears the cached image.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPageRasterizer.GetImage(Leadtools.LeadRect,Leadtools.LeadSize,System.Boolean)">
+      <summary>Gets a raster image of a page.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPageRasterizer.Dispose">
+      <summary>Releases all resources used by this PDFPageRasterizer.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPageRasterizer.Dispose(System.Boolean)">
+      <summary>Releases all the resources used by this PDFPageRasterizer.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPageRasterizer.Finalize">
+      <summary>Releases all non-garbage collectible resources used by this object.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPageRasterizer.Resolution">
+      <summary>Gets the resolution, in dots per inch, of this page.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPageRasterizer.Size">
+      <summary>Gets the size, in pixels, of this page.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPencilAnnotation">
+      <summary>Contains information for a PDF pencil annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPencilAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFPencilAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPencilAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFPencilAnnotation.</summary>
+      <returns>The PDFPencilAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPencilAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPencilAnnotation.Pen">
+      <summary>Pen of this annotation.</summary>
+      <value>A PDFPen that represents the pen properties for this annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPencilAnnotation.Points">
+      <summary>Gets the list of points for this pencil annotation.</summary>
+      <value>An IList of PDFPoint structures that contain the list of points, in PDF units (1/72 of an inch and bottom-left), of the polyline annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPencilAnnotation.Types">
+      <summary>The type of each point in this pencil annotation object.</summary>
+      <value>The type of each point in this pencil annotation object.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPencilAnnotation.LineTo">
+      <summary>Line to point type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPencilAnnotation.MoveTo">
+      <summary>Move to point type.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPolygonAnnotation">
+      <summary>Contains information for a PDF polygon annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPolygonAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFPolygonAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPolygonAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFAnnotation.</summary>
+      <returns>The PDFAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolygonAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolygonAnnotation.BorderEffect">
+      <summary>The border effect for this polygon object.</summary>
+      <value>The border effect for this polygon object. The default value is 0 (BorderEffectNone).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolygonAnnotation.BorderEffectIntensity">
+      <summary>The intensity of the border effect.</summary>
+      <value>The intensity of the border effect. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolygonAnnotation.Brush">
+      <summary>Brush of this annotation.</summary>
+      <value>A PDFBrush that represents brush properties for this annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolygonAnnotation.Intent">
+      <summary>Intent of this polygon object.</summary>
+      <value>The intent of this polygon object. The default value is **null**, which means a default polygon with no intent.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolygonAnnotation.Pen">
+      <summary>Pen of this annotation.</summary>
+      <value>A PDFPen that represents pen properties for this annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolygonAnnotation.Points">
+      <summary>Gets the list of points for this polygon annotation.</summary>
+      <value>An IList of PDFPoint structures that contain the list of points, in PDF units (1/72 of an inch from the bottom-left), of the polygon annotation.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPolygonAnnotation.IntentPolygonCloud">
+      <summary>Cloud polygon intent.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPolygonAnnotation.IntentPolygonDimension">
+      <summary>Dimension polygon intent.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPolylineAnnotation">
+      <summary>Contains information of a PDF polyline annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPolylineAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFPolylineAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPolylineAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFAnnotation</summary>
+      <returns>The PDFAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolylineAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolylineAnnotation.EndingsBrush">
+      <summary>The brush to use to fill any area inside the selected ending style.</summary>
+      <value>Brush to use to fill any area inside the selected ending style. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolylineAnnotation.EndStyle">
+      <summary>The style of the end point of this object.</summary>
+      <value>Style of the end point of this object. The default value is **null** for none.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolylineAnnotation.Intent">
+      <summary>Intent of this polyline object.</summary>
+      <value>The intent of this polyline object. The default value is **null**, which means a default polyline with no intent.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolylineAnnotation.Pen">
+      <summary>Pen of this annotation.</summary>
+      <value>A PDFPen that represents pen properties for this annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolylineAnnotation.Points">
+      <summary>Gets the list of points for this polyline annotation.</summary>
+      <value>An IList of PDFPoint structures that contain the list of points, in PDF units (1/72 of an inch from the bottom-left), of the polyline annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPolylineAnnotation.StartStyle">
+      <summary>The style of the starting point of this object.</summary>
+      <value>Style of the starting point of this object. The default value is **null** for none.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPolylineAnnotation.IntentPolyLineDimension">
+      <summary>Dimension polyline intent.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFRectangleAnnotation">
+      <summary>Contains information of a PDF rectangle annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFRectangleAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFRectangleAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFRectangleAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFRectangleAnnotation.</summary>
+      <returns>The PDFRectangleAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRectangleAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRectangleAnnotation.BorderEffect">
+      <summary>The border effect of this rectangle object.</summary>
+      <value>The border effect of this rectangle object. The default value is 0 (BorderEffectNone).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRectangleAnnotation.BorderEffectIntensity">
+      <summary>The intensity of the border effect.</summary>
+      <value>The intensity of the border effect. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRectangleAnnotation.Bounds">
+      <summary>Source bounds of rectangle annotation.</summary>
+      <value>A PDFRect that represents the source location and size of rectangle annotation in PDF units (1/72 of an inch and bottom left). The default value is an empty PDFRect.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRectangleAnnotation.Brush">
+      <summary>Brush of this annotation.</summary>
+      <value>A PDFBrush that represents brush properties for this annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRectangleAnnotation.Pen">
+      <summary>Pen of this annotation.</summary>
+      <value>A PDFPen that represents pen properties for this annotation.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFSchema">
+      <summary>Defines a PDF schema.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSchema.#ctor">
+      <summary>Initializes a new instance of PDFSchema with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSchema.AsDate(System.String)">
+      <summary>Helper method to convert a schema value to a date object.</summary>
+      <param name="value">String containing the value to convert.</param>
+      <returns>The converted value as a date, or an empty `DateTime` if the value could not be converted.</returns>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSchema.AsNumber(System.String)">
+      <summary>Helper method to convert a schema value into a number.</summary>
+      <param name="value">String containing the value to convert.</param>
+      <returns>The converted value as an integer number, or 0 if the value could not be converted.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSchema.IsEditable">
+      <summary>Indicates that this schema should be editable in an application program by default.</summary>
+      <value>**true** if this schema should be editable in an application program by default; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSchema.IsVisible">
+      <summary>Indicates that this schema should be visible in an application program by default.</summary>
+      <value>**true** if this schema should be visible in an application program by default; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSchema.Key">
+      <summary>Identifier key for this schema.</summary>
+      <value>Unique key identifier of this schema.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSchema.SchemaType">
+      <summary>Type of this schema.</summary>
+      <value>The type of this schema. This could be one of the `XYZSchemaType` constants.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSchema.DateSchemaType">
+      <summary>Date schema type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSchema.NumberSchemaType">
+      <summary>Number schema type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSchema.TextSchemaType">
+      <summary>Text schema type.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFSecurityOptions">
+      <summary>PDF encryption options</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSecurityOptions.#ctor">
+      <summary>Initializes a new instance of the PDFSecurityOptions class with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSecurityOptions.Clone">
+      <summary>Creates an exact copy of this PDFSecurityOptions object.</summary>
+      <returns>The PDFSecurityOptions clone this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.AnnotationsEnabled">
+      <summary>Indicates whether annotations and comments can be added to the PDF document.</summary>
+      <value>**true** to allow external viewers and editors to add annotations and comments to the PDF document; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.AssemblyEnabled">
+      <summary>Indicates whether pages can be added or removed from the PDF document.</summary>
+      <value>**true** to allow external viewers and editors to add or remove pages from the PDF document; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.CopyEnabled">
+      <summary>Indicates whether the PDF document has copy text access rights.</summary>
+      <value>**true** to allow external viewers and editors to copy text from the PDF document; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.CopyForAccessibilityEnabled">
+      <summary>Indicates whether text in the PDF document should be accessible for screen reader software.</summary>
+      <value>**true** if text in the PDF document should be accessible for screen reader software; otherwise, **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.EditEnabled">
+      <summary>Indicates whether the PDF document can be edited.</summary>
+      <value>**true** to allow external viewers and editors to edit the PDF document; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.EncryptionMode">
+      <summary>Indicates the encryption mode to use when updating or creating a PDF document.</summary>
+      <value>An PDFEncryptionMode enumeration member that specifies the encryption mode to use when updating or creating a PDF document. The default value is PDFEncryptionMode.RC40Bit.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.FormFieldFillingEnabled">
+      <summary>Indicates whether the software can fill any form fields in the PDF document.</summary>
+      <value>**true** if the software can fill any form fields in the PDF document; otherwise, **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.HighQualityPrintEnabled">
+      <summary>Indicates whether the PDF document has high quality (faithful) printing owner access rights.</summary>
+      <value>**true** to allow external viewers and editors to print in high quality (faithful); otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.OwnerPassword">
+      <summary>Owner password to use when encrypting a PDF file.</summary>
+      <value>A System.String that contains the owner password to use when encrypting a PDF file. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.PrintEnabled">
+      <summary>Indicates whether the PDF document has printing owner access rights.</summary>
+      <value>**true** to allow external viewers and editors to print the PDF document; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSecurityOptions.UserPassword">
+      <summary>The user password to use when encrypting a PDF file.</summary>
+      <value>A System.String that contain the user password to use when encrypting a PDF file. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFSignature">
+      <summary>Contains information about a single PDF digital signature.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSignature.#ctor">
+      <summary>Initializes a new instance of PDFSignature.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSignature.Clone">
+      <summary>Returns an exact copy of this PDFSignature.</summary>
+      <returns>An exact copy of this PDFSignature.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.Bounds">
+      <summary>The location and size of this signature in the page.</summary>
+      <value>location and size of this signature in the page in PDF page coordinates.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.CanValidate">
+      <summary>Indicates that this signature can be validated.</summary>
+      <value>**true** if this signature can be validated; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.CertificateInfo">
+      <summary>A dictionary of the certificate information of this signature.</summary>
+      <value>A dictionary of the certificate information of this signature. The key of this dictionary is, in most cases, one of the **CertificateInfoXYZ** constants defined in PDFSignature.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.KeyUsage">
+      <summary>Key usage of this signature.</summary>
+      <value>Key usage of this signature. In most cases, this is one or more of the **KeyUsageXYZ** constants defined in PDFSignature.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.PageNumber">
+      <summary>The 1-based number of the page that owns this signature.</summary>
+      <value>The 1-based number of the page that owns this signature.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.PublicKeyBits">
+      <summary>Number of bits of the signature's public key.</summary>
+      <value>Number of bits of the signature's public key.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.PublicKeyType">
+      <summary>Public key type of this signature.</summary>
+      <value>Public key type of this signature. In most cases, this is one of the **PublicKeyTypeXYZ** constants defined in PDFSignature.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.State">
+      <summary>State of the signature.</summary>
+      <value>State of the signature. In most cases, this is one or more of the **StateXYZ** constants defined in PDFSignature.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.ValidFrom">
+      <summary>Starting date of when the signature is valid (issue date).</summary>
+      <value>Starting date of when the signature is valid (issue date).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.ValidTo">
+      <summary>Ending date of when the signature is valid (expiry date).</summary>
+      <value>Ending date of when the signature is valid (expiry date).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSignature.Version">
+      <summary>Signature version.</summary>
+      <value>The signature version.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.CertificateInfoIssuer">
+      <summary>Issuer key</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.CertificateInfoIssuerStream">
+      <summary>Issuer stream key</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.CertificateInfoPublicKey">
+      <summary>Public key</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.CertificateInfoSerialNumber">
+      <summary>Serial number key</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.CertificateInfoSHA1Digest">
+      <summary>SHA1 digest key</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.CertificateInfoSubject">
+      <summary>Subject key</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.CertificateInfoSubjectStream">
+      <summary>Subject stream key</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageCRLSign">
+      <summary>CRL sign signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageDataEncipherment">
+      <summary>Data encipherment signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageDecipherOnly">
+      <summary>Decipher-only signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageDigitalSignature">
+      <summary>This is a digital signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageEncipherOnly">
+      <summary>Encipher-only signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageKeyAgreement">
+      <summary>Agreement signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageKeyCertSign">
+      <summary>Certificate sign signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageKeyEncipherment">
+      <summary>Key encipherment signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.KeyUsageNonRepudiation">
+      <summary>Non-repudiation signature</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.PublicKeyTypeDSA">
+      <summary>DSA public key type</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.PublicKeyTypeDSA1">
+      <summary>DSA1 public key type</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.PublicKeyTypeDSA2">
+      <summary>DSA2 public key type</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.PublicKeyTypeDSA3">
+      <summary>DSA3 public key type</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.PublicKeyTypeDSA4">
+      <summary>DSA4 public key type</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.PublicKeyTypeRSA">
+      <summary>RSA public key type</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.PublicKeyTypeRSA2">
+      <summary>RSA2 public key type</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.StateInvalid">
+      <summary>State is invalid</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.StateUnknown">
+      <summary>State is unknown</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFSignature.StateValid">
+      <summary>State is valid</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFSquigglyAnnotation">
+      <summary>Contains information for PDF squiggly annotations.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSquigglyAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFSquigglyAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFSquigglyAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFAnnotation.</summary>
+      <returns>The PDFAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSquigglyAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSquigglyAnnotation.Color">
+      <summary>Color of the squiggly annotations.</summary>
+      <value>A Leadtools.RasterColor that represents the color of the squiggly annotation. The default value is an empty Leadtools.RasterColor structure.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFSquigglyAnnotation.Points">
+      <summary>Gets the list of points for the squiggly annotations.</summary>
+      <value>An IList of PDFPoint structure that contains the list of points, in PDF units (1/72 of an inch from the bottom-left), of the squiggly annotation.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFStrikeoutAnnotation">
+      <summary>Contains information for PDF strikeout annotations.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFStrikeoutAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFStrikeoutAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFStrikeoutAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFAnnotation.</summary>
+      <returns>The PDFAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFStrikeoutAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFStrikeoutAnnotation.Color">
+      <summary>Color of the strikeout annotations.</summary>
+      <value>A Leadtools.RasterColor that represents the color of the strikeout annotations. The default value is an empty Leadtools.RasterColor structure.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFStrikeoutAnnotation.Points">
+      <summary>Gets the list of points for strikeout annotations.</summary>
+      <value>An IList of PDFPoint structure that contains the list of points, in PDF units (1/72 of an inch from the bottom-left), of the strikeout annotation.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFTextAnnotation">
+      <summary>Contains information of a PDF text annotation.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFTextAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFTextAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFTextAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFTextAnnotation.</summary>
+      <returns>The PDFTextAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.Bold">
+      <summary>Indicates whether the text has a bold font or not.</summary>
+      <value>**true** the text has a bold font; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.BorderEffect">
+      <summary>The border effect of this text object.</summary>
+      <value>The border effect of this text object. The default value is 0 (BorderEffectNone).</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.BorderEffectIntensity">
+      <summary>The intensity of the border effect.</summary>
+      <value>The intensity of the border effect. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.CalloutLineStyle">
+      <summary>Style of the end point for the callout line of this object.</summary>
+      <value>Style of the end point for the callout line of this object. The default value is **null**, which means the callout line does not have a style specified.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.CalloutPoints">
+      <summary>Gets the list of callout polyline points.</summary>
+      <value>List of points to generate a callout polyline for this text annotation object. The default value is **null**, which means no callout polyline gets generated.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.Color">
+      <summary>Color of text annotation.</summary>
+      <value>A Leadtools.RasterColor that represents the color of text annotation. The default value is an empty Leadtools.RasterColor structure.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.FontHeight">
+      <summary>Font height in PDF units.</summary>
+      <value>A System.Double that represents the font height in PDF units (1/72 of an inch and bottom left). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.FontName">
+      <summary>True type face name of this font.</summary>
+      <value>A System.String that contain the face name of this font. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.FrameBounds">
+      <summary>Source bounds of text annotation.</summary>
+      <value>A PDFRect that represents the source location and size of bounding rectangle for text annotation in PDF units (1/72 of an inch and bottom left). The default value is an empty a PDFRect.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.FrameBrush">
+      <summary>Brush for the bounding rectangle of text annotation.</summary>
+      <value>A PDFBrush that represents brush properties for the bounding rectangle of text annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.FramePen">
+      <summary>Pen for the bounding rectangle of text annotation.</summary>
+      <value>A PDFPen that represents pen properties for the bounding rectangle of text annotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.Intent">
+      <summary>Intent of this text object.</summary>
+      <value>The intent of this text object. The default value is **null**, which means default text with no intent.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.Italic">
+      <summary>Indicates whether the annotation text has an italic font or not.</summary>
+      <value>**true** the text has italic font; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.Justification">
+      <summary>Justification of this text annotation object.</summary>
+      <value>A PDFTextJustification enumeration member that specifies the alignment of text annotation object associated with this PDFTextAnnotation.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.LineHeight">
+      <summary>Height of a single line of text in PDF coordinates.</summary>
+      <value>The height of a single line of text in PDF coordinates. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.Rotation">
+      <summary>The rotation angle of the text.</summary>
+      <value>The rotation angle of the text in degrees around the object bounds.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.Strikeout">
+      <summary>Indicates whether the annotation text has a strikeout or not.</summary>
+      <value>**true** the annotation text has a strikeout; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextAnnotation.Underline">
+      <summary>Indicates whether the annotation text is underlined or not.</summary>
+      <value>**true** the annotation text is underlined; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFTextAnnotation.IntentFreeTextCallout">
+      <summary>Callout text intent.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFTextAnnotation.IntentFreeTextTypeWriter">
+      <summary>Free typewriter text intent.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFUnderlineAnnotation">
+      <summary>Contains information for PDF underline annotations.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFUnderlineAnnotation.#ctor">
+      <summary>Initializes a new instance of a PDFUnderlineAnnotation object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFUnderlineAnnotation.Clone">
+      <summary>Creates an exact copy of this PDFAnnotation</summary>
+      <returns>The PDFAnnotation this method creates, cast as an object.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFUnderlineAnnotation.AnnotationType">
+      <summary>Gets the type of this annotation object.</summary>
+      <value>A PDFAnnotationType enumeration member that specifies the type of annotation object associated with this PDFAnnotation</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFUnderlineAnnotation.Color">
+      <summary>Color of the underline annotations.</summary>
+      <value>A Leadtools.RasterColor structure that represents the color of the underline annotations. The default value is an empty Leadtools.RasterColor structure.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFUnderlineAnnotation.Points">
+      <summary>Gets the list of points for the underline annotations.</summary>
+      <value>An IList of PDFPoint structures that contain the list of points, in PDF units (1/72 of an inch from the bottom-left), of the underline annotations.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFAnnotationType">
+      <summary>Specifies the type of PDF annotation</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Note">
+      <summary>Note annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Text">
+      <summary>Text annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Line">
+      <summary>Line annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Rectangle">
+      <summary>Rectangle annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Ellipse">
+      <summary>Ellipse annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Polyline">
+      <summary>Polyline annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Polygon">
+      <summary>Polygon annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Pencil">
+      <summary>Pencil annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Highlight">
+      <summary>Highlight annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Underline">
+      <summary>Underline annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Strikeout">
+      <summary>Strikeout annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAnnotationType.Squiggly">
+      <summary>Squiggly annotation </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFAutoOptimizerMode">
+      <summary>Specifies the mode for automatic PDF document optimization.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAutoOptimizerMode.Customized">
+      <summary>Use custom settings. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAutoOptimizerMode.BestSize">
+      <summary>Optimize for smallest file size </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAutoOptimizerMode.MediumSize">
+      <summary>Optimize favoring size over quality </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAutoOptimizerMode.AverageSize">
+      <summary>Optimize with balance between size and quality </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAutoOptimizerMode.GoodQuality">
+      <summary>Optimize favoring quality over size </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFAutoOptimizerMode.BestQuality">
+      <summary>Optimize for highest quality </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFBookmarkStyle">
+      <summary>Specifies the PDF bookmark style</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFBookmarkStyle.Plain">
+      <summary>No style. Use regular font</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFBookmarkStyle.Italic">
+      <summary>Use italic font</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFBookmarkStyle.Bold">
+      <summary>Use bold font</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFBookmarkStyle.BoldItalic">
+      <summary>Use bold italic font</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFCompatibilityLevel">
+      <summary>Determines which compatibility (or version) level to use when creating or updating PDF files.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCompatibilityLevel.Default">
+      <summary>Default (PDF version 1.5)</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCompatibilityLevel.PDF12">
+      <summary>PDF version 1.2</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCompatibilityLevel.PDF13">
+      <summary>PDF version 1.3</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCompatibilityLevel.PDF14">
+      <summary>PDF version 1.4</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCompatibilityLevel.PDFA">
+      <summary>PDF/A</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCompatibilityLevel.PDF15">
+      <summary>PDF version 1.5</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFContentType">
+      <summary>Specifies PDF content type</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFContentType.Text">
+      <summary>PDF contains any content </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFContentType.Image">
+      <summary>Page has an image only, no other content </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFContentType.ImageOverText">
+      <summary>Page has an image over the content </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFCoordinateType">
+      <summary>Specifies the PDF coordinate type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCoordinateType.Pdf">
+      <summary>The point or rectangle is in PDF coordinates (1/72 of an inch)</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCoordinateType.Pixel">
+      <summary>The point or rectangle is in pixels. The resolution of the document (PDFDocument.Resolution will be used to convert the value</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFCoordinateType.Inch">
+      <summary>The point or rectangle is in inches</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFDistillerAutoRotatePageMode">
+      <summary>Specifies how pages are rotated when distilling Postscript files.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDistillerAutoRotatePageMode.None">
+      <summary>No rotation is used.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDistillerAutoRotatePageMode.PageByPage">
+      <summary>Rotation will be performed on a page by page bases.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDistillerAutoRotatePageMode.All">
+      <summary>Rotation will be applied to all the pages in the final document.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFDistillerOutputMode">
+      <summary>Specifies the Distiller output optimization mode.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDistillerOutputMode.Default">
+      <summary>Output is intended to be useful across a wide variety of uses, possibly at the expense of a larger output file.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDistillerOutputMode.ScreenOptimized">
+      <summary>Low resolution output. This is similar to the Acrobat Distiller 5.0 "Screen Optimized" setting.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDistillerOutputMode.EBookOptimized">
+      <summary>Medium resolution output. This is similar to the Acrobat Distiller 5.0 "eBook" setting.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDistillerOutputMode.PrintOptimized">
+      <summary>Output similar to the Acrobat Distiller 5.0 "Print Optimized" setting.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDistillerOutputMode.PrepressOptimized">
+      <summary>Output similar to Acrobat Distiller 5.0 "Prepress Optimized" setting.</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFDownsamplingMode">
+      <summary>Specifies the downsampling mode for the PDF optimizer.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDownsamplingMode.Average">
+      <summary>Use average downsampling. Faster but lower quality. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFDownsamplingMode.Bicubic">
+      <summary>Use bicubic downsampling. Slower but higher quality. </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFEncryptionMode">
+      <summary>Specifies the PDF encryption mode</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFEncryptionMode.RC40Bit">
+      <summary>Use RC 40 bit mode</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFEncryptionMode.RC128Bit">
+      <summary>Use RC 128 bit mode</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFEncryptionMode.None">
+      <summary>No encryption</summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFFileType">
+      <summary>Specifies PDF and PS (Postscript) file type and version</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.Unknown">
+      <summary>Not a valid PDF or PS (Postscript) file</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.PDF10">
+      <summary>PDF Version 1.0</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.PDF11">
+      <summary>PDF Version 1.1</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.PDF12">
+      <summary>PDF Version 1.2</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.PDF13">
+      <summary>PDF Version 1.3</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.PDF14">
+      <summary>PDF Version 1.4</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.PDF15">
+      <summary>PDF Version 1.5</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.PDF16">
+      <summary>PDF Version 1.6</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.PDF17">
+      <summary>PDF Version 1.7</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.Postscript">
+      <summary>Postscript file (PS)</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFileType.EncapsulatedPostscript">
+      <summary>Encapsulated Postscript file (EPS)</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFFontEmbeddingType">
+      <summary>Font embedding type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFontEmbeddingType.None">
+      <summary>The font is not embedded</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFontEmbeddingType.Embedded">
+      <summary>Font is fully embedded and a full copy of the entire character set of a font is stored in the PDF.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFontEmbeddingType.EmbeddedSubset">
+      <summary>Font is embedded, but with only those characters that are actually used in the lay-out are stored in the PDF.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFFontStyle">
+      <summary>Specifies the styles of a PDF font.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFontStyle.Normal">
+      <summary>Normal font</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFontStyle.Bold">
+      <summary>Bold font</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFontStyle.Italic">
+      <summary>Italic font</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFontStyle.Underline">
+      <summary>Underline font</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFImageType">
+      <summary>Specifies the image compression type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Unknown">
+      <summary>Unknown </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Raw">
+      <summary>Raw uncompressed </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Rle">
+      <summary>Raw RLE compressed </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.FaxG31DimNoEol">
+      <summary>Raw FAX, compressed using CCITT group 3,1 dimension.with no EOL. </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.FaxG31Dim">
+      <summary>Raw FAX, compressed using CCITT group 3, 1 dimension. </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.FaxG32Dim">
+      <summary>Raw FAX, compressed using CCITT group 3, 2 dimensions. </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.FaxG4">
+      <summary>Raw FAX, compressed using CCITT group 4. </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Jbig2">
+      <summary>RAW JBIG2 compressed </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Png">
+      <summary>Embedded PNG compressed </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Flate">
+      <summary>Raw flate compression </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Lzw">
+      <summary>Raw LZW compressed </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Jpeg">
+      <summary>Embedded JPEG compressed </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Jpx">
+      <summary>Embedded JPEG 2000 Part 2 (JPX) compressed </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFImageType.Tiff">
+      <summary>Embedded TIFF uncompressed </summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFObjectType">
+      <summary>Specifies the PDF object type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFObjectType.Text">
+      <summary>The item is text. The PDFObject.Code contains the character code for this text item. The PDFObject.Bounds contains the character exact bounds with any internal or external leading in PDF units (1/72 of an inch and bottom left) and the PDFObject.TextProperties property contains its font and color information.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFObjectType.Rectangle">
+      <summary>The item is a rectangle. The coordinates of the rectangle are in PDFObject.Bounds in PDF units (1/72 of an inch and bottom left)</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFObjectType.Image">
+      <summary>The item is an image. The coordinates of the image are in PDFObject.Bounds in PDF units (1/72 of an inch and bottom left)</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPageFitType">
+      <summary>Specifies the PDF page fit type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageFitType.Default">
+      <summary>Default mode. Do not change the page fit mode.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageFitType.FitWidth">
+      <summary>Fit the page width into the window.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageFitType.FitHeight">
+      <summary>Fit the page height into the window.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageFitType.FitWidthBounds">
+      <summary>Fit the window into the page width.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageFitType.FitHeightBounds">
+      <summary>Fit the window into the page height.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageFitType.FitBounds">
+      <summary>Fit the window into the page width and height.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPageLayoutType">
+      <summary>Specifies the PDF page layout</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageLayoutType.SinglePageDisplay">
+      <summary>Default: Display one page at a time </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageLayoutType.OneColumnDisplay">
+      <summary>Display the pages in one column </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageLayoutType.TwoColumnLeftDisplay">
+      <summary>Display the pages in two columns, with odd-numbered pages on the left </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageLayoutType.TwoColumnRightDisplay">
+      <summary>Display the pages in two columns, with odd-numbered pages on the right </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageLayoutType.TwoPageLeft">
+      <summary>Display the pages two at a time, with odd-numbered pages on the left </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageLayoutType.TwoPageRight">
+      <summary>Display the pages two at a time, with odd-numbered pages on the right </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPageModeType">
+      <summary>Specifies the PDF page mode</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageModeType.PageOnly">
+      <summary>Default: Neither document outline nor thumbnail images visible </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageModeType.Outlines">
+      <summary>Document bookmarks visible </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageModeType.Thumbs">
+      <summary>Thumbnail images visible </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageModeType.FullScreen">
+      <summary>Full-screen mode, with no menu bar, window controls, or any other window visible </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageModeType.Layers">
+      <summary>Layer panel visible </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPageModeType.Attachments">
+      <summary>Attachments panel visible </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFParseDocumentStructureOptions">
+      <summary>Specifies options to use when parsing a PDF document structure.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParseDocumentStructureOptions.None">
+      <summary>Do not parse anything.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParseDocumentStructureOptions.Bookmarks">
+      <summary>Parse the bookmarks that constitute the document's Table of Contents (TOC). This option populates the PDFDocument.Bookmarks property.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParseDocumentStructureOptions.InternalLinks">
+      <summary>Parse the internal links (or jumps) between the pages found in the document. This option populates the PDFDocument.InternalLinks property.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParseDocumentStructureOptions.Images">
+      <summary>Parse the images found in the document. This option populates the PDFDocument.Images property.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParseDocumentStructureOptions.Fonts">
+      <summary>Parse the fonts found in the document. This option populates the PDFDocument.Fonts property.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParseDocumentStructureOptions.All">
+      <summary>Parse bookmarks, internal links, images, fonts and embedded files.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParseDocumentStructureOptions.EmbeddedFiles">
+      <summary>Parse embedded files.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFParsePagesOptions">
+      <summary>Specifies which options to use when parsing the objects of a PDF document.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.None">
+      <summary>Do not parse any items.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.Objects">
+      <summary>Parse the objects of the page such as text items (characters), images, and rectangles. Specifying this member will populate the PDFDocumentPage.Objects collection with the objects found in the page.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.Hyperlinks">
+      <summary>Parse the hyperlinks found in the page. Specifying this member will populate the PDFDocumentPage.Hyperlinks collection with the hyperlinks found in the page.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.IgnoreWhiteSpaces">
+      <summary>Must be OR'ed with Objects (otherwise it will be ignored). If specified, white space characters such as spaces or tab characters or will not be returned as items in the PDFDocumentPage.Objects collection. Use PDFTextProperties.IsEndOfWord and PDFTextProperties.IsEndOfLine to re-construct the page words and lines as needed.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.Fonts">
+      <summary></summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.Annotations">
+      <summary>Parse the annotations found in the page. Specifying this member will populate the PDFDocumentPage.Annotations collection with any annotations found in the page.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.RTLOriginal">
+      <summary>Parse characters right to left as they are stored in the page.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.RTLFlipBrackets">
+      <summary>Flip bracket characters for right to left text when parsing the page.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.InternalLinks">
+      <summary>Parse all internal links found in the page. This is the equivalent of calling PDFDocument.ParseDocumentStructure with the PDFParseDocumentStructureOptions.InternalLinks option.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.FormFields">
+      <summary>Parse the form fields found in the page. Specifying this member will populate the PDFDocumentPage.FormFields collection with the PDF form fields found in the page.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.Signatures">
+      <summary>Parse the digital signatures found in the page. Specifying this member will populate the PDFDocumentPage.Signatures collection with the PDF digital signatures found in the page.</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.All">
+      <summary>Parse all objects with white spaces.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFParsePagesOptions.AllIgnoreWhiteSpaces">
+      <summary>Parse all objects without white spaces.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFTextJustification">
+      <summary>Specifies the text justification.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFTextJustification.Left">
+      <summary>Left aligned text</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFTextJustification.Center">
+      <summary>Center aligned text</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFTextJustification.Right">
+      <summary>Right aligned text</summary>
+      <platforms>NET, Java</platforms>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFBookmark">
+      <summary>Provides information about PDF bookmark properties</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBookmark.BookmarkStyle">
+      <summary>Style of this bookmark.</summary>
+      <value>A PDFBookmarkStyle enumeration that specifies the style of the bookmark. The default value is PDFBookmarkStyle.Plain.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBookmark.Level">
+      <summary>Indentation level of the bookmark.</summary>
+      <value>A System.Int32 that represents the 0-based indentation level of the bookmark. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBookmark.TargetPageFitType">
+      <summary>Target page fit type of this bookmark.</summary>
+      <value>A PDFPageFitType enumeration member that specifies the target page fit type of this bookmark. The default value is PDFPageFitType.Default.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBookmark.TargetPageNumber">
+      <summary>Number of the target page of this bookmark.</summary>
+      <value>The 1-based number of the target page of this bookmark. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBookmark.TargetPosition">
+      <summary>Position in target page to scroll to of this bookmark.</summary>
+      <value>A PDFPoint that represents the position in PDF units (1/72 of an inch and bottom-left) of the target page to scroll to. The default value is an empty PDFPoint.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBookmark.TargetZoomPercent">
+      <summary>Target page zoom percentage of this bookmark.</summary>
+      <value>A System.Int32 that specifies the zoom percent (100 equals to no zoom) of the target page. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBookmark.Title">
+      <summary>Title of the bookmark.</summary>
+      <value>A System.String that represents the title of the bookmark. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFBrush">
+      <summary>Contains information about PDF brush properties</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFBrush.#ctor(Leadtools.RasterColor,System.Int32)">
+      <summary>Initializes a new instance of a PDFBrush structure with the specified parameters.</summary>
+      <param name="color">A Leadtools.RasterColor that represents the color of the brush. The default value is an empty Leadtools.RasterColor structure.</param>
+      <param name="style">A PDFBrush enumeration value that represents the style of the brush. The default value is PDFBrush.Solid.</param>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBrush.BrushStyle">
+      <summary>Style of the brush.</summary>
+      <value>A value that represents the style of the brush. The default value is Solid.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFBrush.Color">
+      <summary>Color of the brush.</summary>
+      <value>A Leadtools.RasterColor that represents the color of the brush. The default value is an empty Leadtools.RasterColor structure.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFBrush.Solid">
+      <summary>Solid brush style</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFBrush.Transparent">
+      <summary>Transparent brush style</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFFilePage">
+      <summary>Contains information about a page in a PDF file.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFilePage.Height">
+      <summary>Height of the PDF page.</summary>
+      <value>The height of the PDF page in PDF units (1/72 of an inch). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFilePage.PageNumber">
+      <summary>Number of this PDF page.</summary>
+      <value>A System.Int32 that specifies the number of this page. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFilePage.Width">
+      <summary>Gets or sets the width of the PDF page.</summary>
+      <value>The width of the PDF page in PDF units (1/72 of an inch). The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFFont">
+      <summary>Contains the information about a PDF font.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFont.DescendantCID">
+      <summary>Descendant CIDFont name if this is a Type 0 font.</summary>
+      <value>Descendant CIDFont name if this is a Type 0 font.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFont.EmbeddingType">
+      <summary>Font embedding type.</summary>
+      <value>Font embedding type.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFont.Encoding">
+      <summary>Character set encoding used by this font.</summary>
+      <value>Character set encoding used by this font.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFont.FaceName">
+      <summary>The name of the face of this font.</summary>
+      <value>String that contains the face name of this font. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFont.FontStyle">
+      <summary>*(Deprecated)* Style of this font.</summary>
+      <value>One or more PDFFontStyle enumeration member values that specify the style of this font. The default value is PDFFontStyle.Normal.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFFont.FontType">
+      <summary>Type of font.</summary>
+      <value>Type of font.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.EncodingMacExpertEncoding">
+      <summary>PDF Mac Expert font encoding.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.EncodingMacRomanEncoding">
+      <summary>PDF Mac Roman font encoding.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.EncodingPDFDocEncoding">
+      <summary>PDF Doc font encoding.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.EncodingStandardEncoding">
+      <summary>PDF standard font encoding.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.EncodingWinAnsiEncoding">
+      <summary>PDF Windows ANSI font encoding.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.TypeCIDFontType0">
+      <summary>PDF CID font type 0.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.TypeCIDFontType2">
+      <summary>PDF CID font type 2.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.TypeMMType1">
+      <summary>PDF font type MM 1.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.TypeTrueType">
+      <summary>PDF TrueType font type.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.TypeType0">
+      <summary>PDF font type 0.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.TypeType1">
+      <summary>PDF font type 1.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFFont.TypeType3">
+      <summary>PDF font type 3.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFHyperlink">
+      <summary>Contains information of a single PDF hyperlink.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFHyperlink.Bounds">
+      <summary>Source bounds of this hyperlink.</summary>
+      <value>A PDFRect that represents the source location and size of this hyperlink in PDF units (1/72 of an inch and bottom left). The default value is an empty PDFRect.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFHyperlink.Hyperlink">
+      <summary>Hyperlink value.</summary>
+      <value>A System.String that specifies the hyperlink value. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFHyperlink.TextProperties">
+      <summary>Text properties such as font information and color of this hyperlink.</summary>
+      <value>A PDFTextProperties structure that contain the text properties such as font information and color of this hyperlink. The default value is a default PDFTextProperties object.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFImage">
+      <summary>The PDFImage structure describes an image embedded in the PDF file.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.BitsPerComponent">
+      <summary>The bits per component of the embedded image.</summary>
+      <value>The bits per component of the embedded image.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.BitsPerPixel">
+      <summary>The bits per pixel of the embedded image.</summary>
+      <value>The bits per pixel of the embedded image.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.ColorDevice">
+      <summary>The color device of the embedded image.</summary>
+      <value>The color device of the embedded image.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.ComponentCount">
+      <summary>The number of color components of the embedded image.</summary>
+      <value>The number of color components of the embedded image.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.Height">
+      <summary>The height in pixels of the embedded image.</summary>
+      <value>The height in pixels.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.ImageType">
+      <summary>The image compression type of the embedded image.</summary>
+      <value>A PDFImageType that indicates the compression type.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.ObjectNumber">
+      <summary>The PDF object number of the embedded image.</summary>
+      <value>The PDF object number of the embedded image.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.PageNumber">
+      <summary>The page number of page that contains the embedded image.</summary>
+      <value>The page number of page that contains the embedded image.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.StreamLength">
+      <summary>The size in bytes of the embedded image.</summary>
+      <value>The size in bytes of the embedded image.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.StreamOffset">
+      <summary>The offset within the PDF stream for the embedded image.</summary>
+      <value>The offset within the PDF stream for the embedded image.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFImage.Width">
+      <summary>The width in pixels of the embedded image.</summary>
+      <value>The width in pixels.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFInternalLink">
+      <summary>Provides information about the PDF internal link properties</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.BorderColor">
+      <summary>Color of the border of this internal link</summary>
+      <value>A Leadtools.RasterColor that specifies the color of the border of this internal link.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.BorderDashLength">
+      <summary>Border dash length of this internal link.</summary>
+      <value>A System.Double that specifies the border dash length of this internal link, in PDF units (1/72 of an inch). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.BorderWidth">
+      <summary>Border width of this internal link.</summary>
+      <value>A System.Double that specifies the border width of this internal link in PDF units (1/72 of an inch). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.SourceBounds">
+      <summary>Source bounds of this internal link.</summary>
+      <value>A PDFRect that represents the source location and size of this internal link, in PDF units (1/72 of an inch and bottom left). The default value is an empty PDFRect.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.SourcePageNumber">
+      <summary>Source page number of this internal link.</summary>
+      <value>A System.Int32 that specifies the 1-based source page number of this internal link. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.TargetPageFitType">
+      <summary>Target page fit type of this internal link.</summary>
+      <value>A PDFPageFitType enumeration member that specifies the target page fit type of this internal link. The default value is PDFPageFitType.Default.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.TargetPageNumber">
+      <summary>Number of the target page of this internal link.</summary>
+      <value>The 1-based number of the target page of this internal link. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.TargetPosition">
+      <summary>Position in target page to scroll to for this internal link.</summary>
+      <value>A PDFPoint that represents the position, in PDF units (1/72 of an inch and bottom-left), of the target page to scroll to. The default value is an empty PDFPoint.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFInternalLink.TargetZoomPercent">
+      <summary>Target page zoom percentage of this internal link.</summary>
+      <value>A System.Int32 that specifies the zoom percent (100 equals to no zoom) of the target page. The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFMatrix">
+      <summary>Represents a 3x3 affine transformation matrix used for transformations in 2-D space.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFMatrix.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+      <summary>Initializes a new instance of PDFMatrix with the specified values.</summary>
+      <param name="m11">The new PDFMatrix M11 coefficient.</param>
+      <param name="m12">The new PDFMatrix M12 coefficient.</param>
+      <param name="m21">The new PDFMatrix M21 coefficient.</param>
+      <param name="m22">The new PDFMatrix M22 coefficient.</param>
+      <param name="offsetX">The new PDFMatrix OffsetX coefficient.</param>
+      <param name="offsetY">The new PDFMatrix OffsetY coefficient.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFMatrix.ToString">
+      <summary>Converts this PDFMatrix to a human-readable string.</summary>
+      <returns>Human-readable string representation of this PDFMatrix.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFMatrix.M11">
+      <summary>The value of the first row and first column of this PDFMatrix.</summary>
+      <value>The value of the first row and first column of this PDFMatrix. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFMatrix.M12">
+      <summary>The value of the first row and second column of this PDFMatrix.</summary>
+      <value>The value of the first row and second column of this PDFMatrix. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFMatrix.M21">
+      <summary>The value of the second row and first column of this PDFMatrix.</summary>
+      <value>The value of the second row and first column of this PDFMatrix. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFMatrix.M22">
+      <summary>The value of the second row and second column of this PDFMatrix.</summary>
+      <value>The value of the second row and second column of this PDFMatrix. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFMatrix.OffsetX">
+      <summary>The value of the third row and first column of this PDFMatrix.</summary>
+      <value>The value of the third row and first column of this PDFMatrix. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFMatrix.OffsetY">
+      <summary>The value of the third row and second column of this PDFMatrix.</summary>
+      <value>The value of the third row and second column of this PDFMatrix. The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFObject">
+      <summary>Contains information of a single PDF object.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFObject.Bounds">
+      <summary>Bounding rectangle of the object.</summary>
+      <value>A PDFRect structure that contain the bounding rectangle of the object in PDF units (1/72 of an inch and bottom left). Default value is an empty PDFRect with all values initialized to 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFObject.Code">
+      <summary>Character code value of this PDFObject text item.</summary>
+      <value>A System.Char that contain the UNICODE character code of this PDFObject text item. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFObject.ImageObjectNumber">
+      <summary>PDF image object number.</summary>
+      <value>The PDF image object number</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFObject.ObjectType">
+      <summary>PDF object type.</summary>
+      <value>A PDFObjectType enumeration member that specifies the PDF object type. The default value is PDFObjectType.Text.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFObject.TextProperties">
+      <summary>Text properties such as font information and color of this PDFObject text item.</summary>
+      <value>A PDFTextProperties structure that contain the text properties such as font information and color of this PDFObject text item. The default value is a default PDFTextProperties object.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPen">
+      <summary>Contains information about PDF pen properties</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPen.#ctor(Leadtools.RasterColor,System.Double,System.Int32)">
+      <summary>Initializes a PDFPen structure with the specified properties</summary>
+      <param name="color">A Leadtools.RasterColor that represents the color of the pen.</param>
+      <param name="width">A System.Double that represents the width of the pen. The default value is 0.0.</param>
+      <param name="style">A PDFPen that represents the style of the pen. The default value is PDFPen.Solid.</param>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPen.Color">
+      <summary>Color of the pen.</summary>
+      <value>A Leadtools.RasterColor that represents the color of the pen. The default value is an empty Leadtools.RasterColor structure.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPen.DashLengths">
+      <summary>The length of a single dash and gap pattern in Dashed pen in PDF coordinates.</summary>
+      <value>The length of a single dash and gap pattern in Dashed pen in PDF coordinates. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPen.PenStyle">
+      <summary>Style of the pen.</summary>
+      <value>A value that represents the style of the pen. The default value is 0 Solid.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPen.Width">
+      <summary>Width of the pen.</summary>
+      <value>A System.Double that represents the width of the pen. The default value is 0.0.</value>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPen.Beveled">
+      <summary>Beveled pen style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPen.Dashed">
+      <summary>Dashed pen style</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPen.Inset">
+      <summary>Inset line style.</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPen.Solid">
+      <summary>Solid pen style</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPen.Transparent">
+      <summary>Transparent pen style</summary>
+    </member>
+    <member name="F:Leadtools.Pdf.PDFPen.Underline">
+      <summary>Underline pen style.</summary>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFPoint">
+      <summary>Represents an x- and y-coordinate pair.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPoint.#ctor(System.Double,System.Double)">
+      <summary>Initializes a new instance of the PDFPoint structure with the specified coordinates.</summary>
+      <param name="x">The horizontal position of the point.</param>
+      <param name="y">The vertical position of the point.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFPoint.ToString">
+      <summary>Converts the attributes of this PDFPoint to a human-readable string.</summary>
+      <returns>A string that contains the coordinates of this PDFPoint structure. For example, {X=10,Y=20}.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPoint.X">
+      <summary>X-coordinate of this PDFPoint.</summary>
+      <value>A System.Double that represents the x-coordinate of this PDFPoint.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFPoint.Y">
+      <summary>Y-coordinate of this PDFPoint.</summary>
+      <value>A System.Double that represents the y-coordinate of this PDFPoint.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFRect">
+      <summary>Describes the width, height, and location of a rectangle.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFRect.#ctor(System.Double,System.Double,System.Double,System.Double)">
+      <summary>Initializes a new instance of the PDFRect structure with the specified edge locations.</summary>
+      <param name="left">The x-coordinate of the upper-left corner of the rectangle</param>
+      <param name="top">The y-coordinate of the upper-left corner of the rectangle</param>
+      <param name="right">The x-coordinate of the lower-right corner of the rectangle</param>
+      <param name="bottom">The y-coordinate of the lower-right corner of the rectangle</param>
+    </member>
+    <member name="M:Leadtools.Pdf.PDFRect.ToString">
+      <summary>Converts the attributes of this PDFRect to a human-readable string.</summary>
+      <returns>A string that contains the coordinates of this PDFRect structure. For example, {Left=10,Top=20,Right=30,Bottom=40}.</returns>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRect.Bottom">
+      <summary>Y-axis value of the bottom side of the rectangle.</summary>
+      <value>A System.Double that represents the y-axis value of the bottom side of the rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRect.Height">
+      <summary>Gets the height of the rectangle.</summary>
+      <value>A System.Double that represents the height of the rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRect.Left">
+      <summary>X-axis value of the left side of the rectangle.</summary>
+      <value>A System.Double that represents the x-axis value of the left side of the rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRect.Right">
+      <summary>X-axis value of the left side of the rectangle.</summary>
+      <value>A System.Double that represents the x-axis value of the left side of the rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRect.Top">
+      <summary>Y-axis value of the top side of the rectangle.</summary>
+      <value>A System.Double that represents the y-axis value of the top side of the rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRect.Width">
+      <summary>Gets the width of the rectangle.</summary>
+      <value>A System.Double that represents the width of the rectangle.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFRedact">
+      <summary>Redact item data.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRedact.Bounds">
+      <summary>Location and size of the redact area in the PDF page.</summary>
+      <value>Location and size of the redact area in the PDF page in PDF coordinates. The default value is an empty rectangle.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFRedact.PageNumber">
+      <summary>Target page number of this redact item.</summary>
+      <value>1-based target page number of this redact item. The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Pdf.PDFTextProperties">
+      <summary>Contains information about a text item in a PDF page.</summary>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextProperties.Color">
+      <summary>Color of the text item.</summary>
+      <value>A Leadtools.RasterColor object that contain the color text item. The default value is an empty Leadtools.RasterColor.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextProperties.FontHeight">
+      <summary>Font height in PDF units.</summary>
+      <value>A System.Double that represents the font height in PDF units (1/72 of an inch and bottom left). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextProperties.FontIndex">
+      <summary>Index of a font used by this text item in the font array.</summary>
+      <value>The 0-based index of font used by this text item into the font array. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextProperties.FontWidth">
+      <summary>Font width in PDF units.</summary>
+      <value>A System.Double that represents the font width in PDF units (1/72 of an inch and bottom left). The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextProperties.IsEndOfLine">
+      <summary>Indicates whether this is the last character in a line.</summary>
+      <value>**true** if this is the last character in a line; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextProperties.IsEndOfWord">
+      <summary>Indicates whether this is the last character in a word.</summary>
+      <value>**true** if this is the last character in a word; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Pdf.PDFTextProperties.IsRTL">
+      <summary>Indicates whether this text is Right to Left.</summary>
+      <value>**true** if the text is Right to Left; otherwise, **false**.</value>
+    </member>
+  </members>
+</doc>

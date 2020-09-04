@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Windows.Media.Transitions</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Windows.Media.Transitions.BlindTransition">
+      <summary>The BlindTransition class gives you precise control over the Blind transition effects. These simulate venetian blind operations.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.BlindTransition.#ctor">
+      <summary>Initializes a new instance of the BlindTransition class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.BlindTransition.Begin">
+      <summary>Applies the BlindTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.BlindTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the BlindTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.BlindTransition.TransitionType">
+      <summary>Gets or sets the type of BlindTransition being used.</summary>
+      <value>A BlindTransitionType enumeration value that specifies the Blindtransition to be used.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.BlindTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.CircularTransition">
+      <summary>The CircularTransition class gives you precise control over Circular transition effects.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.CircularTransition.#ctor">
+      <summary>Initializes a new instance of the CircularTransition class.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.CircularWipeTransition">
+      <summary>The CircularWipeTransition class gives you precise control over Circular Wipe transitions.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.CircularWipeTransition.#ctor">
+      <summary>Initializes a new instance of the CircularWipeTransition class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.CircularWipeTransition.Begin">
+      <summary>Applies the CircularWipeTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.CircularWipeTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the CircularWipeTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.CircularWipeTransition.TransitionType">
+      <summary>Gets or sets the type of CircularWipeTransition.</summary>
+      <value>An CircularWipeTransitionType enumeration value that specifies the behaviour of the CircularWipeTransition.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.EllipticalTransition">
+      <summary>The EllipticalTransition class gives you precise control over Elliptical transitions.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.EllipticalTransition.#ctor">
+      <summary>Initializes a new instance of the EllipticalTransition class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.EllipticalTransition.Begin">
+      <summary>Applies the EllipticalTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.EllipticalTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the EllipticalTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.EllipticalTransition.TransitionType">
+      <summary>Gets or sets the type of EllipticalTransition.</summary>
+      <value>An EllipticalTransitionType enumeration value that specifies the behaviour of the EllipticalTransition.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.LinearWipeTransition">
+      <summary>The LinearWipeTransition class gives you precise control over Linear Wipe transitions.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.LinearWipeTransition.#ctor">
+      <summary>Initializes a new instance of the LinearWipeTransition class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.LinearWipeTransition.Begin">
+      <summary>Applies the LinearWipeTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.LinearWipeTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the LinearWipeTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.LinearWipeTransition.TransitionType">
+      <summary>Gets or sets the type of LinearWipeTransition.</summary>
+      <value>An LinearWipeTransitionType enumeration value that specifies the behaviour of the LinearWipeTransition.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.PushTransition">
+      <summary>The PushTransition class gives you precise control over Push transitions.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.PushTransition.#ctor">
+      <summary>Initializes a new instance of the PushTransition class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.PushTransition.Begin">
+      <summary>Applies the PushTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.PushTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the PushTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.PushTransition.Push">
+      <summary>Gets or sets a brush to be used beside the Leadtools.Windows.Media.Transitions.TransitionBase.Fill to generate the animated Leadtools.Windows.Media.Transitions.TransitionBase.OutBrush brush for the PushTransition. This is a dependency property.</summary>
+      <value>The brush to be used when applying a push transition to a framework element.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.PushTransition.TransitionType">
+      <summary>Gets or sets the type of PushTransition.</summary>
+      <value>An PushTransitionType enumeration value that specifies the behaviour of the PushTransition.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.PushTransition.PushProperty">
+      <summary>Identifies the Push dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.PushTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.RectangularTransition">
+      <summary>The RectangularTransition class gives you precise control over Rectangular transitions.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.RectangularTransition.#ctor">
+      <summary>Initializes a new instance of the RectangularTransition class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.RectangularTransition.Begin">
+      <summary>Applies the RectangularTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.RectangularTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the RectangularTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.RectangularTransition.TransitionType">
+      <summary>Gets or sets the type of RectangularTransition.</summary>
+      <value>An RectangularTransitionType enumeration value that specifies the behaviour of the RectangularTransition.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RectangularTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.RotateTransition">
+      <summary>The RotateTransition class gives you precise control over Rotational transitions.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.RotateTransition.#ctor">
+      <summary>Initializes a new instance of the RotateTransition class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.RotateTransition.Begin">
+      <summary>Applies the RotateTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.RotateTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the RotateTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.RotateTransition.TransitionType">
+      <summary>Gets or sets the type of RotateTransition.</summary>
+      <value>An RotateTransitionType enumeration value that specifies the behaviour of the RotateTransition.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RotateTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.SlideTransition">
+      <summary>The SlideTransition class gives you precise control over Slide transitions.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.SlideTransition.#ctor">
+      <summary>Initializes a new instance of the SlideTransition class.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.SlideTransition.Begin">
+      <summary>Applies the SlideTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.SlideTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the SlideTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.SlideTransition.TransitionType">
+      <summary>Gets or sets the type of SlideTransition.</summary>
+      <value>An SlideTransitionType enumeration value that specifies the behaviour of the SlideTransition.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.SlideTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.ZoomTransition">
+      <summary>The ZoomTransition class gives you precise control over Zoom transitions.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.ZoomTransition.#ctor">
+      <summary>Gets or sets the type of ZoomTransition.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.ZoomTransition.Begin">
+      <summary>Applies the ZoomTransition to the target object referenced by the Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject property.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.ZoomTransition.CreateInstanceCore">
+      <summary>Creates a new instance of the ZoomTransition class.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.ZoomTransition.TransitionType">
+      <summary>Gets or sets the type of ZoomTransition.</summary>
+      <value>An ZoomTransitionType enumeration value that specifies the behaviour of the ZoomTransition.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.ZoomTransition.TransitionTypeProperty">
+      <summary>Identifies the TransitionType dependency property.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.BlindTransitionType">
+      <summary>Values for the BlindTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.BlindTransitionType.TopToBottom">
+      <summary>(0x00000000)A Blind growing from top to bottom.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.BlindTransitionType.LeftToRight">
+      <summary>(0x00000001)A Blind growing from left to right.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.BlindTransitionType.GrowingLeftToRight">
+      <summary>A Blind growing from left to right.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.BlindTransitionType.GrowingRightToLeft">
+      <summary>A Blind growing from right to left.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.BlindTransitionType.GrowingTopToBottom">
+      <summary>A Blind growing from top to bottom.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.BlindTransitionType.GrowingBottomToTop">
+      <summary>A Blind growing from bottom to top.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType">
+      <summary>Values for the CircularWipeTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.CenterClockwiseFromLeft">
+      <summary>Wipe circle center clockwise from left. Starting from the 9:00 position and moving clockwise (with the origin at the center of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.CenterCounterclockwiseFromLeft">
+      <summary>Wipe circle center counterclockwise from left. Starting from the 9:00 position and moving counterclockwise (with the origin at the center of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.CenterClockwiseFromRight">
+      <summary>Wipe circle center clockwise from right. Starting from the 3:00 position and moving clockwise (with the origin at the center of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.CenterCounterclockwiseFromRight">
+      <summary>Wipe circle center counterclockwise from right. Starting from the 3:00 position and moving counterclockwise (with the origin at the center of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.CenterClockwiseFromTop">
+      <summary>Wipe circle center clockwise from top. Starting from the 12:00 position and moving clockwise (with the origin at the center of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.CenterCounterclockwiseFromTop">
+      <summary>Wipe circle center counterclockwise from top. Starting from the 12:00 position and moving counterclockwise (with the origin at the center of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.CenterClockwiseFromBottom">
+      <summary>Wipe circle center clockwise from bottom. Starting from the 6:00 position and moving clockwise (with the origin at the center of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.CenterCounterclockwiseFromBottom">
+      <summary>Wipe circle center counterclockwise from bottom. Starting from the 6:00 position and moving counterclockwise (with the origin at the center of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.LeftClockwiseFromTop">
+      <summary>Wipe circle left clockwise from top. Starting from the 12:00 position and moving clockwise (with the origin at the center of the left edge of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.LeftCounterclockwiseFromBottom">
+      <summary>Wipe circle left counterclockwise from bottom. Starting from the 6:00 position and moving counterclockwise (with the origin at the center of the left edge of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.RightClockwiseFromBottom">
+      <summary>Wipe circle right clockwise from bottom. Starting from the 6:00 position and moving clockwise (with the origin at the center of the right edge of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.RightCounterclockwiseFromTop">
+      <summary>Wipe circle right counterclockwise from top. Starting from the 12:00 position and moving counterclockwise (with the origin at the center of the left edge of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.TopClockwiseFromRight">
+      <summary>Wipe circle top clockwise from right. Starting from the 6:00 position and moving clockwise (with the origin at the center of the right edge of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.TopCounterclockwiseFromLeft">
+      <summary>Wipe circle top counterclockwise from left. Starting from the 9:00 position and moving clockwise (with the origin at the center of the top edge of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.BottomClockwiseFromLeft">
+      <summary>Wipe circle bottom clockwise from left. Starting from the 9:00 position and moving clockwise (with the origin at the center of the bottom edge of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.CircularWipeTransitionType.BottomCounterclockwiseFromRight">
+      <summary>Wipe circle bottom counterclockwise from right. Starting from the 3:00 position and moving counterclockwise (with the origin at the center of the bottom edge of the image), the new image appears as if swept in by the minute hand.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.EllipticalTransitionType">
+      <summary>Values for the EllipticalTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.CenterIn">
+      <summary>Ellipse center in. The old image remains underneath. The new image appears in the area outside the ellipse which is centered in the image but is very large. The ellipse gets smaller and smaller and as it does more of the new image appears.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.CenterOut">
+      <summary>Ellipse center out. The old image remains underneath. The new image appears in a elliptical shape, starting very small in the center of the image and growing outward.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.LeftIn">
+      <summary>Ellipse left in. The ellipse is very large, and has its center to the left of the left edge of the image. The ellipse remains the same size. It is pulled to the left, and as it is pulled it pulls in the new image starting from the right side and moving left.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.LeftOut">
+      <summary>Ellipse left out. The ellipse is very large, and has its center to the left of the left edge of the image. The ellipse remains the same size. It is pushed to the right and as it is pushed the new image appears starting from the left and moving to the right.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.RightIn">
+      <summary>Ellipse right in. The ellipse is very large, and has its center to the right of the right edge of the image. The ellipse remains the same size. It is pulled to the right, and as it is pulled it pulls in the new image starting from the left side and moving right.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.RightOut">
+      <summary>Ellipse right out. The ellipse is very large, and completely to the right of the right edge of the image. The ellipse remains the same size. It is pushed to the left and as it is pushed the new image appears starting from the right and moving to the left.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.TopIn">
+      <summary>Ellipse top in. The ellipse is very large, and has its center above the top edge of the image. The ellipse remains the same size. It is pulled vertically, and as it is pulled it pulls in the new image starting from the bottom and moving to the top.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.TopOut">
+      <summary>Ellipse top out. The ellipse is very large, and completely above the top of the image. The ellipse remains the same size. It is pushed to the bottom and as it is pushed the new image appears starting from the top and moving to the bottom.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.BottomIn">
+      <summary>Ellipse bottom in. The ellipse is very large, and has its center below the bottom edge of the image. The ellipse remains the same size. It is pulled down to the bottom, and as it is pulled it pulls in the new image starting from the top and moving to the bottom.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.BottomOut">
+      <summary>Ellipse bottom out. The ellipse is very large, and completely below the bottom of the image. The ellipse remains the same size. It is pushed to the top and as it is pushed the new image appears starting from the bottom and moving to the top.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.CenterInterlaceInIn">
+      <summary>Ellipse center interlace in then in. A series of concentric elliptical rings begin appearing, covering the old image, starting from the outward edges. When that operation completes, the rest of the image gets filled in, starting from the outward edges and moving to the center.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.CenterInterlaceOutOut">
+      <summary>Ellipse center interlace out then out. A series of concentric elliptical rings begin appearing, covering the old image, starting from the center. When that operation completes, the rest of the image gets filled in, starting from the center and moving outward to the center.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.CenterInterlaceInOut">
+      <summary>Ellipse center interlace in then out. A series of concentric elliptical rings begin appearing, covering the old image, starting from the outward edges. When that operation completes, the rest of the image gets filled in, starting from the center and moving toward the edges.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.EllipticalTransitionType.CenterInterlaceOutIn">
+      <summary>Ellipse center interlace out then in. A series of concentric elliptical rings begin appearing, covering the old image, starting from the center. When that operation completes, the rest of the image gets filled in, starting from the outward edges and moving to the center.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType">
+      <summary>Values for the LinearWipeTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType.LeftToRight">
+      <summary>Wipe left to right. The old image remains underneath. The new image unrolls from the left edge moving toward the right edge.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType.RightToLeft">
+      <summary>Wipe right to left. The old image remains underneath. The new image unrolls from the right edge moving toward the left edge.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType.TopToBottom">
+      <summary>Wipe top to bottom. The old image remains underneath. The new image unrolls from the top edge moving toward the bottom edge.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType.BottomToTop">
+      <summary>Wipe bottom to top. The old image remains underneath. The new image unrolls from the bottom edge moving toward the top edge.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType.LeftTopToRightBottom">
+      <summary>Wipe left-top to right-bottom. The old image remains underneath. The new image unrolls from the top left corner, moving along a diagonal toward the bottom right corner.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType.RightTopToLeftBottom">
+      <summary>Wipe right-top to left-bottom. The old image remains underneath. The new image unrolls from the top right corner moving along a diagonal toward the bottom left corner.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType.LeftBottomToRightTop">
+      <summary>Wipe left-bottom to right-top. The old image remains underneath. The new image unrolls from the bottom left corner moving along a diagonal toward the top right corner.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.LinearWipeTransitionType.RightBottomToLeftTop">
+      <summary>Wipe right-bottom to left-top. The old image remains underneath. The new image unrolls from the left edge moving toward the right edge.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.PushTransitionType">
+      <summary>Values for the PushTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.PushTransitionType.LeftToRight">
+      <summary>Push left to right. The new image pushes out the old image, moving from left to right.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.PushTransitionType.RightToLeft">
+      <summary>Push right to left. The new image pushes out the old image, moving from right to left.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.PushTransitionType.TopToBottom">
+      <summary>Push top to bottom. The new image pushes out the old image, moving from top to bottom.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.PushTransitionType.BottomToTop">
+      <summary>Push bottom to top. The new image pushes out the old image, moving from bottom to top.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.RectangularTransitionType">
+      <summary>Values for the RectangularTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RectangularTransitionType.Out">
+      <summary>(0x00000003)(0x00000000)Wipe rectangle out. The old image remains in place. A small rectangle of the new image appears in the center and grows outward until the old image is covered.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RectangularTransitionType.In">
+      <summary>(0x00000002)(0x00000001)Wipe rectangle in. The old image begins disappearing, starting from the edges and moving toward the center.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RectangularTransitionType.InterlaceInIn">
+      <summary>Wipe rectangle interlace in then in. A series of concentric rectangular rings begin appearing, covering the old image, starting from the outward edges. When that operation completes, the rest of the image gets filled in, starting from the outward edges and moving to the center.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RectangularTransitionType.InterlaceOutOut">
+      <summary>Wipe rectangle interlace out then out. A series of concentric rectangular rings begin appearing, covering the old image, starting from the center. When that operation completes, the rest of the image gets filled in, starting from the center and moving outward to the center.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RectangularTransitionType.InterlaceInOut">
+      <summary>Wipe rectangle interlace in then out. A series of concentric rectangular rings begin appearing, covering the old image, starting from the outward edges. When that operation completes, the rest of the image gets filled in, starting from the center and moving toward the edges.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RectangularTransitionType.InterlaceOutIn">
+      <summary>Wipe rectangle interlace out then in. A series of concentric rectangular rings begin appearing, covering the old image, starting from the center. When that operation completes, the rest of the image gets filled in, starting from the outward edges and moving to the center.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.RotateTransitionType">
+      <summary>Values for the RotateTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RotateTransitionType.LeftToRight">
+      <summary>Rotate from left to right. The old image remains in place. The new image begins appearing from the left.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RotateTransitionType.RightToLeft">
+      <summary>Rotate from right to left. The old image remains in place. The new image begins appearing from the right.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RotateTransitionType.TopToBottom">
+      <summary>Rotate from top to bottom. The old image remains in place. The new image begins appearing from the top.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.RotateTransitionType.BottomToTop">
+      <summary>Rotate from bottom to top. The old image remains in place. The new image begins appearing from the bottom.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.SlideTransitionType">
+      <summary>Values for the SlideTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.SlideTransitionType.LeftToRight">
+      <summary>Slide from left to right. The old image remains in place. The new image slides in from the right.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.SlideTransitionType.RightToLeft">
+      <summary>Slide from right to left. The old image remains in place. The new image slides in from the left.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.SlideTransitionType.TopToBottom">
+      <summary>Slide from top to bottom. The old image remains in place. The new image slides in from the bottom.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.SlideTransitionType.BottomToTop">
+      <summary>Slide from bottom to top. The old image remains in place. The new image slides in from the to[.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.Transitions.ZoomTransitionType">
+      <summary>Values for the ZoomTransition.TransitionType property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.ZoomTransitionType.FromCenter">
+      <summary>Zoom from center. The image starts out very small and grows larger, staying centered.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.ZoomTransitionType.ToCenter">
+      <summary>Zoom to center. The image starts out large and grows very small, staying centered.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Windows.D2DRendering</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Windows.D2DRendering.D2DBitmap">
+      <summary>Represents a bitmap that has been bound to a D2DSurface.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DBitmap.Free">
+      <summary>Releases all resources used by this D2DBitmap.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DBitmap.Dispose">
+      <summary>Releases all resources used by this D2DBitmap.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DBitmap.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this D2DBitmap.</summary>
+      <param name="disposing">Boolean value</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DBitmap.Finalize">
+      <summary>This member overrides System.Object.Finalize.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DBitmap.Height">
+      <summary>Gets or sets the height of the D2DBitmap.</summary>
+      <value>The height of the D2DBitmap in pixels.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DBitmap.Width">
+      <summary>Gets or sets the width of the D2DBitmap.</summary>
+      <value>The width of the D2DBitmap in pixels.</value>
+    </member>
+    <member name="T:Leadtools.Windows.D2DRendering.D2DDrawingState">
+      <summary>Represents the drawing state of a D2DSurface as the current transformation.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DDrawingState.Dispose">
+      <summary>Releases all resources used by this D2DDrawingState.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DDrawingState.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this D2DDrawingState.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DDrawingState.Finalize">
+      <summary>This member overrides System.Object.Finalize.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.D2DRendering.D2DFont">
+      <summary>Describes a font for a D2DSurface.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DFont.#ctor">
+      <summary>Initializes a new D2DFont object.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DFont.#ctor(System.String,System.Double)">
+      <summary>Initializes a new D2DFont object having the specified familyName and font size.</summary>
+      <param name="familyName">A System.String that specifies the familyName.</param>
+      <param name="size">A System.Double value that represents the size of the font.</param>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DFont.FontFamily">
+      <summary>Gets or sets the font family.</summary>
+      <value>The System.Windows.Media.FontFamily of the D2DFont object.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DFont.FontSize">
+      <summary>Gets or sets the font size.</summary>
+      <value>The font size of the D2DFont, in points.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DFont.FontStretch">
+      <summary>Gets or sets the font stretch style.</summary>
+      <value>A System.Windows.FontStretches value that describes the amount the font is stretched or compressed relative to the font's normal size.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DFont.FontStyle">
+      <summary>Gets or sets the font style.</summary>
+      <value>A System.Windows.FontStyles value that represents the font style of the D2DFont.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DFont.FontWeight">
+      <summary>Gets or sets the font weight.</summary>
+      <value>A System.Windows.FontWeights value that represents the weight of the D2DFont.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DFont.Strikethrough">
+      <summary>Gets or sets a value that indicates whether to add strikethrough to the font.</summary>
+      <value>A Boolean value that indicates whether to add strikethrough to the font.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DFont.TextWrapping">
+      <summary>Gets or sets Text Wrapping behavior.</summary>
+      <value>The Text Wrapping the D2DFont format.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DFont.Underline">
+      <summary>Gets or sets a value that indicates whether the font is underlined.</summary>
+      <value>A boolean value indicating whether to underline the font.</value>
+    </member>
+    <member name="T:Leadtools.Windows.D2DRendering.D2DPen">
+      <summary>Describes how a shape is outlined on a D2DSurface.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DPen.#ctor">
+      <summary>Initializes a new D2DPen object.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DPen.#ctor(Brush,System.Double)">
+      <summary>Initializes a new D2DPen having the specified brush and thickness.</summary>
+      <param name="brush">The Brush used for rendering.</param>
+      <param name="thickness">A System.Double value that represents the thickness.</param>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.Brush">
+      <summary>Gets or sets the pen System.Windows.Media.Brush.</summary>
+      <value>The brush color of the D2DPen.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.DashCap">
+      <summary>Gets or sets the pen dash cap style.</summary>
+      <value>A System.Windows.Media.PenLineCap value that describes how to shape the end of the line.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.Dashes">
+      <summary>Gets or sets the pen dashes collection.</summary>
+      <value>The dashes collection of the D2DPen.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.DashOffset">
+      <summary>Gets or sets the pen dash Offset.</summary>
+      <value>The dash Offset of the D2DPen in units of D2DPen Thickness.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.EndLineCap">
+      <summary>Gets or sets a value that describes how to shape the end of a line.</summary>
+      <value>A System.Windows.Media.PenLineCap value that describes how to the shape the end of a line drawn by the D2DPen.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.LineJoin">
+      <summary>Gets or sets a value that describes how to join lines.</summary>
+      <value>A System.Windows.Media.PenLineJoin value that describes how to join lines.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.MiterLimit">
+      <summary>Gets or sets the pen miter limit value.</summary>
+      <value>The miter limit value of the D2DPen.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.StartLineCap">
+      <summary>Gets or sets the cap style used on the starting point of the line.</summary>
+      <value>A System.Windows.Media.PenLineCap value that describes the cap style used on the starting point of the D2DPen.</value>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DPen.Thickness">
+      <summary>Gets or sets the thickness of the pen.</summary>
+      <value>A value that specifies the thickness of the D2DPen in pixels.</value>
+    </member>
+    <member name="T:Leadtools.Windows.D2DRendering.D2DSurface">
+      <summary>Represents a DirectX drawing surface.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.#ctor">
+      <summary>Initializes a new D2DSurface</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.BeginDraw(Rect)">
+      <summary>Initiates drawing on this surface.</summary>
+      <param name="rect">The region of the surface on which drawing will be performed.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.Clear(SolidColorBrush)">
+      <summary>Clears the drawing area to the specified solid color brush.</summary>
+      <param name="brush">The solid color brush to which the drawing area is cleared.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.CreateD2DBitmap(System.Byte[])">
+      <summary>Creates an instance of a D2D bitmap.</summary>
+      <param name="data">An array of bytes that represents the content of a D2D bitmap image.</param>
+      <returns>The D2DBitmap created from the specified array of pixels.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.CreateD2DTileBrush(TileBrush)">
+      <summary>Creates a D2DTileBrush from an instance of a System.Windows.Media.TileBrush.</summary>
+      <param name="brush">The System.Windows.Media.TileBrushbrush used to create D2DTileBrush instance.</param>
+      <returns>The created D2DTileBrush.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.Dispose">
+      <summary>Releases all resources used by this D2DSurface.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawArc(Leadtools.Windows.D2DRendering.D2DPen,Point,Point,Size,SweepDirection,System.Boolean)">
+      <summary>Draws the outline of an elliptical arc using the specified D2DPen.</summary>
+      <param name="pen">A D2DPen that determines the Pen's color, thickness, and style.</param>
+      <param name="startPoint">The starting point where the arc begins.</param>
+      <param name="endPoint">The ending point of the arc.</param>
+      <param name="size">A Size structure that specifies the x- and y-radius of the arc.</param>
+      <param name="sweepDirection">A System.Windows.Media.SweepDirection value that specifies whether to draw the arc in the Clockwise or Counterclockwise direction.</param>
+      <param name="isLargeArc">The value that indicates whether the arc should be greater than 180 degrees. Set it to "true" if the arc should be greater than 180 degrees, and "false" if it should be less than 180 degrees.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawEllipse(Leadtools.Windows.D2DRendering.D2DPen,System.Single,System.Single,System.Single,System.Single)">
+      <summary>Draws the outline of an ellipse having the specified dimensions with the specified D2DPen.</summary>
+      <param name="pen">D2DPen that determines the pen brush, thickness, and style.</param>
+      <param name="x">The x-coordinate of the upper-left corner of the ellipse to draw.</param>
+      <param name="y">The y-coordinate of the upper-left corner of the ellipse to draw.</param>
+      <param name="width">Width of the ellipse to draw.</param>
+      <param name="height">Height of the ellipse to draw.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawEllipse(Leadtools.Windows.D2DRendering.D2DPen,Rect)">
+      <summary>Draws the outline of an ellipse having the specified dimensions with the specified D2DPen.</summary>
+      <param name="pen">D2DPen that determines the pen brush, thickness, and style.</param>
+      <param name="rect">The rectangle bounding the ellipse.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawGeometry(Leadtools.Windows.D2DRendering.D2DPen,Geometry)">
+      <summary>Draws the outline of the specified geometry using the specified D2DPen.</summary>
+      <param name="pen">D2DPen that determines the Pen brush, thickness, and style.</param>
+      <param name="geometry">The System.Windows.Media.Geometry to draw. Both geometry.Bounds.Width and geometry.Bounds.Height must be greater than or equal to 1.0 to avoid an ArgumentOutOfRangeException when drawing custom annotations.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawImage(System.Byte[],Rect,System.Double)">
+      <summary>Draws the specified image data array to the size of the specified rectangle and opacity.</summary>
+      <param name="data">Specifies the Image Data Array to draw onto the surface.</param>
+      <param name="destRect">Specifies the location and size of the drawn image.</param>
+      <param name="opacity">A value between 0 and 1, Specifies an opacity value to apply to the image.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawImage(Leadtools.Windows.D2DRendering.D2DBitmap,Rect,System.Double)">
+      <summary>Draws the specified D2DBitmap to the size of the specified rectangle and opacity.</summary>
+      <param name="d2dBitmap">Specifies the D2DBitmap to be drawn onto the surface.</param>
+      <param name="destRect">Specifies the location and size of the drawn image.</param>
+      <param name="opacity">A value between 0 and 1. Specifies an opacity value to apply to the image.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawImage(Leadtools.RasterImage,Rect,System.Double)">
+      <summary>Draws the specified Leadtools.RasterImage to the size of the specified rectangle and opacity.</summary>
+      <param name="image">Specifies Leadtools.RasterImage to draw onto the surface.</param>
+      <param name="destRect">Specifies the location and size of the drawn image.</param>
+      <param name="opacity">A value between 0 and 1, Specifies an opacity value to apply to the image.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawLine(Leadtools.Windows.D2DRendering.D2DPen,Point,Point)">
+      <summary>Draws a line between the specified points using the specified D2DPen.</summary>
+      <param name="pen">D2DPen that determines the Pen brush, thickness, and style.</param>
+      <param name="startPoint">The start point of the line.</param>
+      <param name="endPoint">The end point of the line.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawPolygon(Leadtools.Windows.D2DRendering.D2DPen,Point[])">
+      <summary>Draws the outline of a polygon using an array of Point structures and the specified D2DPen.</summary>
+      <param name="pen">D2DPen that determines the Pen brush, thickness, and style.</param>
+      <param name="points">Array of Point structures that represent the vertices of the polygon.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawRectangle(Leadtools.Windows.D2DRendering.D2DPen,System.Single,System.Single,System.Single,System.Single)">
+      <summary>Draws the outline of a rectangle that has the specified dimensions and D2DPen.</summary>
+      <param name="pen">D2DPen that determines the pen brush, thickness, and style.</param>
+      <param name="x">The x-coordinate of the upper-left corner of the rectangle to draw.</param>
+      <param name="y">The y-coordinate of the upper-left corner of the rectangle to draw.</param>
+      <param name="width">Width of the rectangle to draw.</param>
+      <param name="height">Height of the rectangle to draw.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawRectangle(Leadtools.Windows.D2DRendering.D2DPen,Rect)">
+      <summary>Draws the outline of a rectangle that has the specified dimensions and D2DPen.</summary>
+      <param name="pen">D2DPen that determines the pen brush, thickness, and style.</param>
+      <param name="rect">The dimensions of the rectangle to draw.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawText(Leadtools.Windows.D2DRendering.D2DTextLayout,Brush,Rect)">
+      <summary>Draws the formatted text described by the specified D2DTextLayout object.</summary>
+      <param name="textLayout">The formatted text to draw.</param>
+      <param name="brush">Brush that determines the color and texture of the drawn text.</param>
+      <param name="rect">The size and position of the area in which the text is drawn.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.DrawText(System.String,Leadtools.Windows.D2DRendering.D2DFont,Brush,Rect)">
+      <summary>Draws the specified text using the format information provided by an D2DFont object.</summary>
+      <param name="text">String to draw.</param>
+      <param name="font">D2DFont that defines the text format of the string.</param>
+      <param name="brush">Brush that determines the color and texture of the drawn text.</param>
+      <param name="rect">The size and position of the area in which the text is drawn.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.EndDraw">
+      <summary>Ends drawing operations on the surface and returns true to indicate the success of the operations.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.FillArc(Brush,Point,Point,Size,SweepDirection,System.Boolean)">
+      <summary>Fills the interior of an elliptical arc using the specified brush.</summary>
+      <param name="brush">The brush used to fill the arc's interior.</param>
+      <param name="startPoint">The start point where the arc begins.</param>
+      <param name="endPoint">The end point of the arc.</param>
+      <param name="size">A Size structure specifies the x- and y-radius of the arc.</param>
+      <param name="sweepDirection">The value that specifies if the arc is drawn in the Clockwise or Counterclockwise direction.</param>
+      <param name="isLargeArc">The value that indicates if the arc should be greater than 180 degrees.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.FillEllipse(Brush,System.Single,System.Single,System.Single,System.Single)">
+      <summary>Fills the interior of an ellipse using the specified brush.</summary>
+      <param name="brush">The brush used to fill the ellipse's interior.</param>
+      <param name="x">The x-coordinate of the upper-left corner of the ellipse bounding rectangle.</param>
+      <param name="y">The y-coordinate of the upper-left corner of the ellipse bounding rectangle.</param>
+      <param name="width">Width of the ellipse bounding rectangle.</param>
+      <param name="height">Height of the ellipse bounding rectangle.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.FillEllipse(Brush,Rect)">
+      <summary>Fills the interior of an ellipse using the specified brush.</summary>
+      <param name="brush">The brush used to fill the ellipse's interior.</param>
+      <param name="rect">The boundaries `Rect` of the ellipse.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.FillGeometry(Brush,Geometry)">
+      <summary>Fills the interior of the specified geometry using the specified brush.</summary>
+      <param name="brush">The brush used to fill the geometry's interior.</param>
+      <param name="geometry">The geometry to draw.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.FillPolygon(Brush,Point[])">
+      <summary>Fills the interior of a polygon using an array of Point and the specified brush.</summary>
+      <param name="brush">The brush used to fill the polygon's interior.</param>
+      <param name="points">Array of Point structures that represent the vertices of the polygon.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.FillRectangle(Brush,System.Single,System.Single,System.Single,System.Single)">
+      <summary>Fills the interior of a rectangle that has the specified dimensions and the specified brush.</summary>
+      <param name="brush">The brush used to fill the rectangle's interior.</param>
+      <param name="x">The x-coordinate of the upper-left corner of the rectangle to draw.</param>
+      <param name="y">The y-coordinate of the upper-left corner of the rectangle to draw.</param>
+      <param name="width">Width of the rectangle to draw.</param>
+      <param name="height">Height of the rectangle to draw.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.FillRectangle(Brush,Rect)">
+      <summary>Fills the interior of a rectangle that has the specified dimensions and the specified brush.</summary>
+      <param name="brush">The brush used to fill the rectangle's interior.</param>
+      <param name="rect">The dimensions of the rectangle to draw.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.Invalidate(Rect)">
+      <summary>Redraw the specified area in D2DSurface.</summary>
+      <param name="rect">The size and position of the invalidated area, to be redrawn.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.MultiplyTransform(Matrix)">
+      <summary>Multiplies the transformation of this surface and the specified matrix.</summary>
+      <param name="matrix">The transform to be multiplied by the surface transform.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.PopClip">
+      <summary>Removes the last clip rect from the surface. After this method is called, the clip is no longer applied to subsequent drawing operations.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.PopLayer">
+      <summary>Stops redirecting drawing operations to the layer that is specified by the last PushLayer call.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.PushClip(Rect)">
+      <summary>Specifies a rectangle to which all subsequent drawing operations are clipped. until PopClip is called.</summary>
+      <param name="rect">The size and position of the clipping area, in device-independent pixels.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.PushLayer(Geometry)">
+      <summary>Adds the specified layer to the surface so that it receives all subsequent drawing operations until PopLayer is called.</summary>
+      <param name="geometry">The content geometric mask for the layer.</param>
+      <returns>If this method succeeds, it returns true. Otherwise, it returns false.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.PushLayer(Rect)">
+      <summary>Adds the specified layer to the surface so that it receives all subsequent drawing operations until PopLayer is called.</summary>
+      <param name="rect">The content rectangle mask for the layer.</param>
+      <returns>If this method succeeds, it returns true. Otherwise, it returns false.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.Restore(Leadtools.Windows.D2DRendering.D2DDrawingState)">
+      <summary>Restores the D2DSurface drawing state to that of the specified D2DDrawingState.</summary>
+      <param name="drawingState">The new drawing state block of the D2DSurface.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.Save">
+      <summary>Saves the current drawing state.</summary>
+      <returns>The current drawing state block of D2DSurface.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.SetDpi(System.Double,System.Double)">
+      <summary>Sets the dots per inch (DPI) of the surface.</summary>
+      <param name="dpiX">A value greater than or equal to zero that specifies the horizontal DPI of the surface.</param>
+      <param name="dpiY">A value greater than or equal to zero that specifies the vertical DPI of the surface.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.SetTransform(Matrix)">
+      <summary>Applies the specified transform to the surface, replacing the existing transformation. All subsequent drawing operations occur in the transformed space.</summary>
+      <param name="matrix">The transform to apply to the surface.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DSurface.Finalize">
+      <summary>This member overrides System.Object.Finalize.</summary>
+    </member>
+    <member name="E:Leadtools.Windows.D2DRendering.D2DSurface.IsFrontBufferAvailableChanged">
+      <summary>Occurs when the Front Buffer Available property changes.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.D2DRendering.D2DSurface.SurfaceSize">
+      <summary>Gets or sets the D2DSurface size.</summary>
+      <value>The size of the D2DSurface. Default value is Size(0, 0).</value>
+    </member>
+    <member name="T:Leadtools.Windows.D2DRendering.D2DTextLayout">
+      <summary>Represents a block of text that has been formatted.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.#ctor(System.String,Leadtools.Windows.D2DRendering.D2DFont,Size)">
+      <summary>Initializes a new D2DTextLayout object.</summary>
+      <param name="text">The text string included in the D2DTextLayout instance.</param>
+      <param name="font">The D2DFont used by the string.</param>
+      <param name="size">A System.Windows.Size structure representing the size of the text layout box.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetFontFamilyName(System.String,Point)">
+      <summary>Sets the family name of the font.</summary>
+      <param name="fontFamilyName">A string that represents the Font's family name.</param>
+      <param name="textRange">A System.Windows.Point that represents the text range being set. The X value represents the starting text position of the range. The Y value represents the number of characters in the range.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetFontSize(System.Double,Point)">
+      <summary>Sets the font size.</summary>
+      <param name="fontSize">Font size, in points.</param>
+      <param name="textRange">A System.Windows.Point that represents the text range being set. The X value represents the starting text position of the range. The Y value represents the number of characters in the range.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetFontStretch(FontStretch,Point)">
+      <summary>Sets the font stretch.</summary>
+      <param name="fontStretch">A System.Windows.FontStretch value that describes the amount of stretching or compression that is applied to the font.</param>
+      <param name="textRange">A System.Windows.Point that represents the text range being set. The X value represents the starting text position of the range. The Y value represents the number of characters in the range.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetFontStyle(FontStyle,Point)">
+      <summary>Sets the font style.</summary>
+      <param name="fontStyle">A System.Windows.FontStyle value that represents the font's style.</param>
+      <param name="textRange">A System.Windows.Point that represents the text range being set. The X value represents the starting text position of the range. The Y value represents the number of characters in the range.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetFontWeight(FontWeight,Point)">
+      <summary>Sets the font weight.</summary>
+      <param name="fontWeight">A System.Windows.FontWeight value that represents the font's weight.</param>
+      <param name="textRange">A System.Windows.Point that represents the text range being set. The X value represents the starting text position of the range. The Y value represents the number of characters in the range.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetLayoutSize(Size)">
+      <summary>Sets the layout size.</summary>
+      <param name="size">A System.Windows.FontStyle value that specifies the size of the layout.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetParagraphAlignment(Leadtools.Windows.D2DRendering.D2DParagraphAlignment)">
+      <summary>Sets the paragraph alignment.</summary>
+      <param name="paragraphAlignment">A D2DParagraphAlignment enumeration value that represents the paragraph alignment.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetStrikethrough(System.Boolean,Point)">
+      <summary>Gets or sets a value that indicates whether to add strikethrough to the font.</summary>
+      <param name="strikethrough">A Boolean value that indicates whether to add strikethrough. true means to add strikethrough to the font. false means that strikethrough should not be added to the font. The default value is false.</param>
+      <param name="textRange">A System.Windows.Point that represents the text range being set. The X value represents the starting text position of the range. The Y value represents the number of characters in the range.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetTextAlignment(TextAlignment)">
+      <summary>Sets the alignment option of Layout box text.</summary>
+      <param name="textAlignment">A System.Windows.TextAlignment value that specifies how to align the text.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetUnderline(System.Boolean,Point)">
+      <summary>Sets the underline.</summary>
+      <param name="underline">A Boolean value that indicates whether to add strikethrough to the font. true means to add strikethrough to the font. false means that strikethrough should not be added to the font. The default value is false.</param>
+      <param name="textRange">A System.Windows.Point that represents the text range being set. The X value represents the starting text position of the range. The Y value represents the number of characters in the range.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.SetWordWrapping(TextWrapping)">
+      <summary>Sets the text wrapping.</summary>
+      <param name="textWrapping">A System.Windows.TextWrapping value that specifies how to treat text that overflows the width of the text layout box.</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.Dispose">
+      <summary>Releases all resources used by this D2DTextLayout.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this D2DTextLayout.</summary>
+      <param name="disposing">Boolean value</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTextLayout.Finalize">
+      <summary>This member overrides System.Object.Finalize.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.D2DRendering.D2DTileBrush">
+      <summary>Represents a wrapper for the DirectX Brush and the System.Windows.Media.TileBrush.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTileBrush.Dispose">
+      <summary>Releases all resources used by this D2DTileBrush.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTileBrush.Dispose(System.Boolean)">
+      <summary>Releases all resources used by this D2DTileBrush.</summary>
+      <param name="disposing">Boolean value</param>
+    </member>
+    <member name="M:Leadtools.Windows.D2DRendering.D2DTileBrush.Finalize">
+      <summary>This member overrides System.Object.Finalize.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.D2DRendering.D2DParagraphAlignment">
+      <summary>Alignment of text in the paragraph box.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.D2DRendering.D2DParagraphAlignment.Near">
+      <summary>The first line of the paragraph is aligned to the beginning edge.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.D2DRendering.D2DParagraphAlignment.Far">
+      <summary>The last line of the paragraph is aligned to the ending edge.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.D2DRendering.D2DParagraphAlignment.Center">
+      <summary>The center of the paragraph is aligned to the center.</summary>
+    </member>
+  </members>
+</doc>

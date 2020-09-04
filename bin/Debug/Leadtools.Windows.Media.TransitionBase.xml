@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Windows.Media.Transitions</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Windows.Media.Transitions.TransitionBase">
+      <summary>Base class for all transition classes.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.TransitionBase.#ctor">
+      <summary>Initializes a new instance of a TransitionBase class with the specified parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.TransitionBase.Begin">
+      <summary>Apply a transition to its TargetObject.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.TransitionBase.End">
+      <summary>Stops a transition.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.Transitions.TransitionBase.OnOutBrushChanged(RoutedPropertyChangedEventArgs&lt;DrawingBrush&gt;)">
+      <summary>Raises the OutBrushChanged event.</summary>
+      <param name="e">A RoutedPropertyChangedEventArgs that contains the event data.</param>
+    </member>
+    <member name="E:Leadtools.Windows.Media.Transitions.TransitionBase.Completed">
+      <summary>Add/Remove the System.Windows.Media.Animation.Timeline.Completed for the internal 'Storyboard' object.</summary>
+    </member>
+    <member name="E:Leadtools.Windows.Media.Transitions.TransitionBase.OutBrushChanged">
+      <summary>Occurs when the value of the OutBrush property changes.</summary>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.AccelerationRatio">
+      <summary>Gets or sets the AccelerationRatio for the internal 'Storyboard' object.</summary>
+      <value>refer to System.Windows.Media.Animation.Timeline.AccelerationRatio value.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.AutoReverse">
+      <summary>Gets or sets the System.Windows.Media.Animation.Timeline.AutoReverse for the internal 'Storyboard object.</summary>
+      <value>refer to System.Windows.Media.Animation.Timeline.AutoReverse value.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.BeginTime">
+      <summary>Gets or sets the System.Windows.Media.Animation.Timeline.BeginTime for the internal 'Storyboard' object.</summary>
+      <value>refer to System.Windows.Media.Animation.Timeline.BeginTime value.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.DecelerationRatio">
+      <summary>Gets or sets the System.Windows.Media.Animation.Timeline.DecelerationRatio for the internal 'Storyboard' object.</summary>
+      <value>refer to System.Windows.Media.Animation.Timeline.DecelerationRatio value.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.Duration">
+      <summary>Gets or sets the System.Windows.Media.Animation.Timeline.Duration for the internal 'Storyboard' object.</summary>
+      <value>refer to System.Windows.Media.Animation.Timeline.Duration value.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.Fill">
+      <summary>Gets or sets the filled brush to be used to generate the animated OutBrush brush. This is a dependency property.</summary>
+      <value>The brush to be used when applying a transition to a framework element.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.FillBehavior">
+      <summary>Gets or sets the System.Windows.Media.Animation.Timeline.FillBehavior for the internal 'Storyboard' object.</summary>
+      <value>refer to System.Windows.Media.Animation.Timeline.FillBehavior value.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.Grain">
+      <summary>Gets or sets the Graining size. This is the smallest unit to be updated when applying a transition.</summary>
+      <value>Specifies the graining size. The smallest value is 5.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.OutBrush">
+      <summary>Gets an animated brush created from the Fill and Leadtools.Windows.Media.Transitions.PushTransition.Push if the tranisition type is PushTransition to be used to fill any element. This is a dependency property.</summary>
+      <value>The animated brush to be used when applying a transition to a framework element.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.RepeatBehavior">
+      <summary>Gets or sets the System.Windows.Media.Animation.Timeline.RepeatBehavior for the internal 'Storyboard' object.</summary>
+      <value>refer to System.Windows.Media.Animation.Timeline.RepeatBehavior value.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.SpeedRatio">
+      <summary>Gets or sets the System.Windows.Media.Animation.Timeline.SpeedRatio for the internal 'Storyboard' object.</summary>
+      <value>refer to System.Windows.Media.Animation.Timeline.SpeedRatio value.</value>
+    </member>
+    <member name="P:Leadtools.Windows.Media.Transitions.TransitionBase.TargetObject">
+      <summary>Gets or set a framework element to apply a transition to it. This is a dependency property.</summary>
+      <value>The brush for the shadow for the frame that you add to the ImageViewer or RasterImageViewer control.</value>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.AccelerationRatioProperty">
+      <summary>Identifies the AccelerationRatio dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.AutoReverseProperty">
+      <summary>Identifies the AutoReverse dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.BeginTimeProperty">
+      <summary>Identifies the BeginTime dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.DecelerationRatioProperty">
+      <summary>Identifies the DecelerationRatio dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.DurationProperty">
+      <summary>Identifies the Duration dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.FillBehaviorProperty">
+      <summary>Identifies the FillBehavior dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.FillProperty">
+      <summary>Identifies the Fill dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.GrainProperty">
+      <summary>Identifies the Grain dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.OutBrushProperty">
+      <summary>Identifies the OutBrush dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.RepeatBehaviorProperty">
+      <summary>Identifies the RepeatBehavior dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.SpeedRatioProperty">
+      <summary>Identifies the SpeedRatio dependency property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.Transitions.TransitionBase.TargetObjectProperty">
+      <summary>Identifies the TargetObject dependency property.</summary>
+    </member>
+  </members>
+</doc>

@@ -43,6 +43,9 @@ namespace Document_Archiving
             if ((usernameBox.Text == "Admin") && (passwordBox.Password == "Admin"))
             {
                 MessageBox.Show("Logged in successfully!\n Welcome Admin");
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Hide();
             }
             else
             {

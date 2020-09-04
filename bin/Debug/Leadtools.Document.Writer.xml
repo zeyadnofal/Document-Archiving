@@ -1,0 +1,1283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Document.Writer</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Document.Writer.AltoXmlDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the ALTO (Analyzed Layout and Text Object) format.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.AltoXmlDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the AltoXmlDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.AltoXmlDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.ApplicationDescription">
+      <summary>Application description setting for the ALTO document.</summary>
+      <value>The application description setting for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.FileName">
+      <summary>File name for the ALTO document.</summary>
+      <value>A The file name for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.FirstPhysicalPageNumber">
+      <summary>First physical page number setting for the ALTO document.</summary>
+      <value>The first physical page number setting for the ALTO document. Default value is 1.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.AltoXml.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.Formatted">
+      <summary>Produce a formatted XML document.</summary>
+      <value>**true** to produce a formatted XML document, otherwise; **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.Indentation">
+      <summary>Indentation string to use when producing a formatted XML document.</summary>
+      <value>The indentation string to use when producing a formatted XML document. Default value is `"  "`.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.MeasurementUnit">
+      <summary>Measurement unit for the ALTO document.</summary>
+      <value>The measurement unit for the ALTO document. Default value is AltoXmlMeasurementUnit.MM10</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.PlainText">
+      <summary>Discards font information so the text will be written without any font style.</summary>
+      <value>**true** to discard font information, causing the text to be written without any font style; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.ProcessingAgency">
+      <summary>Processing agency for the ALTO document.</summary>
+      <value>The processing agency for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.ProcessingDateTime">
+      <summary>Processing date/time for the ALTO document.</summary>
+      <value>The processing date/time for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.ProcessingStepDescription">
+      <summary>Processing step description for the ALTO document.</summary>
+      <value>The Processing step description for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.ProcessingStepSettings">
+      <summary>Processing step settings for the ALTO document.</summary>
+      <value>The processing step settings for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.ShowGlyphInfo">
+      <summary>Shows the extra information that can be displayed for each glyph (position, bounding rectangle).</summary>
+      <value>**true** to show the extra information that can be displayed for each glyph (position, bounding rectangle); otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.ShowGlyphVariants">
+      <summary>Display variants for some glyphs if the input is text from OCR.</summary>
+      <value>**true** to display variants for some glyphs if the input is text from OCR; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.SoftwareCreator">
+      <summary>Software creator setting for the ALTO document.</summary>
+      <value>The software creator setting for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.SoftwareName">
+      <summary>Software name setting for the ALTO document.</summary>
+      <value>The software name setting for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.SoftwareVersion">
+      <summary>Software version setting for the ALTO document.</summary>
+      <value>The software version setting for the ALTO document. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.AltoXmlDocumentOptions.Sort">
+      <summary>Sorts text from top-left to bottom-right.</summary>
+      <value>**true** to sort text from top-left to bottom-right in the output document; otherwise, **false** to save data into the output file in the same order as the input data. The default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Microsoft Word 2003 document format (DOC) format.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the DocDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocDocumentOptions.DropObjects">
+      <summary>Controls which object types to drop from the final document.</summary>
+      <value>Controls which object types to drop from the final document. The default value is DocumentDropObjects.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Doc.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocDocumentOptions.TextMode">
+      <summary>Controls how and when to frames the text blocks in the resulting DOC file.</summary>
+      <value>Controls how and when to frames the text blocks in the resulting DOC file. Default value is DocumentTextMode.Auto.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentOptions">
+      <summary>Abstract base class that provides functionality common to all the format option classes in the LEADTOOLS Document Writers.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentOptions.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentOptions.DocumentResolution">
+      <summary>Document resolution (in dots per inch) of the resulting document.</summary>
+      <value>Document resolution value given in dots per inch unit and it controls the dimensions of the resulting document. Default value is 0 (use the resolution of the actual page).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentOptions.EmptyPageHeight">
+      <summary>Document empty page height.</summary>
+      <value>A double value that indicates the height of an empty page in inches. Default value is 11.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentOptions.EmptyPageResolution">
+      <summary>Resolution (in dots per inch) of the document empty page.</summary>
+      <value>Document resolution value given in dots per inch unit and it controls the dimensions of the empty page. Default value is 0 (use the current screen resolution).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentOptions.EmptyPageWidth">
+      <summary>Document empty page width.</summary>
+      <value>A double value that indicates the width of an empty page in inches. Default value is 8.5</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return the DocumentFormat associated with the derived class.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentOptions.MaintainAspectRatio">
+      <summary>Maintain the aspect ratio of the original emf file.</summary>
+      <value>**true** to maintain the aspect so the created document will have the same aspect ratio of the original emf file; **false**, otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentOptions.PageRestriction">
+      <summary>Indicates whether there can be blank pages and overlay images.</summary>
+      <value>A DocumentPageRestriction enumeration member that specifies the current document page restriction.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentProgressEventArgs">
+      <summary>Provides data for the DocumentWriter.Progress event.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentProgressEventArgs.#ctor(System.Int32)">
+      <summary>Initializes a new DocumentProgressEventArgs object with given parameters.</summary>
+      <param name="percentage">Progress percentage value (from 0 to 100).</param>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentProgressEventArgs.Cancel">
+      <summary>Allow the user to cancel the current operation.</summary>
+      <value>**true** to cancel the current operation; **false** to continue the current operation.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentProgressEventArgs.Percentage">
+      <summary>Gets the value, in percent, of the completion for the current operation.</summary>
+      <value>A number between 0 and 100 that indicates in percent how close to finishing the current operation is.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentWriter">
+      <summary>Support for creating document files such as PDF, XPS, DOC, HTML, RTF, or Text from Scalable Vector Graphics (SVG), Windows Enhanced Meta Files (EMF) or raster images.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.#ctor">
+      <summary>Creates a new instance of the DocumentWriter class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.AddPage(Leadtools.Document.Writer.DocumentWriterPage)">
+      <summary>Adds a new page to current document being created.</summary>
+      <param name="page">The new page properties</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.AppendLtd(System.String,System.String)">
+      <summary>Appends one LEADTOOLS Temporary Document (LTD) file to another.</summary>
+      <param name="sourceFileName">The source LTD file.</param>
+      <param name="destFileName">The destination LTD file.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.BeginDocument(System.IO.Stream,Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Creates a new document stream and prepares it for the new pages to be added.</summary>
+      <param name="stream">The stream that will contain the new document file.</param>
+      <param name="format">The format of the new document.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.BeginDocument(System.String,Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Creates a new document file and prepares it for the new pages to be added.</summary>
+      <param name="fileName">The name of the new document file.</param>
+      <param name="format">The format of the new document.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.Convert(System.IO.Stream,System.IO.Stream,Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Converts a document stream from the LEADTOOLS Temporary Document (LTD) format to a stream that will contain the data in any of the formats supported by the LEADTOOLS Document Writer.</summary>
+      <param name="ltdStream">The stream containing existing LTD format data.</param>
+      <param name="outputStream">The stream that will contain the data of the converted document file.</param>
+      <param name="format">The format of the converted document file to be created. This parameter cannot be DocumentFormat.Ltd.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.Convert(System.String,System.IO.Stream,System.String,System.IO.Stream,Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Converts a document file or stream from the LEADTOOLS Temporary Document (LTD) format to a file or stream that will contain the data in any of the formats supported by the LEADTOOLS Document Writer.</summary>
+      <param name="ltdFileName">The name of the file containing existing LEADTOOLS Temporary Document format (LTD) data. Either *ltdFileName* or *ltdStream* must not be **null**.</param>
+      <param name="ltdStream">The stream containing existing LTD format data. Either *ltdFileName* or *ltdStream* must not be **null**.</param>
+      <param name="outputFileName">The name of the file that will contain the data of the converted document file. Either *outputFileName* or *outputStream* must not be **null**.</param>
+      <param name="outputStream">The stream that will contain the data of the converted document file. Either *outputFileName* or *outputStream* must not be **null**.</param>
+      <param name="format">The format of the converted document file to be created. This parameter cannot be DocumentFormat.Ltd.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.Convert(System.String,System.String,Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Converts a document file from the LEADTOOLS Temporary Document format to a file of any of the formats supported by the LEADTOOLS Document Writer.</summary>
+      <param name="ltdFileName">The name of an existing LEADTOOLS Temporary Document Format file on disk.</param>
+      <param name="outputFileName">The name of the converted document file to be created.</param>
+      <param name="format">The format of the converted document file to be created. This parameter cannot be DocumentFormat.Ltd.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.EndDocument">
+      <summary>Finalize the document being created on disk.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.GetFormatFileExtension(Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Gets the default file extension for the specified document format.</summary>
+      <param name="format">The document format requested.</param>
+      <returns>A String containing the file extension for the specified format (without the ".").</returns>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.GetFormatFriendlyName(Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Gets the friendly name of the specified document format.</summary>
+      <param name="format">The document format requested.</param>
+      <returns>A String containing the friendly name for the specified format.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.GetLtdInfo(System.String)">
+      <summary>Gets information on an LTD file on disk.</summary>
+      <param name="fileName">Path to the LTD file on disk.</param>
+      <returns>An LtdDocumentInfo object containing the information on the LTD file. Or **null** if the file does not contain LTD data.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.GetOptions(Leadtools.Document.Writer.DocumentFormat)">
+      <summary>Gets the extra options to use when saving a document using the specified format.</summary>
+      <param name="format">The document format.</param>
+      <returns>The document options for this format. Note that the returned object from the base DocumentOptions class needs to be cast to one of the derived classes based on *format*.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.GetSupportedFormats">
+      <summary>Gets an array containing the supported formats.</summary>
+      <returns>An array containing the supported formats.</returns>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.InsertPage(Leadtools.Document.Writer.DocumentWriterPage,System.Int32)">
+      <summary>Inserts a new page to current document being created.</summary>
+      <param name="page">The new page properties</param>
+      <param name="pageNumber">1-based number of \page\.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.LoadOptions(System.IO.Stream)">
+      <summary>Loads the document options from an XML stream.</summary>
+      <param name="stream">A standard .NET Stream containing the options.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.LoadOptions(System.String)">
+      <summary>Loads the document options from an XML file on disk.</summary>
+      <param name="fileName">The name of XML file containing the options.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.SaveOptions(System.IO.Stream)">
+      <summary>Saves the document options to an XML stream.</summary>
+      <param name="stream">A standard .NET Stream to save the options to.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.SaveOptions(System.String)">
+      <summary>Saves the document options to an XML file on disk.</summary>
+      <param name="fileName">The name of XML file to save the options to.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.SetOptions(Leadtools.Document.Writer.DocumentFormat,Leadtools.Document.Writer.DocumentOptions)">
+      <summary>Sets the extra options to use when saving a document using the specified format.</summary>
+      <param name="format">The document format.</param>
+      <param name="options">An instance of an object derived from DocumentOptions. The remarks section lists the various document formats and the derived object that can be used.</param>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriter.UpdateMetaFileResolution(System.IntPtr,System.Int32,System.Int32)">
+      <summary>Changes the resolution of an existing Windows Enhanced Metafile (EMF).</summary>
+      <param name="emfHandle">Handle to the source EMF</param>
+      <param name="xResolution">New horizontal resolution</param>
+      <param name="yResolution">New vertical resolution</param>
+      <returns>A handle to the modified Windows Enhanced Metafile (EMF).</returns>
+    </member>
+    <member name="E:Leadtools.Document.Writer.DocumentWriter.Progress">
+      <summary>Document writer progress notification event.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentWriterEmfPage">
+      <summary>Data for one Windows Enhanced Metafile (WMF) page to be added to a document file.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterEmfPage.#ctor">
+      <summary>Initializes a new instance of the DocumentWriterEmfPage class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterEmfPage.Clone">
+      <summary>Creates an exact copy of this DocumentWriterEmfPage</summary>
+      <returns>The DocumentWriterPage this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterEmfPage.AnnotationContainer">
+      <summary>LEADTOOLS Annotation container that contains the objects to use when annotating a page in PDF documents.</summary>
+      <value>An optional Object that must point to a valid instance of AnnContainer class containing the objects to use when annotating a page in PDF documents. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterEmfPage.EmfHandle">
+      <summary>The Windows Enhanced Meta File handle representation of the page.</summary>
+      <value>An IntPtr structure that contains the unmanaged handle to the Windows Enhanced Meta File object.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterEmfPage.Image">
+      <summary>The image used for creating a PDF document page with the image and text overlay feature.</summary>
+      <value>A RasterImage that contains the optional raster image to use to create a PDF page with the image/text overlay feature. If this feature is not used, this property must be set to **null** (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterEmfPage.Type">
+      <summary>Gets the type of this document page.</summary>
+      <value>The type of this document page (DocumentWriterPageType.Emf).</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentWriterEmptyPage">
+      <summary>Data for one empty page to be added to a document file.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterEmptyPage.#ctor">
+      <summary>Initializes a new instance of the DocumentWriterEmptyPage class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterEmptyPage.Clone">
+      <summary>Creates an exact copy of this DocumentWriterEmptyPage</summary>
+      <returns>The DocumentWriterPage this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterEmptyPage.Height">
+      <summary>Page height in inches.</summary>
+      <value>Page height in inches. Default value is 11.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterEmptyPage.Type">
+      <summary>Gets the type of this document page.</summary>
+      <value>The type of this document page (DocumentWriterPageType.Empty).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterEmptyPage.Width">
+      <summary>Page width in inches.</summary>
+      <value>Page width in inches. Default value is 8.5.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentWriterPage">
+      <summary>Data for one page to be added to a document file.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterPage.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterPage.Clone">
+      <summary>Creates an exact copy of this DocumentWriterPage</summary>
+      <returns>The DocumentWriterPage this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterPage.Type">
+      <summary>Gets the type of this document page.</summary>
+      <value>The type of this document page.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentWriterRasterPage">
+      <summary>Data for one raster page to be added to a document file.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterRasterPage.#ctor">
+      <summary>Initializes a new instance of the DocumentWriterRasterPage class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterRasterPage.Clone">
+      <summary>Creates an exact copy of this DocumentWriterRasterPage</summary>
+      <returns>The DocumentWriterPage this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterRasterPage.Image">
+      <summary>The raster image representation of the page.</summary>
+      <value>An RasterImage that contains the image representation of the page.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterRasterPage.Type">
+      <summary>Gets the type of this document page.</summary>
+      <value>The type of this document page (DocumentWriterPageType.Raster).</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentWriterSvgPage">
+      <summary>Data for one SVG page to be added to a document file.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterSvgPage.#ctor">
+      <summary>Initializes a new instance of the DocumentWriterSvgPage class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocumentWriterSvgPage.Clone">
+      <summary>Creates an exact copy of this DocumentWriterSvgPage</summary>
+      <returns>The DocumentWriterPage this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterSvgPage.AnnotationContainer">
+      <summary>LEADTOOLS Annotation container that contains the objects to use when annotating a page in PDF documents.</summary>
+      <value>An optional Object that must point to a valid instance of AnnContainer class containing the objects to use when annotating a page in PDF documents. Default value is null (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterSvgPage.Height">
+      <summary>Custom page height in inches.</summary>
+      <value>Custom page height in inches. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterSvgPage.Image">
+      <summary>The image used for creating a PDF document page with the image and text overlay feature.</summary>
+      <value>A RasterImage that contains the optional raster image to use to create a PDF page with the image/text overlay feature. If this feature is not used, this property must be set to **null** (**Nothing** in VB).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterSvgPage.SvgDocument">
+      <summary>The SVG document representation of the page.</summary>
+      <value>An SvgDocument that contains the SVG document representation of the page.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterSvgPage.Type">
+      <summary>Gets the type of this document page.</summary>
+      <value>The type of this document page (DocumentWriterPageType.Svg).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocumentWriterSvgPage.Width">
+      <summary>Custom page width in inches.</summary>
+      <value>Custom page width in inches. Default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocxDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Microsoft Word format (DOCX).</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocxDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the DocxDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.DocxDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocxDocumentOptions.DropObjects">
+      <summary>Controls which object types to drop from the final document.</summary>
+      <value>Controls which object types to drop from the final document. The default value is DocumentDropObjects.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocxDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Docx.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.DocxDocumentOptions.TextMode">
+      <summary>Controls how and when to frames the text blocks in the resulting DOCX file.</summary>
+      <value>Controls how and when to frames the text blocks in the resulting DOCX file. Default value is DocumentTextMode.Auto.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.EmfDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Windows Enhanced Meta File (EMF) format.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.EmfDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the EmfDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.EmfDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.EmfDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Emf.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.HtmlDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the HyperText Markup Language (HTML) format.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.HtmlDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the HtmlDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.HtmlDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.BackgroundColor">
+      <summary>Background color.</summary>
+      <value>A RasterColor structure that contains the background color to use in the final HTML document. Default value is "White".</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.DocumentType">
+      <summary>Type of the HTML file created using the LEADTOOLS Document Writers.</summary>
+      <value>One of the HtmlDocumentType enumeration members that indicate which type of HTML file the resulting HTML file will be.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.DropObjects">
+      <summary>Controls which object types to drop from the final document.</summary>
+      <value>Controls which object types to drop from the final document. The default value is DocumentDropObjects.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.EmbedCSS">
+      <summary>Indicate whether CSS elements are to be embedded in the document.</summary>
+      <value>**true** to embed the CSS elements in the final document. Otherwise, **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.EmbedFonts">
+      <summary>Indicates whether fonts are to be embedded in the document.</summary>
+      <value>**true** to embed the fonts in the final HTML document. Otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.EmbedImages">
+      <summary>Indicate whether images are to be embedded in the document.</summary>
+      <value>**true** to embed images in the final HTML document. Otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.FontEmbedMode">
+      <summary>Font embedding mode used when creating an HTML document.</summary>
+      <value>One of the DocumentFontEmbedMode enumeration members that indicate which font embedding mode to use when creating an HTML document. Default value is DocumentFontEmbedMode.Auto.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.FontTypes">
+      <summary>Font types to embed in the document.</summary>
+      <value>Font types to embed in the document. Default value is DocumentFontTypes.WOFF1.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Html.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.ImageType">
+      <summary>Format to use when saving images in the document</summary>
+      <value>Format to use when saving images in the document. Default value is RasterImageFormat.Png.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.HtmlDocumentOptions.UseBackgroundColor">
+      <summary>Indicates whether the HTML document will use the a background color or not.</summary>
+      <value>**true** to use the background color in the HTML document; **false**, otherwise.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.LtdDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the LEADTOOLS Temporary Document (LTD) format.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.LtdDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the LtdDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.LtdDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.LtdDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Ltd.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.MobDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Mobipocket e-book format (MOB) format.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.MobDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the MobDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.MobDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.MobDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Mob.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PdfDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Adobe Portable Document Format (PDF).</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.PdfDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the PdfDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.PdfDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.AnnotationsEnabled">
+      <summary>Indicates whether annotations and comments can be added to the resulting PDF document.</summary>
+      <value>**true** to allow external viewers and editors to add annotations and comments to the resulting PDF document, otherwise; **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.AssemblyEnabled">
+      <summary>Indicates whether pages can be added or removed from the resulting PDF document.</summary>
+      <value>**true** to allow external viewers and editors to add or remove pages from the resulting PDF document, otherwise; **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Author">
+      <summary>Author value to be used in the resulting PDF document.</summary>
+      <value>A String which contains the PDF document author (the name of the person who created the document) to be used. To reset the author value, use either an empty string or **null**. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.AutoBookmarks">
+      <summary>List of the current auto bookmarks options.</summary>
+      <value>A list of PdfAutoBookmark that represent the auto-bookmarking settings used when creating PDF documents.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.AutoBookmarksEnabled">
+      <summary>Use automatic bookmarking in the final PDF document</summary>
+      <value>**true** to allow bookmarks to be created using automatic bookmarking, otherwise; **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.CenterWindow">
+      <summary>Indicates if the initial view should center the document in the window</summary>
+      <value>**true** if initial view should center the document in the window, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.ColoredImageCompression">
+      <summary>Type of compression to use on colored images when creating a PDF document.</summary>
+      <value>One of the ColoredImageCompressionType enumeration members that indicate which type of compression to use on colored images when creating a PDF document. The default value is ColoredImageCompressionType.FlateJpeg.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.CopyEnabled">
+      <summary>Indicates whether the resulting PDF document has access rights to copy text.</summary>
+      <value>**true** to allow external viewers and editors to copy text from the resulting PDF document, otherwise; **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Creator">
+      <summary>Creator value to be used in the resulting PDF document.</summary>
+      <value>A string which contains the PDF document's creator (the name of the person who created the document) to be used. To reset the creator value, use either an</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.CustomBookmarks">
+      <summary>List of the custom (user) bookmarks to use when creating PDF documents.</summary>
+      <value>A list of PdfCustomBookmark that represent the custom (user) bookmarks to add to the final PDF document.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.DisplayDocTitle">
+      <summary>Indicates that the initial view should display the document title.</summary>
+      <value>**true** if the initial view should display the document title, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.DocumentType">
+      <summary>PDF file type created using the LEADTOOLS Document Writers.</summary>
+      <value>One of the PdfDocumentType enumeration members that indicate which type of PDF file will be created. Default value is PdfDocumentType.Pdf</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.DropObjects">
+      <summary>Controls which object types to drop from the final document.</summary>
+      <value>Controls which object types to drop from the final document. The default value is DocumentDropObjects.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.EditEnabled">
+      <summary>Indicates whether the resulting PDF document can be edited.</summary>
+      <value>**true** to allow external viewers and editors to edit the resulting PDF document, otherwise; **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.EncryptionMode">
+      <summary>Encryption mode to use when creating the PDF document.</summary>
+      <value>A PdfDocumentEncryptionMode enumeration member that specifies which encryption mode to use when creating the PDF document. Default value is PdfDocumentEncryptionMode.RC128Bit.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.FitWindow">
+      <summary>Indicates if the initial view should fit the document in the window</summary>
+      <value>**true** if initial view should fit the document in the window, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.FontEmbedMode">
+      <summary>Font embedding mode used when creating an PDF document.</summary>
+      <value>One of the DocumentFontEmbedMode enumeration members that indicate which font embedding mode to use when creating a PDF document. Default value is DocumentFontEmbedMode.Auto.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Pdf.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.HideMenubar">
+      <summary>Indicates whether the initial view should hide the menu bar</summary>
+      <value>**true** if the initial view should hide the menu bar, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.HideToolbar">
+      <summary>Indicates whether the initial view should hide the toolbar</summary>
+      <value>**true** if the initial view should hide the toolbar, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.HideWindowUI">
+      <summary>Indicates whether the initial view should hide the window user interface elements</summary>
+      <value>**true** if the initial view should hide the window user interface elements, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.HighQualityPrintEnabled">
+      <summary>Indicates whether the resulting PDF document can be printed in high quality.</summary>
+      <value>**true** to allow allow external viewers and editors to print the resulting PDF document in high quality, otherwise; **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.ImageOverText">
+      <summary>Indicates whether to use a raster image overlay on top of the resulting PDF document.</summary>
+      <value>**true** to use a raster image overlay on top of the resulting PDF document; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.ImageOverTextMode">
+      <summary>Indicates how the document writer converts the overlay image (image over text).</summary>
+      <value>A value that indicates how the document writer converts the overlay image (image over text). Default value is DocumentImageOverTextMode.Strict</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.ImageOverTextSize">
+      <summary>Resize options for the overlay image (image over text).</summary>
+      <value>A value that indicates the resize options for the overlay image (image over text). Default value is DocumentImageOverTextSize.Original</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.InitialPageNumber">
+      <summary>Initial view page number to use when creating a PDF document.</summary>
+      <value>The initial view page number to use when creating a PDF document. Default value is 0 (go to the first page).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Keywords">
+      <summary>Keywords to be used in the resulting PDF document.</summary>
+      <value>A String which contains the keywords associated with the PDF document. To reset the keywords value, use either an empty string or **null**. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Linearized">
+      <summary>Create a PDF document that is optimized for fast web viewing.</summary>
+      <value>**true** to create a PDF document optimized for fast web viewing, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.OneBitImageCompression">
+      <summary>One bit compression type used to compress one bit per pixel images when creating a PDF document.</summary>
+      <value>One of the OneBitImageCompressionType enumeration members that indicate which one bit compression type to use for compressing one bit per pixel images when creating a PDF document. The default value is OneBitImageCompressionType.Jbig2.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.OwnerPassword">
+      <summary>Owner password value to be used in the resulting PDF document.</summary>
+      <value>A String that contains the user password value to be used. To reset the owner password, use either an empty string or **null**. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.PageFitType">
+      <summary>Initial view page fit type when creating a PDF document.</summary>
+      <value>One of the PdfDocumentPageFitType enumeration members that indicate the initial view page fit type mode to use when creating a PDF document. The default value is PdfDocumentPageFitType.Default.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.PageLayoutType">
+      <summary>Initial view page layout type when creating a PDF document.</summary>
+      <value>One of the PdfDocumentPageLayoutType enumeration members that indicate the initial view layout of page mode to use when creating a PDF document. The default value is PdfDocumentPageLayoutType.SinglePageDisplay.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.PageModeType">
+      <summary>Initial view page mode type when creating a PDF document.</summary>
+      <value>One of the PdfDocumentPageModeType enumeration members that indicate the initial view page mode type to use to use when creating a PDF document. The default value is PdfDocumentPageModeType.PageOnly.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.PrintEnabled">
+      <summary>Indicates whether the resulting PDF document has access rights to allow printing.</summary>
+      <value>**true** to allow external viewers and editors to print the resulting PDF document, otherwise; **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Producer">
+      <summary>Producer value to be used in the resulting PDF document.</summary>
+      <value>A string which contains the PDF document's producer (the name of the person who created the document) to be used. To reset the producer value, use either an</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Protected">
+      <summary>Create a protected PDF document.</summary>
+      <value>**true** to create a protected PDF document, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.QualityFactor">
+      <summary>Degree of loss in the compression process. This applies to JPEG compression only.</summary>
+      <value>A QualityFactor determines the degree of loss in the compression process. The default value is 80.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Subject">
+      <summary>Subject value to be used in the resulting PDF document.</summary>
+      <value>A String which contains the PDF document subject to be used. To reset the subject value, use either an empty string or **null**. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.Title">
+      <summary>Title value to be used in the resulting PDF document.</summary>
+      <value>A String which contains the PDF document title to be used. To reset the title value, use either an empty string or **null**. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.TotalBookmarkLevels">
+      <summary>Total number of bookmark levels for created PDF documents.</summary>
+      <value>A TotalBookmarkLevels determines the total number of bookmark levels for created PDF documents.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.UserPassword">
+      <summary>User password value to be used in the resulting PDF document.</summary>
+      <value>A String that contains the user password value to be used. To reset the user password, use either an empty string or **null**. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.XCoordinate">
+      <summary>Initial view X coordinate position of the page to use when creating a PDF document.</summary>
+      <value>The initial view X coordinate position of the page to use when creating a PDF document. Default value is 0 (left of the page).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.YCoordinate">
+      <summary>Initial view Y coordinate position of the page to use when creating a PDF document.</summary>
+      <value>The initial view Y coordinate position of the page to use when creating a PDF document. Default value is 0 (top of the page).</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfDocumentOptions.ZoomPercent">
+      <summary>Initial view zoom percentage to use when creating a PDF document.</summary>
+      <value>The initial view zoom percentage to use when creating a PDF document. Default value is 0 (actual size).</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PubDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the eBooks Format (ePUB).</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.PubDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the PubDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.PubDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PubDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Pub.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.RtfDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Rich Text Format (RTF).</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.RtfDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the RtfDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.RtfDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.RtfDocumentOptions.DropObjects">
+      <summary>Controls which object types to drop from the final document.</summary>
+      <value>Controls which object types to drop from the final document. The default value is DocumentDropObjects.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.RtfDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Rtf.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.RtfDocumentOptions.TextMode">
+      <summary>Indicates how and when to frames the text blocks in the resulting RTF file.</summary>
+      <value>Controls how and when to frames the text blocks in the resulting RTF file. Default value is DocumentTextMode.Auto.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.SvgDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Scalable Vector Graphics (SVG) format.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.SvgDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the SvgDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.SvgDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.SvgDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Svg.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.TextDocumentOptions">
+      <summary>Provides extra options to use when saving a document to a text file using the LEADTOOLS DocumentWriter.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.TextDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the TextDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.TextDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.TextDocumentOptions.AddPageBreak">
+      <summary>Indicates whether the resulting text file should have page breaks.</summary>
+      <value>**true** to add page breaks in the final text document, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.TextDocumentOptions.AddPageNumber">
+      <summary>Get or sets a value that indicates whether text file should have page numbers.</summary>
+      <value>**true** to add page numbers to the final text document, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.TextDocumentOptions.DocumentType">
+      <summary>Value that indicates the text file type.</summary>
+      <value>An TextDocumentType enumeration member that indicate the text file type.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.TextDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Text.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.TextDocumentOptions.Formatted">
+      <summary>Get or sets a value that indicates whether the text file should be formatted.</summary>
+      <value>**true** if the text file should be formatted, otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.XlsDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Microsoft Excel 2003 format (XLS).</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.XlsDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the XlsDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.XlsDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.XlsDocumentOptions.DropObjects">
+      <summary>Controls which object types to drop from the final document.</summary>
+      <value>Controls which object types to drop from the final document. The default value is DocumentDropObjects.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.XlsDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Xls.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.XpsDocumentOptions">
+      <summary>Provides extra options to use when saving a document using the Microsoft Open XML Paper Specification format (XPS).</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.XpsDocumentOptions.#ctor">
+      <summary>Initializes a new instance of the XpsDocumentOptions class.</summary>
+    </member>
+    <member name="M:Leadtools.Document.Writer.XpsDocumentOptions.Clone">
+      <summary>Creates an exact copy of this DocumentOptions.</summary>
+      <returns>The DocumentOptions this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Document.Writer.XpsDocumentOptions.DropObjects">
+      <summary>Controls which object types to drop from the final document.</summary>
+      <value>Controls which object types to drop from the final document. The default value is DocumentDropObjects.None.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.XpsDocumentOptions.Format">
+      <summary>Gets the document format type associated with this options class.</summary>
+      <value>This property will always return DocumentFormat.Xps.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.AltoXmlMeasurementUnit">
+      <summary>Specifies the measurement unit.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.AltoXmlMeasurementUnit.MM10">
+      <summary>Measurement for ALTO file in 1/10mm.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.AltoXmlMeasurementUnit.Inch1200">
+      <summary>Measurement for ALTO file in 1/1200inches.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.AltoXmlMeasurementUnit.Dpi">
+      <summary>Measurement for ALTO file in dots per inch.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.AltoXmlMeasurementUnit.Pixel">
+      <summary>Measurement for ALTO file in pixels.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.ColoredImageCompressionType">
+      <summary>Specifies the compression types for colored images.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.ColoredImageCompressionType.FlateJpeg">
+      <summary>Use JPEG compression for images which are more than 8BPP, or for grayscale 8BPP, else use flate compression.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.ColoredImageCompressionType.LzwJpeg">
+      <summary>Use JPEG compression for images which are more than 8BPP, or for grayscale 8BPP, else use LZW compression.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.ColoredImageCompressionType.Flate">
+      <summary>Use flate compression for compressing colored images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.ColoredImageCompressionType.Lzw">
+      <summary>Use LZW compression for compressing colored images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.ColoredImageCompressionType.Jpeg">
+      <summary>Use JPEG compression for compressing colored images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.ColoredImageCompressionType.FlateJpx">
+      <summary>Use JPEG 2000 compression for images which are more than 8BPP, or for grayscale 8BPP, else use flate compression. Requires Leadtools.Codecs.J2k, Leadtools.Codecs.Tif and Leadtools.Codecs.Bmp </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.ColoredImageCompressionType.LzwJpx">
+      <summary>Use JPEG 2000 compression for images which are more than 8BPP, or for grayscale 8BPP, else use LZW compression. Requires Leadtools.Codecs.J2k, Leadtools.Codecs.Tif and Leadtools.Codecs.Bmp </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.ColoredImageCompressionType.Jpx">
+      <summary>Use JPEG 2000 compression for compressing colored images. Requires Leadtools.Codecs.J2k, Leadtools.Codecs.Tif and Leadtools.Codecs.Bmp </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentDropObjects">
+      <summary>Lists object types available for dropping from the final document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentDropObjects.DropShapes">
+      <summary>Drop shapes from the final document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentDropObjects.DropImages">
+      <summary>Drop images from the final document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentDropObjects.DropText">
+      <summary>Drop text from the final document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentDropObjects.None">
+      <summary>Add all text, images and shapes to the final document (the default value).</summary>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentFontEmbedMode">
+      <summary>Specifies the font embedding mode used when saving a document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontEmbedMode.None">
+      <summary>No font embedding. Smallest output file size.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontEmbedMode.Auto">
+      <summary>Embed fonts that are not commonly available with the exception of Licensed Fonts.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontEmbedMode.Force">
+      <summary>Embed fonts that are not commonly available with Licensed Fonts.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontEmbedMode.All">
+      <summary>Embed all fonts, including the Licensed Fonts with the document. May result in large output file sizes.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentFontTypes">
+      <summary>Type (format) of fonts to use.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontTypes.Default">
+      <summary>Default font type. Currently this will be similar to WOFF1</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontTypes.WOFF1">
+      <summary>WOFF version 1 font file format. Supported by all major browsers.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontTypes.EOT">
+      <summary>EOF font file format. Supported by older versions of Internet Explorer.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontTypes.TTF">
+      <summary>TTF font file format. Supported by all major browsers.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFontTypes.WOFF2">
+      <summary>WOFF version 2 font file format. Supported by some of major browsers</summary>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentFormat">
+      <summary>Specifies the output document formats supported by the LEADTOOLS Document Writers.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.User">
+      <summary>User-defined document format. The User document format is not used inside the LEADTOOLS Document Writers toolkit. An exception will be thrown if User is used as an output document format in the DocumentWriter.BeginDocument method. The User format can however be used as an output format when used in the LEADTOOLS OCR toolkit as a special case to instruct the OCR framework to save the document using the engine native format.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Ltd">
+      <summary>LEADTOOLS Temporary Document. This format creates a temporary file on disk that can later be converted to any of the other formats supported by the LEADTOOLS Document Writers.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Pdf">
+      <summary>Adobe Portable Document Format (PDF).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Doc">
+      <summary>Microsoft Word 2003 document format (DOC).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Rtf">
+      <summary>Rich Text Format (RTF).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Html">
+      <summary>HyperText Markup Language (HTML).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Text">
+      <summary>Text format.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Emf">
+      <summary>Windows Enhanced Meta File (EMF).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Xps">
+      <summary>Microsoft Open XML Paper Specification (XPS) (this format requires .NET Framework 3.0 or later).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Docx">
+      <summary>Microsoft Word Document format (DOCX) (this format requires .NET Framework 3.0 or later and Microsoft Open XML Format SDK 2.*.).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Xls">
+      <summary>Microsoft Excel 2003 format (XLS).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Pub">
+      <summary>eBooks format (ePUB).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Mob">
+      <summary>Mobipocket e-book format (MOB).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.Svg">
+      <summary>Scalable Vector Graphics format (SVG).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentFormat.AltoXml">
+      <summary>ALTO (Analyzed Layout and Text Object) is an XML Schema used by the library of congress to describe OCR text and layout format.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentImageOverTextMode">
+      <summary>Specifies the how the document writer converts the overlay image (image over text).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentImageOverTextMode.None">
+      <summary>Apply no rules. The image will be used as is and no detection is perform.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentImageOverTextMode.Strict">
+      <summary>The document writer will determine if the image is grayscale, if so, it will convert the image to black and white (1 bit per pixel) only if the image contains no grayscale values besides pure black and white.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentImageOverTextMode.Relaxed">
+      <summary>The document writer will determine if the image is grayscale. If the image has noise or shadows, they will be ignored and the image is converted to black and white (1 bit per pixel).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentImageOverTextSize">
+      <summary>Specifies the resize options for the overlay image (image over text).</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentImageOverTextSize.Original">
+      <summary>Use original size (no resizing is performed). Output will have highest quality and largest size.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentImageOverTextSize.Half">
+      <summary>Resize the image by two and stretch over to cover the page. Output will have the best ratio between quality and size.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentImageOverTextSize.Quarter">
+      <summary>Resize the image by 4 and stretch over to cover the page. Output will have the lowest quality and minimum size.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentPageRestriction">
+      <summary>Specifies the page restriction mode used when saving a document.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentPageRestriction.Default">
+      <summary>Default page restriction, requires emf handle to create document.</summary>
+      <platforms>NET, Java, Android</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentPageRestriction.Relaxed">
+      <summary>Relaxed page restrictions, emf handle is not mandatory to create document.</summary>
+      <platforms>NET, Java, Android</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentTextMode">
+      <summary>Specifies the document text mode.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentTextMode.Auto">
+      <summary>The document will be automatically have framed/non-framed text in the resulting Doc/Docx/Rtf documents (this is not implemented currently, so Auto will be equivalent to NonFramed).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentTextMode.NonFramed">
+      <summary>Flow text in the resulting Doc/Docx/Rtf documents.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentTextMode.Framed">
+      <summary>Set frame the text blocks (use text box objects) in the resulting Doc/Docx/Rtf documents.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.DocumentPageType">
+      <summary>Specifies the document page type.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentPageType.Emf">
+      <summary>EMF page (DocumentWriterEmfPage).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentPageType.Svg">
+      <summary>SVG page (DocumentWriterSvgPage).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentPageType.Raster">
+      <summary>Raster image page (DocumentWriterRasterPage).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.DocumentPageType.Empty">
+      <summary>an Empty page (DocumentWriterEmptyPage).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.HtmlDocumentType">
+      <summary>Specifies the HTML document type.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.HtmlDocumentType.IE">
+      <summary>The target document is compatible with Microsoft Internet Explorer.</summary>
+      <platforms>NET, Java, Android</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.HtmlDocumentType.Netscape">
+      <summary>The target document is compatible with Netscape Navigator.</summary>
+      <platforms>NET, Java, Android</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.HtmlDocumentType.IENetscape">
+      <summary>The target document is compatible with Microsoft Internet Explorer and Netscape Navigator.</summary>
+      <platforms>NET, Java, Android</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.LtdDocumentType">
+      <summary>Indicates the type of the LTD file.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.LtdDocumentType.Ocr">
+      <summary>The LTD file was created through the LEADTOOLS OCR engine and contains the data of OCR pages.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.LtdDocumentType.Svg">
+      <summary>The LTD file was created directly through the document writer and contains SVG pages only.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.LtdDocumentType.Raster">
+      <summary>The LTD file was created directly through the document writer and contains raster pages only.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.LtdDocumentType.Mixed">
+      <summary>The LTD file was created directly through the document writer and contains SVG and raster pages.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Writer.OneBitImageCompressionType">
+      <summary>Specifies the compression types for one bit per pixels images.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.OneBitImageCompressionType.Flate">
+      <summary>Use flate compression for compressing one bit images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.OneBitImageCompressionType.FaxG31D">
+      <summary>Use FAX G3_1D compression for compressing one bit images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.OneBitImageCompressionType.FaxG32D">
+      <summary>Use FAX G3_2D compression for compressing one bit images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.OneBitImageCompressionType.FaxG4">
+      <summary>Use FAX G4 compression for compressing one bit images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.OneBitImageCompressionType.Lzw">
+      <summary>Use LZW compression for compressing one bit images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.OneBitImageCompressionType.Jbig2">
+      <summary>Use JBIG2 compression for compressing one bit images.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PdfDocumentEncryptionMode">
+      <summary>Specifies the PDF document encryption mode.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentEncryptionMode.RC40Bit">
+      <summary>Use 40-bit RC4 encryption mode. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentEncryptionMode.RC128Bit">
+      <summary>Use 128-bit RC4 encryption mode. </summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PdfDocumentPageFitType">
+      <summary>Specifies the page fit option.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageFitType.Default">
+      <summary>Default page fit type.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageFitType.FitWidth">
+      <summary>Fit page width.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageFitType.FitHeight">
+      <summary>Fit page height.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageFitType.FitWidthBounds">
+      <summary>Fit page width bounds.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageFitType.FitHeightBounds">
+      <summary>Fit page height bounds.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageFitType.FitBounds">
+      <summary>Fit page bounds.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PdfDocumentPageLayoutType">
+      <summary>Specifies the page layout option.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageLayoutType.SinglePageDisplay">
+      <summary>Display one page at a time.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageLayoutType.OneColumnDisplay">
+      <summary>Display the pages in one column.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageLayoutType.TwoColumnLeftDisplay">
+      <summary>Display the pages in two columns, with odd-numbered pages on the left.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageLayoutType.TwoColumnRightDisplay">
+      <summary>Display the pages in two columns, with odd-numbered pages on the right.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageLayoutType.TwoPageLeft">
+      <summary>Display the pages two at a time, with odd-numbered pages on the left.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageLayoutType.TwoPageRight">
+      <summary>Display the pages two at a time, with odd-numbered pages on the right.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PdfDocumentPageModeType">
+      <summary>Specifies the PDF initial view document page mode type.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageModeType.PageOnly">
+      <summary>Neither document outline nor thumbnail images visible.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageModeType.BookmarksAndPage">
+      <summary>Document bookmarks visible.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageModeType.ThumbnailAndPage">
+      <summary>Thumbnail images visible.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageModeType.FullScreen">
+      <summary>Full-screen mode, with no menu bar, window controls, or any other window visible.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageModeType.LayerAndPage">
+      <summary>Layer panel visible.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentPageModeType.AttachmentsAndPage">
+      <summary>Attachments panel visible.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PdfDocumentType">
+      <summary>Specifies the PDF document type.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentType.Pdf">
+      <summary>The target document should be PDF version 1.4.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentType.PdfA">
+      <summary>The target document should be PDF/A-1b.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentType.Pdf12">
+      <summary>The target document should be PDF version 1.2.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentType.Pdf13">
+      <summary>The target document should be PDF version 1.3.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentType.Pdf15">
+      <summary>The target document should be PDF version 1.5.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.PdfDocumentType.Pdf16">
+      <summary>The target document should be PDF version 1.6.</summary>
+    </member>
+    <member name="T:Leadtools.Document.Writer.TextDocumentType">
+      <summary>Specifies the Text document type.</summary>
+    </member>
+    <member name="F:Leadtools.Document.Writer.TextDocumentType.Ansi">
+      <summary>The output text document type is ANSI (contains 8-bit ANSI characters only).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.TextDocumentType.Unicode">
+      <summary>The output text document type is UNICODE (contains 16-bit UNICODE characters).</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.TextDocumentType.UnicodeBigEndian">
+      <summary>The output text document type is UNICODE with Big Endian, the most significant byte (MSB) value is stored at the memory location with the lowest address.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Document.Writer.TextDocumentType.UTF8">
+      <summary>The output text document type is UTF8.</summary>
+      <platforms>NET, Java, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Document.Writer.LtdDocumentInfo">
+      <summary>Contains information on an LTD file.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Writer.LtdDocumentInfo.PageCount">
+      <summary>Number of pages in the LTD file.</summary>
+      <value>The number of pages in the LTD file.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.LtdDocumentInfo.Type">
+      <summary>Type of the LTD file.</summary>
+      <value>An LtdDocumentType enumeration member that indicate the type of the LTD file.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PdfAutoBookmark">
+      <summary>Options to use when creating bookmarks in automatic way based on font information of the document when creating Adobe Portable Document Format (PDF) documents.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfAutoBookmark.BoldStyle">
+      <summary>Indicates that bookmarks should be created based on whether the font is bold.</summary>
+      <value>**true** to create bookmarks based on whether the font is bold, otherwise; **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfAutoBookmark.FontFaceName">
+      <summary>Typeface name of the font to be considered for the font which will be used for creation bookmark in the PDF document.</summary>
+      <value>A String which contains typeface name of the font which is used to determine the selected font for creation bookmark. To reset this value, use either an empty string or **null**. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfAutoBookmark.FontHeight">
+      <summary>Font height to be considered for the font which will be used when creating bookmarks in the PDF document.</summary>
+      <value>A FontHeight double value that indicates the font height. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfAutoBookmark.ItalicStyle">
+      <summary>Consider italic font style for the selected font while creating bookmark in the PDF document.</summary>
+      <value>**true** to consider only italic font for the selected font type and size while creating bookmark in the PDF document; **false**, otherwise. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfAutoBookmark.UseStyles">
+      <summary>Consider font styles when creating bookmarks in the PDF document.</summary>
+      <value>**true** to allow checking for font styles such as bold or italic while creating the bookmark in the PDF document using the automatic bookmarking feature, otherwise; **false** The default value is **false**.</value>
+    </member>
+    <member name="T:Leadtools.Document.Writer.PdfCustomBookmark">
+      <summary>Options to use when creating custom bookmarks based when creating Adobe Portable Document Format (PDF) documents.</summary>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfCustomBookmark.LevelNumber">
+      <summary>Level number of bookmark item to be created in bookmark for the created PDF document.</summary>
+      <value>The level number of the bookmark item inside PDF bookmark. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfCustomBookmark.Name">
+      <summary>Name of this bookmark item.</summary>
+      <value>A String which contains the name of this bookmark item. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfCustomBookmark.PageNumber">
+      <summary>Page number this custom bookmark refer to in the created PDF document.</summary>
+      <value>The page number where this custom bookmark item refer to. Must be value greater or equal to 1 and less or equal to the total number of pages in the final PDF document. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfCustomBookmark.XCoordinate">
+      <summary>Horizontal coordinate in points of this bookmark item in the PDF page.</summary>
+      <value>The horizontal coordinate of this bookmark item in points in the PDF page. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Document.Writer.PdfCustomBookmark.YCoordinate">
+      <summary>Vertical coordinate in points of this bookmark item in the PDF page.</summary>
+      <value>The vertical coordinate of this bookmark item in points in the PDF page. Default value is 0.</value>
+    </member>
+  </members>
+</doc>

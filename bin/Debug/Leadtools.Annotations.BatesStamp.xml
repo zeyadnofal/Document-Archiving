@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Annotations.BatesStamp</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesDateTime">
+      <summary>Defines a Bates stamp date time element.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.AsString">
+      <summary>Gets the current date and time for the Bates element on current AnnDateTimeKind format.</summary>
+      <returns>The current date and time for the Bates element on current AnnDateTimeKind format.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.Clone">
+      <summary>Creates an exact copy of this IAnnBatesElement object.</summary>
+      <returns>The IAnnBatesElement object that this class creates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.OnPropertyChanged(Leadtools.Annotations.Engine.AnnPropertyChangedEventArgs)">
+      <summary>Raises the PropertyChanged event.</summary>
+      <param name="e">AnnPropertyChangedEventArgs event data</param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.ToString">
+      <summary>Returns the value of the FriendlyName property.</summary>
+      <returns>This method returns the FriendlyName's property value.</returns>
+    </member>
+    <member name="E:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.PropertyChanged">
+      <summary>Occurs when a property value changes. AnnPropertyChangedEventArgs</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.CurrentDateTime">
+      <summary>Gets or sets the current date and time when creating this stamp element.</summary>
+      <value>A value indicating the current date and time when creating this stamp element.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.Format">
+      <summary>Gets or sets the format to use when representing the current date and time.</summary>
+      <value>A value indicating the format to use to represent the current date and time.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.FriendlyName">
+      <summary>Gets the friendly name for AnnBatesDateTime.</summary>
+      <value>A string that represents the friendly name for AnnBatesDateTime.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesDateTime.Kind">
+      <summary>Gets or sets the representation to use for the current date and time.</summary>
+      <value>A value indicating the representation to use for the current date time.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesElementCollection">
+      <summary>Represents a dynamic collection of IAnnBatesElement's and provides notifications when items are added or removed.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesElementCollection.#ctor">
+      <summary>Creates a new empty AnnBatesElementCollection.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesElementCollection.#ctor(Leadtools.Annotations.BatesStamp.IAnnBatesElement[])">
+      <summary>Creates a new AnnBatesElementCollection with values.</summary>
+      <param name="annBatesElements">An array of type IAnnBatesElement to be added to this collection.</param>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesNumber">
+      <summary>Defines a Bates stamp number element</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesNumber.#ctor">
+      <summary>Initializes a new AnnBatesNumber class object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesNumber.AsString">
+      <summary>Gets the current value of this AnnBatesNumber. The returned value's format is controlled by properties, such as those for the number of digits and starting number.</summary>
+      <returns>The current value of AnnBatesNumber. The returned value's format is controlled by properties, such as the number of digits and starting number.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesNumber.Clone">
+      <summary>Creates an exact copy of this IAnnBatesElement object.</summary>
+      <returns>The IAnnBatesElement object that this class creates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesNumber.OnPropertyChanged(Leadtools.Annotations.Engine.AnnPropertyChangedEventArgs)">
+      <summary>Raises the PropertyChanged event.</summary>
+      <param name="e">AnnPropertyChangedEventArgs event data</param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesNumber.ToString">
+      <summary>Returns the value of FriendlyName property.</summary>
+      <returns>This method returns the value of the FriendlyName property.</returns>
+    </member>
+    <member name="E:Leadtools.Annotations.BatesStamp.AnnBatesNumber.PropertyChanged">
+      <summary>Occurs when a property value changes. AnnPropertyChangedEventArgs</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesNumber.AutoIncrement">
+      <summary>Gets or sets whether AnnBatesNumber is to increment starting from StartNumber value or randomly.</summary>
+      <value>A value indicating whether AnnBatesNumber is to be incremented starting from StartNumber value or randomly.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesNumber.FriendlyName">
+      <summary>Gets the friendly name for this AnnBatesNumber.</summary>
+      <value>A string that represents the friendly name for this AnnBatesNumber.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesNumber.NumberOfDigits">
+      <summary>Gets or sets the number of digits viewed for AnnBatesNumber.</summary>
+      <value>A value defining the number of digits to view for AnnBatesNumber.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesNumber.PrefixText">
+      <summary>Gets or sets the starting text for this AnnBatesNumber.</summary>
+      <value>A value indicating the starting text for AnnBatesNumber.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesNumber.StartNumber">
+      <summary>Gets or sets the AnnBatesNumber starting numerical value.</summary>
+      <value>A value indicating the starting number for AnnBatesNumber.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesNumber.SuffixText">
+      <summary>Gets or sets the text you want to add as ending text of AnnBatesNumber.</summary>
+      <value>A value indicating the text to add as ending text of AnnBatesNumber.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesNumber.UseAllDigits">
+      <summary>Gets or sets all the number of digits specified on NumberOfDigits property used to view AnnBatesNumber.</summary>
+      <value>A value indicating whether or not to use all the number of digits specified on the NumberOfDigits property to view the AnnBatesNumber digits.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesStamp">
+      <summary>Defines a Bates stamp that is composed from a list of Bates stamp elements with different types.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStamp.#ctor">
+      <summary>Initializes a new AnnBatesStamp class object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStamp.AsString(Leadtools.Annotations.Engine.AnnContainer)">
+      <summary>Gets the final representation of the Bates stamp string that is composed from different elements and types.</summary>
+      <param name="container">The current container we want to stamp.</param>
+      <returns>The final representation of the Bates stamp string that is composed from different elements and types.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStamp.Clone">
+      <summary>Creates an exact copy of this AnnBatesStamp object.</summary>
+      <returns>The AnnBatesStamp object that this class creates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStamp.OnPropertyChanged(Leadtools.Annotations.Engine.AnnPropertyChangedEventArgs)">
+      <summary>Raises the PropertyChanged event.</summary>
+      <param name="e">AnnPropertyChangedEventArgs event data</param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStamp.ToString">
+      <summary>Returns the value of the FriendlyName property.</summary>
+      <returns>This method returns the value of the FriendlyName property.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStamp.Dispose">
+      <summary>Frees the resource used by AnnBatesStamp object and detaches the events.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStamp.Dispose(System.Boolean)">
+      <summary>Releases all the resources used by this AnnBatesStamp.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStamp.Finalize">
+      <summary>This member overrides Finalize.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.BatesStamp.AnnBatesStamp.PropertyChanged">
+      <summary>Occurs when a property value changes. AnnPropertyChangedEventArgs</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStamp.Elements">
+      <summary>Gets the list of elements that the Bates stamp is composed of.</summary>
+      <value>The value of the list of elements that the Bates stamp is composed of.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStamp.Font">
+      <summary>Gets or sets the font that used when viewing the Bates stamp text.</summary>
+      <value>The value of the font used when viewing the Bates stamp text.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStamp.Foreground">
+      <summary>Gets or sets the foreground color used when viewing the Bates stamp text.</summary>
+      <value>The value of the foreground color used when viewing the Bates stamp text.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStamp.FriendlyName">
+      <summary>Gets the friendly name for AnnBatesStamp.</summary>
+      <value>A string that represents the friendly name for the AnnBatesStamp object.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStamp.HorizontalAlignment">
+      <summary>Gets or sets the horizontal alignment for the Bates stamp.</summary>
+      <value>The value of the horizontal alignment for the Bates stamp.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStamp.Logo">
+      <summary>Gets or sets the Bates stamp logo.</summary>
+      <value>A value of the Bates stamp logo.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStamp.VerticalAlignment">
+      <summary>Gets or sets the vertical alignment for the Bates stamp.</summary>
+      <value>The value of the vertical alignment for the Bates stamp.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesStampCollection">
+      <summary>Represents a dynamic collection of AnnBatesStamp's and provides notifications when items are added or removed.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampCollection.#ctor">
+      <summary>Creates a new empty AnnBatesStampCollection.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampCollection.#ctor(Leadtools.Annotations.BatesStamp.AnnBatesStamp[])">
+      <summary>Creates a new AnnBatesStampCollection with values.</summary>
+      <param name="annBatesStamps">An array of type AnnBatesStamp to be added to this collection.</param>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer">
+      <summary>AnnBatesStampComposer is the main part for Bates stamping operation as it connects annotations containers with Bates stamp objects.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.#ctor">
+      <summary>Initializes a new AnnBatesStampComposer class object with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.Load(System.IO.Stream)">
+      <summary>Loads a Bates stamp composer from the specified stream.</summary>
+      <param name="stream">File containing the XML data of the Bates stamp composer to be loaded. This value must not be **null**.</param>
+      <returns>A new AnnBatesStampComposer object containing all the Bates stamp objects and elements loaded from \stream\.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.Load(System.String)">
+      <summary>Loads a Bates stamp composer from the specified file.</summary>
+      <param name="fileName">File containing the XML data of the Bates stamp composer to be loaded. This value must not be **null**.</param>
+      <returns>A new AnnBatesStampComposer object containing all the Bates stamp objects and elements loaded from \fileName\.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.LoadFromString(System.String)">
+      <summary>Loads a Bates stamp composer from a string.</summary>
+      <param name="xmlData">string containing the XML data of the Bates stamp composer to be loaded. This value must not be **null**.</param>
+      <returns>A new AnnBatesStampComposer object containing all the Bates stamp objects and elements loaded from \xmlData\.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.Save(System.IO.Stream,Leadtools.Annotations.BatesStamp.AnnBatesStampComposer)">
+      <summary>Saves a Bates stamp composer with its components to a stream.</summary>
+      <param name="stream">Destination stream to save the data to.</param>
+      <param name="composer">The AnnBatesStampComposer to be saved. This value must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.Save(System.String,Leadtools.Annotations.BatesStamp.AnnBatesStampComposer)">
+      <summary>Saves a Bates stamp composer with its components to a file.</summary>
+      <param name="fileName">Destination file name to save the data to.</param>
+      <param name="composer">The AnnBatesStampComposer to be saved. This value must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.SaveToString(Leadtools.Annotations.BatesStamp.AnnBatesStampComposer)">
+      <summary>Saves a Bates stamp composer to a string.</summary>
+      <param name="composer">The AnnBatesStampComposer to be saved. This value must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.Dispose">
+      <summary>Free the resource used by AnnBatesStampComposer object and detach the events .</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.Dispose(System.Boolean)">
+      <summary>Releases all the resources used by this AnnBatesStampComposer.</summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.Finalize">
+      <summary>This member overrides Finalize.</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.RenderingEngine">
+      <summary>Gets or sets the rendering engine associated with this AnnBatesStampComposer.</summary>
+      <value>The rendering engine associated with this AnnBatesStampComposer.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.Stamps">
+      <summary>Gets the AnnBatesStamp list associated with this AnnBatesStampComposer.</summary>
+      <value>The AnnBatesStamp list associated with this AnnBatesStampComposer.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampComposer.TargetContainers">
+      <summary>Gets the list of target containers associated with this AnnBatesStampComposer.</summary>
+      <value>The list of target containers associated with this AnnBatesStampComposer.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo">
+      <summary>Defines a logo that can be drawn for the Bates stamp components.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.Clone">
+      <summary>Creates an exact copy of this AnnBatesStampLogo object.</summary>
+      <returns>The AnnBatesStampLogo object that this class creates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.OnPropertyChanged(Leadtools.Annotations.Engine.AnnPropertyChangedEventArgs)">
+      <summary>Raises the PropertyChanged event.</summary>
+      <param name="e">AnnPropertyChangedEventArgs event data</param>
+    </member>
+    <member name="E:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.PropertyChanged">
+      <summary>Occurs when a property value changes. AnnPropertyChangedEventArgs</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.Angle">
+      <summary>Gets or sets the angle of the logo.</summary>
+      <value>The angle of the logo.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.Font">
+      <summary>Gets or sets the font of the logo's text.</summary>
+      <value>The font of the logo's text</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.LogoRect">
+      <summary>Gets or sets the LeadRectD of the logo picture and its text.</summary>
+      <value>The rectangle of the logo picture and its text where they will be laid out.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.Opacity">
+      <summary>Gets or sets a value indicating the opacity value to use when drawing the Bates stamp logo.</summary>
+      <value>A value indicating the opacity value to use when drawing the Bates stamp logo. A value of 1 means opaque and a value of 0 means transparent. Allowable values are between 0 and 1 inclusive. The default value is 1.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.Picture">
+      <summary>Gets or sets a picture for the logo.</summary>
+      <value>The picture of the logo.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.StretchLogo">
+      <summary>Gets or sets the stretch property to the Bates stamp logo. Hence, making it possible to cover the entire area of the container attached to this Bates stamp.</summary>
+      <value>The value that determines whether or not to stretch the Bates stamp logo to the entire container area attached to this Bates stamp.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampLogo.Text">
+      <summary>Gets or sets the text of the logo.</summary>
+      <value>The text of the logo.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesStampTranslator">
+      <summary>AnnBatesStampTranslator defines a translator that converts the Bates stamp elements to a string expression. Converts from a string expression to Bates stamp elements that can be saved and loaded using AnnBatesStampComposer.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampTranslator.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampTranslator.ReadFromString(System.String)">
+      <summary>Reads all Bates stamp elements from the elements' text expression.</summary>
+      <param name="elementsExpression">A string containing the text expression to be read from the Bates stamp elements. This value must not be **null**.</param>
+      <returns>An array of IAnnBatesElement objects.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampTranslator.WriteElementsToString(Leadtools.Annotations.BatesStamp.IAnnBatesElement[])">
+      <summary>Converts an array of IAnnBatesElement elements to a string expression using (starting, ending , and separating) symbols.</summary>
+      <param name="elements">The Bates stamp elements array to convert to a string expression. This value must not be **null**.</param>
+      <returns>A string expression for these \elements\.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesStampTranslator.WriteElementToString(Leadtools.Annotations.BatesStamp.IAnnBatesElement)">
+      <summary>Converts IAnnBatesElement to string expression using (starting, ending, and separating) symbols.</summary>
+      <param name="element">The Bates stamp element to convert to a string expression. This value must not be **null**.</param>
+      <returns>A string expression for this \element\.</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampTranslator.ExpressionEndSymbol">
+      <summary>Gets or sets the expression's ending symbol.</summary>
+      <value>A value of the ending symbol for the given expression. The default value is **"}}"**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampTranslator.ExpressionSeparatingSymbol">
+      <summary>Gets or sets the separating symbol for the given expression.</summary>
+      <value>A value for the given expression that separates the Bates stamp element properties. The default value is **"\*"**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesStampTranslator.ExpressionStartSymbol">
+      <summary>Gets or sets the starting symbol the expression should start with.</summary>
+      <value>A value of the starting symbol the expression should start with, the default value is **"{{"**.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnBatesText">
+      <summary>Defines a Bates stamp text element</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesText.AsString">
+      <summary>Gets the current value of AnnBatesText.</summary>
+      <returns>The current value of AnnBatesText.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesText.Clone">
+      <summary>Creates an exact copy of this IAnnBatesElement object.</summary>
+      <returns>The IAnnBatesElement object that this class creates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesText.Create(System.String)">
+      <summary>Creates a new instance of AnnBatesText.</summary>
+      <param name="text">A String</param>
+      <returns>The AnnBatesText this method creates.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesText.OnPropertyChanged(Leadtools.Annotations.Engine.AnnPropertyChangedEventArgs)">
+      <summary>Raises the PropertyChanged event.</summary>
+      <param name="e">AnnPropertyChangedEventArgs event data</param>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.AnnBatesText.ToString">
+      <summary>Returns the value of the FriendlyName property.</summary>
+      <returns>This method returns the FriendlyName's value.</returns>
+    </member>
+    <member name="E:Leadtools.Annotations.BatesStamp.AnnBatesText.PropertyChanged">
+      <summary>Occurs when a property value changes. AnnPropertyChangedEventArgs</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesText.FriendlyName">
+      <summary>Gets the friendly name for AnnBatesText.</summary>
+      <value>A string that represents the friendly name for AnnBatesText.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.AnnBatesText.Text">
+      <summary>Gets or sets the text to show on AnnBatesText.</summary>
+      <value>A value of the text to show on this element</value>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.AnnDateTimeKind">
+      <summary>Indicates a date time representation.</summary>
+    </member>
+    <member name="F:Leadtools.Annotations.BatesStamp.AnnDateTimeKind.Utc">
+      <summary>The time represented as UTC.</summary>
+      <platforms>NET, Java, Android</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.BatesStamp.AnnDateTimeKind.Local">
+      <summary>The time represented as local time.</summary>
+      <platforms>NET, Java, Android</platforms>
+    </member>
+    <member name="T:Leadtools.Annotations.BatesStamp.IAnnBatesElement">
+      <summary>Defines an interface with properties and methods for representing Bates stamp elements.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.IAnnBatesElement.AsString">
+      <summary>Gets the current date time for the Bates element on current AnnDateTimeKind, date time kind and format.</summary>
+      <returns>The current date time for the Bates element on current AnnDateTimeKind, date time kind and format.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.BatesStamp.IAnnBatesElement.Clone">
+      <summary>Creates an exact copy of this IAnnBatesElement object.</summary>
+      <returns>The IAnnBatesElement object that this class creates.</returns>
+    </member>
+    <member name="E:Leadtools.Annotations.BatesStamp.IAnnBatesElement.PropertyChanged">
+      <summary>Occurs when any property of IAnnBatesElement changes. AnnPropertyChangedEventArgs</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.BatesStamp.IAnnBatesElement.FriendlyName">
+      <summary>Gets or sets the friendly name for a specific IAnnBatesElement element.</summary>
+      <value>A string that represents the friendly name for the IAnnBatesElement element.</value>
+    </member>
+  </members>
+</doc>

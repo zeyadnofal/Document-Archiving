@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Windows.Media</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Windows.Media.RasterColorConverter">
+      <summary>Converts between LEADTOOLS Leadtools.RasterColor and Windows Presentation Foundation (WPF) System.Windows.Media.Color objects.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterColorConverter.FromColor(Color)">
+      <summary>Converts a Windows Presentation Foundation (WPF) System.Windows.Media.Color object to a LEADTOOLS Leadtools.RasterColor object.</summary>
+      <param name="color">The source WPF color.</param>
+      <returns>The corresponding LEADTOOLS Leadtools.RasterColor object.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterColorConverter.ToColor(Leadtools.RasterColor)">
+      <summary>Converts a LEADTOOLS Leadtools.RasterColor object to a a Windows Presentation Foundation (WPF) System.Windows.Media.Color object.</summary>
+      <param name="color">The source LEADTOOLS Leadtools.RasterColor color.</param>
+      <returns>The WPF System.Windows.Media.Color object.</returns>
+    </member>
+    <member name="T:Leadtools.Windows.Media.RasterImageConverter">
+      <summary>Converts a LEADTOOLS Leadtools.RasterImage to and from Windows Presentation Foundation (WPF) image objects.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterImageConverter.ConvertFromSource(ImageSource,Leadtools.Windows.Media.ConvertFromSourceOptions)">
+      <summary>Converts a WPF System.Windows.Media.ImageSource object to LEADTOOLS Leadtools.RasterImage.</summary>
+      <param name="image">The System.Windows.Media.ImageSource object containing the image data to convert.</param>
+      <param name="options">Options to control the conversion operation. Currently there are no extra options and the value of this parameter must be set to ConvertFromSourceOptions.None</param>
+      <returns>A Leadtools.RasterImage object representing the converted image.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterImageConverter.ConvertToSource(Leadtools.RasterImage,Leadtools.Windows.Media.ConvertToSourceOptions)">
+      <summary>Converts a LEADTOOLS for .NET Leadtools.RasterImage object to WPF System.Windows.Media.ImageSource.</summary>
+      <param name="image">The Leadtools.RasterImage object containing the image data to convert.</param>
+      <param name="options">Options to control the conversion operation. The following values can be ORed together:</param>
+      <param name=""></param>
+      <returns>An System.Windows.Media.ImageSource object representing the converted image.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterImageConverter.ConvertToSource(Leadtools.RasterImage,Leadtools.Windows.Media.ConvertToSourceOptions,System.Double)">
+      <summary>Converts a LEADTOOLS for .NET Leadtools.RasterImage object to WPF System.Windows.Media.ImageSource.</summary>
+      <param name="image">The Leadtools.RasterImage object containing the image data to convert.</param>
+      <param name="options">Options to control the conversion operation. The following values can be ORed together:</param>
+      <param name=""></param>
+      <returns>An System.Windows.Media.ImageSource object representing the converted image.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterImageConverter.TestCompatible(Leadtools.RasterImage,Leadtools.Windows.Media.ConvertToSourceOptions)">
+      <summary>Tests a Leadtools.RasterImage to see if it is compatible with the WPF System.Windows.Media.ImageSource.</summary>
+      <param name="image">The source image.</param>
+      <param name="options">The options to use when testing.</param>
+      <returns>Value indicating the compatibility.</returns>
+    </member>
+    <member name="T:Leadtools.Windows.Media.RasterRegionConverter">
+      <summary>Converts between a LEADTOOLS Leadtools.RasterRegion and Windows Presentation Foundation (WPF) System.Windows.Media.Geometry objects.</summary>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterRegionConverter.AddGeometryToRegion(Leadtools.RasterImage,Leadtools.RasterRegionXForm,Geometry,Leadtools.RasterRegionCombineMode)">
+      <summary>Creates or updates a LEADTOOLS image region by adding the specified WPF geometry.</summary>
+      <param name="image">The source image.</param>
+      <param name="xform">Leadtools.RasterRegionXForm object that LEADTOOLS uses to translate between display coordinates and image coordinates. If you specify null (Nothing in VB) in this parameter, the scalar fields default to 1, the offsets default to 0, and the view perspective defaults to the image view perspective.</param>
+      <param name="geometry">The WPF geometry to add.</param>
+      <param name="combineMode">The action to take regarding the existing image region, if one is defined.</param>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterRegionConverter.ConvertFromGeometry(Geometry)">
+      <summary>Converts a WPF System.Windows.Media.Geometry object to a LEADTOOLS Leadtools.RasterRegion.</summary>
+      <param name="geometry">The WPF source geometry. This parameter cannot be null (Nothing in VB).</param>
+      <returns>The LEADTOOLS Leadtools.RasterRegion object this method creates. You must dispose this object after using it.</returns>
+    </member>
+    <member name="M:Leadtools.Windows.Media.RasterRegionConverter.ConvertToGeometry(Leadtools.RasterRegion,Leadtools.RasterRegionXForm)">
+      <summary>Converts a LEADTOOLS Leadtools.RasterRegion to a WPF System.Windows.Media.Geometry object.</summary>
+      <param name="region">The source LEADTOOLS region. This parameter cannot be null (Nothing in VB).</param>
+      <param name="xform">Leadtools.RasterRegionXForm object that LEADTOOLS uses to translate between display coordinates and image coordinates.</param>
+      <returns>The Geometry object this method creates.</returns>
+    </member>
+    <member name="T:Leadtools.Windows.Media.ConvertFromSourceOptions">
+      <summary>Options for converting a Windows Presentation Foundation (WPF) System.Windows.Media.ImageSource to a LEADTOOLS Leadtools.RasterImage object.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertFromSourceOptions.None">
+      <summary>Default </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertFromSourceOptions.UseWritableBitmap">
+      <summary>Use WriteableBitmap for image data storage.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertFromSourceOptions.AutoDetectAlpha">
+      <summary>Indicates LEADTOOLS should automatically detect if the image data contains meaningful alpha channel values, and if so, set the RasterImage.PremultiplyAlpha property accordingly.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertFromSourceOptions.FastConvertTo1Bit">
+      <summary>Fast conversion to 1-bit black on white. Use this flag to convert any System.Windows.Media.ImageSource to a 1-bit per pixel Leadtools.RasterImage object with black on white palette. Useful for quickly converting System.Windows.Media.ImageSource to Leadtools.RasterImage; suitable for barcode or OCR recognition.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.ConvertToSourceOptions">
+      <summary>Options for converting a LEADTOOLS Leadtools.RasterImage object to Windows Presentation Foundation (WPF) System.Windows.Media.ImageSource.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertToSourceOptions.None">
+      <summary>Default </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertToSourceOptions.KeepAlphaValues">
+      <summary>If the source Leadtools.RasterImage is 32 or 64-bits/pixel, then use the alpha values from this alpha if the result of the conversion is also a 32 or 64-bits/pixel System.Windows.Media.ImageSource.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertToSourceOptions.KeepViewPerspective">
+      <summary>Keep the original Leadtools.RasterImage view perspective. The Leadtools.RasterImage objects supports having an image data orientation other than the normal top-left through the RasterImage.ViewPerspective property.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertToSourceOptions.IgnoreLowHighBitsOnGrayImages">
+      <summary>Do not use the gray scale bit window values when converting 12 or 16-bit grayscale Leadtools.RasterImage objects. The Leadtools.RasterImage object contains the RasterImage.LowBit and RasterImage.HighBit values that can be set to provide a Window into the image data. This is mostly used by medical applications during a window-leveling operations.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertToSourceOptions.UseSetSource">
+      <summary>Note: This option is no longer supported.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ConvertToSourceOptions.AutoDetectAlpha">
+      <summary>Note: This option is no longer supported.</summary>
+    </member>
+    <member name="T:Leadtools.Windows.Media.ImageIncompatibleReason">
+      <summary>Indicates the reason that the LEADTOOLS Leadtools.RasterImage object is not compatible with WPF.</summary>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ImageIncompatibleReason.Compatible">
+      <summary>Image is compatible </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ImageIncompatibleReason.BitsPerPixel">
+      <summary>Unsupported Bits/Pixel </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ImageIncompatibleReason.Order">
+      <summary>Unsupported color byte order </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ImageIncompatibleReason.Palette">
+      <summary>Unsupported palette </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ImageIncompatibleReason.Data">
+      <summary>Unsupported raw data </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ImageIncompatibleReason.ViewPerspective">
+      <summary>Unsupported view perspective </summary>
+      <platforms>NET</platforms>
+    </member>
+    <member name="F:Leadtools.Windows.Media.ImageIncompatibleReason.Other">
+      <summary>Unspecified reason </summary>
+      <platforms>NET</platforms>
+    </member>
+  </members>
+</doc>

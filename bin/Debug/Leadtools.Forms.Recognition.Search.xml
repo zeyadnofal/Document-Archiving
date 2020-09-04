@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Recognition.Search</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager">
+      <summary>Disk full text search manager.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.#ctor">
+      <summary>Initializes a new class of DiskFullTextSearchManager.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.Delete(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Deletes master forms from the full text search database.</summary>
+      <param name="item">Properties of the item(s) to be deleted. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.Delete(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Deletes master forms from the full text search database.</summary>
+      <param name="items">Properties of the item(s) to be deleted. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.Index">
+      <summary>Start a re-indexing of the database.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.Search(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Searches the full text database for candidates.</summary>
+      <param name="item">Properties of the item(s) to search. Must not be **null**.</param>
+      <returns>List of candidates sorted by rank.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.Select(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Returns matching forms with content.</summary>
+      <param name="item">Properties of the item(s) to find. Must not be **null**.</param>
+      <returns>The items found.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.Upsert(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Adds or updates a new master form page to the full text search database</summary>
+      <param name="item">Properties of the item to add or update. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.Upsert(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Adds or updates one or more master form pages to the full text search database</summary>
+      <param name="items">Properties of the items to add or update. Must not be **null**.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.IndexDirectory">
+      <summary>Path to the directory to use for storing the index files.</summary>
+      <value>Path to the directory to use for storing the index files. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.Search.DiskFullTextSearchManager.MaximumSearchContentSize">
+      <summary>The maximum size of the content size in bytes.</summary>
+      <value>Maximum size of Content in bytes. Default value is 1000.</value>
+    </member>
+  </members>
+</doc>

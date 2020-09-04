@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Pdf.Annotations</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Pdf.Annotations.AnnPDFConvertor">
+      <summary>Defines a class that converts between AnnObject annotation objects and PDFAnnotation annotation objects.</summary>
+    </member>
+    <member name="M:Leadtools.Pdf.Annotations.AnnPDFConvertor.ConvertFromPDF(Leadtools.Pdf.PDFAnnotation,Leadtools.Annotations.Engine.AnnContainer,Leadtools.LeadSizeD)">
+      <summary>Converts a list of PDFAnnotation objects into a list of AnnObject objects by adding it to target AnnContainer.</summary>
+      <param name="source">The list of PDFAnnotation objects to fill into AnnContainer. This value must not be **null**.</param>
+      <param name="target">The target AnnContainer is used to fill into it a list of PDFAnnotation objects. This parameter must not be **null**.</param>
+      <param name="pdfPageSize">The size of the PDF page with the annotations.</param>
+    </member>
+    <member name="M:Leadtools.Pdf.Annotations.AnnPDFConvertor.ConvertToPDF(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Pdf.PDFAnnotation,System.Double)">
+      <summary>Converts the annotation objects inside AnnContainer to a list of PDFAnnotation objects.</summary>
+      <param name="source">The source container that holds a list of annotation objects. This value must not be **null**.</param>
+      <param name="target">The target list of PDFAnnotation to fill converted objects into. This value must not be **null**.</param>
+      <param name="pdfPageHeight">The height of the PDF page to add annotations into.</param>
+    </member>
+  </members>
+</doc>

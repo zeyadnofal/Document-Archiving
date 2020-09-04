@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Recognition.Barcode</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Recognition.Barcode.Assembly">
+      <summary>Utility class to force dynamic loading of this assembly in the Xamarin platform.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Barcode.Assembly.Use">
+      <summary>Forces dynamic loading of this assembly in the Xamarin platform.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.Barcode.BarcodeObjectsManager">
+      <summary>Creates a Barcode objects manager that extracts barcode features in a form. The created object is added to ObjectsManagers.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Barcode.BarcodeObjectsManager.#ctor(Leadtools.Barcode.BarcodeEngine)">
+      <summary>Initializes a new BarcodeObjectsManager class object.</summary>
+      <param name="engine">The barcode engine.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.Barcode.BarcodeObjectsManager.Engine">
+      <summary>Gets/sets the barcode engine to read barcodes.</summary>
+      <value>The Leadtools.Barcode.BarcodeEngine that is used in this BarcodeObjectsManager to perform barcode reading</value>
+    </member>
+  </members>
+</doc>

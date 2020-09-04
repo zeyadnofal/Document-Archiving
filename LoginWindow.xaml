@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="LoginScreen" Height="450" Width="500" FontFamily="Segoe UI Semibold" WindowStartupLocation="CenterScreen" WindowState="Normal" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
     <Window.Resources>
-        <ImageBrush x:Key="closeIcon" ImageSource="C:\Users\Zazo\source\repos\Document Archiving\Assets\close.png" Stretch="Fill"/>
-        <ImageBrush x:Key="minIcon" ImageSource="C:\Users\Zazo\source\repos\Document Archiving\Assets\minimize.png" Stretch="Fill"/>
+        <ImageBrush x:Key="closeIcon" ImageSource="C:\Users\Zazo\source\repos\Document Archiving\Assets\close.png" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="minIcon" ImageSource="C:\Users\Zazo\source\repos\Document Archiving\Assets\minimize.png" Stretch="UniformToFill"/>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -138,37 +138,128 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="RoundedTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="RoundedPasswordBox" TargetType="{x:Type PasswordBox}">
+            <Setter Property="PasswordChar" Value="●"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="border" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
-    <Border CornerRadius="10" BorderThickness="5" BorderBrush ="#FFE4A600">
-        <Border CornerRadius="5" BorderThickness="3" BorderBrush="Black">
-            <Grid Background="#FF020202">
-                <Label Content="Welcome" HorizontalAlignment="Center" Margin="150,64,160,0" VerticalAlignment="Top" FontSize="40" Width="182" Foreground="#FFE4A600" Background="{x:Null}">
+    <Border CornerRadius="10" BorderThickness="5" BorderBrush ="#304352">
+        <Border CornerRadius="5" BorderThickness="3" BorderBrush="#304352">
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF304352" Offset="0"/>
+                        <GradientStop Color="#FFD7D2CC" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Label Content="Welcome" HorizontalAlignment="Center" Margin="150,64,160,0" VerticalAlignment="Top" FontSize="40" Width="182" Foreground="#FFD7D2CC" Background="{x:Null}">
                     <Label.Effect>
                         <DropShadowEffect BlurRadius="3" ShadowDepth="3"/>
                     </Label.Effect>
                 </Label>
-                <TextBox Name="usernameBox" HorizontalAlignment="Left" Height="35" Margin="150,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="{x:Null}" BorderBrush="#FFE4A600" FontSize="24" Foreground="#FFE4A600"/>
-                <Label Content="Username" HorizontalAlignment="Left" Margin="150,159,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFE4A600">
+                <TextBox Name="usernameBox" HorizontalAlignment="Left" Height="35" Margin="150,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="{x:Null}" BorderBrush="#FF304352" FontSize="24" Foreground="#FFD7D2CC" Style="{DynamicResource RoundedTextBox}"/>
+                <Label Content="Username" HorizontalAlignment="Left" Margin="150,159,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFD7D2CC">
                     <Label.Effect>
                         <DropShadowEffect ShadowDepth="3"/>
                     </Label.Effect>
                 </Label>
-                <Label Content="Password" HorizontalAlignment="Left" Margin="150,246,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFE4A600">
+                <Label Content="Password" HorizontalAlignment="Left" Margin="150,246,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFD7D2CC">
                     <Label.Effect>
                         <DropShadowEffect ShadowDepth="3"/>
                     </Label.Effect>
                 </Label>
-                <PasswordBox Name="passwordBox" Height ="35" Width="200" HorizontalAlignment="Left" Margin="150,288,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FFE4A600" FontSize="24" Foreground="#FFE4A600"/>
-                <Button Content="Login" HorizontalAlignment="Left" Margin="189,358,0,0" VerticalAlignment="Top" Height="26" Width="100" BorderBrush="#FFE4A600" Background="Black" Style="{DynamicResource RoundedButtonStyle}" Foreground="#FFE4A600" Click="Button_Click">
-                </Button>
+                <PasswordBox Name="passwordBox" Height ="35" Width="200" HorizontalAlignment="Left" Margin="150,288,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF304352" FontSize="24" Foreground="#FFD7D2CC" Style="{DynamicResource RoundedPasswordBox}"/>
+                <Button Content="Login" HorizontalAlignment="Left" Margin="189,358,0,0" VerticalAlignment="Top" Height="26" Width="100" BorderBrush="#FF304352" Style="{DynamicResource RoundedButtonStyle}" Foreground="#FFFFF7EC" Click="Button_Click" Background="{x:Null}"/>
                 <Button Name="CloseButton" Content="" HorizontalAlignment="Left" Height="24" Margin="444,10,0,0" VerticalAlignment="Top" Width="30" BorderBrush="{x:Null}" Click="CloseButton_Click" Style="{DynamicResource CloseStyle}">
                     <Button.Background>
-                        <ImageBrush ImageSource="close.png" Stretch="UniformToFill"/>
+                        <ImageBrush Stretch="UniformToFill" ImageSource="C:\Users\Zazo\source\repos\Document Archiving\Assets\close.png"/>
                     </Button.Background>
                 </Button>
                 <Button Name="MinButton" Content="" HorizontalAlignment="Left" Height="24" Margin="409,10,0,0" VerticalAlignment="Top" Width="30" BorderBrush="{x:Null}" Click="MinButton_Click" Style="{DynamicResource minStyle}">
                     <Button.Background>
-                        <ImageBrush ImageSource="minimize.png"/>
+                        <ImageBrush ImageSource="C:\Users\Zazo\source\repos\Document Archiving\Assets\minimize.png" Stretch="UniformToFill" TileMode="None"/>
                     </Button.Background>
                 </Button>
 

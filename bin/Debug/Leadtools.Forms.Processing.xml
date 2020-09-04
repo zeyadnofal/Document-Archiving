@@ -1,0 +1,1090 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Processing</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Processing.BarcodeFormField">
+      <summary>A single rectangular region on a form.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFormField.#ctor">
+      <summary>Initializes a new BarcodeFormField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFormField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFormField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs the processing of this field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines (as needed).</param>
+      <param name="form">The image on which processing will be performed.</param>
+      <param name="pageAlignment">Page alignment value that specifies how to align a Master Form to the \form\.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFormField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Fills this BarcodeFormField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing this BarcodeFormField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFormField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes this BarcodeFormField class data into the specified XML _valuesElement_</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BarcodeFormField.Result">
+      <summary>Gets the results of processing this field.</summary>
+      <value>A value that provides the results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BarcodeFormField.Symbology">
+      <summary>Gets or sets the barcode symbology associated with this field.</summary>
+      <value>A Leadtools.Barcode.BarcodeSymbology enumeration value that represents the symbology for which to search inside this field area. The default value is BarcodeSymbology.Unknown.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.BarcodeFormFieldResult">
+      <summary>Provides the results of processing the barcode field.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFormFieldResult.#ctor">
+      <summary>Initializes a new BarcodeFormFieldResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BarcodeFormFieldResult.BarcodeData">
+      <summary>List of BarcodeData classes in a BarcodeDataCollection class representing the detected barcodes inside the barcode field.</summary>
+      <value>List containing information about the detected barcode.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.BubbleWordField">
+      <summary>High level OMR form field (such as Student Name or Social Security Number), that can be used in OMR forms with column-wise OMR areas with multiple columns.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BubbleWordField.#ctor">
+      <summary>Initializes a new BubbleWordField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BubbleWordField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BubbleWordField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Processes the field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines.</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">The page alignment to align the field to this form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BubbleWordField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Reads the data of BubbleWordField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing the BubbleWordField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BubbleWordField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes the BubbleWordField class data into the specified XML _valuesElement_.</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BubbleWordField.Fields">
+      <summary>A list of SingleSelectionField objects that holds the OMR marks in this field.</summary>
+      <value>A list of SingleSelectionField represents the OMR marks in this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BubbleWordField.Parent">
+      <summary>A string value that holds a reference to the parent field name.</summary>
+      <value>Parent field name.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BubbleWordField.Result">
+      <summary>(Read only) Gets the results of processing the field.</summary>
+      <value>The results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BubbleWordField.Value">
+      <summary>(Read Only) Gets the value after processing the field.</summary>
+      <value>String value of the field after processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BubbleWordField.ValueType">
+      <summary>Type of this bubble field value. It can be numerical or characters.</summary>
+      <value>Type of the field value.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FormField">
+      <summary>The base class for all form fields. Any form field, either predefined or user-defined, should implement FormField.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormField.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs processing on a form.</summary>
+      <param name="engine">The FormProcessingEngine that is initialized with the OCR and barcode engines (as needed).</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">A PageAlignment value that specifies how to align a Master Form's field to the processed form.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormField.ReadXml(IXPathNavigable)">
+      <summary>Reads the values stored in the XML file.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Fills this FormField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing this FormField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormField.WriteXml(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes the values to an XML file.</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="element">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes this FormField class data to the specified XML _valuesElement_.</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormField.Bounds">
+      <summary>Gets or sets a LeadRect that specifies the location of the field in the form image.</summary>
+      <value>A LeadRect that specifies the location of this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormField.Dropout">
+      <summary>Gets or sets the dropout options.</summary>
+      <value>Dropout options or combination of them.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormField.MasterPageNumber">
+      <summary>Gets or sets the master page index that this FormField belong to.</summary>
+      <value>Master page index in MasterForm that is related to this FormField .</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormField.Name">
+      <summary>Gets or sets the field's name.</summary>
+      <value>The string associated with this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormField.Result">
+      <summary>Gets the results of processing this field.</summary>
+      <value>A value that indicates the results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormField.SerializationTagType">
+      <summary>Gets or sets the serialization type to use with form fields.</summary>
+      <value>The serialization type to use with form fields. The default value is `FormFieldSerializationTagType.String` in the .NET standard version of LEADTOOLS and `FormFieldSerializationTagType.Binary` in the .NET framework version.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormField.Tag">
+      <summary>Gets or sets user-defined data of the field.</summary>
+      <value>The user-defined data in the field.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FormFieldResult">
+      <summary>Provides the results of processing the field. The base class for all form field result classes.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormFieldResult.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormFieldResult.Status">
+      <summary>Gets or sets the status of processing the field.</summary>
+      <value>The status of processing the field.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FormPage">
+      <summary>Specifies the page properties and fields for a Master Form.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormPage.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary>Initializes a new FormPage class object with explicit parameters.</summary>
+      <param name="pageNumber">Master Form page number that this object represents.</param>
+      <param name="dpiX">The Master Form page image resolution along the x-axis.</param>
+      <param name="dpiY">The Master Form page image resolution along the y-axis.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormPage.DpiX">
+      <summary>Gets or sets the page image resolution along the x-axis of the Master Form.</summary>
+      <value>The horizontal DPI (dots per inch) of the image on the Master Form page.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormPage.DpiY">
+      <summary>Gets or sets the page image resolution along the y-axis of the Master Form.</summary>
+      <value>The vertical DPI (dots per inch) of the image on the Master Form page.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormPage.PageNumber">
+      <summary>Gets the page number of the Master Form.</summary>
+      <value>The 1-based index of the Master Form page that FormPage represents.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FormPages">
+      <summary>Collection of FormPage objects.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormPages.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormPages.GetPage(System.Int32)">
+      <summary>Returns the FormPage at the specified page number.</summary>
+      <param name="pageNumber">The page number.</param>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FormProcessingEngine">
+      <summary>Class that contains the processing engine used to perform field processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.#ctor">
+      <summary>Initializes a new FormProcessingEngine class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.LoadFields(System.IO.Stream)">
+      <summary>Loads field data from the specified stream.</summary>
+      <param name="stream">A System.IO.Stream containing the field data to be loaded.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.LoadFields(System.String)">
+      <summary>Loads field data from the specified file.</summary>
+      <param name="fileName">The path of the file to load.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.Process(Leadtools.RasterImage,Leadtools.Forms.Processing.FormProcessingOptions)">
+      <summary>Performs field processing on the form image using the specified options.</summary>
+      <param name="form">The form image.</param>
+      <param name="options">Processing options. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.Process(Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs field processing on the form image.</summary>
+      <param name="form">Form image.</param>
+      <param name="formAlignment">A value that indicates the Form Alignment. It aligns the Master Form's fields to this form field. If it is null the fields will be aligned depending on the image resolution.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.Process(Leadtools.RasterImage,System.Int32,System.Int32,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs field processing on the form image.</summary>
+      <param name="form">The Leadtools.RasterImage.</param>
+      <param name="firstPageNumber">First form page to process. It is a 1-based value.</param>
+      <param name="lastPageNumber">Last form page to process. It is a 1-based value.</param>
+      <param name="formAlignment">A value that indicates the Form Alignment. Alignment matches a LeadRect that represents a specific area in the Master Form to its equivalent area in the Form. If it is null the fields will be aligned depending on the image resolution.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.ProcessPage(Leadtools.RasterImage,System.Int32,Leadtools.Forms.Processing.PageProcessingOptions)">
+      <summary>Performs field processing with options on the page image provided.</summary>
+      <param name="page">Page image. Must not be **null**.</param>
+      <param name="formPageNumber">1-based index, indicates the Master Form page number that corrospondslast to the provided form page.</param>
+      <param name="options">Options to use. Can be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.ProcessPage(Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment,System.Int32)">
+      <summary>Performs field processing on the page image provided.</summary>
+      <param name="page">Page image.</param>
+      <param name="pageAlignment">A value that indicates the page Alignment. It aligns the Master Form's fields to this page field. If it is null fields will be aligned depending on the image resolution.</param>
+      <param name="formPageNumber">1-based index, indicate the Master Form page number that corrospondslast to the provided form page.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.SaveFields(System.IO.Stream)">
+      <summary>Saves field data to the specified stream.</summary>
+      <param name="stream">A System.IO.Stream where fields data will be saved.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingEngine.SaveFields(System.String)">
+      <summary>Saves field data for the specified file.</summary>
+      <param name="fileName">The path of the file to save.</param>
+    </member>
+    <member name="E:Leadtools.Forms.Processing.FormProcessingEngine.PostProcessPage">
+      <summary>Optional delegate method used after page processing is finished.</summary>
+    </member>
+    <member name="E:Leadtools.Forms.Processing.FormProcessingEngine.PreProcessPage">
+      <summary>Optional delegate method used before page processing begins.</summary>
+    </member>
+    <member name="E:Leadtools.Forms.Processing.FormProcessingEngine.ProcessField">
+      <summary>Optional delegate method used after field processing is finished.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormProcessingEngine.BarcodeEngine">
+      <summary>Gets or sets the barcode engine that is going to be used for field processing.</summary>
+      <value>The barcode engine to be used to recognize barcodes.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormProcessingEngine.OcrEngine">
+      <summary>Gets or sets the OCR engine that is going to be used for field processing.</summary>
+      <value>The OCR engine used to recognize text and OMR.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormProcessingEngine.Pages">
+      <summary>Gets the form page fields and properties.</summary>
+      <value>The form field page and properties.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormProcessingEngine.TradeoffMode">
+      <summary>Specifies which recognition algorithm trade-off setting to use for forms processing.</summary>
+      <value>The Leadtools.Forms.Common.FormsTradeoffMode setting to use for forms processing.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FormProcessingOptions">
+      <summary>Options for the FormProcessingEngine.Process method.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.FormProcessingOptions.#ctor">
+      <summary>Initialzies a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormProcessingOptions.FirstPageNumber">
+      <summary>First page number of the form to process.</summary>
+      <value>1-based first page number of the form to process. A value of -1 means the first page in the form. Default value is -1.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormProcessingOptions.FormAlignment">
+      <summary>Optional form alignment for each page.</summary>
+      <value>Array of PageAlignment for each page in the form. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormProcessingOptions.LastPageNumber">
+      <summary>Last page number of the form to process.</summary>
+      <value>1-based last page number of the form to process. A value of -1 means the last page in the form. Default value is -1.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.FormProcessingOptions.SvgDocuments">
+      <summary>Optional SVG representation of each page in the form.</summary>
+      <value>Array of ISvgDocument for each page in the form. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.ImageFormField">
+      <summary>A single rectangular region on a form that defines an image area on a blank (not filled-in) form to be used when an image reading process is performed on the filled form during form processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ImageFormField.#ctor">
+      <summary>Initializes a new ImageFormField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ImageFormField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ImageFormField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs the processing on this field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines (as needed).</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">A value which indicates how the field is to be aligned on the form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ImageFormField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Fills this ImageFormField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing this BarcodeFormField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ImageFormField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes this ImageFormField class data into the specified XML _valuesElement_</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ImageFormField.Result">
+      <summary>Gets the results of processing this field.</summary>
+      <value>The results of field processing.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.ImageFormFieldResult">
+      <summary>Provides the results of processing the image field.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ImageFormFieldResult.#ctor">
+      <summary>Initializes a new ImageFormFieldResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ImageFormFieldResult.Image">
+      <summary>Gets the image that is specified by the image field.</summary>
+      <value>The results of field processing.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.OcrFormField">
+      <summary>The base class for all text, OMR and OCR fields. Any OCR form field, whether predefined or user-defined, should implement OcrFormField.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OcrFormField.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.OcrFormFieldResult">
+      <summary>Provides the results of processing the OCR field.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OcrFormFieldResult.#ctor">
+      <summary>Initializes a new OcrFormFieldResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OcrFormFieldResult.AverageConfidence">
+      <summary>Gets or sets the average confidence of all detected characters.</summary>
+      <value>The confidence number expressing the average certainty of the recognized characters.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OcrFormFieldResult.Characters">
+      <summary>List of character classes representing the detected characters inside the OCR field.</summary>
+      <value>The recognized characters.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OcrFormFieldResult.MaximumConfidence">
+      <summary>Gets or sets the maximum confidence of the detected characters.</summary>
+      <value>The confidence number expressing the maximum certainty of the recognized characters.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OcrFormFieldResult.MinimumConfidence">
+      <summary>Gets or sets the minimum confidence of the detected characters.</summary>
+      <value>The confidence number expressing the minimum certainty of the recognized characters.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OcrFormFieldResult.Text">
+      <summary>Gets or sets the detected text inside the OCR field.</summary>
+      <value>The recognized text string of the OCR field.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.OmrAnswerAreaField">
+      <summary>High level Omr form field that can be used with row wise Omr answer area with multiple rows and multiple choice questions.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrAnswerAreaField.#ctor">
+      <summary>Initializes a new OmrAnswerAreaField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrAnswerAreaField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrAnswerAreaField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs the processing of the field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines.</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">The page alignment to align the field to this form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrAnswerAreaField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Reads the data of OmrAnswerAreaField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing the OmrAnswerAreaField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrAnswerAreaField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes the OmrAnswerAreaField class data into the specified XML _valuesElement_.</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrAnswerAreaField.Answers">
+      <summary>A list of SingleSelectionField that holds the Omr rows in this field.</summary>
+      <value>A list of SingleSelectionField represents the Omr rows in this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrAnswerAreaField.Result">
+      <summary>(Read only) Gets the results of processing the field.</summary>
+      <value>The results of field processing.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.OmrDateField">
+      <summary>High level Omr form field that can be used in Omr forms with column wise Omr date area.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrDateField.#ctor">
+      <summary>Initializes a new OmrDateField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrDateField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrDateField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs the processing of the field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines.</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">The page alignment to align the field to this form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrDateField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Reads the data of OmrDateField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing the OmrDateField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrDateField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes the OmrDateField class data into the specified XML _valuesElement_.</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrDateField.Day">
+      <summary>(Read only) Gets the value of the day after processing the field.</summary>
+      <value>Integer number represents the day.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrDateField.DayField">
+      <summary>A BubbleWordField represents the Day Omr columns in the OmrDateField.</summary>
+      <value>BubbleWordField with multiple columns.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrDateField.Month">
+      <summary>(Read only) Gets the value of the month after processing the field.</summary>
+      <value>Integer number represents the day.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrDateField.MonthField">
+      <summary>A SingleSelectionField represents the Month Omr column in the OmrDateField.</summary>
+      <value>SingleSelectionField with single column.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrDateField.Result">
+      <summary>(Read only) Gets the results of processing the field.</summary>
+      <value>The results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrDateField.Year">
+      <summary>(Read only) Gets the value of the year after processing the field.</summary>
+      <value>Integer number represents the year.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrDateField.YearField">
+      <summary>A BubbleWordField represents the Year Omr columns in the OmrDateField.</summary>
+      <value>BubbleWordField with multiple columns.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.OmrFormField">
+      <summary>A single rectangular region on a form that defines an OMR (optical mark) area on a blank (not filled-in) form so that an OMR reading process can be performed on the filled form during form processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrFormField.#ctor">
+      <summary>Initializes a new OmrFormField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrFormField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrFormField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs the processing of this field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines (as needed).</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">A value that indicates how to align the page in order to align the field to this form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrFormField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Fills this OmrFormField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing this OmrFormField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrFormField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes this OmrFormField class data into the specified XML _valuesElement_</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrFormField.FrameMethod">
+      <summary>Gets or sets the OMR frame detection mode of the field.</summary>
+      <value>An Leadtools.Ocr.OcrOmrFrameDetectionMethod enumeration member that indicates the OMR frame detection mode of the field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrFormField.Result">
+      <summary>Gets the results of processing this field.</summary>
+      <value>The results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrFormField.Sensitivity">
+      <summary>Gets or sets the OMR sensitivity mode of the field.</summary>
+      <value>An Leadtools.Ocr.OcrOmrSensitivity enumeration member that indicates the OMR sensitivity mode of the field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.OmrFormField.UseFieldSettings">
+      <summary>Gets or sets the use of the field settings for its OMR recognition.</summary>
+      <value>true use the OMR settings saved inside this OMR field, otherwise, use the settings inside the used Leadtools.Ocr.IOcrEngine.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.OmrFormFieldResult">
+      <summary>Provides the results of processing the OMR field.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.OmrFormFieldResult.#ctor">
+      <summary>Initializes a new OmrFormFieldResult class object.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.PageProcessingOptions">
+      <summary>Options for the FormProcessingEngine.ProcessPage method.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.PageProcessingOptions.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.PageProcessingOptions.PageAlignment">
+      <summary>Optional page alignment.</summary>
+      <value>The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.PageProcessingOptions.SvgDocument">
+      <summary>Optional SVG representation of the page.</summary>
+      <value>The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.ProcessFieldEventArgs">
+      <summary>Handles each field processed by the FormProcessingEngine.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ProcessFieldEventArgs.#ctor">
+      <summary>Initializes a new ProcessFieldEventArgs class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ProcessFieldEventArgs.#ctor(Leadtools.RasterImage,System.Int32,System.Int32,System.Int32,Leadtools.Forms.Processing.FormField,System.Int32,System.Int32)">
+      <summary>Initializes a new ProcessFieldEventArgs class object with explicit parameters.</summary>
+      <param name="form">The page image that is under processing.</param>
+      <param name="formFirstPageNumber">The starting page number for the process.</param>
+      <param name="formCurrentPageNumber">The current page number that is undergoing processing.</param>
+      <param name="formLastPageNumber">The last page number to be processed.</param>
+      <param name="field">The current field being processed.</param>
+      <param name="fieldIndex">The index of the field being processed.</param>
+      <param name="fieldCount">The number of fields in the current page.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ProcessFieldEventArgs.#ctor(Leadtools.RasterImage,System.Int32,System.Int32,System.Int32,Leadtools.Forms.Processing.FormField,System.Int32,System.Int32,System.Boolean)">
+      <summary>Initializes a new instance of ProcessFieldEventArgs that is used in ProcessField event.</summary>
+      <param name="form">The form page image that is undergoing processing.</param>
+      <param name="formFirstPageNumber">The first page number of the form to be processed.</param>
+      <param name="formCurrentPageNumber">The page number of the page that is currently undergoing processing.</param>
+      <param name="formLastPageNumber">The last page number of the form to be processed.</param>
+      <param name="field">The field currently being processed.</param>
+      <param name="fieldIndex">Index of the current field in the page field list.</param>
+      <param name="fieldCount">Number of fields in the current form page.</param>
+      <param name="isPreprocess">Indicates whether ProcessField event using this instance of ProcessFieldEventArgs was fired before processing the field or after processing it. </param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.Cancel">
+      <summary>Gets or sets a flag to cancel the current processing.</summary>
+      <value>true to abort, false to continue normally.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.Field">
+      <summary>Gets the field currently being processed.</summary>
+      <value>The field currently being processed.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.FieldCount">
+      <summary>Gets the number of fields in the current form page.</summary>
+      <value>The number of fields in the current form page.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.FieldIndex">
+      <summary>Gets the index of the current field in the page field list.</summary>
+      <value>The zero-based integer that specifies the position of the current field in the fields list.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.Form">
+      <summary>Gets the form page image that is undergoing processing.</summary>
+      <value>A Leadtools.RasterImage object that represents the form image.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.FormCurrentPageNumber">
+      <summary>Gets the page number of the page that is currently undergoing processing.</summary>
+      <value>The 1-based integer that specifies the page number of the current form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.FormFirstPageNumber">
+      <summary>Gets the first page number of the form to be processed.</summary>
+      <value>The 1-based integer that specifies the first page number to process.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.FormLastPageNumber">
+      <summary>Gets the last page number of the form to be processed.</summary>
+      <value>The 1-based integer that specifies the page number of the last page to be processed.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessFieldEventArgs.IsPreprocess">
+      <summary>Gets a value indicating whether ProcessField event using the associated instance of ProcessFieldEventArgs was fired before processing the field or after processing it.</summary>
+      <value>**true** to indicate the ProcessField event was fired before processing a FormField. Otherwise, **false** to indicate the ProcessField event was fired after processing a FormField.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.ProcessPageEventArgs">
+      <summary>Handles each page processed by FormProcessingEngine.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ProcessPageEventArgs.#ctor">
+      <summary>Initializes a new ProcessPageEventArgs class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ProcessPageEventArgs.#ctor(Leadtools.RasterImage,System.Int32,System.Int32,System.Int32,System.Boolean,Leadtools.Ocr.IOcrDocument,System.Int32)">
+      <summary>Initializes a new ProcessPageEventArgs class object with explicit parameters.</summary>
+      <param name="form">The page image that is under processing.</param>
+      <param name="formFirstPageNumber">The start processing page number.</param>
+      <param name="formCurrentPageNumber">The current page number that is under processing.</param>
+      <param name="formLastPageNumber">The last processing page number.</param>
+      <param name="requiresOcr">Specifies if this page needs to be added to the OCR engine to process its fields.</param>
+      <param name="ocrDocument">Specifies an OCR Document that is created from the Ocr engine.</param>
+      <param name="ocrPageNumber">Specifies the page index in the \ocrDocument\ if it is already added or -1 if it is not.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.ProcessPageEventArgs.#ctor(Leadtools.RasterImage,System.Int32,System.Int32,System.Int32,System.Boolean,Leadtools.Ocr.IOcrDocument,System.Int32,Leadtools.Forms.Processing.FormField,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Initializes a new instance of ProcessPageEventArgs that is used in PreProcessPage and PostProcessPage events.</summary>
+      <param name="form">The form page image that is being processed.</param>
+      <param name="formFirstPageNumber">The starting page number of the form being processed.</param>
+      <param name="formCurrentPageNumber">The current page number that is undergoing processing.</param>
+      <param name="formLastPageNumber">The last page number of the form being processed.</param>
+      <param name="requiresOcr">A flag that specifies whether this page needs to be added to the OCR engine in order to process its fields.</param>
+      <param name="ocrDocument">The OcrDocument that contains the page.</param>
+      <param name="ocrPageNumber">The index of the page in the OcrDocument.</param>
+      <param name="fields">A List&lt;FormField&gt; object that contains the fields of this form page. </param>
+      <param name="alignment">A Leadtools.Forms.Common.PageAlignment object that determines the amount of shift and scaling to align the Master Form's fields to this page field. If it is **null**, fields will be aligned depending on the image resolution. </param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.Alignment">
+      <summary>A Leadtools.Forms.Common.PageAlignment object that determines the amount of shift and scaling to align the Master Form's fields to the fields on the page. If it is null, fields align depending on the image's resolution.</summary>
+      <value>Leadtools.Forms.Common.PageAlignment object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.Fields">
+      <summary>A List&lt;FormField&gt; object that contains the fields of a form page.</summary>
+      <value>A List&lt;FormField&gt; object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.Form">
+      <summary>Gets the form page image that is being processed.</summary>
+      <value>A Leadtools.RasterImage object that represents the form image.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.FormCurrentPageNumber">
+      <summary>Gets the current page number that is undergoing processing.</summary>
+      <value>The 1-based integer that specifies the current form page number.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.FormFirstPageNumber">
+      <summary>Gets the starting page number of the form being processed.</summary>
+      <value>The 1-based integer that specifies starting form page number being processed.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.FormLastPageNumber">
+      <summary>Gets the last page number of the form being processed.</summary>
+      <value>The 1-based integer that specifies the last form page number being processed.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.OcrDocument">
+      <summary>Gets or sets the OcrDocument that contains the page.</summary>
+      <value>The OCR Document that is created from the Ocr engine and used for processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.OcrPageNumber">
+      <summary>Gets or sets the index of the page in the OcrDocument.</summary>
+      <value>The 0-based integer that specifies the index of the current page in the OcrDocument.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.ProcessPageEventArgs.RequiresOcr">
+      <summary>Gets a flag that specifies whether this page needs to be added to the OCR engine in order to process its fields.</summary>
+      <value>true if this page needs OCR, otherwise, false</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.SingleSelectionField">
+      <summary>High level OMR form field that represents a row or a column of multiple OmrFormField objects in which one of the OMR marks is selected in the filled form.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.SingleSelectionField.#ctor">
+      <summary>Initializes a new SingleSelectionField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.SingleSelectionField.#ctor(System.String,Leadtools.LeadRect,Leadtools.Forms.Processing.SingleField)">
+      <summary>Initializes a new SingleSelectionField class object with explicit parameters.</summary>
+      <param name="name">The name of this field.</param>
+      <param name="bounds">The location of the field in the form image.</param>
+      <param name="fields">A list of SingleField that represents the row or column of OMR marks in this field.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.SingleSelectionField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.SingleSelectionField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Processes the field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines.</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">The page alignment to align the field to this form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.SingleSelectionField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Reads the data of the SingleSelectionField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing the SingleSelectionField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.SingleSelectionField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes the SingleSelectionField class data into the specified XML _valuesElement_.</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleSelectionField.Fields">
+      <summary>(Read Only) A list of SingleField objects that holds the OMR marks in this field.</summary>
+      <value>A list of SingleField objects that holds the OMR marks in this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleSelectionField.NameBounds">
+      <summary>A LeadRect that represents the location of the field name in the form image.</summary>
+      <value>The location of the field name in the form image.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleSelectionField.Parent">
+      <summary>A string value that holds a reference to the parent field's name.</summary>
+      <value>The parent field's name.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleSelectionField.Result">
+      <summary>(Read only) Gets the results of processing the field.</summary>
+      <value>The results of processing the field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleSelectionField.SelectedIndex">
+      <summary>(Read only) Holds the index of the filled OMR field in the list of OMR fields.</summary>
+      <value>Index of the selected Omr field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleSelectionField.SelectedItem">
+      <summary>(Read Only) Gets the filled OmrFormField from the list of fields.</summary>
+      <value>Gets the selected OmrFormField.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleSelectionField.Status">
+      <summary>(Read Only) Gets a SingleSelectionStatus enumeration value representing the status after processing the SingleSelectionField.</summary>
+      <value>Status of processing the SingleSelectionField.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleSelectionField.Value">
+      <summary>(Read Only) Gets the value of the field after processing it.</summary>
+      <value>String value of the field after processing.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.TableColumn">
+      <summary>A column of TableFormField.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableColumn.#ctor(Leadtools.Forms.Processing.OcrFormField)">
+      <summary>Initializes a new TableColumn class object.</summary>
+      <param name="ocrField">The field containing data in the column.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableColumn.#ctor(Leadtools.Forms.Processing.OcrFormField,System.Boolean)">
+      <summary>Initializes a new TableColumn class object.</summary>
+      <param name="ocrField">The field containing data in the column.</param>
+      <param name="isKeyColumn">Specifies whether the column is primary key.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableColumn.Alignment">
+      <summary>(Read only) Gets the column alignment after detection.</summary>
+      <value>Column fields alignment.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableColumn.FullBounds">
+      <summary>(Read only) Gets the bounds of column area.</summary>
+      <value>The full Area occupied by column fields.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableColumn.IsKeyColumn">
+      <summary>Specifies whether the column is primary key.</summary>
+      <value>true if the column is a primary key; otherwise, not.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableColumn.OcrField">
+      <summary>(Read only) Gets the OcrFormField that the TableColumn object initialized with.</summary>
+      <value>get the OcrFormField that the TableColumn object initialized with.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableColumn.Tag">
+      <summary>Assigns object to the column.</summary>
+      <value>The object assigned to TableColumn.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.TableFormField">
+      <summary>A single rectangular region on a form that extended to defines a table/invoice area on a table header (not filled-in) form so a text reading process can be performed on the filled form during form processing on the recognized fields to the end of the invoice area.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormField.#ctor">
+      <summary>Initializes a new TableFormField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormField.#ctor(Leadtools.Forms.Processing.TableColumn)">
+      <summary>Initializes a new TableFormField class object.</summary>
+      <param name="columns">Initialize a new TableFormField class object with list of TableColumn.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormField.ExtractInfo(Leadtools.RasterImage,Leadtools.Ocr.IOcrEngine)">
+      <summary>Extracts table columns information from the specified image.</summary>
+      <param name="image">RasterImage used to extract table columns information.</param>
+      <param name="ocrEngine">IOcrEngine used in extracting table columns information</param>
+      <returns>This method returns void, while it updates TableFormField with Columns information.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs the processing of a field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines.</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">The page alignment to align the field to this form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Reads the data of TableFormField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing the TableFormField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes the TableFormField class data into the specified XML _valuesElement_.</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableFormField.Columns">
+      <summary>Gets or sets the columns list of the table.</summary>
+      <value>The columns list of the table.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableFormField.ExpectedPages">
+      <summary>Gets List of expected pages indices that are occupied by TableFormField.</summary>
+      <value>List of expected pages indices for the TableFormField.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableFormField.PagesBounds">
+      <summary>Gets Dictionary of Pages bounds and Pages indices.</summary>
+      <value>The Bounds for each page index that occupied by table field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableFormField.Result">
+      <summary>(Read only) Gets the results of processing the field.</summary>
+      <value>The results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableFormField.Rules">
+      <summary>Gets or sets the rules for the table.</summary>
+      <value>The Rules used to recognize the table.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.TableFormFieldResult">
+      <summary>Provides the results of processing the table field.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormFieldResult.#ctor">
+      <summary>Initializes a new TableFormFieldResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableFormFieldResult.Rows">
+      <summary>Gets the recognized list of TableFormRow in the table.</summary>
+      <value>List of recognized TableFormRow in the table.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.TableFormRow">
+      <summary>The row containing the recognized fields in the table.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TableFormRow.#ctor(System.Int32)">
+      <summary>Initializes a new TableFormRow class object.</summary>
+      <param name="pageIndex">The Page Index of the TableFormRow.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableFormRow.Fields">
+      <summary>Gets the list of recognized OcrFormField in the row.</summary>
+      <value>List of recognized OcrFormField in the row.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TableFormRow.PageIndex">
+      <summary>Gets the page index of the current row.</summary>
+      <value>Page index of the TableFormRow.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.TextFormField">
+      <summary>A single rectangular region on a form that defines a text area on a blank (not filled-in) form so a text reading process can be performed on the filled form during form processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TextFormField.#ctor">
+      <summary>Initializes a new TextFormField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TextFormField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>The copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TextFormField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Performs the processing of this field.</summary>
+      <param name="engine">The processing engine that is initialized with OCR and barcode engines (as needed).</param>
+      <param name="form">The image on which the processing should be performed.</param>
+      <param name="pageAlignment">The page alignment that is needed to align the field to this form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TextFormField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Fills this TextFormField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing this TextFormField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TextFormField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes this TextFormField class data into the specified XML _valuesElement_</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.EnableIcr">
+      <summary>Enables/disables the using of the ICR module in reading this text field.</summary>
+      <value>true if the ICR module is enabled, otherwise, false. Its default value is true.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.EnableOcr">
+      <summary>Enables/disables the using of Ocr module in reading this text field.</summary>
+      <value>true if the Ocr module is enabled, otherwise, false. Its default value is true.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.MinimumCharacterConfidence">
+      <summary>Specifies the minimum character confidence in Result.</summary>
+      <value>The minimum character confidence in Result.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.OcrTextType">
+      <summary>Specifies the text type inside the text field.</summary>
+      <value>The type of the text field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.RegexPattern">
+      <summary>Gets or sets an optional regular expression which defines the string to read.</summary>
+      <value>The string containing the regular expression used to filter the text field string. A value of null (Nothing in **VB**) means no regular expression pattern matching will be performed on this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.Result">
+      <summary>Gets the results of processing this field.</summary>
+      <value>The results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.ResultDefault">
+      <summary>Gets the default results of processing this field.</summary>
+      <value>The default results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.ResultIcr">
+      <summary>Gets the ICR results of processing this field.</summary>
+      <value>The ICR results of field processing.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormField.Type">
+      <summary>Gets or sets the text type of the text field.</summary>
+      <value>A TextFieldType enumeration value that represents which type of text is in the Text field.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.TextFormFieldResult">
+      <summary>Provides the results of processing the text field.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.TextFormFieldResult.#ctor">
+      <summary>Initializes a new TextFormFieldResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormFieldResult.IsValidated">
+      <summary>Specifies whether the read text matches the specified regular expression in the text field.</summary>
+      <value>true if text string matches the specified regular expression, otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.TextFormFieldResult.Matches">
+      <summary>Contains all occurrences of the successful matches in the results text OcrFormFieldResult.Text for the TextFormField.RegexPattern.</summary>
+      <value>The System.Text.RegularExpressions.MatchCollection of the System.Text.RegularExpressions.Match objects found by OcrFormFieldResult.Text search.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.UnStructuredTextFormField">
+      <summary>A class that represents a rectangular region (as well as the label to the left of the region) that defines an area on a form that can be filled in with text and read during form processing. Unlike the TextFormField, this class does not have a fixed, pre-defined structure.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.UnStructuredTextFormField.#ctor">
+      <summary>Initializes a new UnStructuredTextFormField class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.UnStructuredTextFormField.Clone">
+      <summary>Creates a copy of the field.</summary>
+      <returns>A copy of the field.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.UnStructuredTextFormField.Process(Leadtools.Forms.Processing.FormProcessingEngine,Leadtools.RasterImage,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Processes this field.</summary>
+      <param name="engine">A Form Processing Engine class initialized with any OCR and barcode engines that are going to be used for processing.</param>
+      <param name="form">The Leadtools.RasterImage on which to perform the processing.</param>
+      <param name="pageAlignment">The Leadtools.Forms.Common.PageAlignment enumeration value that represents the page alignment to be applied to this form image.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.UnStructuredTextFormField.ReadXmlValues(IXPathNavigable,IList&lt;KeyValuePair&lt;string)">
+      <summary>Fills this UnStructuredTextFormField from the XML string stored in _values_.</summary>
+      <param name="navigator">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="values">A list of XML strings key values containing this UnStructuredTextFormField data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.UnStructuredTextFormField.WriteXmlValues(IXPathNavigable,IXPathNavigable)">
+      <summary>Writes this UnStructuredTextFormField class data into the specified XML _valuesElement_.</summary>
+      <param name="document">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+      <param name="valuesElement">Provides an accessor to the System.Xml.XPath.XPathNavigator class.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.UnStructuredTextFormField.Result">
+      <summary>Gets the results of processing this field.</summary>
+      <value>A FormFieldResult containing the results from processing this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.UnStructuredTextFormField.TextFormField">
+      <summary>Gets or sets the region of the field that defines the text area to be recognized.</summary>
+      <value>The TextFormField defining the area to be recognized.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.BubbleWordValueType">
+      <summary>Enumeration that represents which value type the bubble word field contains. The Character value type can contain any combination of alphanumeric characters. The Numerical value type contains only numerals.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.BubbleWordValueType.Character">
+      <summary>Any possible values of textual or numerical type.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.BubbleWordValueType.Numerical">
+      <summary>Values of numerical type only.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.DropoutFlag">
+      <summary>Values that represent the Dropout options for a form field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.DropoutFlag.None">
+      <summary>Do not use the dropout feature.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.DropoutFlag.CellsDropout">
+      <summary>Drop out the cell borders containing the data, so cell lines will not be detected.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.DropoutFlag.WordsDropout">
+      <summary>Drop out the words appearing on the master forms in the same field area.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FieldAlignment">
+      <summary>Values that represent the alignment of columns/fields in a table.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.FieldAlignment.Left">
+      <summary>Left alignment.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.FieldAlignment.Center">
+      <summary>Center alignment.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.FieldAlignment.Right">
+      <summary>Right alignment.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FormFieldSerializationTagType">
+      <summary>The serialization type to use with form fields.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.FormFieldSerializationTagType.String">
+      <summary>Serialize the form field as a string. Using this mode ensures that the forms data files can be used by both the .NET framework and .NET standard version of LEADTOOLS.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.FormFieldSerializationTagType.Binary">
+      <summary>Use binary serialization. Using this mode will prevent forms data files created by the .NET framework version of LEADTOOLS from being used by the .NET standard version. This value is not supported and will throw an exception when used through the .NET standard version of LEADTOOLS.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.FormFieldStatus">
+      <summary>Values that describe the status of field processing.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.FormFieldStatus.Success">
+      <summary>Success.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.FormFieldStatus.Failed">
+      <summary>Failure.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.OcrTextType">
+      <summary>Values that indicate the different text field types.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.OcrTextType.FlowText">
+      <summary>Flow text type field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.OcrTextType.Table">
+      <summary>Table type field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.OcrTextType.Graphic">
+      <summary>Field containing graphics.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.OcrTextType.Omr">
+      <summary>Omr type field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.OcrTextType.Micr">
+      <summary>Micr (Magnetic ink character recognition) type field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.OcrTextType.Icr">
+      <summary>Icr (hand written) text type field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.OcrTextType.None">
+      <summary>None type field.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.SingleSelectionStatus">
+      <summary>Represents the status of processing the SingleSelectionField.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.SingleSelectionStatus.Error">
+      <summary>Error processing the field</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.SingleSelectionStatus.Success">
+      <summary>Successfully processed the field</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.SingleSelectionStatus.NoSelection">
+      <summary>The field has been successfully processed but with no filled OMR</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.SingleSelectionStatus.MultipleSelections">
+      <summary>The field has been successfully processed but with multiple filled OMR</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.TableRules">
+      <summary>Values that represent the rules that will be used to help recognizing Table fields.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.TableRules.NoRules">
+      <summary>Do not use any rules when recognizing Table fields.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.TableRules.RowsLineSeparator">
+      <summary>Use horizontal lines to separate each table row from the other rows.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.TableRules.EqualFixedRowHeight">
+      <summary>Use a fixed row height so that the distance between each row in the table is equal.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.TableRules.EqualFixedLineHeight">
+      <summary>Use a fixed line height so that the distance between each line in the table is equal.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.TableRules.MultiPageTableHeaderRepeted">
+      <summary>If a table extends over multiple pages, add a table header containing the column names to each page.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.TextFieldType">
+      <summary>Values that represent the type of text being used in the Text Field.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.TextFieldType.Character">
+      <summary>Character field. The field contains alphanumeric characters (both uppercase and lowercase), the Arabic numerals 0 – 9, punctuation marks, and symbols.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.TextFieldType.Numerical">
+      <summary>Numeric field. The field consists entirely of Arabic numerals.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.TextFieldType.Data">
+      <summary>Data field. The field is a named zone (field) on a form which can contain capital letters, digits, and separators.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.BarcodeFieldData">
+      <summary>This class contains barcode data information that have been read inside the field.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFieldData.#ctor(Leadtools.Barcode.BarcodeSymbology,System.Byte[])">
+      <summary>Initializes a new BarcodeFieldData class object.</summary>
+      <param name="symbology">Barcode symbology.</param>
+      <param name="data">Barcode data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFieldData.GetData">
+      <summary>Gets the barcode data.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.BarcodeFieldData.SetData(System.Byte[])">
+      <summary>Sets the barcode data.</summary>
+      <param name="data">The data to be set.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.BarcodeFieldData.Symbology">
+      <summary>Gets or sets the barcode symbology.</summary>
+      <value>A value that represents the barcode symbology.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.SingleField">
+      <summary>A structure that represents a single OMR field to be used in SingleSelectionField.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleField.Bounds">
+      <summary>Gets or sets a LeadRect that specifies the location of the field in the form image.</summary>
+      <value>A LeadRect that specifies the location of this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleField.FieldValue">
+      <summary>A string value that represents the value returned from SingleSelectionField when this SingleField is selected.</summary>
+      <value>A string that specifies the value of this field when selected.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.SingleField.OmrField">
+      <summary>A reference that holds the OmrFormField to delegate the processing of this SingleField to this property.</summary>
+      <value>An OmrFormField where the actual processing of the SingleField takes place.</value>
+    </member>
+  </members>
+</doc>

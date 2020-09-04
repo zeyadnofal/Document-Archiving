@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Processing.Omr</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.BarcodeField">
+      <summary>A single rectangular region on a form that defines a barcode area on a blank (not filled-in) form. Thus, a barcode reading process can be performed on the filled form during OMR processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.BarcodeField.#ctor">
+      <summary>Initializes a new instance of BarcodeField with the default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.BarcodeField.Clone">
+      <summary>Creates an exact copy of the current BarcodeField.</summary>
+      <returns>The BarcodeField this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.BarcodeField.Result">
+      <summary>Gets the results of processing the BarcodeField in the filled-in form.</summary>
+      <value>A reference of type FieldResult that must be cast to BarcodeFieldResult.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.BarcodeField.Symbology">
+      <summary>The recognized barcode symbology.</summary>
+      <value>An enumeration value of type BarcodeSymbology. Default value is Unknown.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.BarcodeFieldResult">
+      <summary>Provides the results of processing the BarcodeField.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.BarcodeFieldResult.#ctor">
+      <summary>Initializes a new instance of BarcodeFieldResult with the default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.BarcodeFieldResult.BarcodeData">
+      <summary>A list of BarcodeData objects recognized using LEADTOOLS barcode engine in the filled-in form.</summary>
+      <value>A list of BarcodeData objects. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.Field">
+      <summary>The base class for all OMR fields. Any OMR form field implements this class.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.Field.#ctor">
+      <summary>Initializes a new instance of Field with the default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.Field.Clone">
+      <summary>Creates an exact copy of the current Field.</summary>
+      <returns>The Field this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.Field.Bounds">
+      <summary>The LeadRect area that specifies the location of the field in the OMR image.</summary>
+      <value>A LeadRect that specifies the location of this field. Default value is empty LeadRect.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.Field.Id">
+      <summary>The unique identifier for each field in the Fields collection.</summary>
+      <value>A FieldId object that represents a unique identifier of the Field. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.Field.IsInfoExtracted">
+      <summary>Indicates whether the Field information has been extracted using ITemplateForm.ExtractInfo.</summary>
+      <value>**true** if the information has been extracted; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.Field.Name">
+      <summary>The field's name.</summary>
+      <value>The string associated with this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.Field.PageNumber">
+      <summary>The page number associated with this field in the Pages object.</summary>
+      <value>The page number associated with this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.Field.Result">
+      <summary>Gets an object of type FieldResult that contains the processed field results.</summary>
+      <value>Object of type FieldResult contains the processed field results. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.Field.Tag">
+      <summary>The user-defined data object that is associated with this object.</summary>
+      <value>The user-defined data. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.FieldResult">
+      <summary>The base class for all [Fields](Fields-Fields.md result classes.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.FieldResult.#ctor">
+      <summary>Initializes a new instance of FieldResult with the default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.FieldResult.Status">
+      <summary>Indicates the status of processing the Field.</summary>
+      <value>Enumeration of type FieldStatus representing the status of processing Field. The value can be **Success** if the process succeeded and **Failed** otherwise.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.Fields">
+      <summary>The Field collection.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.Fields.#ctor">
+      <summary>Initializes a new instance of Fields with the default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.Fields.InsertItem(System.Int32,Leadtools.Forms.Processing.Omr.Fields.Field)">
+      <summary>Inserts a Field object into this collection.</summary>
+      <param name="index">Index value where to insert the new Field object.</param>
+      <param name="newItem">The Field object to be inserted.</param>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.GenerateOmrFieldValues">
+      <summary>A static class used to generate a list of possible values to be used in the OmrField.SetValues method.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.GenerateOmrFieldValues.Generate(System.Int32,System.Int32,Leadtools.Forms.Processing.Omr.Fields.OmrFieldOrientation)">
+      <summary>Generates a list of possible values to be used in OmrField.SetValues method.</summary>
+      <param name="rowCount">The total number of OMR bubbles rows in OmrField.</param>
+      <param name="columnCount">The total number of OMR bubbles columns in OmrField.</param>
+      <param name="orientation">The OmrFieldOrientation value of OmrField.</param>
+      <returns>A list of a list of string values that represents ranges of values.</returns>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.ImageField">
+      <summary>A single rectangular region on a form that defines an image area on a blank (not filled-in) form. Thus, the image can be extracted from the filled-in form after the OMR process finishes.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.ImageField.#ctor">
+      <summary>Initializes a new instance of ImageField with the default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.ImageField.Clone">
+      <summary>Creates an exact copy of the current ImageField.</summary>
+      <returns>The ImageField this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.ImageField.Result">
+      <summary>Gets the results of processing the ImageField in the filled-in form.</summary>
+      <value>A reference of type FieldResult that must be cast to ImageFieldResult.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.ImageFieldResult">
+      <summary>Provides the results of processing the ImageField.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.ImageFieldResult.#ctor">
+      <summary>Initializes a new instance of ImageFieldResult with the default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.ImageFieldResult.Image">
+      <summary>The RasterImage in the filled-in form corresponding to the ImageField in ITemplateForm.</summary>
+      <value>An object of type RasterImage.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OcrField">
+      <summary>A single rectangular region on a form that defines an OCR area on a blank (not filled-in) form. Thus, an OCR reading process can be performed on the filled form during OMR processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OcrField.#ctor">
+      <summary>Initializes a new instance of OcrField with the default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OcrField.Clone">
+      <summary>Creates an exact copy of the current OcrField.</summary>
+      <returns>The OcrField this method creates.</returns>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OcrField.Result">
+      <summary>Gets the results of processing the OcrField in the filled-in form.</summary>
+      <value>A reference of type FieldResult that must be cast to OcrFieldResult.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OcrField.ZoneFilters">
+      <summary>The OcrField's character filters.</summary>
+      <value>An enumeration value of type OcrZoneCharacterFilters. The default value is **None**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OcrField.ZoneType">
+      <summary>Determines the OCR recognition's OcrZoneType.</summary>
+      <value>An enumeration value of type OcrZoneType. The default value is **Text**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OcrFieldResult">
+      <summary>Provides the results of processing the OcrField object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OcrFieldResult.#ctor">
+      <summary>Initializes a new instance of OcrFieldResult with the default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OcrFieldResult.Characters">
+      <summary>A list of OcrCharacters representing OCR recognized character data.</summary>
+      <value>A list of OcrCharacter.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OcrFieldResult.Confidence">
+      <summary>Confidence value that represents the amount of confidence in the recognition results of the OCR text.</summary>
+      <value>Value between 0 and 100, where 0 is the lowest confidence value and 100 the highest. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OcrFieldResult.Text">
+      <summary>The OCR recognized text in the filled-in form.</summary>
+      <value>A string that represents the OCR recognized text. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrCollection">
+      <summary>A collection of OmrBubble objects representing a row or column in OmrField.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.#ctor">
+      <summary>Initializes a new instance of OmrCollection class.</summary>
+    </member>
+    <member name="E:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.PropertyChanged">
+      <summary>An event that occurs when a property value changes in the OmrCollection object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Bounds">
+      <summary>The LeadRect area that specifies the location of the OmrCollection in the OMR image.</summary>
+      <value>A LeadRect that specifies the location of this field. Default value is empty LeadRect.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Confidence">
+      <summary>Confidence value that represents the amount of confidence in the recognition results of the OMR marks.</summary>
+      <value>Value between 0 and 100 where 0 is the lowest confidence value and 100 the highest. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.CorrectGrade">
+      <summary>The grade points corresponding to a correct answer for an OmrCollection object.</summary>
+      <value>Integer value that represents the score for a correct answer in the OmrCollection object. The default value is **1**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Fields">
+      <summary>The collection of OmrBubble objects associated with this OmrCollection.</summary>
+      <value>A collection of OmrBubble objects associated with this OmrCollection. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.GradePartialAnswer">
+      <summary>Indicates whether to enable partial credit on a gradable OmrField.</summary>
+      <value>**true** to enable partial grading credit; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Id">
+      <summary>The integer identifier for the OmrCollection.</summary>
+      <value>Integer value representing an identifier for the OmrCollection. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.IncorrectGrade">
+      <summary>The grade points corresponding to an incorrect answer for an OmrCollection.</summary>
+      <value>**IncorrectGrade** specifies the deduction value in points of an incorrect answer for the question corresponding to an OmrCollection. The default value is **0**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Item">
+      <summary>Indicates the index to an OmrBubble in an OmrCollection.</summary>
+      <param name="index">The integer value representing the index of the OmrBubble in the OmrCollection.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Name">
+      <summary>The OmrCollection's name.</summary>
+      <value>The string associated with this field. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.NoResponseGrade">
+      <summary>The grade points corresponding to a no answer/response for an OmrCollection.</summary>
+      <value>**NoResponseGrade** specifies the deduction value in points of a no answer/response for the question corresponding to an OmrCollection.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Note">
+      <summary>The string value used as a note associated with this OmrCollection.</summary>
+      <value>A string value used as a note associated with this OmrCollection. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.OriginalValue">
+      <summary>Gets the OmrCollection's original value recognized by the OMR toolkit.</summary>
+      <value>A string value that represents the original OmrCollection value recognized by the OMR toolkit.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.SelectedIndex">
+      <summary>Gets the index of the selected (filled) OmrBubble in this OmrCollection.</summary>
+      <value>Integer value representing the index of the filled OmrBubble in this collection. Index starts at 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.SelectedIndices">
+      <summary>A list of integer representing the selected (filled) OmrBubble in this OmrCollection object.</summary>
+      <value>A list of integer values representing the indices of the filled OmrBubble in this collection. Index starts at 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.SelectedItem">
+      <summary>Gets an object of type OmrBubble representing the filled OMR bubble in the OMR page image.</summary>
+      <value>OmrBubble object that represents the filled OMR bubble in the OmrCollection. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.SelectedItems">
+      <summary>Gets or sets a list of objects of type OmrBubble representing the filled OMR bubbles in the OMR page image.</summary>
+      <value>A list of OmrBubble objects representing the filled OMR bubbles in the OmrCollection. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Status">
+      <summary>Gets the status of processing the associated OmrCollection.</summary>
+      <value>An enumeration value of type OmrCollectionStatus indicating the status of processing this OmrCollection.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Tag">
+      <summary>The user-defined data object that is associated with this object.</summary>
+      <value>The user-defined data. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.UserModified">
+      <summary>Indicates weather the user has modified the value of this OmrCollection.</summary>
+      <value>**true** if the OmrCollection.Value has been modified by the user. **false** otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrCollection.Value">
+      <summary>A string value that represents the filled-in OmrBubble in the OmrCollection object.</summary>
+      <value>A string value that represents the filled-in OmrBubble. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrField">
+      <summary>A class that represents a single rectangular region on a form that defines an OMR (optical mark) area on a blank (not filled-in) form. Thus, an OMR reading process can be performed on the filled form during OMR processing.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OmrField.#ctor">
+      <summary>Initializes a new instance of OmrField with the default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OmrField.Clone">
+      <summary>Creates an exact copy of the current OmrField.</summary>
+      <returns>The OmrField this method creates.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OmrField.GetValues">
+      <summary>Gets the range of values currently used for the underlying OMR bubbles.</summary>
+      <returns>A list of string values representing the range of values in OmrField.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OmrField.SetValues(IList&lt;string&gt;)">
+      <summary>Sets the values of underlying OmrBubbles.</summary>
+      <param name="values">A list of string values representing the range of values in the OmrField.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrField.ColumnsCount">
+      <summary>Indicates the number of columns of OMR bubbles detected in the OmrField.</summary>
+      <value>An integer represents the number of OMR columns contained in the OMR field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrField.FieldBubbleLayoutType">
+      <summary>The bubble's layout type of the OmrField object.</summary>
+      <value>An OmrFieldBubbleLayoutType enumeration member that indicates the OMR bubbles layout type.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrField.Fields">
+      <summary>A list of OmrCollection objects representing the rows/columns in the OmrField object.</summary>
+      <value>A list of OmrCollection.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrField.Options">
+      <summary>The OmrField options.</summary>
+      <value>A structure of type OmrFieldOptions.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrField.Result">
+      <summary>Gets the results of processing OmrField in the filled-in form.</summary>
+      <value>A reference of type FieldResult that must be cast to OmrFieldResult.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrField.RowsCount">
+      <summary>Indicates the number of rows of OMR detected in the OmrField object.</summary>
+      <value>An integer representing the number of OMR rows contained in the OMR field.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrFieldResult">
+      <summary>Provides the results of processing the OmrField.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Fields.OmrFieldResult.#ctor">
+      <summary>Initializes a new instance of OmrFieldResult class object with the default parameters.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldResult.Confidence">
+      <summary>Confidence value that represents the amount of confidence in the recognition results of the OMR marks.</summary>
+      <value>Value between 0 and 100, where 0 is the lowest confidence value and 100 the highest. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldResult.FieldName">
+      <summary>Gets the name of the OmrField associated with this result object.</summary>
+      <value>A string value that represents the name of the associated OmrField. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldResult.Results">
+      <summary>Gets the results of processing the field.</summary>
+      <value>A list of string values that represents the results of filled OMR marks for each OMR row or column.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldResult.Text">
+      <summary>The text value after processing the OmrField.</summary>
+      <value>String value of the field results after processing the filled form.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.ColumnsReportOrder">
+      <summary>An enumeration that determines the output text reporting order for column wise OmrField.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.ColumnsReportOrder.LeftToRight">
+      <summary>Report output text from left to right.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.ColumnsReportOrder.RightToLeft">
+      <summary>Report output text from right to left.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.FieldStatus">
+      <summary>An enumeration that represents the status of recognizing a Field wether the process was successful.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.FieldStatus.Failed">
+      <summary>Failed to process the Field object.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.FieldStatus.Success">
+      <summary>The Field has been processed successfully.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrCollectionStatus">
+      <summary>An enumeration that indicates the result of processing OmrCollection.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrCollectionStatus.Failed">
+      <summary>Failed to process this OmrCollection.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrCollectionStatus.Success">
+      <summary>Processing was succesful.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrCollectionStatus.NoSelection">
+      <summary>No OmrBubble is filled in this OmrCollection.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrCollectionStatus.MultipleSelections">
+      <summary>Multiple OmrBubbles are filled.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrFieldBubbleLayoutType">
+      <summary>Enumeration to determine the type of the associated OmrField object.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrFieldBubbleLayoutType.None">
+      <summary>Matrix of rows and columns of OMR marks.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrFieldBubbleLayoutType.BubbleWithLabel">
+      <summary>Every single OMR mark contains a text label.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOrientation">
+      <summary>The orientation of the OmrField object.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOrientation.RowWise">
+      <summary>Each row of OMR marks has a single output result regardless of multiple or single markings.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOrientation.ColumnWise">
+      <summary>Each column of OMR marks has a single output result regardless of multiple or single markings.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOrientation.FreeFlow">
+      <summary>All OMR marks in the OmrField are treated as a single row.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrTextFormat">
+      <summary>Enumeration that represents the output text format of the OmrField.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrTextFormat.CSV">
+      <summary>Comma Separated Value string format.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Processing.Omr.Fields.OmrTextFormat.Aggregated">
+      <summary>Combined output string</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrBubble">
+      <summary>A class that represents a single OMR mark in the OMR page image.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrBubble.Bounds">
+      <summary>The LeadRect that specifies the location of the OmrBubble in the OMR image.</summary>
+      <value>A LeadRect that specifies the location of a single OMR mark in the image. Default value is empty LeadRect.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrBubble.Confidence">
+      <summary>Confidence value that represents the amount of confidence in the recognition results of the OMR marks.</summary>
+      <value>Value between 0 and 100 where 0 is the lowest confidence value and 100 the highest. Default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrBubble.IsChecked">
+      <summary>Indicates whether the OMR mark has been filled in the OMR page image.</summary>
+      <value>**true** if the OMR bubble is filled in the OMR image; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrBubble.Label">
+      <summary>Gets the text next to the OmrBubble that has been recognized with the OCR engine.</summary>
+      <param name=""></param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrBubble.LabelBounds">
+      <summary>Gets a LeadRect that specifies the location of the text label next to the OmrBubble that has been recognized with the OCR engine.</summary>
+      <value>A LeadRect that specifies the location of a text label associated with the OMR mark in the image. Default value is an empty LeadRect.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrBubble.Value">
+      <summary>The string value of the OmrBubble mark.</summary>
+      <value>A string value associated with this OmrBubble. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions">
+      <summary>OmrFieldOptions structure is used to control different options of the OmrField object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions.ColumnsReportOrder">
+      <summary>Determines wether to report column wise OMR field results from left to right or right to left.</summary>
+      <value>A property of type ColumnsReportOrder. The default value is LeftToRight.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions.CorrectGrade">
+      <summary>The grade points corresponding to a correct answer for an OmrField object.</summary>
+      <value>Integer value that represents the score for correct answer for an OmrField. The default value is **1**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions.FieldOrientation">
+      <summary>The orientation of OmrField.</summary>
+      <value>A value of type OmrFieldOrientation that determines the field orientation. The default value is RowWise.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions.GradeThisField">
+      <summary>Indicates whether this OmrField is gradable or not.</summary>
+      <value>**true** if the associated field is gradable. **false** otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions.IncorrectGrade">
+      <summary>The grade points corresponding to an incorrect answer for an OmrField.</summary>
+      <value>**IncorrectGrade** specifies the deduction value in points of an incorrect answer for the question corresponding to an OmrField. The default value is **0**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions.NoResponseGrade">
+      <summary>The grade points corresponding to a no answer/response for an OmrField.</summary>
+      <value>**NoResponseGrade** specifies the deduction value in points of a no answer/response for the question corresponding to an OmrField. The default value is **0**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions.OmrSensitivity">
+      <summary>The sensitivity of the OMR recognition engine.</summary>
+      <value>An OcrOmrSensitivity enumeration member that indicates the OMR sensitivity mode.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Fields.OmrFieldOptions.TextFormat">
+      <summary>The result text format of the OmrField rows or columns.</summary>
+      <value>An OmrTextFormat enumeration member that indicates the output text format.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.BaseGrade">
+      <summary>The base class for all grade objects.  Any grade class should implement BaseGrade.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.BaseGrade.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.BaseGrade.DecimalPlace">
+      <summary>Specifies the decimal place of the grade.</summary>
+      <value>A value that indicates the decimal place of the grade. Default value is 2.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.BaseGrade.FieldName">
+      <summary>Gets the field's name.</summary>
+      <value>The string associated with this field.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.BaseGrade.MinPercentPass">
+      <summary>The minimum passing score for a graded OMR/bubble sheet exam.</summary>
+      <value>Specifies the minimum score/grade to consider a student passed the exam.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.FieldId">
+      <summary>Provides a unique identifier for each field in the Fields collection.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.FieldId.#ctor(System.Int32,System.String)">
+      <summary>Initializes a new instance of FieldId with the specified _pageNumber_ and _fieldName_ properties.</summary>
+      <param name="pageNumber">The page number associated with this field.</param>
+      <param name="fieldName">A string that represents the field name.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.FieldId.FieldName">
+      <summary>The name of the field.</summary>
+      <value>A string value that represents the field's name. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.FieldId.PageNumber">
+      <summary>The unique number that represents the page associated with this field in the Pages collection.</summary>
+      <value>Unique integer value for each page in the Pages collection starting from 1.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.ObjectiveGrade">
+      <summary>Specifies the answers and grades for OmrFields objects.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.ObjectiveGrade.#ctor">
+      <summary>Initializes a new instance of ObjectiveGrade that can be used in grading an OmrField object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.ObjectiveGrade.#ctor(Leadtools.Forms.Processing.Omr.OmrField,System.Int32,System.Double,System.Double,System.Double)">
+      <summary>Initializes a new instance of ObjectiveGrade that can be used in grading an OmrFields object.</summary>
+      <param name="answerField">OmrFields to be graded using this ObjectiveGrade object.</param>
+      <param name="pageNumber">Sets the ITemplate page number that answerField belongs to.</param>
+      <param name="correctGrade">Sets the grade points corresponding to a correct answer for an OmrCollection in answerField.</param>
+      <param name="incorrectGrade">Sets the grade points corresponding to an incorrect answer for an OmrCollection in answerField.</param>
+      <param name="noResponseGrade">Sets the grade points corresponding to no answer/response for an OmrCollection in answerField.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.ObjectiveGrade.AnswersKey">
+      <summary>Answers key for an OmrField</summary>
+      <value>A List&lt;[string]&gt; object representing the answer key.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.ObjectiveGrade.CorrectGrade">
+      <summary>The grade points corresponding to a correct answer for an OmrCollection object.</summary>
+      <value>The grade points for the correct answer of an OmrCollection object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.ObjectiveGrade.IncorrectGrade">
+      <summary>The grade points corresponding to an incorrect answer for an OmrCollection.</summary>
+      <value>The grade points for an incorrect answer of an OmrCollection object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.ObjectiveGrade.NoResponseGrade">
+      <summary>The grade points corresponding to a no answer/response for an OmrCollection object.</summary>
+      <value>The grade points for a no answer/response of an OmrCollection.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.ObjectiveGrade.QuestionsAnswers">
+      <summary>The `Dictionary&lt;string, ``QuestionAnswers``&gt;` object containing the set of questions with corresponding answers frequency.</summary>
+      <value>A dictionary of QuestionsAnswers object.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine">
+      <summary>Specifies an analysis engine for OMR forms to compute their statistics and grades.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.#ctor">
+      <summary>Initializes a new instance of OmrAnalysisEngine to calculate the grade and statistics for OMR based tests and surveys.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.#ctor(Leadtools.Forms.Processing.Omr.IRecognitionForm,Leadtools.Forms.Processing.Omr.IRecognitionForm)">
+      <summary>Initializes a new instance of OmrAnalysisEngine to calculate the grade and statistics for the OMR-based/bubble-based test and survey forms.</summary>
+      <param name="filledForms">The list of filled forms to be analyzed using this instance of OmrAnalysisEngine.</param>
+      <param name="answersForm">Form that specifies the answers used in grading the list of forms specified by filledForms . Set to **null** if this is a survey not an exam.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.GetFormFullScore">
+      <summary>Gets the sum of all graded form fields in all pages.</summary>
+      <returns>Gets the sum of the graded form fields in all pages.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.GradeForms">
+      <summary>Performs the grading process of forms.</summary>
+      <returns>OmrGradesStatistics object.</returns>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.DecimalPlace">
+      <summary>The number of digits to the right of the decimal point to be retained.</summary>
+      <value>This value should be greater than or equal to 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.FilledForms">
+      <summary>A list of filled IRecognitionForm forms to be analyzed by OmrAnalysisEngine.</summary>
+      <value>A List&lt;IRecognitionForm&gt; object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.Grades">
+      <summary>A list of BaseGrade objects that associate fields with their grading process.</summary>
+      <value>AList&lt;BaseGrade&gt; object.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.PassingScore">
+      <summary>The minimum passing score for a graded OMR/bubble sheet exam.</summary>
+      <value>Specifies the minimum score/grade used to determine whether a student passed the exam.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrAnalysisEngine.QuestionsAnswers">
+      <summary>A Dictionary&lt;string, QuestionAnswers&gt; that associates fields with their answers.</summary>
+      <value>Dictionary&lt;string, QuestionAnswers&gt; object</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Engines">
+      <summary>A class that holds the engines needed for the OmrEngine to process the fields, such as the OCR engine and the barcode engine.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Engines.BarcodeEngine">
+      <summary>The initialized barcode engine object to be used to recognize barcode data.</summary>
+      <value>An initialized object of type BarcodeEngine. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Engines.OcrEngine">
+      <summary>The initialized OCR engine object to be used to recognize OCR text.</summary>
+      <value>An initialized object of type IOcrEngine. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Engines.RasterCodecs">
+      <summary>The initialized RasterCodecs object to be used to save and load images of different formats.</summary>
+      <value>An initialized object of type RasterCodecs. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.OmrEngine">
+      <summary>Provides a high level OMR forms functionality to create forms objects and process forms fields.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrEngine.#ctor">
+      <summary>Initializes a new instance of OmrEngine class with the default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrEngine.CreateRecognitionForm">
+      <summary>Creates a new object of type IRecognitionForm.</summary>
+      <returns>A new object of type IRecognitionForm created internally.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrEngine.CreateTemplateForm">
+      <summary>Creates a new object of type ITemplateForm.</summary>
+      <returns>A new object of type ITemplateForm created internally.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrEngine.LoadRecognitionForm(System.IO.Stream)">
+      <summary>Loads an object of type IRecognitionForm from the provided stream.</summary>
+      <param name="stream">A standard .NET Stream containing the existing IRecognitionForm.</param>
+      <returns>An object of type IRecognitionForm loaded from the provided stream.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.OmrEngine.LoadTemplateForm(System.IO.Stream)">
+      <summary>Loads an object of type ITemplateForm from the provided stream.</summary>
+      <param name="stream">A standard .NET Stream containing the existing ITemplateForm.</param>
+      <returns>An object of type ITemplateForm loaded from the provided stream.</returns>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrEngine.EnginesObject">
+      <summary>Gets an object that holds the engines needed for the OmrEngine to process the fields, such as the OCR engine and the barcode engine.</summary>
+      <value>An object of type Engines that holds the engines used by the OmrEngine.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Page">
+      <summary>Specifies the page properties and fields for all OMR IForm implementation.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Page.Fields">
+      <summary>Gets a collection of the OMR form fields in the page.</summary>
+      <value>A collection of Field associated with this page.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Page.Image">
+      <summary>The RasterImage used to create this page.</summary>
+      <value>RasterImage that represents the OMR form page.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Page.OmrMarks">
+      <summary>Gets a collection of LeadRect that represents the detected OMR marks in the form page.</summary>
+      <value>A collection of LeadRect that represents the detected OMR marks in the page.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Page.Owner">
+      <summary>Gets a reference to the IForm object that contains this page.</summary>
+      <value>A reference to the IForm object. The value can be either ITemplateForm or IRecognitionForm.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Page.PageName">
+      <summary>The name of the OMR form page.</summary>
+      <value>A string value that represents the page name. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Page.PageNumber">
+      <summary>Gets a unique number that represents the page in the Pages collection.</summary>
+      <value>Unique integer value for each page in the Pages collection starting from 1.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.Pages">
+      <summary>A class representing a collection of Page objects.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Pages.AddPage(Leadtools.RasterImage)">
+      <summary>Add a new OMR form page using its RasterImage object.</summary>
+      <param name="image">The RasterImage that represents the OMR form page.</param>
+      <returns>Initialized Page object. If the method fails to create the Page object, the return value is **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Pages.GetPage(System.Int32)">
+      <summary>Gets the Page object using its Page.PageNumber property.</summary>
+      <param name="pageNumber">Integer that represents the page number to return. The value starts from 1.</param>
+      <returns>Page object associated with the pageNumber arguments.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.Pages.Update">
+      <summary>Updates the internal data in the Pages object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.Pages.Owner">
+      <summary>Gets a reference to the IForm object that contains this page's object.</summary>
+      <value>A reference to the IForm object. The value can be either ITemplateForm or IRecognitionForm.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.RubricGrade">
+      <summary>A class that helps in computing the Rubric grade of the associated OmrField.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.RubricGrade.#ctor(System.Double)">
+      <summary>Initializes a new instance of RubricGrade with the specified minPercentPass parameter.</summary>
+      <param name="minPercentPass">Specifies the minimum score/grade to consider a student passed the exam.</param>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.TemplateGrades">
+      <summary>Facilitates saving and loading grade objects associated with ITemplateForm.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.TemplateGrades.#ctor">
+      <summary>Initializes a new instance of TemplateGrades.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.TemplateGrades.Load(System.IO.Stream)">
+      <summary>Loads the current TemplateGrades object from the provided stream.</summary>
+      <param name="stream">The stream containing the existing TemplateGrades data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.TemplateGrades.Save(System.IO.Stream)">
+      <summary>Saves the current TemplateGrades object to the provided stream.</summary>
+      <param name="stream">A standard .NET Stream to which to save the current object.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.TemplateGrades.Grades">
+      <summary>A list of grading objects to be used to grade the associated ITemplateForm.</summary>
+      <value>List of BaseGrade objects. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.TemplateGrades.Name">
+      <summary>The name of the TemplateGrades object.</summary>
+      <value>A string value representing the name of the TemplateGrades object. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.IForm">
+      <summary>The base interface for all forms in the LEADTOOLS OMR toolkit.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.IForm.Load(System.IO.Stream)">
+      <summary>Loads the current IForm object from the provided stream.</summary>
+      <param name="stream">A system Stream containing the existing IForm data.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.IForm.Save(System.IO.Stream)">
+      <summary>Saves the current IForm object to the provided stream.</summary>
+      <param name="stream">A standard .NET Stream to which to save the current object.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.IForm.Id">
+      <summary>A unique identifier for this IForm object.</summary>
+      <value>A unique string value that can be used to identify the IForm object. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.IForm.Name">
+      <summary>The form's name.</summary>
+      <value>A string representing the name of this form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.IForm.Pages">
+      <summary>Gets the collection of pages associated with this IForm object.</summary>
+      <value>A reference of type Pages.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.IRecognitionForm">
+      <summary>Represents a filled-in recognition form in the LEADTOOLS OMR toolkit. The interface provides methods to read and write recognition form attributes, and process the fields.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.IRecognitionForm.LoadPages(System.IO.Stream)">
+      <summary>Loads the images of the pages from the provided stream.</summary>
+      <param name="documentStream">A standard .Net Stream from which the images are loaded.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.IRecognitionForm.Recognize(System.Int32,Leadtools.Forms.Processing.Omr.ITemplateForm,System.Int32,Leadtools.Forms.Processing.Omr.Field)">
+      <summary>Performs processing on the IRecognitionForm on the page number and fields provided as parameters.</summary>
+      <param name="recognitionPageNumber">Integer that represents the page number in the recognition form's Pages collection.</param>
+      <param name="templateForm">The template form object.</param>
+      <param name="templatePageNumber">Integer that represents the page number in the template form Pages collection.</param>
+      <param name="fields">A generic collection of Field to be processed in this IRecognitionForm.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.IRecognitionForm.Recognize(Leadtools.Forms.Processing.Omr.ITemplateForm)">
+      <summary>Performs processing on IRecognitionForm for all pages of the filled-in form and fields existing in the provided ITemplateForm.</summary>
+      <param name="templateForm">The template form object.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.IRecognitionForm.SavePages(System.IO.Stream,Leadtools.RasterImageFormat)">
+      <summary>Saves the images of the pages to the provided stream.</summary>
+      <param name="documentStream">A standard .Net Stream to which to save the images.</param>
+      <param name="format">The format of the output RasterImage.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.IRecognitionForm.Grade">
+      <summary>The grade of the IRecognitioForm object.</summary>
+      <value>A double value representing the grade of this IRecognitionForm. The default value is **0**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.IRecognitionForm.SaveEmbeddedImage">
+      <summary>Indicates whether to save the RasterImage objects in this form embedded in the binary data saved to the stream using IForm.Save.</summary>
+      <value>**true** to save the RasterImage objects embedded in the binary data; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.IRecognitionForm.Score">
+      <summary>The total score of points for the filled OMR bubbles computed using the OmrAnalysisEngine.</summary>
+      <value>A double value representing the score of this form. Default value is **0**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.ITemplateForm">
+      <summary>Represents a template form in the LEADTOOLS OMR toolkit. The interface provides methods for reading and writing template form recognition attributes, processing fields, and images.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Processing.Omr.ITemplateForm.ExtractInfo(System.Int32,Leadtools.Forms.Processing.Omr.Field)">
+      <summary>Facilitates extracting a collection of fields internal data from the template image.</summary>
+      <param name="pageNumber">The page number where the fields exist.</param>
+      <param name="fields">The fields collection to extract the information.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.ITemplateForm.AutoEstimateMissingOmr">
+      <summary>The auto estimate OMR bubbles in this ITemplateForm.</summary>
+      <value>**true** to enable OMR bubbles estimation; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.ITemplateForm.IdentifierFieldId">
+      <summary>The FieldId object used as the identifier field Id.</summary>
+      <value>An object of type FieldId associated with this template. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.OmrGradesHistogram">
+      <summary>A struct that holds a histogram data that represents the grades of all IRecognitionForm.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesHistogram.Data">
+      <summary>Gets the array that represents the histogram of all graded IRecognitionForm forms.</summary>
+      <value>An array of integers containing the frequency of each grade for all graded IRecognitionForm forms.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.OmrGradesStatistics">
+      <summary>A struct that contains all statistical data computed after grading the filled forms using the GradeForms method.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.GradesHistogram">
+      <summary>Gets the histogram object that represents the frequency of forms grades.</summary>
+      <value>A struct of type OmrGradesHistogram. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.HighestGrade">
+      <summary>Double value that represents the highest grade for all graded filled OMR forms.</summary>
+      <value>Double value between 0 and 100. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.LowestGrade">
+      <summary>Double value that represents the lowest grade for all graded filled OMR forms.</summary>
+      <value>Double value between 0 and 100. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.Mean">
+      <summary>Double value that represents the mean value for all graded filled OMR forms.</summary>
+      <value>Double value between 0 and 100. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.Median">
+      <summary>Double value that represents the median value of all graded filled OMR forms.</summary>
+      <value>Double value between 0 and 100. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.NumberFail">
+      <summary>Represents the number of filled forms with grade value lower than the passing grade specified in PassingScore.</summary>
+      <value>Integer value representing the count of filled forms with grade value lower than the passing grade. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.NumberPass">
+      <summary>Represents the number of filled forms with grade value higher or equal to the passing grade specified in PassingScore.</summary>
+      <value>Integer value representing the count of filled forms with grade value higher or equal to the passing grade. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.StandardDeviation">
+      <summary>Double value that represents the standard deviation value of all graded filled OMR forms.</summary>
+      <value>A double number expressing the quantity of how much deviation exists from the mean value for the group. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.OmrGradesStatistics.TotalForms">
+      <summary>Total number of filled forms that have been graded using the GradeForms.</summary>
+      <value>Integer value represents the total number of filled forms graded. The default value is 0.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Processing.Omr.QuestionAnswers">
+      <summary>A structure representing each question answer in the provided answer key, alongside a dictionary that contains the frequency of each answer in the graded filled forms.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.QuestionAnswers.Answer">
+      <summary>Gets a string value representing the answer for the associated question in the provided OMR form's answer key (IRecognitionForm).</summary>
+      <value>A string value representing the answer in the OMR form's answer key. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.QuestionAnswers.AnswersCount">
+      <summary>Gets a dictionary object containing the frequency of the associated question-answers in the graded, filled forms after invoking the OmrAnalysisEngine.GradeForms method.</summary>
+      <value>A dictionary object containing the frequency of each answer. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Processing.Omr.QuestionAnswers.Name">
+      <summary>Gets a unique string representing the question in the OMR form.</summary>
+      <value>String value representing the unique name for the question. The default value is **null**.</value>
+    </member>
+  </members>
+</doc>

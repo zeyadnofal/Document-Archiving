@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Recognition.Ocr</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Recognition.Ocr.Assembly">
+      <summary>Utility class to force dynamic loading of this assembly in the Xamarin platform.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Ocr.Assembly.Use">
+      <summary>Forces dynamic loading of this assembly in the Xamarin platform.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.Ocr.OcrObjectsManager">
+      <summary>Creates an OCR objects manager that extracts text features in a form. The created object is added to Leadtools.Forms.Recognition.FormRecognitionEngine.ObjectsManagers.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.Ocr.OcrObjectsManager.#ctor(Leadtools.Ocr.IOcrEngine)">
+      <summary>Initializes a new OcrObjectsManager class object.</summary>
+      <param name="engine">OCR engine.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.Ocr.OcrObjectsManager.Engine">
+      <summary>Gets or sets the OCR engine.</summary>
+      <value>The Leadtools.Ocr.IOcrEngine that is used in this OcrObjectsManager to perform Ocr</value>
+    </member>
+  </members>
+</doc>

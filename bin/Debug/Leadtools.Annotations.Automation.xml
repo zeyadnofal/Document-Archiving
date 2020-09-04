@@ -1,0 +1,1201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Annotations.Automation</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Annotations.Automation.AnnAfterObjectChangedEventArgs">
+      <summary>Provides data for the AnnAutomation.AfterObjectChanged event.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAfterObjectChangedEventArgs.#ctor(Leadtools.Annotations.Engine.AnnObjectCollection,Leadtools.Annotations.Automation.AnnObjectChangedType,Leadtools.Annotations.Designers.AnnDesigner)">
+      <summary>Initializes a new instance of this class.</summary>
+      <param name="objects">Collection containing the objects that have changed.</param>
+      <param name="changeType">Change type.</param>
+      <param name="designer">The annotation designer that caused the change.</param>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAfterObjectChangedEventArgs.Cancel">
+      <summary>A value indicating whether the change should be canceled.</summary>
+      <value>**true** if the change should be canceled; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAfterObjectChangedEventArgs.ChangeType">
+      <summary>Gets the type of change.</summary>
+      <value>An AnnObjectChangedType value specifying what is to be changed.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAfterObjectChangedEventArgs.Designer">
+      <summary>Gets the designer responsible for the change.</summary>
+      <value>The AnnDesigner responsible for the change.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAfterObjectChangedEventArgs.Objects">
+      <summary>Gets the objects that have been changed.</summary>
+      <value>An AnnObjectCollection that has a collection of the objects that have been changed.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnAutomation">
+      <summary>Manages the automation for an AnnContainer.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.#ctor(Leadtools.Annotations.Automation.AnnAutomationManager,Leadtools.Annotations.Engine.IAnnAutomationControl)">
+      <summary>Initializes a new instance of the AnnAutomation class.</summary>
+      <param name="automationManager">The manager to which this AnnAutomation object will belong. Must not be **null**.</param>
+      <param name="automationControl">The automation control to use. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.AddLayer(Leadtools.Annotations.Engine.AnnLayer,Leadtools.Annotations.Engine.AnnLayer)">
+      <summary>Adds a layer to the container.</summary>
+      <param name="parentLayer">Parent layer in the container. Pass **null** to add the layer to the root of the container</param>
+      <param name="layer">The layer to add. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.AlignBottoms">
+      <summary>Aligns the selected objects along with alignment target bottom side.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.AlignCenters">
+      <summary>Aligns the selected objects along with alignment target horizontal center.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.AlignLefts">
+      <summary>Aligns the selected objects along with alignment target left side.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.AlignMiddles">
+      <summary>Aligns the selected objects along with alignment target vertical center.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.AlignRights">
+      <summary>Aligns the selected objects along with alignment target rights side.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.AlignTops">
+      <summary>Aligns the selected objects along with alignment target top side.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.ApplyAllDecryptors">
+      <summary>Applies all the decryptor AnnEncryptObject objects in this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.ApplyAllEncryptors">
+      <summary>Applies all the encryptor AnnEncryptObject objects in this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.ApplyDecryptor">
+      <summary>Applies the decryptor AnnEncryptObject that is currently being edited (selected).</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.ApplyEncryptor">
+      <summary>Applies the encryptor AnnEncryptObject object currently being edited (selected).</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Attach(Leadtools.Annotations.Engine.IAnnAutomationControl)">
+      <summary>Attaches this AnnAutomation object to a IAnnAutomationControl object.</summary>
+      <param name="automationControl">The automation control for this AnnAutomation. This value cannot be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.AttachContainer(Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Automation.AnnAutomationUndoRedoObject)">
+      <summary>Attaches this AnnAutomation object to a container and optional undo/redo object.</summary>
+      <param name="container">The annotation container to attach this automation to. This value cannot be **null**.</param>
+      <param name="undoRedoObject">Optional undo/redo object that contains the internal data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.BeginUndo">
+      <summary>Creates a new undo node in this AnnAutomation object.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.BeginUpdateContainers">
+      <summary>Stops the automation from passing events to the automation control while containers are being added or removed.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.BringLayerToFront(System.Boolean)">
+      <summary>Brings the currently selected layer up in the Z-order.</summary>
+      <param name="first"></param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.BringToFront(System.Boolean)">
+      <summary>Brings the currently selected object(s) up in the Z-order.</summary>
+      <param name="first"></param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Cancel">
+      <summary>Cancels the operation currently being performed in this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.CancelUndo">
+      <summary>Cancels the undo node started in this AnnAutomation object.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Copy">
+      <summary>Copies the objects currently being edited to the clipboard.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.DeleteLayer(Leadtools.Annotations.Engine.AnnLayer,System.Boolean)">
+      <summary>Deletes a layer from the container</summary>
+      <param name="layer">The layer to delete. This parameter cannot be **null** since you cannot delete the default root layer of the container.</param>
+      <param name="deleteChildren"></param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.DeleteSelectedObjects">
+      <summary>Deletes the selected objects from this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Detach">
+      <summary>Detaches this AnnAutomation object from its IAnnAutomationControl object.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.EndDesigner">
+      <summary>Ends (and commits) the operation currently being performed in this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.EndUndo">
+      <summary>Commits the undo node started in this AnnAutomation object.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.EndUpdateContainers">
+      <summary>Instructs the viewer that updates are completed and rendering of the content can be resumed.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Flip(System.Boolean)">
+      <summary>Flips the objects that are currently being edited (selected) in this AnnAutomation.</summary>
+      <param name="horizontal"></param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.GetContainerInvalidRect(Leadtools.Annotations.Engine.AnnContainer,System.Boolean)">
+      <summary>Gets the current invalidate rectangle (the physical location and size) of a container</summary>
+      <param name="container">The container object. Must be one of the item in Containers.</param>
+      <param name="includeObjects"></param>
+      <returns>The current invalidate rectangle (the physical location and size) of a container.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.GetObjectInvalidateRect(Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Gets a LeadRectD object that specifies the current physical rectangle of this AnnObject.</summary>
+      <param name="annObject">The object to query. A value of **null** will return an empty rectangle.</param>
+      <returns>The invalidate rectangle of this AnnObject.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.GetUndoRedoObject">
+      <summary>Gets an object that contains the current undo/redo object data.</summary>
+      <returns>AnnAutomationUndoRedoObject object that contains the current undo/redo object data.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.HitTestContainer(Leadtools.LeadPointD,System.Boolean)">
+      <summary>Gets the container under the specified location.</summary>
+      <param name="location">The location that is being tested.</param>
+      <param name="includeObjects"></param>
+      <returns>The first container found under the specified location or **null** if no containers satisfies the hit-testing location.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Invalidate(Leadtools.LeadRectD)">
+      <summary>Invalidates the specified region of the automation control.</summary>
+      <param name="rc">A LeadRectD that represents the region to invalidate. If this value is LeadRectD.Empty, then the entire control area must be invalidated.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.InvalidateContainer(Leadtools.Annotations.Engine.AnnContainer)">
+      <summary>Invalidates the specified container and re-renders its content in the automation control.</summary>
+      <param name="container">The container to invalidate.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.InvalidateObject(Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Invalidates and re-draws an object.</summary>
+      <param name="annObject">The object to re-draw. A value of **null** will be ignored.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.InvokeAfterObjectChanged(Leadtools.Annotations.Engine.AnnObjectCollection,Leadtools.Annotations.Automation.AnnObjectChangedType)">
+      <summary>Invokes the AfterObjectChanged event with the specified parameters.</summary>
+      <param name="objects">A AnnObjectCollection that has a collection of the objects that is about to be changed.</param>
+      <param name="changeType">An AnnObjectChangedType value specifying what is to be changed.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.InvokeObjectModified(Leadtools.Annotations.Engine.AnnObjectCollection,Leadtools.Annotations.Automation.AnnObjectChangedType)">
+      <summary>Invokes the ObjectModified event with the specified parameters.</summary>
+      <param name="objects">A collection that contains the objects modified</param>
+      <param name="changeType">Type of change.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.LayerFromSelectedObjects(System.String)">
+      <summary>Creates a new layer from the currently selected objects.</summary>
+      <param name="layerName">Optional layer name. Can be **null**.</param>
+      <returns>The newly created layer.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Lock">
+      <summary>Locks the object(s) currently being edited (selected).</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.MakeSameHeight">
+      <summary>Make the height for selected objects the same with alignment target height.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.MakeSameSize">
+      <summary>Make the size for selected objects the same with alignment target size.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.MakeSameWidth">
+      <summary>Make the width for selected objects the same with alignment target width.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Paste">
+      <summary>Copies the annotation objects from the clipboard to this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.PasteAt(Leadtools.LeadPointD)">
+      <summary>Copies the annotation objects from the clipboard to this AnnAutomation at the specified position.</summary>
+      <param name="position">Top-left position of the pasted objects in container coordinates.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.PasteStringAt(System.String,Leadtools.LeadPointD)">
+      <summary>Copies the annotation objects contained in a serialization object at the specified position.</summary>
+      <param name="data">String containing serialization of annotation objects. This parameter cannot be **null**</param>
+      <param name="position">Top-left position of the pasted objects in container coordinates.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.RealizeAllRedactions">
+      <summary>Realizes all the AnnRedactionObject objects in this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.RealizeRedaction">
+      <summary>Realizes the AnnRedactionObject object currently being edited (selected).</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Redo">
+      <summary>Reapplies the last operation that was undone in this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.ResetRotatePoints">
+      <summary>Resets the rotate control points of the selected AnnObject to their default locations.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.RestoreAllRedactions">
+      <summary>Restores all of the AnnRedactionObject objects in this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.RestoreRedaction">
+      <summary>Restores the AnnRedactionObject object currently being edited (selected).</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.SelectLayer(Leadtools.Annotations.Engine.AnnLayer)">
+      <summary>Selects a layer in this AnnAutomation.</summary>
+      <param name="activeLayer">New layer to act as the selected layer or **null** to set the selected layer as the default in the container.</param>
+      <returns>The old selected layer.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.SelectObject(Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Select an object in this AnnAutomation.</summary>
+      <param name="annObject">Object to select. If this value is **null**, then any object that is selected becomes de-selected.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.SelectObjects(Leadtools.Annotations.Engine.AnnObjectCollection)">
+      <summary>Selects an object or a group of objects in this AnnAutomation.</summary>
+      <param name="objects">Collection of annotation objects to select, this collection should not contain duplicated objects.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.SendLayerToBack(System.Boolean)">
+      <summary>Sends the currently selected layer down in the Z-order.</summary>
+      <param name="last"></param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.SendToBack(System.Boolean)">
+      <summary>Sends the currently selected object(s) down in the Z-order.</summary>
+      <param name="last"></param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.ShowContextMenu">
+      <summary>Displays the automation context menu.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.ShowObjectContextMenu">
+      <summary>Displays the object context menu.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.ShowObjectProperties">
+      <summary>Shows the object properties</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Undo">
+      <summary>Reverses the last operation performed in this AnnAutomation.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.Unlock">
+      <summary>Unlocks the object(s) currently being edited (selected).</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.GetDefaultCurrentObjectId">
+      <summary>Returns the value of the default current object id.</summary>
+      <returns>The id of the default current object.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.OnAfterUndoRedo(System.EventArgs)">
+      <summary>Raises the AfterUndoRedo event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.OnAutomationPointerDown(Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Called by the IAnnAutomationControl pointer down event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.OnAutomationPointerMove(Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Called by the IAnnAutomationControl pointer move event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.OnAutomationPointerUp(Leadtools.Annotations.Engine.AnnPointerEventArgs)">
+      <summary>Called by the IAnnAutomationControl pointer up event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.OnCurrentDesignerChanged(System.EventArgs)">
+      <summary>Raises the CurrentDesignerChanged event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.OnDragDrop(Leadtools.Annotations.Automation.AnnDragDropEventArgs)">
+      <summary>Raises the DragDrop event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomation.OnUndoRedoChanged(System.EventArgs)">
+      <summary>Raises the UndoRedoChanged event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.ActiveContainerChanged">
+      <summary>Occurs when the active container of this object is changed.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.AfterObjectChanged">
+      <summary>Occurs when an AnnObject has changed.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.AfterUndoRedo">
+      <summary>Occurs after an undo or redo operation.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.BeforeObjectChanged">
+      <summary>Occurs when an AnnObject is about to be changed.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.CurrentDesignerChanged">
+      <summary>Occurs when the current designer has been changed.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.DeserializeObjectError">
+      <summary>Occurs when an error occur during an object serialization operation.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.DragDrop">
+      <summary>Occurs when an AnnObject is being dragged out of a container.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.Draw">
+      <summary>Occurs when an AnnObject is being drawn.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.Edit">
+      <summary>Occurs when an AnnObject is being edited.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.EditContent">
+      <summary>Occurs when the content of an AnnObject is edited.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.EditText">
+      <summary>Occurs when the text of an AnnObject is edited.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.LockObject">
+      <summary>Occurs when an AnnObject is locked.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.ObjectModified">
+      <summary>Occurs when one or more AnnObject has changed.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.OnShowContextMenu">
+      <summary>Occurs when the automation needs to show the context menu when no objects are selected.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.OnShowObjectProperties">
+      <summary>Occurs when the automation needs to show the properties dialog of the selected object.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.RestoreCursor">
+      <summary>Occurs when the automation has determine that the original cursor needs to be restored.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.Run">
+      <summary>Occurs when an AnnObject is being run.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.SelectedObjectsChanged">
+      <summary>Occurs when the selected object changes.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.SetCursor">
+      <summary>Occurs when the automation has determine that the user needs to change the cursor.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.ToolTip">
+      <summary>Occurs when the mouse hovers over an annotation object and a tooltip is requested.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.UndoRedoChanged">
+      <summary>Occurs when the undo or redo buffer changes.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomation.UnlockObject">
+      <summary>Occurs when an AnnObject is unlocked.</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.Active">
+      <summary>Gets or sets a value indicating whether this AnnAutomation is active.</summary>
+      <value>**true** if this AnnAutomation is active; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.ActiveContainer">
+      <summary>Gets or sets the active container of the automation.</summary>
+      <value>The to be set as the active container for this object.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.AutomationControl">
+      <summary>Gets the automation control for this AnnAutomation.</summary>
+      <value>The IAnnAutomationControl control for this AnnAutomation</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanAlign">
+      <summary>Gets a value that indicates whether this AnnAutomation can align or change the size for selected objects based on alignment target.</summary>
+      <value>**true** if this AnnAutomation can align or change the size for selected objects based on alignment target; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanApplyAllDecryptors">
+      <summary>Gets a value that indicates whether any decryptor AnnEncryptObject object in this AnnAutomation can be applied.</summary>
+      <value>**true** if any decryptor AnnEncryptObject object in this AnnAutomation can be applied; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanApplyAllEncryptors">
+      <summary>Gets a value that indicates whether any encryptor AnnEncryptObject object in this AnnAutomation can be applied.</summary>
+      <value>**true** if any encryptor AnnEncryptObject object in this AnnAutomation can be applied; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanApplyDecryptor">
+      <summary>Gets a value that indicates whether the object currently being edited is a decryptor AnnEncryptObject and can be applied.</summary>
+      <value>**true** if the object currently being edited is a decryptor AnnEncryptObject and can be applied; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanApplyEncryptor">
+      <summary>Gets a value that indicates whether the object currently being edited (selected) is an encryptor AnnEncryptObject and can be applied.</summary>
+      <value>**true** if the object currently being edited (selected) is an encryptor AnnEncryptObject and can be applied; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanBringLayerToFirst">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where a layer can be brought up to the top of the z-order.</summary>
+      <value>**true** if this AnnAutomation is in a state where a layer can be brought up to the top of the z-order; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanBringLayerToFront">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where a layer can be brought up the z-order.</summary>
+      <value>**true** if this AnnAutomation is in a state where a layer can be brought up the z-order; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanBringToFirst">
+      <summary>Gets a value that indicates whether this AnnAutomation can bring the currently selected object(s) to the top of the Z-order.</summary>
+      <value>**true** if this AnnAutomation can bring the currently selected object(s) to the top of Z-order; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanBringToFront">
+      <summary>Gets a value that indicates whether this AnnAutomation can bring the currently selected object(s) up in the Z-order.</summary>
+      <value>**true** if this AnnAutomation can bring the currently selected object(s) up in the Z-order; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanCopy">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where objects can be copied to the clipboard.</summary>
+      <value>**true** if this AnnAutomation is in a state where objects can be copied to the clipboard; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanDeleteObjects">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where objects can be deleted.</summary>
+      <value>**true** if this AnnAutomation is in a state where objects can be deleted; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanFlip">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where objects can be flipped.</summary>
+      <value>true</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanGroup">
+      <summary>Gets a value indicating whether this AnnAutomation is in a state where objects can be grouped together.</summary>
+      <value>**true** if this AnnAutomation is in a state where objects can be grouped together; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanLock">
+      <summary>Gets a value that indicates whether the object currently being edited (selected) can be locked.</summary>
+      <value>**true** if the object currently being edited (selected) can be locked; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanPaste">
+      <summary>Gets a value that indicates whether the clipboard contains annotation objects that can be pasted.</summary>
+      <value>**true** if the clipboard contains annotation objects that can be pasted; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanRealizeAllRedactions">
+      <summary>Gets a value that indicates whether any of the AnnRedactionObject objects in this AnnAutomation can be realized.</summary>
+      <value>**true** if any AnnRedactionObject object in this AnnAutomation can be realized; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanRealizeRedaction">
+      <summary>Gets a value that indicates whether the object currently being edited (selected) is an AnnRedactionObject and can be realized.</summary>
+      <value>**true** if the object currently being edited (selected) is an AnnRedactionObject and can be realized; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanRedo">
+      <summary>Gets a value indicating whether the user can redo the previous operation performed in this AnnAutomation.</summary>
+      <value>**true** if the user can redo the previous operation performed in this AnnAutomation; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanResetRotatePoints">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where the selected AnnObject is able to have its rotate control points reset to the default location.</summary>
+      <value>**true** if the selected AnnObject in this AnnAutomation can have its rotate controls reset to the default location; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanRestoreAllRedactions">
+      <summary>Gets a value that indicates whether any AnnRedactionObject objects in this AnnAutomation can be restored.</summary>
+      <value>**true** if any AnnRedactionObject object in this AnnAutomation can be restored; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanRestoreRedaction">
+      <summary>Gets a value that indicates whether the object currently being edited (selected) is a AnnRedactionObject and can be restored.</summary>
+      <value>**true** if the object currently being edited (selected) is an AnnRedactionObject and can be restored; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanSelectNone">
+      <summary>Gets a value indicating whether this AnnAutomation is in a state where it can deselect objects.</summary>
+      <value>**true** if objects in this AnnAutomation can be deselected; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanSelectObjects">
+      <summary>Gets a value that indicates whether the this AnnAutomation is in a state where any object can be selected.</summary>
+      <value>**true** if this AnnAutomation is in a state where any object can be selected; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanSendLayerToBack">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where a layer can be sent down the z-order.</summary>
+      <value>**true** if this AnnAutomation is in a state where a layer can be sent down the z-order; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanSendLayerToLast">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where a layer can be sent to end of the z-order.</summary>
+      <value>**true** if this AnnAutomation is in a state where a layer can be sent to end of the z-order; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanSendToBack">
+      <summary>Gets a value that indicates whether this AnnAutomation can send the currently selected object(s) down in the Z-order.</summary>
+      <value>**true** if this AnnAutomation can send the currently selected object(s) down in the Z-order; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanSendToLast">
+      <summary>Gets a value that indicates whether this AnnAutomation can send the currently selected object(s) to the bottom of the Z-order.</summary>
+      <value>**true** if this AnnAutomation can send the currently selected object(s) to the bottom of Z-order; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanShowObjectContextMenu">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where the object context menu can be displayed.</summary>
+      <value>**true** if this AnnAutomation is currently in a state where the object context menu can be displayed; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanShowObjectProperties">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where the object properties can be displayed.</summary>
+      <value>**true** if this AnnAutomation is currently in a state where the object properties can be displayed; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanShowProperties">
+      <summary>Gets a value that indicates whether this AnnAutomation is currently in a state where the user properties dialog can be displayed.</summary>
+      <value>**true** if this AnnAutomation is currently in a state where the user properties dialog can be displayed; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanUndo">
+      <summary>Gets a value that indicates whether the user can undo the previous operation performed in this AnnAutomation.</summary>
+      <value>**true** if the user can undo the previous operation performed in this AnnAutomation; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanUngroup">
+      <summary>Gets a value indicating whether this AnnAutomation is in a state where objects can be ungrouped.</summary>
+      <value>**true** if this AnnAutomation is in a state where objects can be ungrouped; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CanUnlock">
+      <summary>Gets a value that indicates whether the object currently being edited (selected) can be unlocked.</summary>
+      <value>**true** if the object currently being edited (selected) can be unlocked; otherwise, it is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.Container">
+      <summary>Gets the AnnContainer of this AnnAutomation.</summary>
+      <value>The AnnContainer object of this AnnAutomation.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.Containers">
+      <summary>The list of containers in this AnnAutomation when multi-containers mode is used.</summary>
+      <value>The list of containers in this AnnAutomation when multi-containers mode is used. The default value is an empty list ready to be used.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CurrentDesigner">
+      <summary>Gets the current working designer.</summary>
+      <value>The current working AnnDesigner derived object.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.CurrentEditObject">
+      <summary>Gets the current AnnObject being edited.</summary>
+      <value>The current AnnObject being edited; **null** if no objects are currently being edited.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.DefaultCurrentObjectId">
+      <summary>The annotations object ID to use when a draw designer finishes its operation.</summary>
+      <value>The annotations object id to use when a draw designer finishes its operation. The default value is SelectObjectId.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.EnableDragDrop">
+      <summary>A value that indicates whether drag and drop is enabled in this AnnAutomation.</summary>
+      <value>**true** if drag and drop is enabled in this AnnAutomation; otherwise, **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.Manager">
+      <summary>Returns the AnnAutomationManager that this AnnAutomation object belongs to.</summary>
+      <value>The AnnAutomationManager that this AnnAutomation object belongs to. This is the same value passed to the AnnAutomationManager constructor.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomation.UndoCapacity">
+      <summary>A value that specifies the capacity of the undo/redo buffer.</summary>
+      <value>The number of user actions that can be reversed using Undo or re-applied using Redo.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnAutomationEventArgs">
+      <summary>Provides data for the AnnAutomation.OnShowContextMenu and AnnAutomation.OnShowContextMenu events.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationEventArgs.Create(Leadtools.Annotations.Automation.AnnAutomationObject)">
+      <summary>Creates a new instance of AnnAutomationEventArgs with the specified parameter.</summary>
+      <param name="obj">The automation object associated with the currently selected object AnnAutomation.CurrentEditObject.</param>
+      <returns>The created AnnAutomationEventArgs object.</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationEventArgs.Cancel">
+      <summary>Get or sets a value that indicates whether this event is to be cancelled.</summary>
+      <value>**true** if the event is to be cancelled; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationEventArgs.Object">
+      <summary>Gets the current selected automation object.</summary>
+      <value>The automation object associated with the current selected object AnnAutomation.CurrentEditObject.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnAutomationManager">
+      <summary>Manages the automation mode for an annotation application.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationManager.#ctor">
+      <summary>Initializes a new instance of the AnnAutomationManager class</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationManager.Create(Leadtools.Annotations.Engine.AnnRenderingEngine)">
+      <summary>Creates a new instance of AnnAutomationManager with the specified rendering engine.</summary>
+      <param name="engine">Rendering engine instance.</param>
+      <returns>The newly created object.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationManager.CreateDefaultObjects">
+      <summary>Creates the default automation annotation objects.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationManager.FindObject(Leadtools.Annotations.Engine.AnnObject)">
+      <summary>Finds the AnnAutomationObject for a specified AnnObject</summary>
+      <param name="obj">The AnnObject to query.</param>
+      <returns>The AnnAutomationObject for the specified obj, or **null** if no AnnAutomationObject associated with that object can be found.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationManager.FindObjectById(System.Int32)">
+      <summary>Finds the specified AnnAutomationObject by id.</summary>
+      <param name="id">The id of the AnnAutomationObject to find.</param>
+      <returns>The AnnAutomationObject for the specified id, or **null** if no AnnAutomationObject with that id can be found.</returns>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationManager.LoadPackage(Leadtools.Annotations.Automation.IAnnPackage,System.String)">
+      <summary>Loads the automation objects from the specified package.</summary>
+      <param name="pack">Package to load. This cannot be **null**.</param>
+      <param name="groupName">Group name to use. This can be **null**.</param>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomationManager.CurrentObjectIdChanged">
+      <summary>Occurs when the value of the CurrentObjectId property changes.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomationManager.CurrentRubberStampTypeChanged">
+      <summary>Occurs when the value of the CurrentRubberStampType property changes.</summary>
+    </member>
+    <member name="E:Leadtools.Annotations.Automation.AnnAutomationManager.UserModeChanged">
+      <summary>Occurs when the value of the UserMode property changes</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.Automations">
+      <summary>Gets the collection of AnnAutomation objects in this AnnAutomationManager.</summary>
+      <value>The collection of AnnAutomations objects in the AnnAutomationManager.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.CancelInactiveDesigners">
+      <summary>A value indicating whether any designers in an AnnAutomation are automatically canceled when the automation becomes inactive.</summary>
+      <value>**true** to automatically cancel all designers in an AnnAutomation when the automation becomes inactive; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.CurrentObjectId">
+      <summary>Gets or sets the current automation object ID.</summary>
+      <value>The current automation object ID. The default value is AnnObject.None</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.CurrentRubberStampType">
+      <summary>Gets or sets the current automation rubber stamp object type.</summary>
+      <value>An AnnRubberStampType value that specifies the current automation rubber stamp object type. The default value is AnnRubberStampType.StampApproved.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.DeselectOnDown">
+      <summary>Gets or sets a value that indicates whether to de-select any objects as soon as the user clicks down with the cursor or taps using touch on the container outside of its boundaries.</summary>
+      <value>**true** to de-select any object as soon as the user clicks down on the container outside its boundaries; otherwise, **false** and the objects become de-selected only when the user releases the cursor or touch. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EditContentAfterDraw">
+      <summary>Gets or sets a value that indicates whether the EditContent event should occur automatically after the designer has successfully finished drawing a new object.</summary>
+      <value>**true** to fire the EditContent automatically after the designer has successfully finished drawing a new object; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EditObjectAfterDraw">
+      <summary>Gets or sets a value that indicates whether newly drawn objects are selected (edited).</summary>
+      <value>**true** to edit (select) new objects; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EditTextAfterDraw">
+      <summary>Gets or sets a value that indicates whether the EditText event should occur automatically after the designer has successfully finished drawing a new text object.</summary>
+      <value>**true** to fire the EditText automatically after the designer has successfully finished drawing a new text object; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EnableDeselectObject">
+      <summary>Gets or sets a value that indicates whether clicking on an already selected object while the MultiSelectModifierKey is pressed should de-select it.</summary>
+      <value>**true** if clicking an already selected object while the MultiSelectModifierKey is pressed should de-select it; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EnableObjectsAlignment">
+      <summary>Gets or sets a value that indicates whether you can align selected objects based on one of them.</summary>
+      <value>**true** if you can align selected objects based on one of them; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EnablePartialDrop">
+      <summary>Gets or sets a value that indicates whether to allow partial drop of annotation objects between multiple containers.</summary>
+      <value>**true** to allow partial drop of annotation objects between multiple containers; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EnableThumbsSelection">
+      <summary>Gets or sets a value that indicates whether clicking on any of the thumbs of the objects automatically starts editing.</summary>
+      <value>**true** if clicking on any of the thumbs of the objects automatically starts editing; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EnableToolTip">
+      <summary>Gets or sets a value that indicates whether firing the ToolTip event is enabled.</summary>
+      <value>**true** to fire the ToolTip event; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EndDrawWhenLostFocus">
+      <summary>Gets or sets a value indicating whether any designers in an AnnAutomation are automatically canceled when the automation loses focus.</summary>
+      <value>**true** to automatically cancel all designers in an AnnAutomation when the automation loses focus; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.EndEditDesignerBeforeDraw">
+      <summary>Gets or sets a value that indicates whether to end the current edit designer when the user starts drawing a new object.</summary>
+      <value>**true** to end the current edit designer when the user starts drawing a new object; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.ExtendedModeModifierKey">
+      <summary>Gets or sets the extended mode modifier key.</summary>
+      <value>The extended mode modifier key. The default value is AnnKeys.Shift.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.FontRelativeToImageDpi">
+      <summary>Indicates whether to take image DPI in consideration when calculating font size.</summary>
+      <value>**true** Indicates whether to take image DPI in consideration when calculating font size. Otherwise, **false**. Default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.ForceSelectionModifierKey">
+      <summary>Gets or sets a value that indicates whether the user can draw the selection object only when one of its key modifiers is pressed.</summary>
+      <value>**true** if the user can draw the selection object only when one of its key modifiers is pressed; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.GroupsRoles">
+      <summary>Gets or sets the AnnGroupsRoles associated with this automation manager.</summary>
+      <value>The AnnGroupsRoles object to be associated with this automation manager. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.HitTestBehavior">
+      <summary>Gets or sets a value that determines how objects are hit-tested through a selection rectangle.</summary>
+      <value>A value that determines how objects are hit-tested through a selection rectangle. The default value is AnnHitTestBehavior.Contains.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.MaintainAspectRatio">
+      <summary>Gets or sets a value that indicates whether to preserve the aspect ratio when moving a corner thumb for all AnnEditDesigner derived classes.</summary>
+      <value>**true** to maintain the aspect ratio; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.MultiSelectModifierKey">
+      <summary>Gets or sets the multi-select modifier key.</summary>
+      <value>The multi-select modifier key. The default value is AnnKeys.Shift.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.Objects">
+      <summary>Gets the collection of AnnAutomationObject objects in this AnnAutomationManager.</summary>
+      <value>The collection of AnnAutomationObject objects in the AnnAutomationManager.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.PlatformCallbacks">
+      <summary>Gets the platform-specific callbacks for this automation manager.</summary>
+      <value>The platform-specific callbacks for this automation manager.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.RedactionRealizePassword">
+      <summary>Gets or sets the password to use to perform realization of AnnRedactionObject objects.</summary>
+      <value>The password used for realization of AnnRedactionObject objects. The default value is an empty string.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.RenderingEngine">
+      <summary>Gets or sets the rendering engine associated with this AnnAutomationManager.</summary>
+      <value>The rendering engine associated with this control.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.Resources">
+      <summary>Gets or sets the annotations resources used by all containers used with this automation manager.</summary>
+      <value>The annotations resources used by all the containers used with this automation manager. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.RestrictDesigners">
+      <summary>Gets or sets a value that indicates whether the object should be restricted to be inside the container boundary.</summary>
+      <value>**true** if the object should be restricted inside the container boundary; otherwise, **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.RotateModifierKey">
+      <summary>Gets or sets the rotate modifier key.</summary>
+      <value>The rotate modifier key. The default value is AnnKeys.Shift.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.RunHitTestBuffer">
+      <summary>Gets or sets the hit test buffer for all AnnRunDesigner derived classes.</summary>
+      <value>The hit test buffer, in container units, for all AnnRunDesigner derived classes. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.SelectionModifierKey">
+      <summary>Gets or sets the value of the modifier key that must be pressed in order for the user to start drawing the selection object.</summary>
+      <value>The value of the modifier key that must be pressed in order for the user to start drawing the selection object. The default value is AnnKeys.Shift.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.ShowThumbs">
+      <summary>Gets or sets a value that indicates whether to show the thumbs.</summary>
+      <value>**true** to show the thumbs; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.SnapToGridOptions">
+      <summary>Gets or sets the default AnnSnapToGridOptions of this AnnAutomationManager.</summary>
+      <value>The default AnnSnapToGridOptions for this AnnAutomationManager.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.ThumbsGap">
+      <summary>Gets or sets a value that indicates which thumbs to display in a polyline object.</summary>
+      <value>An value greater than zero that indicates which thumbs to display in a polyline object, or 0 to display all thumbs. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.ThumbsHitTestBuffer">
+      <summary>Gets or sets the hit test buffer for all AnnEditDesigner derived classes.</summary>
+      <value>The hit test buffer, in container units, for all AnnEditDesigner derived classes. The default value is 15.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.UseFreehandSelection">
+      <summary>Indicates whether to use free hand selection.</summary>
+      <value>**true** to use free hand selection; otherwise; **false**. Default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.UsePDFMode">
+      <summary>Gets or sets a value that indicates whether a PDF document is being edited.</summary>
+      <value>A Boolean value that indicates whether it is a PDF document. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.UserMode">
+      <summary>Gets or sets the current user mode.</summary>
+      <value>A AnnUserMode value that specifies the current user mode. The default value is AnnUserMode.Design.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationManager.UseRotateThumbs">
+      <summary>Gets or sets a value that indicates whether to show the rotation thumbs when an object is selected.</summary>
+      <value>**true** to show the rotation thumbs when an object is selected; otherwise, **false**. The default value is **true**.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnAutomationObject">
+      <summary>Defines all the properties needed to automate an annotation object.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationObject.#ctor">
+      <summary>Initializes a new instance of the AnnAutomationObject class.</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.ContextMenu">
+      <summary>Gets or sets the context menu associated with this AnnAutomationObject</summary>
+      <value>The context menu associated with this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.DrawCursor">
+      <summary>Gets or sets the mouse cursor used when drawing new objects of this AnnAutomationObject</summary>
+      <value>The mouse cursor used when drawing new objects of this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.DrawDesignerType">
+      <summary>Gets or sets the type of the draw designer of this AnnAutomationObject.</summary>
+      <value>The type of the draw designer of this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.EditDesignerType">
+      <summary>Gets or sets the type of the edit designer of this AnnAutomationObject.</summary>
+      <value>The type of the edit designer of this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.GroupName">
+      <summary>Gets or sets the group name for this automation object</summary>
+      <value>The group name for this automation object. The default value is "Main".</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.Id">
+      <summary>Gets or sets the id of this AnnAutomationObject.</summary>
+      <value>The id of this AnnAutomationObject. The default value is 0.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.LabelTemplate">
+      <summary>Gets or sets the template used when creating labels for this AnnAutomationObject</summary>
+      <value>The template used when creating labels for this AnnAutomationObject. The default value is **null** (no label is created).</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.Name">
+      <summary>Gets or sets the name of this AnnAutomationObject.</summary>
+      <value>A string value that represents the name of this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.NextNumber">
+      <summary>Gets or sets the next number used when creating labels for this AnnAutomationObject</summary>
+      <value>The next number used when creating labels for this AnnAutomationObject. The default value is 1.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.ObjectTemplate">
+      <summary>Gets or sets the initial annotation object template of this AnnAutomationObject.</summary>
+      <value>The initial annotation object template of this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.Renderer">
+      <summary>Gets the annotation object renderer for this AnnAutomationObject.</summary>
+      <value>The IAnnObjectRenderer for this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.RunDesignerType">
+      <summary>Gets or sets the type of the run designer of this AnnAutomationObject.</summary>
+      <value>The type of the run designer of this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.ToolBarImage">
+      <summary>Gets or sets the toolbar image associated with this AnnAutomationObject</summary>
+      <value>The toolbar image associated with this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.ToolBarToolTipText">
+      <summary>Gets or sets the tooltip text associated with this AnnAutomationObject.</summary>
+      <value>The text associated with this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.UserData">
+      <summary>Gets or sets the user-defined data for this AnnAutomationObject.</summary>
+      <value>The user-defined data for this AnnAutomationObject. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnAutomationObject.UseRotateThumbs">
+      <summary>Enables or disables the use of rotate thumbs of this AnnAutomationObject.</summary>
+      <value>**true** to enable rotate thumbs for AnnObject rotation; otherwise, it is **false**. The default value is **true**.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnAutomationObjects">
+      <summary>The AnnAutomationObjects class represents a dynamic collection of AnnAutomationObject objects and provides notifications when items are added or removed.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomationObjects.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnAutomations">
+      <summary>Represents a dynamic collection of AnnAutomation objects and provides notifications when items are added or removed.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnAutomations.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnAutomationUndoRedoObject">
+      <summary>The object holding the undo/redo data for an automation object.</summary>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnBeforeObjectChangedEventArgs">
+      <summary>Provides data for the AnnAutomation.BeforeObjectChanged event.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnBeforeObjectChangedEventArgs.#ctor(Leadtools.Annotations.Engine.AnnObjectCollection,Leadtools.Annotations.Automation.AnnObjectChangedType,Leadtools.Annotations.Designers.AnnDesigner)">
+      <summary>Initializes a new instance of the AnnBeforeObjectChangedEventArgs class.</summary>
+      <param name="objects">A AnnObjectCollection that has a collection of the objects that is about to be changed.</param>
+      <param name="changeType">An AnnObjectChangedType value specifying what is to be changed.</param>
+      <param name="designer">The AnnDesigner object responsible for the change.</param>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnBeforeObjectChangedEventArgs.Cancel">
+      <summary>Gets or sets a value indicating whether the change should be canceled.</summary>
+      <value>**true** if the change should be canceled; otherwise, it is **false**. The default value is **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnBeforeObjectChangedEventArgs.ChangeType">
+      <summary>Gets the type of change.</summary>
+      <value>An AnnObjectChangedType value specifying what is to be changed.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnBeforeObjectChangedEventArgs.Designer">
+      <summary>Gets the designer responsible for the change.</summary>
+      <value>The AnnDesigner responsible for the change.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnBeforeObjectChangedEventArgs.Objects">
+      <summary>Gets the objects that have been changed.</summary>
+      <value>An AnnObjectCollection that has a collection of the objects that have been changed.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnCursorEventArgs">
+      <summary>Provides data for the AnnAutomation.SetCursor event.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnCursorEventArgs.#ctor(System.Int32,Leadtools.Annotations.Automation.AnnDesignerType,System.Int32,System.Boolean,System.Boolean,Leadtools.Annotations.Engine.AnnPointerEventArgs,Leadtools.Annotations.Automation.AnnDragDropEventArgs)">
+      <summary>Initializes a new instance of AnnCursorEventArgs with the specified parameters.</summary>
+      <param name="id">The id of the current AnnAutomationObject.</param>
+      <param name="type">The designer type</param>
+      <param name="thumbIndex">0-based thumb index if the cursor is on a thumb. Or -1 if not.</param>
+      <param name="isRotateCenter"></param>
+      <param name="isRotateGripper"></param>
+      <param name="pointerEvent">The original AnnPointerEventArgs that triggered this event, if any.</param>
+      <param name="dragDropEvent">The original AnnDragDropEventArgs that triggered this event, if any.</param>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnCursorEventArgs.DesignerType">
+      <summary>Gets the designer type.</summary>
+      <value>The designer type.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnCursorEventArgs.DragDropEvent">
+      <summary>Gets the drag/drop event data that triggered this event.</summary>
+      <value>The original drag/drop event data that triggered this event if any; otherwise, **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnCursorEventArgs.Id">
+      <summary>Gets the id of the current AnnAutomationObject.</summary>
+      <value>The id of the current AnnAutomationObject.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnCursorEventArgs.IsRotateCenter">
+      <summary>Gets a value that indicates whether the cursor is on the rotate center.</summary>
+      <value>**true** if the cursor is on the rotate center; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnCursorEventArgs.IsRotateGripper">
+      <summary>Gets a value that indicates whether the cursor is on the rotate gripper.</summary>
+      <value>**true** if the cursor is on the rotate gripper; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnCursorEventArgs.PointerEvent">
+      <summary>Gets the original pointer event data that triggered this event.</summary>
+      <value>The original pointer event data that trigger this event if any; otherwise, **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnCursorEventArgs.ThumbIndex">
+      <summary>Gets the 0-based thumb index.</summary>
+      <value>0-based thumb index if the cursor is on a thumb. Or -1 if not.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnDragDropEventArgs">
+      <summary>Provides data for the DragDrop event.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnDragDropEventArgs.Create(Leadtools.Annotations.Engine.AnnObject,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Engine.AnnContainer,Leadtools.Annotations.Automation.AnnDragDropOperation,Leadtools.Annotations.Engine.AnnContainer)">
+      <summary>Creates a new instance of AnnDragDropEventArgs with the specified parameters.</summary>
+      <param name="annObject">The AnnObject that is being dragged.</param>
+      <param name="sourceContainer">The source annotation container. This is the AnnContainer that is the owner of the object being dragged. This value is never **null**.</param>
+      <param name="targetContainer">The target annotation container. This is the AnnContainer that is currently the target if the object is dropped. targetContainer can be the same value as sourceContainer or can be **null** if the object is currently outside the boundary of all containers.</param>
+      <param name="operation">The current drag and drop operation being performed.</param>
+      <param name="operationContainer">The AnnContainer for this drag drop operation.</param>
+      <returns>The newly created AnnDragDropEventArgs object.</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnDragDropEventArgs.Allowed">
+      <summary>Gets or sets a value that indicates whether the current operation is allowed.</summary>
+      <value>**true** if the current operation is allowed, **false** otherwise.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnDragDropEventArgs.AnnObject">
+      <summary>Gets the AnnObject that is being dragged.</summary>
+      <value>The AnnObject being dropped. This object belongs to SourceContainer and will be dropped into TargetContainer by default.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnDragDropEventArgs.CanDrop">
+      <summary>Gets a value that indicates whether the object(s) being dragged can be dropped on the target container.</summary>
+      <value>**true** if the object(s) being dragged can be dropped on the target container; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnDragDropEventArgs.Operation">
+      <summary>Gets the current drag and drop operation.</summary>
+      <value>The current drag and drop operation being performed.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnDragDropEventArgs.OperationContainer">
+      <summary>Gets the current container for this drag and drop operation.</summary>
+      <value>The AnnContainer for this drag drop operation. The operation is in set in the Operation property.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnDragDropEventArgs.ResizeLargeObject">
+      <summary>Automatically resizes dropped objects when their size is larger than the container.</summary>
+      <value>**true** to automatically resize dropped objects when the size is larger than the container, otherwise; **false**. The default value is **true**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnDragDropEventArgs.SourceContainer">
+      <summary>Gets the source annotation container.</summary>
+      <value>The source annotation container. This is the AnnContainer that is the owner of the object being dragged. This value is never **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnDragDropEventArgs.TargetContainer">
+      <summary>Gets the source annotation container.</summary>
+      <value>The target annotation container. This is the AnnContainer that is currently the target if the object is dropped. TargetContainer can be the same value as SourceContainer or can be **null** if the object is currently outside the boundary of all containers.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnObjectModifiedEventArgs">
+      <summary>Provides data for the AnnAutomation.ObjectModified event.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnObjectModifiedEventArgs.#ctor(Leadtools.Annotations.Engine.AnnObjectCollection,Leadtools.Annotations.Automation.AnnObjectChangedType)">
+      <summary>Creates a new instance of AnnObjectModifiedEventArgs with the specified parameters.</summary>
+      <param name="objects">A collection that contains the objects modified</param>
+      <param name="changeType">Type of change.</param>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnObjectModifiedEventArgs.ChangeType">
+      <summary>Gets the type of change.</summary>
+      <value>An AnnObjectChangedType value specifying what is to be changed.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnObjectModifiedEventArgs.Objects">
+      <summary>Gets the objects that have been modified.</summary>
+      <value>An AnnObjectCollection that has a collection of the objects that have been changed.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnPlatformCallbacks">
+      <summary>Platform-specific callbacks used by the automation manager.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.AnnPlatformCallbacks.#ctor">
+      <summary>Creates a new instance of AnnPlatformCallbacks</summary>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnPlatformCallbacks.CheckModifier">
+      <summary>Gets or sets the keyboard modifier callback</summary>
+      <value>The keyboard modifier callback. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnPlatformCallbacks.GetClipboardData">
+      <summary>Gets or sets the callback for getting the clipboard.</summary>
+      <value>The callback for getting clipboard data. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnPlatformCallbacks.IsClipboardDataPresent">
+      <summary>Gets or sets the callback for checking whether clipboard data is present.</summary>
+      <value>The callback for checking whether clipboard data is present. The default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.AnnPlatformCallbacks.SetClipboardData">
+      <summary>Gets or sets the callback for setting clipboard data.</summary>
+      <value>The callback for setting clipboard data. The default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnGetClipboardDataCallback">
+      <summary>Callback to get the current annotation data for a clipboard paste operation.</summary>
+      <param name="automation">Automation object requesting the operation.</param>
+      <param name="position">Position to paste the objects, in container coordinates.</param>
+      <param name="format">Annotation format. Currently only "AnnObject" is supported.</param>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnIsClipboardDataPresentCallback">
+      <summary>Callback to determine whether a clipboard paste operation can be performed.</summary>
+      <param name="automation">Automation object requesting the operation.</param>
+      <param name="format">Annotation format. Currently only "AnnObject" is supported.</param>
+      <returns>This callback is used by AnnAutomation when CanPaste is called. The automation object will query whether a callback was set in AnnAutomationManager.PlatformCallbacks and then AnnPlatformCallbacks.IsClipboardDataPresent. The implementer of AnnIsClipboardDataPresentCallback must then call the platform clipboard function to check whether data for **format** is present.</returns>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnSetClipboardDataCallback">
+      <summary>Callback to set the current annotation data for a clipboard copy operation.</summary>
+      <param name="automation">Automation object requesting the operation.</param>
+      <param name="format">Annotation format. Currently only "AnnObject" is supported.</param>
+      <param name="data">The clipboard data to set. This is one or more AnnObject in serialization form.</param>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnDesignerType">
+      <summary>Defines an annotation designer type.</summary>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnDesignerType.None">
+      <summary>None </summary>
+      <platforms>NET, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnDesignerType.Draw">
+      <summary>The designer is AnnDrawDesigner</summary>
+      <platforms>NET, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnDesignerType.Run">
+      <summary>The designer is AnnRunDesigner</summary>
+      <platforms>NET, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnDesignerType.Edit">
+      <summary>The designer is AnnEditDesigner</summary>
+      <platforms>NET, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnDragDropOperation">
+      <summary>Specifies the current operation for a drag and drop event.</summary>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnDragDropOperation.Enter">
+      <summary>The object is entering the operation container. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnDragDropOperation.Leave">
+      <summary>The object is leaving the operation container. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnDragDropOperation.Over">
+      <summary>The object is hovering over the operation container. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnDragDropOperation.Drop">
+      <summary>The object is dropped on the operation container. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.AnnObjectChangedType">
+      <summary>Indicates the type of change to the AnnObject.</summary>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.None">
+      <summary>No change. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.BringToFront">
+      <summary>As a result of either calling the BringToFront method manually or from the user interface. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.SendToBack">
+      <summary>As a result of either calling the AnnAutomation.SendToBack method manually or from the user interface. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Deleted">
+      <summary>As a result of either calling the DeleteSelectedObjects method manually or from the user interface. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Lock">
+      <summary>As a result of either calling the Lock method manually or from the user interface. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Unlock">
+      <summary>As a result of either calling the Unlock method manually or from the user interface. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Paste">
+      <summary>Not used. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Flip">
+      <summary>As a result of either calling the AnnAutomation.Flip method manually or from the user interface. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.RealizeRedaction">
+      <summary>As a result realizing a redaction object. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.RestoreRedaction">
+      <summary>As a result of restoring a redaction object. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.ApplyEncryptor">
+      <summary>Not used. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.ApplyDecryptor">
+      <summary>Not used. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Name">
+      <summary>As a result of changing an AnnObjectsLabels property. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Hyperlink">
+      <summary>As a result of changing an AnnObjectsHyperlink property. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Text">
+      <summary>As a result of changing an AnnTextObject derived object. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Picture">
+      <summary>As a result of changing the Picture property of an annotation object. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Pictures">
+      <summary>Not used </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Ruler">
+      <summary>As a result of changing an AnnPolyRulerObject derived object. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Stroke">
+      <summary>As a result of changing an AnnObjectsStroke property. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Fill">
+      <summary>As a result of changing an AnnObjectsFill property. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Font">
+      <summary>As a result of changing an AnnObjectsFont property. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Encrypt">
+      <summary>Not used. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Polygon">
+      <summary>As a result of changing a polygon object. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Curve">
+      <summary>As a result of changing an AnnCurveObject. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Protractor">
+      <summary>As a result of changing an AnnProtractorObject. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.RubberStamp">
+      <summary>As a result of changing an AnnRubberStampObject. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Point">
+      <summary>As a result of changing an AnnPointObject. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Audio">
+      <summary>Not used. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Thumbs">
+      <summary>As a result of changing an AnnObjectsPoints. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Hilite">
+      <summary>As a result of changing an AnnHiliteObject. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.DesignerDraw">
+      <summary>As a result of the user interface drawing a new object via the AnnDrawDesigner user interface. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.DesignerEdit">
+      <summary>As a result of the user interface editing an existing object via the AnnEditDesigner user interface. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.ResetRotatePoints">
+      <summary>As a result of resetting the rotate control points of an existing object via the AnnEditDesigner user interface. For more information, refer to Annotation Rotation Options. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Fixed">
+      <summary>As a result of changing fixed state property of an object (FixedStateOperations). </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Added">
+      <summary>An object is added. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Modified">
+      <summary>An object is modified. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="F:Leadtools.Annotations.Automation.AnnObjectChangedType.Metadata">
+      <summary>An object metadata is modified. </summary>
+      <platforms>NET, Android, iOS</platforms>
+    </member>
+    <member name="T:Leadtools.Annotations.Automation.IAnnPackage">
+      <summary>Provide support for packaging a group of annotation objects.</summary>
+    </member>
+    <member name="M:Leadtools.Annotations.Automation.IAnnPackage.GetAutomationObjects">
+      <summary>Gets an array of the automation objects contained in this package.</summary>
+      <returns>An array of the automation objects contained in this package.</returns>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.IAnnPackage.Author">
+      <summary>Gets the author name of this package.</summary>
+      <value>The author name of this package.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.IAnnPackage.Description">
+      <summary>Gets a description of this package.</summary>
+      <value>A description of this package.</value>
+    </member>
+    <member name="P:Leadtools.Annotations.Automation.IAnnPackage.FriendlyName">
+      <summary>Gets the friendly name of this package.</summary>
+      <value>The friendly name of this package.</value>
+    </member>
+  </members>
+</doc>

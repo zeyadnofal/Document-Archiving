@@ -1,0 +1,960 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Caching</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Caching.CacheItem">
+      <summary>Specifies a cache entry.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem.#ctor">
+      <summary>Initializes a new instance of CacheItem.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem.#ctor(System.String)">
+      <summary>Initializes a new instance of CacheItem with the specified key.</summary>
+      <param name="key">Unique identifier for this cache entry. This value will be stored in Key.</param>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem.#ctor(System.String,System.Object)">
+      <summary>Initializes a new instance of CacheItem with the specified key and value.</summary>
+      <param name="key">Unique identifier for this cache entry. This value will be stored in Key.</param>
+      <param name="value">The data for this cache entry. This value will be stored in Value.</param>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem.#ctor(System.String,System.Object,System.String)">
+      <summary>Initializes a new instance of CacheItem with the specified key and value and region.</summary>
+      <param name="key">Unique identifier for this cache entry. This value will be stored in Key.</param>
+      <param name="value">The data for this cache entry. This value will be stored in Value.</param>
+      <param name="regionName">The name of the region in the cache. This value will be stored in RegionName.</param>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem.ToGeneric">
+      <summary>Creates a generic version of this class.</summary>
+      <returns>Generic version of this class.</returns>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItem.Key">
+      <summary>The unique identifier for this CacheItem.</summary>
+      <value>The unique identifier for this CacheItem. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItem.RegionName">
+      <summary>Name of the region in the cache for this CacheItem.</summary>
+      <value>The name of the region in the cache for this CacheItem. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItem.Value">
+      <summary>Data for this CacheItem.</summary>
+      <value>The data for this CacheItem. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Caching.CacheItemExpiredEventArgs">
+      <summary>Data for ObjectCache.CacheItemExpired event.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItemExpiredEventArgs.#ctor">
+      <summary>Creates a new instance of CacheItemExpiredEventArgs</summary>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItemExpiredEventArgs.Key">
+      <summary>The expired item key.</summary>
+      <value>The expired item key.</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItemExpiredEventArgs.RegionName">
+      <summary>The expired item region name.</summary>
+      <value>The expired item region name.</value>
+    </member>
+    <member name="T:Leadtools.Caching.CacheItemExpiringEventArgs">
+      <summary>Data for ObjectCache.CacheItemExpiring event.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItemExpiringEventArgs.#ctor">
+      <summary>Creates a new instance of CacheItemExpiringEventArgs</summary>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItemExpiringEventArgs.Abort">
+      <summary>Indicates whether the operation should be aborted.</summary>
+      <value>**true** to abort the current operation, otherwise; **false**. Default value is **false.**</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItemExpiringEventArgs.Key">
+      <summary>The expiring item key.</summary>
+      <value>The expiring item key.</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItemExpiringEventArgs.RegionName">
+      <summary>The expiring item region name.</summary>
+      <value>The expiring item region name.</value>
+    </member>
+    <member name="T:Leadtools.Caching.CacheItemPolicy">
+      <summary>Defines the expiration details of a cache entry.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItemPolicy.#ctor">
+      <summary>Initializes a new instance of CacheItemPolicy with default parameters.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItemPolicy.Clone">
+      <summary>Creates an exact copy of this CacheItemPolicy</summary>
+      <returns>The result object.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItemPolicy.IsInfinitePolicy(Leadtools.Caching.CacheItemPolicy)">
+      <summary>Checks whether a policy is infinite.</summary>
+      <param name="policy">Policy to check.</param>
+      <returns>A CacheItemPolicy is infinite when both of the following conditions are met:</returns>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItemPolicy.ToParsableString">
+      <summary>Converts this policy to parsable string.</summary>
+      <returns>A string that can be parsed back to a cache item policy object.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItemPolicy.TryParse(System.String,Leadtools.Caching.CacheItemPolicy)">
+      <summary>Creates a new cache item policy from a string.</summary>
+      <param name="value">Input string. This value must not be **null**.</param>
+      <param name="policy">Output policy to create.</param>
+      <returns>ToParsableString can be used to convert a CacheItemPolicy to a simple string to store in an external resource (such as a configuration file). TryParse can then be used to re-create the policy from the string.</returns>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItemPolicy.AbsoluteExpiration">
+      <summary>Indicates whether the cache entry should be deleted after a specified duration.</summary>
+      <value>The period of time that must pass before a cache entry is deleted. The default value is InfiniteAbsoluteExpiration, meaning</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItemPolicy.IsInfinite">
+      <summary>Indicates that this policy is infinite.</summary>
+      <value>**true** if this policy is infinite; otherwise, **false**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItemPolicy.SlidingExpiration">
+      <summary>Indicates whether the cache entry should be deleted if it has not been accessed in a given span of time.</summary>
+      <value>The time span which the cache entry must be accessed before the cache entry is deleted from the cache. The default is</value>
+    </member>
+    <member name="``0:Leadtools.Caching.CacheItem`1">
+      <summary>Specifies a generic cache entry.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem`1.#ctor(System.String)">
+      <summary>Initializes a new instance of CacheItem\&lt;T\&gt; with the specified key.</summary>
+      <param name="key">Unique identifier for this cache entry. This value will be stored in Key.</param>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem`1.#ctor(System.String,``0)">
+      <summary>Initializes a new instance of CacheItem\&lt;T\&gt; with the specified key and value.</summary>
+      <param name="key">Unique identifier for this cache entry. This value will be stored in Key.</param>
+      <param name="value">The data for this cache entry. This value will be stored in Value.</param>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem`1.#ctor(System.String,``0,System.String)">
+      <summary>Initializes a new instance of CacheItem\&lt;T\&gt; with the specified key and value and region.</summary>
+      <param name="key">Unique identifier for this cache entry. This value will be stored in Key.</param>
+      <param name="value">The data for this cache entry. This value will be stored in Value.</param>
+      <param name="regionName">The name of the region in the cache. This value will be stored in RegionName.</param>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem`1.#ctor">
+      <summary>Initializes a new instance of CacheItem\&lt;T\&gt;.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheItem`1.ToNonGeneric">
+      <summary>Creates a non generic version of this class.</summary>
+      <returns>Non generic version of this class.</returns>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItem`1.Key">
+      <summary>The unique identifier for this CacheItem\&lt;T\&gt;.</summary>
+      <value>The unique identifier for this CacheItem\&lt;T\&gt;. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItem`1.RegionName">
+      <summary>Name of the region in the cache for this CacheItem\&lt;T\&gt;.</summary>
+      <value>The name of the region in the cache for this CacheItem\&lt;T\&gt;. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheItem`1.Value">
+      <summary>Data for this CacheItem\&lt;T\&gt;.</summary>
+      <value>The data for this CacheItem\&lt;T\&gt;. Default value is **null**.</value>
+    </member>
+    <member name="T:Leadtools.Caching.CacheStatistics">
+      <summary>Statistics for the cache.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.CacheStatistics.#ctor">
+      <summary>Initializes a new instance of CacheStatistics.</summary>
+    </member>
+    <member name="P:Leadtools.Caching.CacheStatistics.ExpiredItems">
+      <summary>Total number of items in the cache that have expired.</summary>
+      <value>The total number of items in the cache that have expired. This will be a number greater than 0 and less than or equal to Items.</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheStatistics.Items">
+      <summary>Total number of items in the cache in all regions.</summary>
+      <value>The total number of items in the cache in all regions. If this is the cache used by the LEADTOOLS Document Viewer then an item can be a page raster image, thumbnail,</value>
+    </member>
+    <member name="P:Leadtools.Caching.CacheStatistics.Regions">
+      <summary>Number of current regions in the cache.</summary>
+      <value>The number of current regions in the cache. If this is the cache used by the LEADTOOLS Document Viewer then each region represents a document.</value>
+    </member>
+    <member name="T:Leadtools.Caching.FileCache">
+      <summary>Represents LEADTOOLS support for a file cache.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.#ctor">
+      <summary>Initializes a new instance of FileCache.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.AddOrGetExisting``1(Leadtools.Caching.CacheItem,Leadtools.Caching.CacheItemPolicy)">
+      <summary>Adds a cache entry into the cache, and returns an existing cache entry with a matching key.</summary>
+      <param name="item">Cache item to add.</param>
+      <param name="policy">Expiration policy for the item.</param>
+      <returns>The previous cache entry that matches the specified key, if found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.BeginAdd(System.String,System.String)">
+      <summary>Begins adding a new cache item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region (sub-directory) name.</param>
+      <returns>Returns the path to the physical file that will hold the data for the item on disk.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.BeginAddExternalResource(System.String,System.String,System.Boolean)">
+      <summary>Begins adding a new cache item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region name.</param>
+      <param name="readWrite"></param>
+      <returns>Returns URI to the path holding the data for the item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.CheckPolicies">
+      <summary>Checks the policy of all items in the cache and purge any item that has been expired.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.CheckPolicy(System.String,System.String)">
+      <summary>Checks the policy of an existing cache item or items in a region and purge it if it has expired.</summary>
+      <param name="key">Unique item identifier. If this value is **null** then all the items that belong to regionName</param>
+      <param name="regionName">Optional region (sub-directory) name. If this value is **null** then all the items in the cache</param>
+      <returns>This method checks the policy of the item if found. It its absolute or sliding expiration date is met, then it will be purged from the cache.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.Contains(System.String,System.String)">
+      <summary>Checks whether the specified cache entry exists in the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.DeleteItem(System.String,System.String)">
+      <summary>Deletes the specified item from the cache.</summary>
+      <param name="key">Cache item key to delete</param>
+      <param name="regionName">Optional region name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.DeleteRegion(System.String)">
+      <summary>Deletes the specified region and all its data.</summary>
+      <param name="regionName">region (sub-directory) name. This value cannot be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.EndAdd(System.Boolean,System.String,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Ends adding a new cache item and commit the changes.</summary>
+      <param name="commit"></param>
+      <param name="key">Unique item identifier.</param>
+      <param name="policy">Expiration policy to use with this item.</param>
+      <param name="regionName">Optional region (sub-directory) name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.EndAddExternalResource``1(System.Boolean,System.String,``0,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Ends adding a new cache item and commit the changes.</summary>
+      <param name="commit"></param>
+      <param name="key">Unique item identifier.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy to use with this item.</param>
+      <param name="regionName">Optional region name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.EnumerateKeys(System.String,Leadtools.Caching.EnumerateCacheEntriesCallback)">
+      <summary>Enumerates all the items in a region.</summary>
+      <param name="region">Optional region name.</param>
+      <param name="callback">Occurs for each item found in the region. The entry parameter of callback will contain</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.EnumerateRegions(Leadtools.Caching.EnumerateCacheEntriesCallback)">
+      <summary>Enumerates all the regions in this cache.</summary>
+      <param name="callback">Occurs for each region found in the cache. The entry parameter of callback will contain</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetCacheFilePath(System.String,System.String)">
+      <summary>Path to the physical file holding the data for the specified item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region (sub-directory) name.</param>
+      <returns>The physical file holding the data for the specified item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetCacheItem``1(System.String,System.String)">
+      <summary>Specified cache entry from the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The cache item if found, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetCacheUrl(System.String,System.String)">
+      <summary>URI to the physical file holding the data for the specified item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region (sub-directory) name.</param>
+      <returns>The URI to the file holding the data for the specified item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetCount(System.String)">
+      <summary>Total number of cache entries in the cache.</summary>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The total number of cache entries found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetEnumerator">
+      <summary>Creates an enumerator that can be used to iterate through a collection of cache entries.</summary>
+      <returns>An enumerator that can be used to iterate through a collection of cache entries.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetEnumerator(System.String)">
+      <summary>Creates an enumerator that can be used to iterate through a collection of cache entries.</summary>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>An enumerator that can be used to iterate through a collection of cache entries.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetItemExternalResource(System.String,System.String,System.Boolean)">
+      <summary>Get a URI to the cache item</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region name.</param>
+      <param name="readWrite"></param>
+      <returns>Returns URI to the path holding the data for the item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetItemVirtualDirectoryUrl(System.String,System.String)">
+      <summary>Gets a URI that provides HTTP GET access to data for the specified item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region (sub-directory) name.</param>
+      <returns>The URI to the file holding the data for the specified item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetPolicy(System.String,System.String)">
+      <summary>Gets the policy stored with the specified cache item.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The cache item policy stored for the specified item in the cache. If the value is not found, a new CacheItemPolicy object initialized with default values is returned.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetStatistics">
+      <summary>Returns a snapshot of the number of all items in the cache.</summary>
+      <returns>A CacheStatistics object containing the current number of regions, items and expired items in the cache.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetStatistics(System.String,System.String)">
+      <summary>Returns a snapshot of the number of items in the specified region.</summary>
+      <param name="key">Key name. If this parameter is not **null**, then this method will return information on this item only. This can be used to check</param>
+      <param name="">is returned.</param>
+      <param name="regionName">Region name. If this value is not **null**, then this method will return information on the items in this region. If this</param>
+      <param name=""></param>
+      <returns>A CacheStatistics object containing the current number of regions, items and expired items in the cache.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetValues(IEnumerable&lt;string&gt;,System.String)">
+      <summary>Cache entries that corresponds the specified keys.</summary>
+      <param name="keys">Collection of unique identifies.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>Dictionary of key/value pair found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.Remove``1(System.String,System.String)">
+      <summary>Removes an entry from the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The value of the item removed from the cache if found, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.RemoveItemExternalResource(System.String,System.String)">
+      <summary>Removes the external resource URI associated with the specified cache item</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.SetName(System.String)">
+      <summary>Sets the unique name of this file cache object.</summary>
+      <param name="value">The unique name of this cache object.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.UpdateCacheItem``1(Leadtools.Caching.CacheItem)">
+      <summary>Update an existing item in the cache.</summary>
+      <param name="item">Item to update. Must not be **null**.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.UpdatePolicy(System.String,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Update the policy of an existing cache item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="policy">New expiration policy to use with this item.</param>
+      <param name="regionName">Optional region (sub-directory) name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.GetRegionName(System.String)">
+      <summary>Actual region name.</summary>
+      <param name="regionName">Region name (sub-directory)</param>
+      <returns>The actual region name.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.LoadConfigurationValues(IDictionary&lt;string)">
+      <summary>Load the configuration of this cache object from the specified dictionary.</summary>
+      <param name="values">Dictionary containing configuration key/item pairs.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.OnCacheItemExpired(Leadtools.Caching.CacheItemExpiredEventArgs)">
+      <summary>Overrides OnCacheItemExpired.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.OnCacheItemExpiring(Leadtools.Caching.CacheItemExpiringEventArgs)">
+      <summary>Overrides OnCacheItemExpiring.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Caching.FileCache.SaveConfigurationValues(IDictionary&lt;string)">
+      <summary>Saves the configuration of this cache object to the specified dictionary.</summary>
+      <param name="values">Dictionary containing configuration key/item pairs.</param>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.AccessTimeout">
+      <summary>Determines how long to wait between file access errors before an exception is thrown.</summary>
+      <value>A value that determines how long to wait between file access errors before an exception is thrown. Default value is 4 seconds.</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.Binder">
+      <summary>Binder to use when serializing cache items.</summary>
+      <value>The binder to use when serializing cache items. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.CacheDirectory">
+      <summary>Location in the file system to use for storing cache items.</summary>
+      <value>The location in the file system to use for storing cache items. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.CacheVirtualDirectory">
+      <summary>Location in a web server to use for storing cache items.</summary>
+      <value>The location in a web server to use for storing cache items. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.DataSerializationMode">
+      <summary>Determines the type of serialization to use when the data is saved into the cache.</summary>
+      <value>The type of serialization to use when the data is saved into the cache. The default value is</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.DefaultCacheCapabilities">
+      <summary>Capabilities of this cache.</summary>
+      <value>This property returns</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.DefaultPolicy">
+      <summary>Default policy when setting cache values using the properties and methods that do not use a region name.</summary>
+      <value>The default policy when setting cache values using the indexer. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.DefaultRegion">
+      <summary>Name of the region to use when calling the properties and methods that do not use a region name.</summary>
+      <value>The default policy when setting cache values using the indexer. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.Item">
+      <summary>The cache item.</summary>
+      <value>*key*</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.Name">
+      <summary>Unique name of this cache object</summary>
+      <value>The unique name of this cache object. Returns "LeadFileCache" by default. Use SetName to override this value.</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.PolicySerializationMode">
+      <summary>Determines the type of serialization to use when the policy is saved into the cache.</summary>
+      <value>The type of serialization to use when the policy is saved into the cache. The default value is</value>
+    </member>
+    <member name="P:Leadtools.Caching.FileCache.Trace">
+      <summary>Trace source associated with FileCache.</summary>
+      <value>The trace source associated with all instances of FileCache.</value>
+    </member>
+    <member name="F:Leadtools.Caching.FileCache.ACCESS_TIMEOUT_KEY">
+      <summary>Name of the key used to store AccessTimeout.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.FileCache.CACHE_DIRECTORY_KEY">
+      <summary>Name of the key used to store FileCache.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.FileCache.CACHE_VIRTUAL_DIRECTORY_KEY">
+      <summary>Name of the key used to store CacheVirtualDirectory.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.FileCache.DEFAULT_POLICY_KEY">
+      <summary>Name of the key used to store DefaultPolicy.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.FileCache.DEFAULT_REGION_KEY">
+      <summary>Name of the key used to store DefaultRegion.</summary>
+    </member>
+    <member name="T:Leadtools.Caching.ItemExpiredException">
+      <summary>Exception thrown when a cache item is expired.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.ItemExpiredException.#ctor">
+      <summary>Initializes a new instance of the ItemExpiredException class with default values.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.ItemExpiredException.#ctor(SerializationInfo,StreamingContext)">
+      <summary>Initializes a new instance of the ItemExpiredException class with serialized data.</summary>
+      <param name="info">The object that holds the serialized object data.</param>
+      <param name="context">The contextual information about the source or destination.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ItemExpiredException.#ctor(System.String)">
+      <summary>Initializes a new instance of the ItemExpiredException class with the specified error message.</summary>
+      <param name="message">Message that describes the error.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ItemExpiredException.#ctor(System.String,System.Exception)">
+      <summary>Initializes a new instance of the ItemExpiredException class with the specified error message and inner exception.</summary>
+      <param name="message">Message that describes the error.</param>
+      <param name="inner">The exception that caused the current error.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ItemExpiredException.#ctor(System.String,System.String)">
+      <summary>Initializes a new instance of the ItemExpiredException class with the specified cache item identifier and region name.</summary>
+      <param name="key">Cache item identifier.</param>
+      <param name="regionName">Optional region name in the cache.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ItemExpiredException.#ctor(System.String,System.String,System.String)">
+      <summary>Initializes a new instance of the ItemExpiredException class with the specified cache item identifier, region name and error message.</summary>
+      <param name="key">Cache item identifier.</param>
+      <param name="regionName">Optional region name in the cache.</param>
+      <param name="message">Message that describes the error.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ItemExpiredException.GetObjectData(SerializationInfo,StreamingContext)">
+      <summary>Overrides System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext).</summary>
+      <param name="info">The System.Runtime.Serialization.SerializationInfo that holds the serialized object data about the exception being thrown.</param>
+      <param name="context">The System.Runtime.Serialization.StreamingContext that contains contextual information about the source or destination.</param>
+    </member>
+    <member name="P:Leadtools.Caching.ItemExpiredException.Key">
+      <summary>Unique identifier of the cache item that has been expired.</summary>
+      <value>The unique identifier of the cache item that has been expired.</value>
+    </member>
+    <member name="P:Leadtools.Caching.ItemExpiredException.Message">
+      <summary>Message that describes the current exception.</summary>
+      <value>A message that describes the current exception.</value>
+    </member>
+    <member name="P:Leadtools.Caching.ItemExpiredException.RegionName">
+      <summary>Cache region name of the item that has been expired.</summary>
+      <value>The region name of the item that has been expired. This value can be **null** if the item did not have a region in the cache.</value>
+    </member>
+    <member name="T:Leadtools.Caching.ObjectCache">
+      <summary>Abstract class to provide cache support.</summary>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.#ctor">
+      <summary>Initializes a new instance of ObjectCache</summary>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Add(Leadtools.Caching.CacheItem,Leadtools.Caching.CacheItemPolicy)">
+      <summary>Adds a new item into the cache using the default region</summary>
+      <param name="item">Item to add.</param>
+      <param name="policy">Expiration policy to use</param>
+      <returns>key.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Add(System.String,System.Object,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Adds a new item into the cache using the specified region name</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy to use</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>key.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Add(System.String,System.Object,DateTime,System.String)">
+      <summary>Adds a new item into the cache using the specified absolute expiration data and region name</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="absoluteExpiration">Absolute expiration date to use.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>key.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Add``1(Leadtools.Caching.CacheItem,Leadtools.Caching.CacheItemPolicy)">
+      <summary>Adds a new item into the cache using the default region.</summary>
+      <param name="item">Item to add.</param>
+      <param name="policy">Expiration policy to use.</param>
+      <returns>key.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Add``1(System.String,``0,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Adds a new item into the cache using the specified region name.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy to use</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>key.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Add``1(System.String,``0,Date``0ime,System.String)">
+      <summary>Adds a new item into the cache using the specified absolute expiration data and region name.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="absoluteExpiration">Absolute expiration date to use.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>key.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.AddOrGetExisting(Leadtools.Caching.CacheItem,Leadtools.Caching.CacheItemPolicy)">
+      <summary>Adds a cache entry into the cache, and returns an existing cache entry with a matching key.</summary>
+      <param name="item">Cache item to add.</param>
+      <param name="policy">Expiration policy for the item.</param>
+      <returns>The previous cache entry that matches the specified key, if found. If the cache contains an item with the same key, then it will be returned before it is overwritten. Otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.AddOrGetExisting(System.String,System.Object,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Adds an entry using key and value pair into the cache, and returns an existing cache entry with a matching key.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy for the item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The previous cache entry that matches the specified key, if found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.AddOrGetExisting(System.String,System.Object,DateTime,System.String)">
+      <summary>Adds an entry using key and value pair and absolute expiration date into the cache, and returns an existing cache entry with a matching key.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="absoluteExpiration">Absolute expiration date to use.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The previous cache entry that matches the specified key, if found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.AddOrGetExisting``1(Leadtools.Caching.CacheItem,Leadtools.Caching.CacheItemPolicy)">
+      <summary>Adds a cache entry into the cache, and returns an existing cache entry with a matching key.</summary>
+      <param name="item">Cache item to add.</param>
+      <param name="policy">Expiration policy for the item.</param>
+      <returns>The previous cache entry that matches the specified key, if found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.AddOrGetExisting``1(System.String,``0,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Adds an entry using key and value pair into the cache, and returns an existing cache entry with a matching key.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy for the item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The previous cache entry that matches the specified key, if found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.AddOrGetExisting``1(System.String,``0,Date``0ime,System.String)">
+      <summary>Adds an entry using key and value pair and absolute expiration date into the cache, and returns an existing cache entry with a matching key.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="absoluteExpiration">Absolute expiration date to use.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The previous cache entry that matches the specified key, if found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.BeginAddExternalResource(System.String,System.String,System.Boolean)">
+      <summary>Begins adding a new cache item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region name.</param>
+      <param name="readWrite"></param>
+      <returns>Returns URI to the path holding the data for the item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Contains(System.String,System.String)">
+      <summary>Checks whether the specified cache entry exists in the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.CopyCacheItemPolicy(Leadtools.Caching.CacheItemPolicy)">
+      <summary>Creates a copy of a cache policy.</summary>
+      <param name="policy">Source cache policy.</param>
+      <returns>Exact copy of policy, or **null** if policy is **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.CreateFromConfigurations(System.IO.Stream,IDictionary&lt;string)">
+      <summary>Creates a new cache object from the specified configuration stream and optional additional values.</summary>
+      <param name="stream">Stream containing the configuration. This is usually a stream to an XML file or data containing configuration previously saved with SaveConfiguration. This value must not be **null**.</param>
+      <param name="additionalValues">Dictionary of key/item values containing optional values to use. *additionalValues* override any values with the same key found in *stream*.</param>
+      <returns>The ObjectCache derived class created by this method if successful. Otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.CreateFromConfigurationsString(System.String,IDictionary&lt;string)">
+      <summary>Creates an ObjectCache derived class from the configuration XML stored in a string.</summary>
+      <param name="value">String containing configuration string.</param>
+      <param name="additionalValues">Dictionary of key/item values containing optional values to use. *additionalValues* override any values with the same key found in *value*.</param>
+      <returns>The ObjectCache derived class created by this method if successful; Otherwise, **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.DateFromString(System.String)">
+      <summary>Parses a date / time value stored in a string.</summary>
+      <param name="value">Input string containing a date / time value.</param>
+      <returns>The value converted to a date / time.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.DateToString(DateTime)">
+      <summary>Converts a date / time value to a string using the current format.</summary>
+      <param name="value">Input date / time value.</param>
+      <returns>The value converted to a string.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.DeleteAll(System.String,ISet&lt;string&gt;)">
+      <summary>Deletes the specified items from the cache.</summary>
+      <param name="regionName">Optional region name.</param>
+      <param name="keys">Cache item keys to delete.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.DeleteItem(System.String,System.String)">
+      <summary>Deletes the specified item from the cache.</summary>
+      <param name="key">Cache item key to delete.</param>
+      <param name="regionName">Optional region name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.DeleteRegion(System.String)">
+      <summary>Deletes the specified region and all its data.</summary>
+      <param name="regionName">region name. This value cannot be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.EndAddExternalResource(System.Boolean,System.String,System.Object,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Ends adding a new cache item and commit the changes.</summary>
+      <param name="commit"></param>
+      <param name="key">Unique item identifier.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy to use with this item.</param>
+      <param name="regionName">Optional region name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.EndAddExternalResource``1(System.Boolean,System.String,``0,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Ends adding a new cache item and commit the changes.</summary>
+      <param name="commit"></param>
+      <param name="key">Unique item identifier.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy to use with this item.</param>
+      <param name="regionName">Optional region name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.EnumerateKeys(System.String,Leadtools.Caching.EnumerateCacheEntriesCallback)">
+      <summary>Enumerates all the items in a region.</summary>
+      <param name="region">Optional region name.</param>
+      <param name="callback">Occurs for each item found in the region. The entry parameter of callback will contain</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.EnumerateRegions(Leadtools.Caching.EnumerateCacheEntriesCallback)">
+      <summary>Enumerates all the regions in this cache.</summary>
+      <param name="callback">Occurs for each region found in the cache. The entry parameter of callback will contain</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Get(System.String,System.String)">
+      <summary>Value of the specified cache entry.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The value of the specified entry if found, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Get``1(System.String,System.String)">
+      <summary>Value of the specified cache entry.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The value of the specified entry if found, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetCacheItem(System.String,System.String)">
+      <summary>Specified cache entry from the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The cache item if found, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetCacheItem``1(System.String,System.String)">
+      <summary>Specified cache entry from the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The cache item if found, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetConfigurationString">
+      <summary>Gets the configurations of this ObjectCache as a string.</summary>
+      <returns>A string containing XML configuration that can be used to initialize this ObjectCache derived object.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetCount(System.String)">
+      <summary>Total number of cache entries in the cache.</summary>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The total number of cache entries found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetItemCapabilities(System.Int64)">
+      <summary>Gets the capabilities of a new item to be added, based on its size.</summary>
+      <param name="itemSize">Item size in bytes.</param>
+      <returns>Capabilities of the item to be added.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetItemCapabilities(System.String,System.String)">
+      <summary>Gets the capabilities of an existing item in the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in the cache.</param>
+      <returns>The capabilities of the item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetItemExternalResource(System.String,System.String,System.Boolean)">
+      <summary>Get a URI to the cache item</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region name.</param>
+      <param name="readWrite"></param>
+      <returns>Returns URI to the path holding the data for the item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetItemVirtualDirectoryUrl(System.String,System.String)">
+      <summary>Gets a URI that provides HTTP GET access to data for the specified item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region (sub-directory) name.</param>
+      <returns>The URI to the file holding the data for the specified item.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetPolicy(System.String,System.String)">
+      <summary>Gets the policy stored with the specified cache item.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The cache item policy stored for the specified item in the cache. If the value is not found, a new CacheItemPolicy object initialed with default values is returned.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetStatistics">
+      <summary>Returns a snapshot of the number of all items in the cache.</summary>
+      <returns>A CacheStatistics object containing the current number of regions, items and expired items in the cache.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetStatistics(System.String,System.String)">
+      <summary>Returns a snapshot of the number of items in the specified region.</summary>
+      <param name="key">Key name. If this parameter is not **null**, then this method will return information on this item only. This can be used to check</param>
+      <param name="">is returned.</param>
+      <param name="regionName">Region name. If this value is not **null**, then this method will return information on the items in this region. If this</param>
+      <param name=""></param>
+      <returns>A CacheStatistics object containing the current number of regions, items and expired items in the cache.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetValues(IEnumerable&lt;string&gt;,System.String)">
+      <summary>Cache entries that correspond the specified keys.</summary>
+      <param name="keys">Collection of unique identifiers.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>Dictionary of key/value pair found.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.IsInfinite(DateTime)">
+      <summary>Determines whether the specified time span is an infinite value.</summary>
+      <param name="value">Time span to check.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.LoadConfiguration(System.IO.Stream)">
+      <summary>Updates this ObjectCache from configuration XML stored in a stream.</summary>
+      <param name="stream">A stream containing XML configuration.</param>
+      <returns>Refer to ObjectCache.CreateFromConfigurations for more information and an example on loading and saving cache object configurations.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Remove(System.String,System.String)">
+      <summary>Removes an entry from the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The value of the item removed from the cache if found, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Remove``1(System.String,System.String)">
+      <summary>Removes an entry from the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+      <returns>The value of the item removed from the cache if found, otherwise; **null**.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.RemoveItemExternalResource(System.String,System.String)">
+      <summary>Removes the external resource URI associated with the specified cache item</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="regionName">Optional region name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.ResolveDirectory(System.String)">
+      <summary>Gets the full path to a directory.</summary>
+      <param name="path">Input full or relative path to a file or directory on disk. If this value contains a full path on disk, then the value is returned right away without further actions. Otherwise, the value is combined with BaseDirectory.</param>
+      <returns>The full path on disk to *path*.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.SaveConfiguration(System.IO.Stream,System.Boolean)">
+      <summary>Saves the configurations of this ObjectCache to an XML stored in a stream.</summary>
+      <param name="stream">Stream that will be updated with the configuration.</param>
+      <param name="formatted"></param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Set(Leadtools.Caching.CacheItem,Leadtools.Caching.CacheItemPolicy)">
+      <summary>Adds an item into the cache.</summary>
+      <param name="item">Cache item to add.</param>
+      <param name="policy">Item expiration policy.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Set(System.String,System.Object,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Adds a key/value pair item into the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy for the item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Set(System.String,System.Object,DateTime,System.String)">
+      <summary>Adds a key/value pair item into the cache with the specified absolute expiration date.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="absoluteExpiration">Absolute expiration date to use.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Set``1(Leadtools.Caching.CacheItem,Leadtools.Caching.CacheItemPolicy)">
+      <summary>Adds an item into the cache.</summary>
+      <param name="item">Cache item to add.</param>
+      <param name="policy">Item expiration policy.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Set``1(System.String,``0,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Adds a key/value pair item into the cache.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="policy">Expiration policy for the item.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Set``1(System.String,``0,Date``0ime,System.String)">
+      <summary>Adds a key/value pair item into the cache with the specified absolute expiration date.</summary>
+      <param name="key">Unique identifier of the cache item.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="absoluteExpiration">Absolute expiration date to use.</param>
+      <param name="regionName">Optional name of a region in cache.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.SetConfigurationString(System.String)">
+      <summary>Updates this ObjectCache from configuration XML stored in a string.</summary>
+      <param name="value">A string containing XML configuration.</param>
+      <returns>Refer to ObjectCache.CreateFromConfigurations for more information and an example on loading and saving cache object configurations.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.SetName(System.String)">
+      <summary>Sets the unique name of this cache object.</summary>
+      <param name="value">The unique name of this cache object.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Update(System.String,System.Object,System.String)">
+      <summary>Update an existing item in the cache.</summary>
+      <param name="key">Cache item key to delete.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="regionName">Optional region name.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.Update``1(System.String,``0,System.String)">
+      <summary>Update an existing item in the cache.</summary>
+      <param name="key">Cache item key to delete.</param>
+      <param name="value">Data for the cache item.</param>
+      <param name="regionName">Optional region name.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.UpdateCacheItem(Leadtools.Caching.CacheItem)">
+      <summary>Update an existing item in the cache.</summary>
+      <param name="item">Item to update. Must not be **null**.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.UpdateCacheItem``1(Leadtools.Caching.CacheItem)">
+      <summary>Update an existing item in the cache.</summary>
+      <param name="item">Item to update. Must not be **null**.</param>
+      <returns>Target Platforms</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.UpdatePolicy(System.String,Leadtools.Caching.CacheItemPolicy,System.String)">
+      <summary>Update the policy of an existing cache item.</summary>
+      <param name="key">Unique item identifier.</param>
+      <param name="policy">New expiration policy to use with this item.</param>
+      <param name="regionName">Optional region (sub-directory) name.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.GetEnumerator">
+      <summary>Creates an enumerator that can be used to iterate through a collection of cache entries.</summary>
+      <returns>An enumerator that can be used to iterate through a collection of cache entries.</returns>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.LoadConfigurationValues(IDictionary&lt;string)">
+      <summary>Load the configuration of this cache object from the specified dictionary.</summary>
+      <param name="values">Dictionary containing configuration key/item pairs.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.OnCacheItemExpired(Leadtools.Caching.CacheItemExpiredEventArgs)">
+      <summary>Raises the CacheItemExpired event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.OnCacheItemExpiring(Leadtools.Caching.CacheItemExpiringEventArgs)">
+      <summary>Raises the CacheItemExpiring event.</summary>
+      <param name="e">Event data.</param>
+    </member>
+    <member name="M:Leadtools.Caching.ObjectCache.SaveConfigurationValues(IDictionary&lt;string)">
+      <summary>Saves the configuration of this cache object to the specified dictionary.</summary>
+      <param name="values">Dictionary containing configuration key/item pairs.</param>
+    </member>
+    <member name="E:Leadtools.Caching.ObjectCache.CacheItemExpired">
+      <summary>Occurs when an expired item has been removed from the cache.</summary>
+    </member>
+    <member name="E:Leadtools.Caching.ObjectCache.CacheItemExpiring">
+      <summary>Occurs when an item has expired and is about to be removed from the cache.</summary>
+    </member>
+    <member name="P:Leadtools.Caching.ObjectCache.BaseDirectory">
+      <summary>The base directory where the cache is stored.</summary>
+      <value>Base directory where the cache is stored. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Caching.ObjectCache.DataSerializationMode">
+      <summary>Determines the type of serialization to use when the data is saved into the cache.</summary>
+      <value>The type of serialization to use when the data is saved into the cache.</value>
+    </member>
+    <member name="P:Leadtools.Caching.ObjectCache.DefaultCacheCapabilities">
+      <summary>The capabilities of this cache</summary>
+      <value>The capabilities of this cache.</value>
+    </member>
+    <member name="P:Leadtools.Caching.ObjectCache.Item">
+      <summary>The cache item.</summary>
+      <value>*key*</value>
+    </member>
+    <member name="P:Leadtools.Caching.ObjectCache.Name">
+      <summary>Unique name of this cache object</summary>
+      <value>The unique name of this cache object.</value>
+    </member>
+    <member name="P:Leadtools.Caching.ObjectCache.PolicySerializationMode">
+      <summary>Determines the type of serialization to use when the policy is saved into the cache.</summary>
+      <value>The type of serialization to use when the policy is saved into the cache.</value>
+    </member>
+    <member name="F:Leadtools.Caching.ObjectCache.BASE_DIRECTORY_KEY">
+      <summary>Name of the key used to store BaseDirectory.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.ObjectCache.DATA_SERIALIZATION_MODE_KEY">
+      <summary>Name of the key used to store DataSerializationMode.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.ObjectCache.DateFormat">
+      <summary>Format to use when storing dates in the XML and JSON formats.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.ObjectCache.InfiniteAbsoluteExpiration">
+      <summary>Value that indicates that a cache entry has no absolute expiration.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.ObjectCache.NoSlidingExpiration">
+      <summary>Value that indicates that a cache entry has no sliding expiration.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.ObjectCache.POLICY_SERIALIZATION_MODE_KEY">
+      <summary>Name of the key used to store PolicySerializationMode.</summary>
+    </member>
+    <member name="T:Leadtools.Caching.EnumerateCacheEntriesCallback">
+      <summary>Callback for the EnumerateRegions and EnumerateKeys method.</summary>
+      <param name="entry">The entry name</param>
+    </member>
+    <member name="T:Leadtools.Caching.CacheSerializationMode">
+      <summary>Cache serialization mode</summary>
+    </member>
+    <member name="F:Leadtools.Caching.CacheSerializationMode.Binary">
+      <summary>Binary serialization using the native framework serialization capability.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.CacheSerializationMode.Xml">
+      <summary>XML serialization. This mode is backward compatible between different versions of LEADTOOLS.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.CacheSerializationMode.Json">
+      <summary>Json serialization. This mode is backward compatible between different versions of LEADTOOLS.</summary>
+    </member>
+    <member name="T:Leadtools.Caching.DefaultCacheCapabilities">
+      <summary>Set of features that a cache implementation provides.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.None">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.InMemoryProvider">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.OutOfProcessProvider">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.CacheEntryChangeMonitors">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.AbsoluteExpirations">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.SlidingExpirations">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.CacheEntryUpdateCallback">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.CacheEntryRemovedCallback">
+      <summary></summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.CacheRegions">
+      <summary>Cache implementation supports the ability to partition its storage into cache regions.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.ExternalResources">
+      <summary>Cache implementation supports obtaining a URI to cache items providing direct file read or write access.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.Serialization">
+      <summary>This is a hint to the cache users that this implementation will serialize the objects added to the cache right away.</summary>
+    </member>
+    <member name="F:Leadtools.Caching.DefaultCacheCapabilities.VirtualDirectory">
+      <summary>Cache implementation supports obtaining a URI to cache items providing HTTP GET access.</summary>
+    </member>
+  </members>
+</doc>

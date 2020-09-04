@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Forms.Recognition</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Forms.Recognition.DefaultObjectsManager">
+      <summary>Creates a default form recognition objects manager.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.DefaultObjectsManager.#ctor">
+      <summary>Initializes a new DefaultObjectsManager class object.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.FormRecognitionAttributes">
+      <summary>Describes the properties of a certain form. Attributes are encoded into an array of bytes.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionAttributes.#ctor">
+      <summary>Initializes a new FormRecognitionAttributes class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionAttributes.GetData">
+      <summary>Gets the array of bytes containing the encoded attributes.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionAttributes.SetData(System.Byte[])">
+      <summary>Sets the array of bytes containing the encoded attributes.</summary>
+      <param name="data">Array of bytes containing the encoded attributes.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionAttributes.Image">
+      <summary>Gets or sets RasterImage Associated with FormRecognitionAttributes object, this image should be set before using FormRecognitionAttributes with PageRecognitionOptions with Leadtools.Forms.Common.FormsRecognitionMethod.Simple.</summary>
+      <value>the value should be set by user when needed, otherwise, set it to null.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.FormRecognitionEngine">
+      <summary>This class contains the form recognition engine that creates, compares, and aligns forms.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.#ctor">
+      <summary>Initializes a new FormRecognitionEngine class object.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.AddFormPage(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.RasterImage,Leadtools.Forms.Recognition.PageRecognitionOptions)">
+      <summary>Appends a new page to the specified Form attributes object. The Form attributes object should be opened before the addition using OpenForm.</summary>
+      <param name="attributes">The Form attributes object.</param>
+      <param name="page">The page image that is going to be added to the Form attributes object.</param>
+      <param name="pageOptions">Specifies the options for the page.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.AddFormPage(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.RasterImage,Leadtools.Forms.Recognition.PageRecognitionOptions,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Appends a new page to the specified Form attributes object. The Form attributes object should be opened before the addition using OpenForm.</summary>
+      <param name="attributes">The Form attributes object.</param>
+      <param name="page">The page image that is going to be added to the Form attributes object.</param>
+      <param name="pageOptions">Specifies the options for the page.</param>
+      <param name="callback">Optional callback to show operation progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.AddMasterFormPage(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.RasterImage,Leadtools.Forms.Recognition.PageRecognitionOptions)">
+      <summary>Appends a new page to the specified Master Form attributes object. The Master Form attributes object should be opened before the addition using OpenMasterForm.</summary>
+      <param name="attributes">The Master Form attributes object.</param>
+      <param name="page">The page image that is going to be added to Master Form attributes object.</param>
+      <param name="pageOptions">Specifies the page options.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.AddMasterFormPage(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.RasterImage,Leadtools.Forms.Recognition.PageRecognitionOptions,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Appends a new page to the specified Master Form attributes object. The Master Form attributes object should be opened before the addition using OpenMasterForm.</summary>
+      <param name="attributes">The Master Form attributes object.</param>
+      <param name="page">The page image that is going to be added to Master Form attributes object.</param>
+      <param name="pageOptions">Specifies the page options.</param>
+      <param name="callback">Optional callback to show operation progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.CloseForm(Leadtools.Forms.Recognition.FormRecognitionAttributes)">
+      <summary>Closes an open FormRecognitionAttributes object associated with a Form.</summary>
+      <param name="attributes">An open FormRecognitionAttributes object.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.CloseMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes)">
+      <summary>Closes an open FormRecognitionAttributes object associated with a Master Form.</summary>
+      <param name="attributes">An open FormRecognitionAttributes object.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.CompareExtendedForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Common.FormProgressCallback,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Returns a FormRecognitionResult object determines how close is the specified Form to the specified Master Form.</summary>
+      <param name="masterAttributes">The Master Form attribute object.</param>
+      <param name="formAttributes">The Form attribute object.</param>
+      <param name="formCallback">Status about the progress of the comparison at the form level (i.e. page by page). Set it to null to ignore the progress.</param>
+      <param name="pageCallback">Provides status on the progress of the comparison at the page level. Set it to null to ignore the progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.CompareForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Common.FormProgressCallback)">
+      <summary>Returns a FormRecognitionResult object that describes how close the specified Form is to the specified Master Form.</summary>
+      <param name="masterAttributes">The Master Form attribute object.</param>
+      <param name="formAttributes">The Form attribute object.</param>
+      <param name="callback">Status on the progress of the comparison. Set it to null to ignore progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.CompareForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Common.FormProgressCallback,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Returns a FormRecognitionResult object determines how close is the specified Form to the specified Master Form.</summary>
+      <param name="masterAttributes">The Master Form attribute object.</param>
+      <param name="formAttributes">The Form attribute object.</param>
+      <param name="formCallback">Status about the progress of the comparison at the form level (i.e. page by page). Set it to null to ignore the progress.</param>
+      <param name="pageCallback">Provides status on the progress of the comparison at the page level. Set it to null to ignore the progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.CompareFormFast(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Common.FormProgressCallback)">
+      <summary>Returns a FormRecognitionResult object determines how close is the specified Form to the specified Master Form.</summary>
+      <param name="mastersAttributes">List of all Master Forms attribute objects that you want to compare with.</param>
+      <param name="formAttributes">The Form attribute object.</param>
+      <param name="formCallback">Status about the progress of the comparison at the form level (i.e. page by page). Set it to null to ignore the progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.ComparePage(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32)">
+      <summary>Returns a PageRecognitionResult object that describes how close the specified Form page is in comparison to the specified Master Form page.</summary>
+      <param name="masterAttributes">The attributes of the Master Form.</param>
+      <param name="masterPageNumber">The reference Master Form page. The page number is a 1-based index.</param>
+      <param name="formAttributes">The Form attributes object.</param>
+      <param name="formPageNumber">The page of the form being aligned. The page number is a 1-based index.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.ComparePage(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Returns a PageRecognitionResult object that describes how close the specified Form page is in comparison to the specified Master Form page.</summary>
+      <param name="masterAttributes">The attributes of the Master Form.</param>
+      <param name="masterPageNumber">The reference Master Form page. The page number is a 1-based index.</param>
+      <param name="formAttributes">The Form attributes object.</param>
+      <param name="formPageNumber">The page of the form being aligned. The page number is a 1-based index.</param>
+      <param name="callback">Optional callback to show operation progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.CreateForm(Leadtools.Forms.Recognition.FormRecognitionOptions)">
+      <summary>Creates a new form, with the specified options, for use in recognition It returns a FormRecognitionEngine object that you can use for creating any Form.</summary>
+      <param name="formOptions">A structure which specifies the form options.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.CreateMasterForm(System.String,Guid,Leadtools.Forms.Recognition.FormRecognitionOptions)">
+      <summary>Creates a new Master Form attribute object with the specified options.</summary>
+      <param name="formName">The name of the Master Form.</param>
+      <param name="formGuid">The Master Form's ID.</param>
+      <param name="formOptions">The options for the Master Form.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.DeleteFormPage(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32)">
+      <summary>Deletes the specified page from the specified Form attribute object.</summary>
+      <param name="attributes">The Form attribute object.</param>
+      <param name="pageNumber">The page being deleted from the form. The page number is a 1-based index.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.DeleteMasterFormFromFullTextSearch(System.String,Leadtools.Forms.Recognition.FormRecognitionAttributes)">
+      <summary>Deletes master form from the full text search database.</summary>
+      <param name="repositoryName">Repository name. If this value is **null** or an empty string, then an empty string is used to indicate a default repository without a name.</param>
+      <param name="masterAttributes">Attributes of the master to delete. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.DeleteMasterFormFromFullTextSearch(System.String,System.String)">
+      <summary>Deletes master form (by name) from the full text search database.</summary>
+      <param name="repositoryName">Repository name. If this value is **null** or an empty string, then an empty string is used to indicate a default repository without a name.</param>
+      <param name="masterFormName">Name of the master form to delete. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.DeleteMasterFormPage(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32)">
+      <summary>Deletes the specified page from the specified Master Form.</summary>
+      <param name="attributes">The Master Form attribute object.</param>
+      <param name="pageNumber">The page of the Master Form being deleted. The page number is a 1-based index.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.FillFieldsInformation(Leadtools.RasterImage,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Processing.FormPages,Leadtools.Forms.Common.PageAlignment)">
+      <summary>Update passed Leadtools.Forms.Processing.FormPages by filling Extra-information after recognition phase but before Processing phase.</summary>
+      <param name="form">Form image.</param>
+      <param name="masterAttributes">The Master Form attribute object.</param>
+      <param name="formAttributes">The Form attribute object.</param>
+      <param name="pages">The Leadtools.Forms.Processing.FormPages that needs to by updated with Recognition Information.</param>
+      <param name="alignments">List of Alignments for Each page in Leadtools.Forms.Processing.FormPages.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.GetFormAlignment(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Common.FormProgressCallback)">
+      <summary>Returns a list of Leadtools.Forms.Common.PageAlignment objects that determines the amount of shift and scaling for each page of the Form with its corresponding page in the specified Master Form.</summary>
+      <param name="masterAttributes">The Master Form attributes object.</param>
+      <param name="formAttributes">The Form attributes object.</param>
+      <param name="callback">Provides status on the progress of the alignment calculations at the form level (i.e. page by page). Set it to null to ignore the progress.</param>
+      <returns>A list of Leadtools.Forms.Common.PageAlignment objects that determines the amount of shift and scaling for each page of the Form with its corresponding page in the specified Master Form.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.GetFormAlignment(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.Forms.Common.FormProgressCallback,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Returns a list of Leadtools.Forms.Common.PageAlignment objects that determines the amount of shift and scaling for each page of the Form with its corresponding page in the specified Master Form.</summary>
+      <param name="masterAttributes">The Master Form attributes object.</param>
+      <param name="formAttributes">The Form attributes object.</param>
+      <param name="formCallback">Provides status on the progress of the alignment calculations at the form level (i.e. page by page). Set it to null to ignore the progress.</param>
+      <param name="pageCallback">Provides status on the progress of the alignment calculations at the page level. Set it to null to ignore the progress.</param>
+      <returns>A list of Leadtools.Forms.Common.PageAlignment objects that determines the amount of shift and scaling for each page of the Form with its corresponding page in the specified Master Form.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.GetFormProperties(Leadtools.Forms.Recognition.FormRecognitionAttributes)">
+      <summary>Returns a FormRecognitionProperties object that provides information about the specified FormRecognitionAttributes such as isMaster, name, ID, creation time, modification time, last access time, and the number of pages.</summary>
+      <param name="attributes">The FormRecognitionAttributes object to get its information.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.GetFullTextSearchCandidatesForm(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.String,System.String,Leadtools.Forms.Common.FormProgressCallback,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Finds all the master form candidates for a form using full text search.</summary>
+      <param name="formAttributes">The form attribute object. Must not be **null**.</param>
+      <param name="repositoryName">Repository name. If this value is **null** or an empty string, then an empty string is used to indicate a default repository without a name.</param>
+      <param name="language">Optional language of the form. Passing **null** will default to "en-US" (or locale ID 1033).</param>
+      <param name="formCallback">Status about the progress of the operation at the form level (i.e. page by page). Can be **null**.</param>
+      <param name="pageCallback">Provides status on the progress of the operation at the page level. Can be **null**.</param>
+      <returns>List of candidates sorted by rank.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.GetFullTextSearchCandidatesPage(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32,System.Int32,System.String,System.String,Leadtools.Forms.Common.FormProgressCallback,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Finds all the master form candidates for a form page using full text search.</summary>
+      <param name="formAttributes">The form attribute object. Must not be **null**.</param>
+      <param name="pageNumber">1-based page number of the form to compare.</param>
+      <param name="masterFormPageNumber">1-based page number of the master form to compare.</param>
+      <param name="repositoryName">Repository name. If this value is **null** or an empty string, then an empty string is used to indicate a default repository without a name.</param>
+      <param name="language">Optional language of the form. Passing **null** will default to "en-US" (or locale ID 1033).</param>
+      <param name="formCallback">Status about the progress of the operation at the form level (i.e. page by page). Can be **null**.</param>
+      <param name="pageCallback">Provides status on the progress of the operation at the page level. Can be **null**.</param>
+      <returns>List of candidates sorted by rank.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.GetPageAlignment(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32)">
+      <summary>Returns a Leadtools.Forms.Common.PageAlignment object which specifies the amount of shift and scaling for a specific form page, according to the specified Master Form.</summary>
+      <param name="masterAttributes">The attributes of the Master Form.</param>
+      <param name="masterPageNumber">The reference Master Form page. The page number is a 1-based index.</param>
+      <param name="formAttributes">The Form attributes object.</param>
+      <param name="formPageNumber">The page of the form being aligned. The page number is a 1-based index.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.GetPageAlignment(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Returns a Leadtools.Forms.Common.PageAlignment object which specifies the amount of shift and scaling for a specific form page, according to the specified Master Form.</summary>
+      <param name="masterAttributes">The attributes of the Master Form.</param>
+      <param name="masterPageNumber">The reference Master Form page. The page number is a 1-based index.</param>
+      <param name="formAttributes">The Form attributes object.</param>
+      <param name="formPageNumber">The page of the form being aligned. The page number is a 1-based index.</param>
+      <param name="callback">Optional callback to show operation progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.GetPageOptions(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32)">
+      <summary>Returns a PageRecognitionOptions object from specific page number in FormRecognitionAttributes.</summary>
+      <param name="masterAttributes">An attribute object contains pages.</param>
+      <param name="pageNumber">Specific page index inside attributes.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.InsertFormPage(System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.RasterImage,Leadtools.Forms.Recognition.PageRecognitionOptions,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Appends a new page to the specified Form attributes object. The Form attributes object should be opened before the addition using OpenForm.</summary>
+      <param name="formPageNumber">The One-Based index at which page should be inserted.</param>
+      <param name="attributes">The Form attributes object.</param>
+      <param name="page">The page image that is going to be added to the Form attributes object.</param>
+      <param name="pageOptions">Specifies the options for the page.</param>
+      <param name="callback">Optional callback to show operation progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.InsertMasterFormPage(System.Int32,Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.RasterImage,Leadtools.Forms.Recognition.PageRecognitionOptions,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Appends a new page to the specified Master Form attributes object. The Master Form attributes object should be opened before the addition using OpenMasterForm.</summary>
+      <param name="masterFormPageNumber">The One-Based index at which page should be inserted.</param>
+      <param name="attributes">The Master Form attributes object.</param>
+      <param name="page">The page image that is going to be added to Master Form attributes object.</param>
+      <param name="pageOptions">Specifies the page options.</param>
+      <param name="callback">Optional callback to show operation progress.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.IsMasterFormInFullTextSearch(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.String)">
+      <summary>Detects if the master form has been added to the full text database.</summary>
+      <param name="masterAttributes">Attributes of the master form to check. This value cannot be **null**.</param>
+      <param name="repositoryName">Repository name to check. If this is **null**, then the default repository without a name will be searched.</param>
+      <returns>Use IsMasterFormInFullTextSearch to quickly detect if a master form exists in the full text database. This method will call</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.OpenForm(Leadtools.Forms.Recognition.FormRecognitionAttributes)">
+      <summary>Opens a closed Form attribute object for editing, or adding or deleting pages.</summary>
+      <param name="attributes">The Form attribute object.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.OpenMasterForm(Leadtools.Forms.Recognition.FormRecognitionAttributes)">
+      <summary>Opens a closed Master Form attribute object for editing, or adding or deleting pages.</summary>
+      <param name="attributes">The Master Form attribute object</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.SetPageOptions(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.Int32,Leadtools.Forms.Recognition.PageRecognitionOptions)">
+      <summary>set a PageRecognitionOptions object in page inside FormRecognitionAttributes and return true if success.</summary>
+      <param name="masterAttributes">An attribute object contains pages.</param>
+      <param name="pageNumber">Specific page index inside attributes.</param>
+      <param name="options">The page Options that we want to set.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.UpdatePageType(Leadtools.Forms.Recognition.FormRecognitionAttributes,Leadtools.RasterImage,System.Int32)">
+      <summary>This method is used to update internal data after setting the page type using SetPageOptions method.</summary>
+      <param name="attributes">The master form attributes to be updated.</param>
+      <param name="image">The master form image.</param>
+      <param name="pageNumber">Page number to be updated.</param>
+      <returns>Returns true in case of page update success, false otherwise.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionEngine.UpsertMasterFormToFullTextSearch(Leadtools.Forms.Recognition.FormRecognitionAttributes,System.String,System.String,System.String,Leadtools.Forms.Common.FormProgressCallback,Leadtools.Forms.Common.PageProgressCallback)">
+      <summary>Adds or updates a master form to the full text search database.</summary>
+      <param name="masterAttributes">Attributes of the master form. Must not be **null**.</param>
+      <param name="repositoryName">Repository name. If this value is **null** or an empty string, then an empty string is used to indicate a default repository without a name.</param>
+      <param name="language">Optional language of the form. Passing **null** will default to "en-US" (or locale ID 1033).</param>
+      <param name="userData">Optional user data value. This will be saved to the store and can be retrieved later when getting the candidates. Can be **null**.</param>
+      <param name="formCallback">Status about the progress of the operation at the form level (i.e. page by page). Can be **null**.</param>
+      <param name="pageCallback">Provides status on the progress of the operation at the page level. Can be **null**.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionEngine.FIPSCompatibleMode">
+      <summary>Enables or disables Compatible with FIPS(Federal Information Processing Standards).</summary>
+      <value>**true** to enable FIPS Compatibility mode, **false**, to disable Compatibility.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionEngine.FullTextSearchManager">
+      <summary>Full text search manager support.</summary>
+      <value>Full text search manager. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionEngine.FullTextSearchMaximumCandidates">
+      <summary>The maximum number of matches (candidates) to return.</summary>
+      <value>The default value is 3. Must be a number greater than or equal to 0.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionEngine.FullTextSearchMinimumRank">
+      <summary>Minimum rank value to be considered a match (or candidate).</summary>
+      <value>The default value is -1 meaning to return all candidates.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionEngine.ObjectsManagers">
+      <summary>Gets a list of object managers that are used to extract the features of the form for this FormRecognitionEngine.</summary>
+      <value>List of object managers that are used to extract the features of the form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionEngine.Version">
+      <summary>The FormRecognitionEngine version to use when recognizing forms.</summary>
+      <value>The 'Version' associated with the current FormRecognitionEngine.</value>
+    </member>
+    <member name="F:Leadtools.Forms.Recognition.FormRecognitionEngine.LatestVersion">
+      <summary>A constant value that indicates the latest version of the forms toolkit.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.FormRecognitionOptions">
+      <summary>Specifies the different options for a Form when it is created.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionOptions.#ctor">
+      <summary>Initializes a new FormRecognitionOptions class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionOptions.RecognitionMethod">
+      <summary>Specifies which recognition Method to use for forms recognition.</summary>
+      <value>The Leadtools.Forms.Common.FormsRecognitionMethod Method for forms recognition.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.FormRecognitionResult">
+      <summary>Contains the success or failure result of the comparison operation.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FormRecognitionResult.#ctor">
+      <summary>Initializes a new FormRecognitionResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionResult.Confidence">
+      <summary>Gets or sets the level of confidence that a recognition engine has when comparing a Form's attributes object with a Master Form's attributes object.</summary>
+      <value>The confidence number expresses the certainty of the recognition process.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionResult.LargestConfidencePageNumber">
+      <summary>Specifies the index of the page which has the greatest confidence. This is a 1-based index.</summary>
+      <value>The 1-based integer that specifies the index to the form page with the greatest confidence.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionResult.MasterAttributes">
+      <summary>The Master Form attribute founded using FormRecognitionEngine.CompareFormFast Method.</summary>
+      <value>The Master Form attribute associated with result.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionResult.MasterAttributesCandidatesIndeces">
+      <summary>List of Master Forms indices passed to FormRecognitionEngine.CompareFormFast that could be master form associated with passed form.</summary>
+      <value>List of integers that specifies the Candidates indeices of master attributes.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionResult.PageResults">
+      <summary>Consists of a list of PageRecognitionResult objects containing the success or failure result of comparison operation for each Form page.</summary>
+      <value>List representing the results of the recognition process for the different Form pages.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionResult.Reason">
+      <summary>Identifies the reason for the Confidence result.</summary>
+      <value>Value representing the reason for the recognition result.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.FullTextSearchItem">
+      <summary>Item to add or get from a full text search manager.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.FullTextSearchItem.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FullTextSearchItem.Content">
+      <summary>Content to store and retrieve.</summary>
+      <value>The content as a stream of text.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FullTextSearchItem.FormName">
+      <summary>Form name.</summary>
+      <value>The form name.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FullTextSearchItem.Language">
+      <summary>Content language</summary>
+      <value>Language of the text in Content</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FullTextSearchItem.PageNumber">
+      <summary>Page number of the form.</summary>
+      <value>1-based page number of the form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FullTextSearchItem.RepositoryName">
+      <summary>Repository name.</summary>
+      <value>The forms repository name.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FullTextSearchItem.ScoreRank">
+      <summary>Search ranking score.</summary>
+      <value>Value between 0 and 100. Higher values represent more confidence.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FullTextSearchItem.UserData">
+      <summary>User data.</summary>
+      <value>Optional user data.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.PageRecognitionOptions">
+      <summary>Specifies the different options for a Form page when it is added to a form using FormRecognitionEngine.AddFormPage for Forms or FormRecognitionEngine.AddMasterFormPage for Master Forms.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.PageRecognitionOptions.#ctor">
+      <summary>Initializes a new PageRecognitionOptions class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionOptions.AutoCleanUp">
+      <summary>Gets or sets which clean up operation (to get rid of noise) to perform on the page image before extracting its features.</summary>
+      <value>true if the clean up operation is going to be performed on the form, otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionOptions.ExcludeRectangles">
+      <summary>List of LeadRect objects which specify the portion of the page image that is not a part of the page features.</summary>
+      <value>List of LeadRect objects representing the excluded areas of the form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionOptions.IncludeRectangles">
+      <summary>List of LeadRect objects which specify which portion of the page image is included as a part of the page features.</summary>
+      <value>List of LeadRect objects representing the included areas of the form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionOptions.PageType">
+      <summary>Specifies the type of Page.</summary>
+      <value>The PageType of the page.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionOptions.RegionOfInterestRectangles">
+      <summary>List of LeadRect objects which specify which portion of the page image represents the important features of the page.</summary>
+      <value>List of LeadRect objects representing the important areas of the form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionOptions.SvgDocument">
+      <summary>The optional SVG document representation of this page.</summary>
+      <value>Optional SVG document representation of this page if the original format supports loading as SVG, otherwise; **null**. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionOptions.TradeoffMode">
+      <summary>Specifies which recognition algorithm trade-off setting to use for forms recognition.</summary>
+      <value>The Leadtools.Forms.Common.FormsTradeoffMode setting to use for forms recognition.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionOptions.UpdateImage">
+      <summary>Gets or sets the update the user image with the cleaned one.</summary>
+      <value>True to update the user image with the cleaned one, otherwise it is false.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.PageRecognitionResult">
+      <summary>Describes the results of the comparison operation for a page, including success or failure as well as alignment results.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.PageRecognitionResult.#ctor">
+      <summary>Initializes a new PageRecognitionResult class object.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionResult.Alignment">
+      <summary>Gets or sets the amount of shift and scaling a Form page needs in order to match the corresponding Master Form page.</summary>
+      <value>Value representing the information needed to align the Form to its Master Form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.PageRecognitionResult.Confidence">
+      <summary>Gets or sets the level of confidence that a recognition engine has when comparing the Form page attributes object to the Master Form page attributes object.</summary>
+      <value>The confidence number expressing the certainty of the recognition of the Form page.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.RecognitionObjectsManager">
+      <summary>RecognitionObjectsManager is the base class for all recognition objects manager. Objects managers are used to extract and edit certain features in form images.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.RecognitionObjectsManager.#ctor">
+      <summary>Initializes a new instance of this class.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.RecognitionObjectsManager.EnableObjects(IList&lt;string&gt;,System.Boolean)">
+      <summary>Enables/disables the extraction of the objects (features) of the specified type.</summary>
+      <param name="objectTypeNames">The name of the object type.</param>
+      <param name="enable">true to enable object extraction; false to disable object extraction.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.RecognitionObjectsManager.RetrieveObjectNames">
+      <summary>Gets a list of System.String containing the names of the features (objects) that this manager extracts.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager">
+      <summary>SQL Server full text search manager.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.#ctor">
+      <summary>Initializes a new class of SqlServerFullTextSearchManager.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.Delete(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Deletes master forms from the full text search database.</summary>
+      <param name="item">Properties of the item(s) to be deleted. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.Delete(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Deletes master forms from the full text search database.</summary>
+      <param name="items">Properties of the item(s) to be deleted. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.Index">
+      <summary>Start a re-indexing of the database.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.Search(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Searches the full text database for candidates.</summary>
+      <param name="item">Properties of the item(s) to search. Must not be **null**.</param>
+      <returns>List of candidates sorted by rank.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.Select(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Returns matching forms with content.</summary>
+      <param name="item">Properties of the item(s) to find. Must not be **null**.</param>
+      <returns>The items found.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.Upsert(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Adds or updates a new master form page to the full text search database</summary>
+      <param name="item">Properties of the item to add or update. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.Upsert(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Adds or updates one or more master form pages to the full text search database</summary>
+      <param name="items">Properties of the items to add or update. Must not be **null**.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.ConnectionString">
+      <summary>The connection string to use when connecting to the database.</summary>
+      <value>SQL Server connection string. Default value is **null**.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.SqlServerFullTextSearchManager.MaximumSearchContentSize">
+      <summary>The maximum size of the content size in bytes.</summary>
+      <value>Maximum size of Content in bytes. Default value is 1000.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.FormRecognitionReason">
+      <summary>Represents the reason for the recognition results.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Recognition.FormRecognitionReason.Success">
+      <summary>The recognition process was successful.</summary>
+    </member>
+    <member name="F:Leadtools.Forms.Recognition.FormRecognitionReason.InvalidNumberOfPages">
+      <summary>The form does not match the master form because it has a different number of pages.</summary>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.IFullTextSearchManager">
+      <summary>Full text search manager.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.IFullTextSearchManager.Delete(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Deletes master forms from the full text search database.</summary>
+      <param name="item">Properties of the item(s) to be deleted. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.IFullTextSearchManager.Delete(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Deletes master forms from the full text search database.</summary>
+      <param name="items">Properties of the item(s) to be deleted. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.IFullTextSearchManager.Index">
+      <summary>Start a re-indexing of the database.</summary>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.IFullTextSearchManager.Search(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Searches the full text database for candidates.</summary>
+      <param name="item">Properties of the item(s) to search. Must not be **null**.</param>
+      <returns>List of candidates sorted by rank.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.IFullTextSearchManager.Select(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Returns matching forms with content.</summary>
+      <param name="item">Properties of the item(s) to find. Must not be **null**.</param>
+      <returns>The items found.</returns>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.IFullTextSearchManager.Upsert(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Adds or updates a new master form page to the full text search database</summary>
+      <param name="item">Properties of the item to add or update. Must not be **null**.</param>
+    </member>
+    <member name="M:Leadtools.Forms.Recognition.IFullTextSearchManager.Upsert(Leadtools.Forms.Recognition.FullTextSearchItem)">
+      <summary>Adds or updates one or more master form pages to the full text search database</summary>
+      <param name="items">Properties of the items to add or update. Must not be **null**.</param>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.IFullTextSearchManager.MaximumSearchContentSize">
+      <summary>The maximum size of the content size in bytes.</summary>
+      <value>Maximum size of Content in bytes.</value>
+    </member>
+    <member name="T:Leadtools.Forms.Recognition.FormRecognitionProperties">
+      <summary>Specifies the attribute properties for a form. This class is used by the FormRecognitionEngine.GetFormProperties method.</summary>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionProperties.CreationTime">
+      <summary>Gets or sets the date and time that the form's attribute was created.</summary>
+      <value>The creation time of this form (2100,0050).</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionProperties.Guid">
+      <summary>Gets or sets the form's attributes ID.</summary>
+      <value>The GUID associated with this form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionProperties.IsMaster">
+      <summary>Returns a value that indicates whether these attributes are for a Master Form.</summary>
+      <value>true if this is a Master Form; otherwise, false.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionProperties.LastAccessTime">
+      <summary>Gets or sets the date and time that the form's attribute was last accessed.</summary>
+      <value>The time that this form was last accessed (2100,0050).</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionProperties.LastModificationTime">
+      <summary>Gets or sets the date and time that the form's attribute was last modified.</summary>
+      <value>The time that this form was last modified (2100,0050).</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionProperties.Name">
+      <summary>Gets or sets the form's attributes name.</summary>
+      <value>A string that is associated with this form.</value>
+    </member>
+    <member name="P:Leadtools.Forms.Recognition.FormRecognitionProperties.Pages">
+      <summary>Gets or sets the form's attributes number of pages.</summary>
+      <value>An integer value that specifies the number of pages in the form.</value>
+    </member>
+    <member name="F:Leadtools.Forms.Recognition.FormRecognitionProperties.Empty">
+      <summary>Represents a new instance of the FormRecognitionProperties with uninitialized members.</summary>
+    </member>
+  </members>
+</doc>
